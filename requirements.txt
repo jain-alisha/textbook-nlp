@@ -1,0 +1,14 @@
+PyMuPDF
+tqdm
+pandas
+joblib
+torch
+transformers
+spacypdfreader
+spacy
+pdfplumber
+sentence-transformers
+numpy
+google-generativeai
+python-dotenv
+requests
