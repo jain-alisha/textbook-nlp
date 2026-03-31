@@ -28,8 +28,8 @@ Options:
   --start-fresh    ignore saved progress and restart from scratch
 
 Rate limiting:
-  Uses Groq flex service tier (10x higher limits, still free).
   Exponential backoff on 429s — will keep retrying until it succeeds.
+  Note: flex service tier is NOT used (requires paid Groq plan).
 """
 
 from __future__ import annotations
@@ -456,7 +456,7 @@ def main():
 
         # Count errors
         error_count = sum(1 for v in votes if v == "ERROR")
-        if error_count >= 2:
+        if error_count >= 1:
             errors_this_run += 1
 
         processed_this_run += 1
@@ -497,6 +497,7 @@ def main():
         pct = 100 * count / max(n_classified, 1)
         print(f"  {lbl:<30} {count:>5}  ({pct:.1f}%)")
 
+    print(f"\n  API errors this run: {errors_this_run}")
     print("\nConfidence breakdown:")
     for conf, count in sorted(conf_counts.items(), key=lambda x: -x[1]):
         print(f"  {conf:<15} {count:>5}")

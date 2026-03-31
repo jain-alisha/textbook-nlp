@@ -58,8 +58,8 @@ python scripts/classify.py --name cpm_algebra2
 ```
 
 Output:
-- `data/cpm_algebra2/classified_results.csv` — confirmed (3/3) and majority (2/3) votes
-- `data/cpm_algebra2/uncertain_review.csv` — rows where all 3 models disagreed
+- `data/cpm_algebra2/classified_results.csv` — confirmed (2/2) votes
+- `data/cpm_algebra2/uncertain_review.csv` — rows where models disagreed or errored
 - `data/cpm_algebra2/progress.json` — checkpoint; re-running skips already-classified paragraphs
 
 ### 3. Analyze results (stub)
@@ -80,7 +80,7 @@ python scripts/analyze.py --name cpm_algebra2
 | `COMMON_ERROR_ALERT` | Text warns about a mistake students frequently make |
 | `NA` | Standard content: problem sets, definitions, examples, instructions |
 
-Voting: 3/3 agreement = **CONFIRMED**, 2/3 = **MAJORITY**, all disagree = **UNCERTAIN** (written to `uncertain_review.csv`, excluded from `classified_results.csv`).
+Voting: 2/2 agreement = **CONFIRMED**, any disagreement or single model error = **UNCERTAIN** (written to `uncertain_review.csv`, excluded from `classified_results.csv`).
 
 ---
 
