@@ -266,6 +266,8 @@ def main():
     parser.add_argument("--name",        required=True, help="Textbook identifier")
     parser.add_argument("--model",       required=True, choices=["qwen", "gpt_oss"],
                         help="Which model to run: qwen | gpt_oss")
+    parser.add_argument("--paragraphs",  default=None,
+                        help="Paragraphs CSV filename (default: paragraphs.csv)")
     parser.add_argument("--sleep",       type=float, default=DEFAULT_SLEEP)
     parser.add_argument("--start-fresh", action="store_true")
     args = parser.parse_args()
@@ -280,7 +282,8 @@ def main():
     response_format = cfg["response_format"]
 
     data_dir      = Path("data") / args.name
-    input_path    = data_dir / "paragraphs.csv"
+    para_file  = args.paragraphs if args.paragraphs else "paragraphs.csv"
+    input_path    = data_dir / para_file
     output_path   = data_dir / f"{args.model}_results.csv"
     progress_path = data_dir / f"{args.model}_progress.json"
 

@@ -5,17 +5,13 @@ Full classification pipeline: qwen → wait for quota reset → gpt_oss → merg
 Usage:
   python scripts/run_pipeline.py --name cpm_algebra2
 
-This runs everything hands-off:
-  1. qwen on all paragraphs
-  2. Waits --quota-wait hours (default 24) for Groq quota to reset
-  3. gpt_oss on all paragraphs
-  4. Merges both into classified_results.csv + uncertain_review.csv
-
 Options:
   --name          textbook identifier (required)
+  --paragraphs    paragraphs CSV to classify (default: paragraphs.csv)
+                  use paragraphs_stitched.csv after running stitch.py
   --quota-wait    hours to wait between qwen and gpt_oss (default: 24)
   --sleep         seconds between API calls per model (default: 1.5)
-  --start-fresh   clear all saved progress and restart from scratch
+  --start-fresh   clear all saved progress and restart
 """
 
 from __future__ import annotations
@@ -47,15 +43,14 @@ def wait_with_countdown(hours: float) -> None:
     print(f"  (Safe to leave running — Ctrl+C to abort)")
     print(f"{'━' * 60}")
 
-    interval = 300  # print update every 5 minutes
+    interval = 300
     elapsed = 0
     while elapsed < total_seconds:
         time.sleep(min(interval, total_seconds - elapsed))
         elapsed += interval
         remaining = max(0, total_seconds - elapsed)
-        hrs_left = remaining / 3600
         print(f"  [{datetime.now().strftime('%H:%M')}] "
-              f"Quota wait: {hrs_left:.1f}h remaining...")
+              f"Quota wait: {remaining/3600:.1f}h remaining...")
 
     print(f"\n  Quota wait complete — starting gpt_oss now")
 
@@ -64,31 +59,31 @@ def main() -> int:
     parser = argparse.ArgumentParser(
         description="Full pipeline: qwen → quota wait → gpt_oss → merge"
     )
-    parser.add_argument("--name",        required=True,
-                        help="Textbook identifier (e.g. cpm_algebra2)")
-    parser.add_argument("--quota-wait",  type=float, default=24.0,
-                        help="Hours to wait between qwen and gpt_oss (default: 24)")
-    parser.add_argument("--sleep",       type=float, default=1.5,
-                        help="Seconds between API calls (default: 1.5)")
-    parser.add_argument("--start-fresh", action="store_true",
-                        help="Clear all saved progress and restart")
+    parser.add_argument("--name",        required=True)
+    parser.add_argument("--paragraphs",  default=None,
+                        help="Paragraphs CSV filename (default: paragraphs.csv). "
+                             "Use paragraphs_stitched.csv after running stitch.py.")
+    parser.add_argument("--quota-wait",  type=float, default=24.0)
+    parser.add_argument("--sleep",       type=float, default=1.5)
+    parser.add_argument("--start-fresh", action="store_true")
     args = parser.parse_args()
 
     scripts_dir = Path(__file__).parent
-    classify  = [sys.executable, str(scripts_dir / "classify_single.py")]
-    merge     = [sys.executable, str(scripts_dir / "merge.py")]
+    classify    = [sys.executable, str(scripts_dir / "classify_single.py")]
+    merge_script = [sys.executable, str(scripts_dir / "merge.py")]
+
+    # Build shared classify args
+    para_args = ["--paragraphs", args.paragraphs] if args.paragraphs else []
+    fresh_arg = ["--start-fresh"] if args.start_fresh else []
 
     # ── Step 1: qwen ──────────────────────────────────────────────────────
-    qwen_cmd = classify + ["--name", args.name, "--model", "qwen",
-                           "--sleep", str(args.sleep)]
-    if args.start_fresh:
-        qwen_cmd.append("--start-fresh")
-
+    qwen_cmd = (classify
+                + ["--name", args.name, "--model", "qwen", "--sleep", str(args.sleep)]
+                + para_args + fresh_arg)
     rc = run(qwen_cmd, "STEP 1/3 — Running qwen classifier")
     if rc != 0:
-        print(f"\nERROR: qwen classifier exited with code {rc}. Aborting.")
+        print(f"\nERROR: qwen exited {rc}. Aborting.")
         return rc
-
     print(f"\n✓ qwen complete at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     # ── Step 2: quota wait ─────────────────────────────────────────────────
@@ -98,23 +93,19 @@ def main() -> int:
         print("\nSkipping quota wait (--quota-wait 0)")
 
     # ── Step 3: gpt_oss ───────────────────────────────────────────────────
-    gpt_cmd = classify + ["--name", args.name, "--model", "gpt_oss",
-                          "--sleep", str(args.sleep)]
-    if args.start_fresh:
-        gpt_cmd.append("--start-fresh")
-
+    gpt_cmd = (classify
+               + ["--name", args.name, "--model", "gpt_oss", "--sleep", str(args.sleep)]
+               + para_args + fresh_arg)
     rc = run(gpt_cmd, "STEP 2/3 — Running gpt_oss classifier")
     if rc != 0:
-        print(f"\nERROR: gpt_oss classifier exited with code {rc}. Aborting.")
+        print(f"\nERROR: gpt_oss exited {rc}. Aborting.")
         return rc
-
     print(f"\n✓ gpt_oss complete at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     # ── Step 4: merge ──────────────────────────────────────────────────────
-    merge_cmd = merge + ["--name", args.name]
-    rc = run(merge_cmd, "STEP 3/3 — Merging results")
+    rc = run(merge_script + ["--name", args.name], "STEP 3/3 — Merging results")
     if rc != 0:
-        print(f"\nERROR: merge exited with code {rc}.")
+        print(f"\nERROR: merge exited {rc}.")
         return rc
 
     print(f"\n{'━' * 60}")
