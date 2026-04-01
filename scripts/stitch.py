@@ -37,24 +37,25 @@ MODEL_ID     = "qwen/qwen3-32b"
 DEFAULT_SLEEP = 1.0
 
 SYSTEM_PROMPT = """You are a document processing assistant. You will be given two consecutive
-text chunks extracted from a math textbook PDF. Your job is to decide whether they form a
-single continuous passage or are two independent passages.
+text chunks extracted from a math textbook PDF. Punctuation-based merging has already been
+applied, so both chunks end with complete sentences. Your job is to decide whether they form
+a single continuous pedagogical unit or are two independent passages.
 
 Merge them if:
-- Chunk A ends mid-sentence (no terminal punctuation: . ? ! ) and chunk B continues it
-- Chunk A is clearly the narrative setup for chunk B (e.g. introduces characters or a problem
-  that chunk B then develops)
-- Together they form one coherent problem or instructional unit
+- Chunk A is clearly the narrative setup for chunk B (e.g. introduces named characters or a
+  problem scenario that chunk B then develops or resolves)
+- Together they form one coherent problem or instructional unit that would lose meaning
+  if read separately
 
 Keep them separate if:
 - Both chunks are clearly complete and independent (different problems, different topics)
 - Chunk B starts a new numbered problem or new topic unrelated to chunk A
-- Merging would combine two genuinely different pedagogical moments
+- They are adjacent but thematically unrelated
 
 Respond with valid JSON only:
 {
   "merge": true or false,
-  "result": "merged text if merge=true, or leave empty string if merge=false"
+  "result": "merged text if merge=true, or empty string if merge=false"
 }
 
 If merge=false, return exactly: {"merge": false, "result": ""}

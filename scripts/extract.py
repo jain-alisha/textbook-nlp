@@ -33,6 +33,29 @@ def _is_skip_line(line: str) -> bool:
     return bool(_SKIP_LINE_RE.match(line))
 
 
+_TERMINAL_PUNCT = frozenset('.?!"\')')
+
+def _ends_complete(text: str) -> bool:
+    """Return True if text ends with terminal punctuation."""
+    t = text.rstrip()
+    return bool(t) and t[-1] in _TERMINAL_PUNCT
+
+def _punctuation_merge(chunks: list[str]) -> list[str]:
+    """
+    Pass 1: merge consecutive chunks where the first ends mid-sentence.
+    No API calls — purely punctuation-based.
+    """
+    if not chunks:
+        return chunks
+    merged = [chunks[0]]
+    for chunk in chunks[1:]:
+        if not _ends_complete(merged[-1]):
+            # Previous chunk ends mid-sentence — join with a space
+            merged[-1] = merged[-1].rstrip() + " " + chunk.lstrip()
+        else:
+            merged.append(chunk)
+    return merged
+
 def extract_paragraphs(pdf_path: Path) -> list[str]:
     doc = fitz.open(str(pdf_path))
     raw_chunks: list[str] = []
@@ -52,7 +75,14 @@ def extract_paragraphs(pdf_path: Path) -> list[str]:
                 raw_chunks.append(para)
 
     doc.close()
-    return raw_chunks
+
+    # Pass 1: punctuation-based merge (free, no API)
+    merged = _punctuation_merge(raw_chunks)
+
+    # Filter again after merging in case very short orphan chunks got merged away
+    merged = [p for p in merged if len(p) >= MIN_PARAGRAPH_LEN]
+
+    return merged
 
 
 def main() -> None:
