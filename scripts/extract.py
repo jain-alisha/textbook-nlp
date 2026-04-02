@@ -29,13 +29,10 @@ _SKIP_LINE_RE = re.compile(
 )
 
 
-def _is_skip_line(line: str) -> bool:
-    return bool(_SKIP_LINE_RE.match(line))
-
-
 _TERMINAL_PUNCT = frozenset('.?!"\')')
 
-# Matches structural artifacts: TOC entries, answer keys, lesson reference tables
+# Matches structural artifacts: TOC entries, answer keys, lesson reference tables.
+# These legitimately end without terminal punctuation and should never trigger a merge.
 _STRUCTURAL_RE = re.compile(
     r'\d+\.\d+\.\d+'       # lesson codes like 9.1.1
     r'|Problems\s+\d'      # "Problems 4-22"
@@ -45,6 +42,10 @@ _STRUCTURAL_RE = re.compile(
 )
 
 
+def _is_skip_line(line: str) -> bool:
+    return bool(_SKIP_LINE_RE.match(line))
+
+
 def _ends_complete(text: str) -> bool:
     """Return True if text ends with terminal punctuation."""
     t = text.rstrip()
@@ -52,20 +53,29 @@ def _ends_complete(text: str) -> bool:
 
 
 def _is_structural(text: str) -> bool:
-    """Return True if chunk looks like a TOC entry, answer key, or reference
-    table rather than prose — these should never trigger a merge."""
+    """Return True if chunk looks like a TOC entry, answer key, reference
+    table, or math expression — these should never trigger a merge."""
     if _STRUCTURAL_RE.search(text):
         return True
-    # ends with a bare digit (page number, answer code, section number)
     t = text.rstrip()
-    return bool(t) and t[-1].isdigit()
+    if not t:
+        return False
+    last = t[-1]
+    # ends with a bare digit (page number, answer code, section number)
+    if last.isdigit():
+        return True
+    # ends with a single letter — almost always a variable name (x, y, n)
+    # or a problem label artifact, not a mid-sentence truncation
+    if last.isalpha() and (len(t) < 3 or not t[-2].isalpha()):
+        return True
+    return False
 
 
 def _punctuation_merge(chunks: list[str]) -> list[str]:
     """
     Pass 1 — free, no API calls.
     Merge consecutive chunks where the previous chunk ends mid-sentence,
-    but skip structural artifacts (TOC entries, answer keys, reference tables)
+    skipping structural artifacts (TOC entries, answer keys, reference tables)
     which legitimately end without terminal punctuation.
     """
     if not chunks:
