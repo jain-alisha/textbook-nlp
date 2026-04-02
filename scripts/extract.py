@@ -1,22 +1,94 @@
+#!/usr/bin/env python3
 """
-Extract paragraphs from a textbook PDF using PyMuPDF.
+Extract paragraphs from a textbook PDF using Google Gemini.
+
+Gemini reads the PDF visually and understands layout, producing semantically
+coherent paragraph chunks. Falls back to PyMuPDF if no GEMINI_API_KEY is set
+or if Gemini fails.
 
 Usage:
-    python scripts/extract.py pdfs/saxon_course1.pdf --name saxon_course1
+    python scripts/extract.py pdfs/cpm_algebra2.pdf --name cpm_algebra2
+
+Environment:
+    GEMINI_API_KEY=your_key_here   (in .env)
 """
+
+from __future__ import annotations
 
 import argparse
 import csv
+import json
+import os
 import re
 import sys
 from pathlib import Path
 
-import fitz  # PyMuPDF
+from dotenv import load_dotenv
+
+load_dotenv()
+
+MIN_PARAGRAPH_LEN = 30
+
+GEMINI_PROMPT = """You are processing a math textbook PDF. Extract all instructional paragraphs
+from this document as a JSON array of strings.
+
+Rules:
+- Each string should be one coherent pedagogical unit: a problem, an explanation, a worked
+  example, a definition, a student dialogue, or an instruction set
+- Keep problem setups and their follow-up questions together in one chunk where they clearly
+  belong together (e.g. a narrative setup followed by parts a, b, c)
+- Exclude: page numbers, running headers/footers, table of contents entries, index entries,
+  answer keys at the back of the book
+- Include: problem text, explanations, worked examples, student dialogues, definitions,
+  margin notes, math notes boxes, learning log prompts
+- Preserve the actual text faithfully, do not paraphrase or summarize
+- Minimum chunk length: 30 characters
+
+Return ONLY a valid JSON array of strings. No markdown, no commentary, no preamble.
+Example format: ["paragraph one text", "paragraph two text", ...]
+"""
 
 
-MIN_PARAGRAPH_LEN = 20
+def extract_gemini(pdf_path: Path, api_key: str) -> list[str]:
+    try:
+        import google.generativeai as genai
+    except ImportError:
+        raise RuntimeError("Run: pip install google-generativeai")
 
-# Patterns that indicate a line is a header or page number rather than content.
+    genai.configure(api_key=api_key)
+
+    print(f"  Uploading {pdf_path.name} to Gemini...")
+    upload = genai.upload_file(path=str(pdf_path), display_name=pdf_path.name)
+
+    try:
+        model = genai.GenerativeModel("gemini-2.0-flash")
+        print("  Extracting paragraphs (this may take 1-3 minutes)...")
+        response = model.generate_content(
+            [upload, GEMINI_PROMPT],
+            request_options={"timeout": 600},
+            generation_config={"temperature": 0.0},
+        )
+        raw = (response.text or "").strip()
+    finally:
+        try:
+            genai.delete_file(upload.name)
+        except Exception:
+            pass
+
+    raw = re.sub(r"```(?:json)?", "", raw).replace("```", "").strip()
+
+    try:
+        paragraphs = json.loads(raw)
+        if not isinstance(paragraphs, list):
+            raise ValueError("Response is not a JSON array")
+        return [
+            str(p).strip() for p in paragraphs
+            if str(p).strip() and len(str(p).strip()) >= MIN_PARAGRAPH_LEN
+        ]
+    except (json.JSONDecodeError, ValueError) as e:
+        raise RuntimeError(f"Failed to parse Gemini response: {e}\nRaw: {raw[:500]}")
+
+
 _SKIP_LINE_RE = re.compile(
     r"""
     ^\s*\d+\s*$                      # bare page number
@@ -29,104 +101,46 @@ _SKIP_LINE_RE = re.compile(
 )
 
 
-_TERMINAL_PUNCT = frozenset('.?!"\')')
-
-# Matches structural artifacts: TOC entries, answer keys, lesson reference tables.
-# These legitimately end without terminal punctuation and should never trigger a merge.
-_STRUCTURAL_RE = re.compile(
-    r'\d+\.\d+\.\d+'       # lesson codes like 9.1.1
-    r'|Problems\s+\d'      # "Problems 4-22"
-    r'|Lesson\s+\d'        # "Lesson 8"
-    r'|Section\s+\d'       # "Section 6"
-    r'|\bMN:\s*\d'         # "MN: 8.1.2"
-)
-
-
 def _is_skip_line(line: str) -> bool:
     return bool(_SKIP_LINE_RE.match(line))
 
 
-def _ends_complete(text: str) -> bool:
-    """Return True if text ends with terminal punctuation."""
-    t = text.rstrip()
-    return bool(t) and t[-1] in _TERMINAL_PUNCT
+def extract_pymupdf(pdf_path: Path) -> list[str]:
+    """Fallback: PyMuPDF with double-newline splitting only (no single-newline)."""
+    try:
+        import fitz
+    except ImportError:
+        raise RuntimeError("Run: pip install pymupdf")
 
-
-def _is_structural(text: str) -> bool:
-    """Return True if chunk looks like a TOC entry, answer key, reference
-    table, or math expression — these should never trigger a merge."""
-    if _STRUCTURAL_RE.search(text):
-        return True
-    t = text.rstrip()
-    if not t:
-        return False
-    last = t[-1]
-    # ends with a bare digit (page number, answer code, section number)
-    if last.isdigit():
-        return True
-    # ends with a single letter — almost always a variable name (x, y, n)
-    # or a problem label artifact, not a mid-sentence truncation
-    if last.isalpha() and (len(t) < 3 or not t[-2].isalpha()):
-        return True
-    return False
-
-
-def _punctuation_merge(chunks: list[str]) -> list[str]:
-    """
-    Pass 1 — free, no API calls.
-    Merge consecutive chunks where the previous chunk ends mid-sentence,
-    skipping structural artifacts (TOC entries, answer keys, reference tables)
-    which legitimately end without terminal punctuation.
-    """
-    if not chunks:
-        return chunks
-    merged = [chunks[0]]
-    for chunk in chunks[1:]:
-        tail = merged[-1]
-        if not _ends_complete(tail) and not _is_structural(tail):
-            merged[-1] = tail.rstrip() + " " + chunk.lstrip()
-        else:
-            merged.append(chunk)
-    return merged
-
-
-def extract_paragraphs(pdf_path: Path) -> list[str]:
     doc = fitz.open(str(pdf_path))
-    raw_chunks: list[str] = []
+    chunks: list[str] = []
 
     for page in doc:
         text = page.get_text("text")
-        # Split on blank lines to get natural paragraph breaks.
+        # Split on double newlines only — keeps pages whole if needed,
+        # but avoids the 9000-chunk problem from single-newline splitting
         blocks = re.split(r"\n{2,}", text)
         for block in blocks:
-            # Collapse internal newlines into spaces.
             lines = block.splitlines()
             kept = [ln for ln in lines if not _is_skip_line(ln)]
             para = " ".join(kept).strip()
-            # Normalise whitespace.
             para = re.sub(r"\s+", " ", para)
             if len(para) >= MIN_PARAGRAPH_LEN:
-                raw_chunks.append(para)
+                chunks.append(para)
 
     doc.close()
-
-    # Pass 1: punctuation-based merge (free, catches ~13% of truncations)
-    merged = _punctuation_merge(raw_chunks)
-
-    # Re-apply minimum length filter after merging
-    merged = [p for p in merged if len(p) >= MIN_PARAGRAPH_LEN]
-
-    return merged
+    return chunks
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Extract paragraphs from a PDF.")
-    parser.add_argument("pdf", type=Path, help="Path to the PDF file.")
-    parser.add_argument(
-        "--name",
-        required=True,
-        help="Short identifier for this textbook (e.g. saxon_course1).",
+    parser = argparse.ArgumentParser(
+        description="Extract paragraphs from a textbook PDF using Gemini."
     )
+    parser.add_argument("pdf", type=Path, help="Path to the PDF file.")
+    parser.add_argument("--name", required=True,
+                        help="Short identifier (e.g. cpm_algebra2).")
+    parser.add_argument("--fallback", action="store_true",
+                        help="Force PyMuPDF fallback even if GEMINI_API_KEY is set.")
     args = parser.parse_args()
 
     if not args.pdf.exists():
@@ -137,7 +151,24 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "paragraphs.csv"
 
-    paragraphs = extract_paragraphs(args.pdf)
+    api_key = os.getenv("GEMINI_API_KEY", "").strip()
+
+    if api_key and not args.fallback:
+        print(f"Using Gemini extraction for {args.pdf.name}...")
+        try:
+            paragraphs = extract_gemini(args.pdf, api_key)
+            print(f"  Gemini extracted {len(paragraphs)} paragraphs")
+        except Exception as e:
+            print(f"  Gemini failed: {e}", file=sys.stderr)
+            print("  Falling back to PyMuPDF...", file=sys.stderr)
+            paragraphs = extract_pymupdf(args.pdf)
+            print(f"  PyMuPDF extracted {len(paragraphs)} paragraphs (lower quality)")
+    else:
+        if not api_key:
+            print("No GEMINI_API_KEY found — using PyMuPDF fallback.")
+            print("Add GEMINI_API_KEY to .env for better extraction.")
+        paragraphs = extract_pymupdf(args.pdf)
+        print(f"PyMuPDF extracted {len(paragraphs)} paragraphs")
 
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
@@ -145,7 +176,9 @@ def main() -> None:
         for para in paragraphs:
             writer.writerow([para])
 
-    print(f"Extracted {len(paragraphs)} paragraphs -> {out_path}")
+    print(f"\nSaved {len(paragraphs)} paragraphs -> {out_path}")
+    print(f"\nNext step:")
+    print(f"  python scripts/stitch.py --name {args.name} --start-fresh")
 
 
 if __name__ == "__main__":
