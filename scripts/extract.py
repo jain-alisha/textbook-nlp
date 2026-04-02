@@ -34,7 +34,15 @@ def _is_skip_line(line: str) -> bool:
 
 
 _TERMINAL_PUNCT = frozenset('.?!"\')')
-_MAX_INCOMPLETE_LEN = 300  # only merge if the incomplete chunk is short
+
+# Matches structural artifacts: TOC entries, answer keys, lesson reference tables
+_STRUCTURAL_RE = re.compile(
+    r'\d+\.\d+\.\d+'       # lesson codes like 9.1.1
+    r'|Problems\s+\d'      # "Problems 4-22"
+    r'|Lesson\s+\d'        # "Lesson 8"
+    r'|Section\s+\d'       # "Section 6"
+    r'|\bMN:\s*\d'         # "MN: 8.1.2"
+)
 
 
 def _ends_complete(text: str) -> bool:
@@ -43,18 +51,29 @@ def _ends_complete(text: str) -> bool:
     return bool(t) and t[-1] in _TERMINAL_PUNCT
 
 
+def _is_structural(text: str) -> bool:
+    """Return True if chunk looks like a TOC entry, answer key, or reference
+    table rather than prose — these should never trigger a merge."""
+    if _STRUCTURAL_RE.search(text):
+        return True
+    # ends with a bare digit (page number, answer code, section number)
+    t = text.rstrip()
+    return bool(t) and t[-1].isdigit()
+
+
 def _punctuation_merge(chunks: list[str]) -> list[str]:
     """
-    Pass 1: merge consecutive chunks where the previous chunk ends mid-sentence
-    AND is short enough to be a genuine truncation (not a TOC entry or label).
-    The length cap prevents chaining TOC entries and section headers together.
+    Pass 1 — free, no API calls.
+    Merge consecutive chunks where the previous chunk ends mid-sentence,
+    but skip structural artifacts (TOC entries, answer keys, reference tables)
+    which legitimately end without terminal punctuation.
     """
     if not chunks:
         return chunks
     merged = [chunks[0]]
     for chunk in chunks[1:]:
         tail = merged[-1]
-        if not _ends_complete(tail) and len(tail) <= _MAX_INCOMPLETE_LEN:
+        if not _ends_complete(tail) and not _is_structural(tail):
             merged[-1] = tail.rstrip() + " " + chunk.lstrip()
         else:
             merged.append(chunk)
@@ -81,7 +100,7 @@ def extract_paragraphs(pdf_path: Path) -> list[str]:
 
     doc.close()
 
-    # Pass 1: punctuation-based merge (free, no API calls needed)
+    # Pass 1: punctuation-based merge (free, catches ~13% of truncations)
     merged = _punctuation_merge(raw_chunks)
 
     # Re-apply minimum length filter after merging
