@@ -2,12 +2,11 @@
 """
 Extract paragraphs from a textbook PDF using Google Gemini.
 
-Gemini reads the PDF visually and understands layout, producing semantically
-coherent paragraph chunks. Falls back to PyMuPDF if no GEMINI_API_KEY is set
-or if Gemini fails.
+Processes the PDF in page-range chunks to avoid output token limits.
+Falls back to PyMuPDF if no GEMINI_API_KEY is set or Gemini fails.
 
 Usage:
-    python scripts/extract.py pdfs/cpm_algebra2.pdf --name cpm_algebra2
+    python scripts/extract.py pdfs/saxon_course1.pdf --name saxon_course1
 
 Environment:
     GEMINI_API_KEY=your_key_here   (in .env)
@@ -17,10 +16,12 @@ from __future__ import annotations
 
 import argparse
 import csv
+import io
 import json
 import os
 import re
 import sys
+import time
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -28,66 +29,128 @@ from dotenv import load_dotenv
 load_dotenv()
 
 MIN_PARAGRAPH_LEN = 30
+PAGES_PER_CHUNK   = 50   # pages sent to Gemini per call
 
-GEMINI_PROMPT = """You are processing a math textbook PDF. Extract all instructional paragraphs
-from this document as a JSON array of strings.
+GEMINI_PROMPT = """You are processing a section of a math textbook PDF. Extract all instructional paragraphs as a JSON array of strings.
 
 Rules:
-- Each string should be one coherent pedagogical unit: a problem, an explanation, a worked
-  example, a definition, a student dialogue, or an instruction set
-- Keep problem setups and their follow-up questions together in one chunk where they clearly
-  belong together (e.g. a narrative setup followed by parts a, b, c)
-- Exclude: page numbers, running headers/footers, table of contents entries, index entries,
-  answer keys at the back of the book
-- Include: problem text, explanations, worked examples, student dialogues, definitions,
-  margin notes, math notes boxes, learning log prompts
-- Preserve the actual text faithfully, do not paraphrase or summarize
+- Each string = one coherent pedagogical unit: a problem, explanation, worked example, definition, student dialogue, or instruction set
+- Keep problem setups and follow-up questions together when they clearly belong (e.g. narrative setup + parts a, b, c)
+- Exclude: page numbers, running headers/footers, table of contents entries, index entries, answer keys
+- Include: problem text, explanations, worked examples, student dialogues, definitions, margin notes, math notes boxes
+- Preserve text faithfully — do not paraphrase
 - Minimum chunk length: 30 characters
 
-Return ONLY a valid JSON array of strings. No markdown, no commentary, no preamble.
-Example format: ["paragraph one text", "paragraph two text", ...]
+Return ONLY a valid JSON array of strings. No markdown, no commentary.
+Example: ["paragraph one", "paragraph two"]
 """
 
 
-def extract_gemini(pdf_path: Path, api_key: str) -> list[str]:
+def extract_gemini_chunked(pdf_path: Path, api_key: str, pages_per_chunk: int = PAGES_PER_CHUNK) -> list[str]:
     try:
         import google.generativeai as genai
-    except ImportError:
-        raise RuntimeError("Run: pip install google-generativeai")
+        import fitz
+    except ImportError as e:
+        raise RuntimeError(f"Missing dependency: {e}. Run: pip install google-generativeai pymupdf")
 
     genai.configure(api_key=api_key)
+    model = genai.GenerativeModel("gemini-2.5-flash")
 
-    print(f"  Uploading {pdf_path.name} to Gemini...")
-    upload = genai.upload_file(path=str(pdf_path), display_name=pdf_path.name)
+    doc = fitz.open(str(pdf_path))
+    total_pages = len(doc)
+    doc.close()
 
-    try:
-        model = genai.GenerativeModel("gemini-2.0-flash")
-        print("  Extracting paragraphs (this may take 1-3 minutes)...")
-        response = model.generate_content(
-            [upload, GEMINI_PROMPT],
-            request_options={"timeout": 600},
-            generation_config={"temperature": 0.0},
+    all_paragraphs: list[str] = []
+    chunk_num = 0
+    page = 0
+
+    while page < total_pages:
+        chunk_num += 1
+        page_end = min(page + pages_per_chunk, total_pages)
+        print(f"  Chunk {chunk_num}: pages {page+1}–{page_end} of {total_pages}...")
+
+        # Extract page range to a temporary PDF in memory
+        src = fitz.open(str(pdf_path))
+        chunk_doc = fitz.open()
+        chunk_doc.insert_pdf(src, from_page=page, to_page=page_end - 1)
+        src.close()
+
+        buf = io.BytesIO(chunk_doc.tobytes())
+        chunk_doc.close()
+
+        # Upload chunk to Gemini
+        upload = genai.upload_file(
+            path=buf,
+            display_name=f"{pdf_path.stem}_p{page+1}-{page_end}.pdf",
+            mime_type="application/pdf",
         )
-        raw = (response.text or "").strip()
-    finally:
+
         try:
-            genai.delete_file(upload.name)
-        except Exception:
-            pass
+            response = model.generate_content(
+                [upload, GEMINI_PROMPT],
+                request_options={"timeout": 300},
+                generation_config={"temperature": 0.0},
+            )
+            # Check for copyright refusal (finish_reason == 4)
+            candidate = response.candidates[0] if response.candidates else None
+            if candidate and candidate.finish_reason == 4:
+                print(f"    ⚠ Copyright refusal on chunk {chunk_num} — using PyMuPDF for these pages")
+                src2 = fitz.open(str(pdf_path))
+                for pnum in range(page, page_end):
+                    pg = src2[pnum]
+                    text = pg.get_text("text")
+                    blocks = re.split(r"\n{2,}", text)
+                    for block in blocks:
+                        lines = block.splitlines()
+                        kept = [ln for ln in lines if not _is_skip_line(ln)]
+                        para = " ".join(kept).strip()
+                        para = re.sub(r"\s+", " ", para)
+                        if len(para) >= MIN_PARAGRAPH_LEN:
+                            all_paragraphs.append(para)
+                src2.close()
+                page = page_end
+                continue
+            raw = (response.text or "").strip()
+        finally:
+            try:
+                genai.delete_file(upload.name)
+            except Exception:
+                pass
 
-    raw = re.sub(r"```(?:json)?", "", raw).replace("```", "").strip()
+        # Parse response — use a more lenient JSON extraction
+        raw = re.sub(r"```(?:json)?", "", raw).replace("```", "").strip()
+        # Try to salvage truncated JSON by finding the last complete string
+        try:
+            chunk_paras = json.loads(raw)
+            if not isinstance(chunk_paras, list):
+                raise ValueError("Not a list")
+        except (json.JSONDecodeError, ValueError):
+            # Try to recover partial JSON — find last complete quoted string
+            matches = re.findall(r'"((?:[^"\\]|\\.)*)"\s*(?:,|\])', raw)
+            if matches:
+                chunk_paras = matches
+                print(f"    ⚠ Partial JSON recovered: {len(chunk_paras)} items")
+            else:
+                print(f"    ⚠ Parse error on chunk {chunk_num} — skipping")
+                print(f"    Raw preview: {raw[:150]}")
+                page = page_end
+                continue
 
-    try:
-        paragraphs = json.loads(raw)
-        if not isinstance(paragraphs, list):
-            raise ValueError("Response is not a JSON array")
-        return [
-            str(p).strip() for p in paragraphs
-            if str(p).strip() and len(str(p).strip()) >= MIN_PARAGRAPH_LEN
-        ]
-    except (json.JSONDecodeError, ValueError) as e:
-        raise RuntimeError(f"Failed to parse Gemini response: {e}\nRaw: {raw[:500]}")
+        good = [str(p).strip() for p in chunk_paras
+                if str(p).strip() and len(str(p).strip()) >= MIN_PARAGRAPH_LEN]
+        all_paragraphs.extend(good)
+        print(f"    → {len(good)} paragraphs extracted")
 
+        page = page_end
+
+        # Brief pause between chunks to avoid rate limits
+        if page < total_pages:
+            time.sleep(2)
+
+    return all_paragraphs
+
+
+# ── PyMuPDF fallback ──────────────────────────────────────────────────────────
 
 _SKIP_LINE_RE = re.compile(
     r"""
@@ -106,7 +169,6 @@ def _is_skip_line(line: str) -> bool:
 
 
 def extract_pymupdf(pdf_path: Path) -> list[str]:
-    """Fallback: PyMuPDF with double-newline splitting only (no single-newline)."""
     try:
         import fitz
     except ImportError:
@@ -114,11 +176,8 @@ def extract_pymupdf(pdf_path: Path) -> list[str]:
 
     doc = fitz.open(str(pdf_path))
     chunks: list[str] = []
-
     for page in doc:
         text = page.get_text("text")
-        # Split on double newlines only — keeps pages whole if needed,
-        # but avoids the 9000-chunk problem from single-newline splitting
         blocks = re.split(r"\n{2,}", text)
         for block in blocks:
             lines = block.splitlines()
@@ -127,10 +186,11 @@ def extract_pymupdf(pdf_path: Path) -> list[str]:
             para = re.sub(r"\s+", " ", para)
             if len(para) >= MIN_PARAGRAPH_LEN:
                 chunks.append(para)
-
     doc.close()
     return chunks
 
+
+# ── Main ──────────────────────────────────────────────────────────────────────
 
 def main() -> None:
     parser = argparse.ArgumentParser(
@@ -138,9 +198,11 @@ def main() -> None:
     )
     parser.add_argument("pdf", type=Path, help="Path to the PDF file.")
     parser.add_argument("--name", required=True,
-                        help="Short identifier (e.g. cpm_algebra2).")
+                        help="Short identifier (e.g. saxon_course1).")
     parser.add_argument("--fallback", action="store_true",
                         help="Force PyMuPDF fallback even if GEMINI_API_KEY is set.")
+    parser.add_argument("--chunk-size", type=int, default=PAGES_PER_CHUNK,
+                        help=f"Pages per Gemini chunk (default: {PAGES_PER_CHUNK}).")
     args = parser.parse_args()
 
     if not args.pdf.exists():
@@ -154,19 +216,18 @@ def main() -> None:
     api_key = os.getenv("GEMINI_API_KEY", "").strip()
 
     if api_key and not args.fallback:
-        print(f"Using Gemini extraction for {args.pdf.name}...")
+        print(f"Using Gemini extraction for {args.pdf.name} ({args.chunk_size} pages/chunk)...")
         try:
-            paragraphs = extract_gemini(args.pdf, api_key)
-            print(f"  Gemini extracted {len(paragraphs)} paragraphs")
+            paragraphs = extract_gemini_chunked(args.pdf, api_key, args.chunk_size)
+            print(f"\n  Gemini extracted {len(paragraphs)} paragraphs total")
         except Exception as e:
-            print(f"  Gemini failed: {e}", file=sys.stderr)
+            print(f"\n  Gemini failed: {e}", file=sys.stderr)
             print("  Falling back to PyMuPDF...", file=sys.stderr)
             paragraphs = extract_pymupdf(args.pdf)
             print(f"  PyMuPDF extracted {len(paragraphs)} paragraphs (lower quality)")
     else:
         if not api_key:
-            print("No GEMINI_API_KEY found — using PyMuPDF fallback.")
-            print("Add GEMINI_API_KEY to .env for better extraction.")
+            print("No GEMINI_API_KEY — using PyMuPDF fallback.")
         paragraphs = extract_pymupdf(args.pdf)
         print(f"PyMuPDF extracted {len(paragraphs)} paragraphs")
 

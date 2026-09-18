@@ -46,26 +46,26 @@ GROQ_API_KEY=your_key_here
 ### 1. Extract paragraphs from a PDF
 
 ```bash
-python scripts/extract.py pdfs/cpm_algebra2.pdf --name cpm_algebra2
+python scripts/extract.py pdfs/cpm_algebra2_hs.pdf --name cpm_algebra2_hs
 ```
 
-Output: `data/cpm_algebra2/paragraphs.csv`
+Output: `data/cpm_algebra2_hs/paragraphs.csv`
 
 ### 2. Classify paragraphs
 
 ```bash
-python scripts/classify.py --name cpm_algebra2
+python scripts/classify.py --name cpm_algebra2_hs
 ```
 
 Output:
-- `data/cpm_algebra2/classified_results.csv` — confirmed (2/2) votes
-- `data/cpm_algebra2/uncertain_review.csv` — rows where models disagreed or errored
-- `data/cpm_algebra2/progress.json` — checkpoint; re-running skips already-classified paragraphs
+- `data/cpm_algebra2_hs/classified_results.csv` — confirmed (2/2) votes
+- `data/cpm_algebra2_hs/uncertain_review.csv` — rows where models disagreed or errored
+- `data/cpm_algebra2_hs/progress.json` — checkpoint; re-running skips already-classified paragraphs
 
 ### 3. Analyze results (stub)
 
 ```bash
-python scripts/analyze.py --name cpm_algebra2
+python scripts/analyze.py --name cpm_algebra2_hs
 ```
 
 ---
@@ -86,15 +86,21 @@ Voting: 2/2 agreement = **CONFIRMED**, any disagreement or single model error = 
 
 ## Textbook naming convention
 
-Use the format `publisherabbrev_coursename`, all lowercase with underscores:
+Use the format `publisherabbrev_coursename_level`, all lowercase with underscores, where `level` is
+`ms` (middle school) or `hs` (high school):
 
-| Textbook | Name |
-|---|---|
-| CPM Core Connections Algebra 2 | `cpm_algebra2` |
-| Saxon Math Course 1 | `saxon_course1` |
-| Saxon Math Course 2 | `saxon_course2` |
-| Saxon Math Course 3 | `saxon_course3` |
-| Saxon Algebra 1 | `saxon_algebra1` |
-| Big Ideas Math Algebra 1 | `bigideas_algebra1` |
+| Textbook | Level | Name |
+|---|---|---|
+| CPM Core Connections Course 1 | Middle school | `cpm_course1_ms` |
+| CPM Core Connections Course 2 | Middle school | `cpm_course2_ms` |
+| CPM Core Connections Course 3 | Middle school | `cpm_course3_ms` |
+| CPM Core Connections Algebra 1 | High school | `cpm_algebra1_hs` |
+| CPM Core Connections Algebra 2 | High school | `cpm_algebra2_hs` |
+| CPM Core Connections Geometry | High school | `cpm_geometry_hs` |
+| Saxon Math Course 1 | Middle school | `saxon_course1_ms` |
+| Saxon Math Course 2 | Middle school | `saxon_course2_ms` |
+| Saxon Math Course 3 | Middle school | `saxon_course3_ms` |
+| Saxon Algebra 1 | High school | `saxon_algebra1_hs` |
+| Big Ideas Math Algebra 1 | High school | `bigideas_algebra1_hs` |
 
 The name you pass to `--name` becomes the folder under `data/` and should match the PDF filename in `pdfs/` for clarity.
