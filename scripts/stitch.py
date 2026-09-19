@@ -25,7 +25,7 @@ import os
 import re
 import time
 from pathlib import Path
-from typing import List, Tuple
+from typing import List
 
 import requests
 from dotenv import load_dotenv
@@ -33,7 +33,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 GROQ_URL     = "https://api.groq.com/openai/v1/chat/completions"
-MODEL_ID     = "qwen/qwen3-32b"
+MODEL_ID     = "qwen/qwen3.8-27b"
 DEFAULT_SLEEP = 1.0
 
 SYSTEM_PROMPT = """You are a document processing assistant. You will be given two consecutive
@@ -52,15 +52,36 @@ Keep them separate if:
 - Chunk B starts a new numbered problem or new topic unrelated to chunk A
 - They are adjacent but thematically unrelated
 
-Respond with valid JSON only:
-{
-  "merge": true or false,
-  "result": "merged text if merge=true, or empty string if merge=false"
-}
+Respond with valid JSON only, and nothing else:
+{"merge": true}
+or
+{"merge": false}
 
-If merge=false, return exactly: {"merge": false, "result": ""}
-If merge=true, return the cleanly merged text with no duplicate content.
+Do not echo the chunks back. Judge only; the text is joined separately.
 """
+
+# A chunk opening a new numbered problem ("1-41.", or with a running header,
+# "Core Connections Course 1 2-104.") starts its own unit, so it is not a
+# continuation of the chunk before it. Deciding these in code skips roughly half
+# the API calls on CPM books.
+NEW_PROBLEM_RE = re.compile(r"^\s*(?:[A-Za-z][A-Za-z0-9 ]{0,40}?\s)?\d+-\d+\.\s")
+
+# ...except when the extractor split a problem across pages and restated its
+# number, e.g. "1-2. Continued from previous page. b. ...", which must still merge.
+CONTINUATION_RE = re.compile(r"continued from previous page|\(continued\)|continued\b", re.I)
+
+
+def starts_new_problem(chunk: str) -> bool:
+    return bool(NEW_PROBLEM_RE.match(chunk)) and not CONTINUATION_RE.search(chunk[:120])
+
+
+# Merging is chained: each merge grows the tail, which is then tested against the
+# next paragraph. On books whose chunks often begin mid-sentence the model keeps
+# answering "continues" and a single chunk can swallow the book (one CK-12 chunk
+# reached 601KB and overflowed the context window). No real pedagogical unit is
+# this long, so refuse merges past the cap.
+MAX_MERGED_CHARS = 15000
+
 
 def load_paragraphs(path: Path) -> List[str]:
     paras = []
@@ -85,8 +106,13 @@ def save_progress(progress: dict, path: Path) -> None:
         json.dump(progress, f, ensure_ascii=False, indent=2)
 
 
-def call_qwen(chunk_a: str, chunk_b: str, api_key: str, sleep: float) -> Tuple[bool, str]:
-    """Ask qwen whether to merge two consecutive chunks."""
+def call_qwen(chunk_a: str, chunk_b: str, api_key: str, sleep: float) -> bool:
+    """Ask qwen whether two consecutive chunks belong together.
+
+    Returns a judgment only. The merged text is assembled in code so the output
+    is the textbook's own wording, and so chained merges don't pay to have an
+    ever-growing chunk retyped on every call.
+    """
     user_msg = f"CHUNK A:\n{chunk_a}\n\nCHUNK B:\n{chunk_b}"
     payload = {
         "model": MODEL_ID,
@@ -96,7 +122,7 @@ def call_qwen(chunk_a: str, chunk_b: str, api_key: str, sleep: float) -> Tuple[b
         ],
         "temperature": 0.0,
         "response_format": {"type": "json_object"},
-        "max_tokens": 800,
+        "max_tokens": 200,
     }
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -121,12 +147,14 @@ def call_qwen(chunk_a: str, chunk_b: str, api_key: str, sleep: float) -> Tuple[b
             raw = re.sub(r"```(?:json)?", "", raw).replace("```", "").strip()
             data = json.loads(raw)
             time.sleep(sleep)
-            return bool(data.get("merge", False)), str(data.get("result", "")).strip()
+            return bool(data.get("merge", False))
         except Exception as e:
             fail_attempts += 1
-            print(f"    Error ({fail_attempts}): {str(e)[:80]}")
+            body = getattr(getattr(e, "response", None), "text", "")
+            detail = f" | {body[:300]}" if body else ""
+            print(f"    Error ({fail_attempts}): {str(e)[:120]}{detail}")
             if fail_attempts >= 5:
-                return False, ""
+                return False
             time.sleep(10 * fail_attempts)
 
 
@@ -158,11 +186,27 @@ def stitch(paragraphs: List[str], api_key: str, sleep: float,
         print(f"  A: {short_tail}...")
         print(f"  B: {short_next}...")
 
-        should_merge, merged_text = call_qwen(current_tail, next_para, api_key, sleep)
+        if len(current_tail) + len(next_para) > MAX_MERGED_CHARS:
+            print(f"  → SEPARATE (merge cap: tail is {len(current_tail)} chars)")
+            chunks.append(next_para)
+            i += 1
+            progress["processed_up_to"] = i
+            progress["chunks"] = chunks
+            continue
 
-        if should_merge and merged_text:
+        if starts_new_problem(next_para):
+            print(f"  → SEPARATE (new problem number)")
+            chunks.append(next_para)
+            i += 1
+            progress["processed_up_to"] = i
+            progress["chunks"] = chunks
+            continue
+
+        should_merge = call_qwen(current_tail, next_para, api_key, sleep)
+
+        if should_merge:
             print(f"  → MERGED")
-            chunks[-1] = merged_text   # replace tail with merged version
+            chunks[-1] = f"{current_tail} {next_para}"
         else:
             print(f"  → SEPARATE")
             chunks.append(next_para)   # add as new independent chunk

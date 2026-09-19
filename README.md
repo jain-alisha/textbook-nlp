@@ -101,6 +101,11 @@ Use the format `publisherabbrev_coursename_level`, all lowercase with underscore
 | Saxon Math Course 2 | Middle school | `saxon_course2_ms` |
 | Saxon Math Course 3 | Middle school | `saxon_course3_ms` |
 | Saxon Algebra 1 | High school | `saxon_algebra1_hs` |
+| CK-12 Middle School Math Grade 6 | Middle school | `ck12_grade6_ms` |
+| CK-12 Middle School Math Grade 7 | Middle school | `ck12_grade7_ms` |
+| CK-12 Algebra I (2nd ed.) | High school | `ck12_algebra1_hs` |
+| CK-12 Algebra II with Trigonometry | High school | `ck12_algebra2_hs` |
+| CK-12 Geometry (2nd ed.) | High school | `ck12_geometry_hs` |
 | Big Ideas Math Algebra 1 | High school | `bigideas_algebra1_hs` |
 
 The name you pass to `--name` becomes the folder under `data/` and should match the PDF filename in `pdfs/` for clarity.

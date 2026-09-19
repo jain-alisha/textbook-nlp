@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import os
 import re
@@ -48,7 +49,7 @@ VALID_CATEGORIES = {
 
 MODEL_CONFIGS = {
     "qwen": {
-        "model_id": "qwen/qwen3-32b",
+        "model_id": "qwen/qwen3.8-27b",
         "response_format": {"type": "json_object"},
     },
     "gpt_oss": {
@@ -155,16 +156,46 @@ def load_paragraphs(csv_path: Path) -> List[str]:
     return paragraphs
 
 
-def load_progress(path: Path) -> Dict:
-    if path.exists():
-        with path.open(encoding="utf8") as f:
-            return json.load(f)
-    return {"results": {}}
+def cache_key(model_id: str, paragraph: str) -> str:
+    """Identify a result by what produced it, not by row position.
+
+    Includes a fingerprint of the prompt so editing SYSTEM_PROMPT or switching
+    models invalidates affected entries instead of serving stale labels.
+    """
+    prompt_fingerprint = hashlib.sha256(SYSTEM_PROMPT.encode("utf8")).hexdigest()[:12]
+    payload = f"{model_id}\x00{prompt_fingerprint}\x00{paragraph}"
+    return hashlib.sha256(payload.encode("utf8")).hexdigest()
 
 
-def save_progress(progress: Dict, path: Path) -> None:
-    with path.open("w", encoding="utf8") as f:
-        json.dump(progress, f, ensure_ascii=False, indent=2)
+def load_cache(path: Path, model_id: str) -> Dict[str, Tuple[str, str]]:
+    """Read the append-only cache, keeping the last entry for each key."""
+    if not path.exists():
+        return {}
+    cached: Dict[str, Tuple[str, str]] = {}
+    with path.open(encoding="utf8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rec = json.loads(line)
+            except json.JSONDecodeError:
+                continue  # tolerate a torn final line from an interrupted run
+            if rec.get("model_id") == model_id:
+                cached[rec["key"]] = (rec["label"], rec.get("reasoning", ""))
+    return cached
+
+
+def append_cache(path: Path, key: str, model_id: str,
+                 paragraph: str, label: str, reasoning: str) -> None:
+    with path.open("a", encoding="utf8") as f:
+        f.write(json.dumps({
+            "key": key,
+            "model_id": model_id,
+            "paragraph": paragraph,
+            "label": label,
+            "reasoning": reasoning,
+        }, ensure_ascii=False) + "\n")
 
 
 def parse_response(raw: str) -> Tuple[str, str]:
@@ -285,76 +316,77 @@ def main():
     para_file  = args.paragraphs if args.paragraphs else "paragraphs.csv"
     input_path    = data_dir / para_file
     output_path   = data_dir / f"{args.model}_results.csv"
-    progress_path = data_dir / f"{args.model}_progress.json"
+    cache_path    = data_dir / f"{args.model}_cache.jsonl"
 
     if not input_path.exists():
         print(f"ERROR: {input_path} not found. Run extract.py first.")
         return 1
 
-    if args.start_fresh and progress_path.exists():
-        progress_path.unlink()
-        print("Starting fresh — cleared previous progress")
+    if args.start_fresh and cache_path.exists():
+        cache_path.unlink()
+        print("Starting fresh — cleared cached results")
 
     print(f"Loading paragraphs from {input_path}...")
     all_paragraphs = load_paragraphs(input_path)
     total = len(all_paragraphs)
     print(f"Loaded {total} paragraphs")
 
-    progress = load_progress(progress_path)
-    already_done = set(progress["results"].keys())
-    remaining = [p for p in all_paragraphs if p not in already_done]
+    cached = load_cache(cache_path, model_id)
+    to_call = sum(1 for p in all_paragraphs if cache_key(model_id, p) not in cached)
 
-    eta_mins = len(remaining) * (args.sleep + 1.0) / 60
-    print(f"Already done: {len(already_done)} | Remaining: {len(remaining)}")
+    eta_mins = to_call * (args.sleep + 1.0) / 60
+    print(f"Cached: {total - to_call} | Need API call: {to_call}")
     print(f"Model: {model_id}")
     print(f"Estimated time: {eta_mins:.0f} min ({eta_mins/60:.1f} hrs)")
     print("━" * 60)
 
-    if not output_path.exists():
-        with output_path.open("w", encoding="utf8", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=[
-                "paragraph", f"{args.model}_label", f"{args.model}_reasoning"
-            ])
-            writer.writeheader()
+    # The cache is the durable store; this CSV is a derived view rebuilt each
+    # run, so every input row appears exactly once even when texts repeat.
+    with output_path.open("w", encoding="utf8", newline="") as f:
+        csv.DictWriter(f, fieldnames=[
+            "paragraph", f"{args.model}_label", f"{args.model}_reasoning"
+        ]).writeheader()
 
     processed = 0
     errors = 0
 
-    for i, paragraph in enumerate(remaining):
-        idx = len(already_done) + i + 1
-        short = paragraph[:80].replace("\n", " ")
-        print(f"\n[{idx}/{total}] {short}...")
+    for idx, paragraph in enumerate(all_paragraphs, start=1):
+        key = cache_key(model_id, paragraph)
+        hit = cached.get(key)
 
-        cat, reason = call_groq(model_id, paragraph, api_key, args.sleep, response_format)
-        status = f"✓ {cat}" if cat in VALID_CATEGORIES else f"✗ {cat}"
-        print(f"  {args.model:<10} {status}")
+        if hit is not None:
+            cat, reason = hit
+        else:
+            short = paragraph[:80].replace("\n", " ")
+            print(f"\n[{idx}/{total}] {short}...")
+            cat, reason = call_groq(model_id, paragraph, api_key, args.sleep, response_format)
+            status = f"✓ {cat}" if cat in VALID_CATEGORIES else f"✗ {cat}"
+            print(f"  {args.model:<10} {status}")
 
-        if cat == "ERROR":
-            errors += 1
+            append_cache(cache_path, key, model_id, paragraph, cat, reason)
+            cached[key] = (cat, reason)
+            processed += 1
+
+            if cat == "ERROR":
+                errors += 1
+
+            if processed % 10 == 0:
+                pct = 100 * idx / total
+                print(f"\n  ── {idx}/{total} ({pct:.1f}%) | new: {processed} | errors: {errors} ──")
 
         with output_path.open("a", encoding="utf8", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=[
+            csv.DictWriter(f, fieldnames=[
                 "paragraph", f"{args.model}_label", f"{args.model}_reasoning"
-            ])
-            writer.writerow({
+            ]).writerow({
                 "paragraph": paragraph,
                 f"{args.model}_label": cat,
                 f"{args.model}_reasoning": reason,
             })
 
-        progress["results"][paragraph] = {"label": cat, "reasoning": reason}
-        processed += 1
-
-        if processed % 10 == 0:
-            save_progress(progress, progress_path)
-            pct = 100 * (len(already_done) + processed) / total
-            print(f"\n  ── Saved: {len(already_done) + processed}/{total} ({pct:.1f}%) | errors: {errors} ──")
-
-    save_progress(progress, progress_path)
-
     print("\n" + "━" * 60)
     print("COMPLETE")
-    print(f"  Total:  {len(already_done) + processed}/{total}")
+    print(f"  Rows written: {total}")
+    print(f"  New API calls: {processed}")
     print(f"  Errors: {errors}")
     print(f"  Output: {output_path}")
     return 0
