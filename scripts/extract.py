@@ -56,6 +56,10 @@ Example: ["paragraph one", "paragraph two"]
 
 # ── Gemini ────────────────────────────────────────────────────────────────────
 
+class DailyQuotaExhausted(Exception):
+    """Retrying or splitting can't help; every further call fails until reset."""
+
+
 def _parse(raw: str | None) -> list[str] | None:
     raw = re.sub(r"```(?:json)?", "", raw or "").replace("```", "").strip()
     try:
@@ -94,6 +98,8 @@ def _gemini_chunk(client, data: bytes, label: str) -> tuple[str, list[str]]:
                 resp = client.models.generate_content(
                     model=GEMINI_MODEL, contents=[upload, GEMINI_PROMPT], config=config)
             except Exception as e:
+                if "PerDay" in str(e):
+                    raise DailyQuotaExhausted(str(e)) from e
                 print(f"    {label}: attempt {attempt}/{MAX_ATTEMPTS} failed: {str(e)[:140]}")
                 time.sleep(15 * attempt)
                 continue
@@ -237,8 +243,13 @@ def main() -> None:
     if api_key and not args.fallback:
         print(f"Using Gemini extraction for {args.pdf.name} "
               f"({args.chunk_size} pages/chunk, {args.workers} workers)...")
-        paragraphs, fallback, total_pages = extract_gemini_chunked(
-            args.pdf, api_key, args.chunk_size, args.workers)
+        try:
+            paragraphs, fallback, total_pages = extract_gemini_chunked(
+                args.pdf, api_key, args.chunk_size, args.workers)
+        except DailyQuotaExhausted:
+            print(f"\nERROR: Gemini daily request quota exhausted; nothing saved. "
+                  f"Re-run after the quota resets.", file=sys.stderr)
+            sys.exit(3)
         fb_pages = sum(e - s for s, e in fallback)
         share = fb_pages / total_pages if total_pages else 0.0
         print(f"\n  {len(paragraphs)} paragraphs; {fb_pages}/{total_pages} pages "
