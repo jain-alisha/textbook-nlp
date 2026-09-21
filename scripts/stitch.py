@@ -36,6 +36,12 @@ GROQ_URL     = "https://api.groq.com/openai/v1/chat/completions"
 MODEL_ID     = "qwen/qwen3.8-27b"
 DEFAULT_SLEEP = 1.0
 
+# Local backend: free, slower (~4-11s/decision), no API key. Measured against the
+# Groq model it agrees on 92% of real-content pairs, but leans toward merging —
+# MAX_MERGED_CHARS and the problem-number filter matter more here.
+OLLAMA_URL   = "http://localhost:11434/api/chat"
+OLLAMA_MODEL = "qwen3:14b"
+
 SYSTEM_PROMPT = """You are a document processing assistant. You will be given two consecutive
 text chunks extracted from a math textbook PDF. Punctuation-based merging has already been
 applied, so both chunks end with complete sentences. Your job is to decide whether they form
@@ -106,35 +112,51 @@ def save_progress(progress: dict, path: Path) -> None:
         json.dump(progress, f, ensure_ascii=False, indent=2)
 
 
-def call_qwen(chunk_a: str, chunk_b: str, api_key: str, sleep: float) -> bool:
-    """Ask qwen whether two consecutive chunks belong together.
+def call_qwen(chunk_a: str, chunk_b: str, api_key: str, sleep: float,
+              backend: str = "groq") -> bool:
+    """Ask the model whether two consecutive chunks belong together.
 
     Returns a judgment only. The merged text is assembled in code so the output
     is the textbook's own wording, and so chained merges don't pay to have an
     ever-growing chunk retyped on every call.
     """
-    user_msg = f"CHUNK A:\n{chunk_a}\n\nCHUNK B:\n{chunk_b}"
-    payload = {
-        "model": MODEL_ID,
-        "messages": [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user",   "content": user_msg},
-        ],
-        "temperature": 0.0,
-        "response_format": {"type": "json_object"},
-        "max_tokens": 200,
-    }
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type":  "application/json",
-    }
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user",   "content": f"CHUNK A:\n{chunk_a}\n\nCHUNK B:\n{chunk_b}"},
+    ]
+    if backend == "ollama":
+        url = OLLAMA_URL
+        headers = {"Content-Type": "application/json"}
+        payload = {
+            "model": OLLAMA_MODEL,
+            "messages": messages,
+            "stream": False,
+            "think": False,   # adds ~1 point of agreement for a large slowdown
+            "format": "json",
+            "options": {"temperature": 0, "num_predict": 200},
+        }
+        timeout = 600
+    else:
+        url = GROQ_URL
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type":  "application/json",
+        }
+        payload = {
+            "model": MODEL_ID,
+            "messages": messages,
+            "temperature": 0.0,
+            "response_format": {"type": "json_object"},
+            "max_tokens": 200,
+        }
+        timeout = 90
 
     rate_attempts = 0
     fail_attempts = 0
 
     while True:
         try:
-            resp = requests.post(GROQ_URL, headers=headers, json=payload, timeout=90)
+            resp = requests.post(url, headers=headers, json=payload, timeout=timeout)
             if resp.status_code == 429:
                 rate_attempts += 1
                 wait = min(15 * (2 ** (rate_attempts - 1)), 120)
@@ -142,12 +164,24 @@ def call_qwen(chunk_a: str, chunk_b: str, api_key: str, sleep: float) -> bool:
                 time.sleep(wait)
                 continue
             resp.raise_for_status()
-            raw = resp.json()["choices"][0]["message"]["content"].strip()
+            body = resp.json()
+            raw = (body["message"]["content"] if backend == "ollama"
+                   else body["choices"][0]["message"]["content"]).strip()
             raw = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL).strip()
             raw = re.sub(r"```(?:json)?", "", raw).replace("```", "").strip()
-            data = json.loads(raw)
             time.sleep(sleep)
-            return bool(data.get("merge", False))
+            try:
+                data = json.loads(raw)
+                if "merge" not in data:
+                    raise ValueError(f"no 'merge' key in {raw[:80]!r}")
+                return bool(data["merge"])
+            except json.JSONDecodeError:
+                # The answer is one boolean; don't discard it because the model
+                # added a field or ran past the token limit mid-string.
+                verdict = re.search(r'"merge"\s*:\s*(true|false)', raw, re.I)
+                if verdict:
+                    return verdict.group(1).lower() == "true"
+                raise
         except Exception as e:
             fail_attempts += 1
             body = getattr(getattr(e, "response", None), "text", "")
@@ -159,7 +193,7 @@ def call_qwen(chunk_a: str, chunk_b: str, api_key: str, sleep: float) -> bool:
 
 
 def stitch(paragraphs: List[str], api_key: str, sleep: float,
-           progress: dict, progress_path: Path) -> List[str]:
+           progress: dict, progress_path: Path, backend: str = "groq") -> List[str]:
     """
     Iterate through paragraphs, merging consecutive chunks where appropriate.
     Resumes from progress["processed_up_to"].
@@ -202,7 +236,7 @@ def stitch(paragraphs: List[str], api_key: str, sleep: float,
             progress["chunks"] = chunks
             continue
 
-        should_merge = call_qwen(current_tail, next_para, api_key, sleep)
+        should_merge = call_qwen(current_tail, next_para, api_key, sleep, backend)
 
         if should_merge:
             print(f"  → MERGED")
@@ -229,10 +263,12 @@ def main() -> int:
                         help="Textbook identifier (e.g. cpm_algebra2)")
     parser.add_argument("--sleep",       type=float, default=DEFAULT_SLEEP)
     parser.add_argument("--start-fresh", action="store_true")
+    parser.add_argument("--backend",     choices=["groq", "ollama"], default="groq",
+                        help="groq (API key, fast) or ollama (local, free, slower)")
     args = parser.parse_args()
 
     api_key = os.getenv("GROQ_API_KEY", "").strip()
-    if not api_key:
+    if args.backend == "groq" and not api_key:
         print("ERROR: GROQ_API_KEY not found in .env")
         return 1
 
@@ -261,11 +297,14 @@ def main() -> int:
         print("Already complete — writing output from saved progress")
         stitched = progress["chunks"]
     else:
-        eta = total * (args.sleep + 1.0) / 60
+        per_call = 8.0 if args.backend == "ollama" else args.sleep + 1.0
+        eta = total * per_call / 60
         print(f"Estimated time: {eta:.0f} min ({eta/60:.1f} hrs)")
-        print(f"Model: {MODEL_ID}")
+        print(f"Backend: {args.backend} "
+              f"({OLLAMA_MODEL if args.backend == 'ollama' else MODEL_ID})")
         print("━" * 60)
-        stitched = stitch(paragraphs, api_key, args.sleep, progress, progress_path)
+        stitched = stitch(paragraphs, api_key, args.sleep, progress, progress_path,
+                          args.backend)
 
     # Write output
     with output_path.open("w", encoding="utf-8", newline="") as f:
