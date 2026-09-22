@@ -43,9 +43,9 @@ OLLAMA_URL   = "http://localhost:11434/api/chat"
 OLLAMA_MODEL = "qwen3:14b"
 
 SYSTEM_PROMPT = """You are a document processing assistant. You will be given two consecutive
-text chunks extracted from a math textbook PDF. Punctuation-based merging has already been
-applied, so both chunks end with complete sentences. Your job is to decide whether they form
-a single continuous pedagogical unit or are two independent passages.
+text chunks extracted from a math textbook PDF. They come straight from the extractor, so a
+chunk may begin or end mid-sentence, and may carry page headers or footers. Your job is to
+decide whether they form a single continuous pedagogical unit or are two independent passages.
 
 Merge them if:
 - Chunk A is clearly the narrative setup for chunk B (e.g. introduces named characters or a
@@ -100,6 +100,36 @@ def load_paragraphs(path: Path) -> List[str]:
     return paras
 
 
+def load_sources(path: Path) -> List[str]:
+    """Per-paragraph extractor labels, aligned with load_paragraphs()."""
+    sources = []
+    with path.open(encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            if (row.get("paragraph") or "").strip():
+                sources.append(row.get("source") or "")
+    return sources
+
+
+def chunk_sources(paragraphs: List[str], sources: List[str],
+                  stitched: List[str]) -> List[str]:
+    """Label each stitched chunk with the extractor(s) its paragraphs came from."""
+    if not any(sources):
+        return [""] * len(stitched)
+    labels, i = [], 0
+    for chunk in stitched:
+        used, acc = [], ""
+        while i < len(paragraphs):
+            acc = paragraphs[i] if not acc else f"{acc} {paragraphs[i]}"
+            used.append(sources[i])
+            i += 1
+            if acc == chunk:
+                break
+        distinct = {s for s in used if s}
+        labels.append(distinct.pop() if len(distinct) == 1 else
+                      ("mixed" if distinct else ""))
+    return labels
+
+
 def load_progress(path: Path) -> dict:
     if path.exists():
         with path.open(encoding="utf-8") as f:
@@ -113,7 +143,7 @@ def save_progress(progress: dict, path: Path) -> None:
 
 
 def call_qwen(chunk_a: str, chunk_b: str, api_key: str, sleep: float,
-              backend: str = "groq") -> bool:
+              backend: str = "groq") -> bool | None:
     """Ask the model whether two consecutive chunks belong together.
 
     Returns a judgment only. The merged text is assembled in code so the output
@@ -188,7 +218,7 @@ def call_qwen(chunk_a: str, chunk_b: str, api_key: str, sleep: float,
             detail = f" | {body[:300]}" if body else ""
             print(f"    Error ({fail_attempts}): {str(e)[:120]}{detail}")
             if fail_attempts >= 5:
-                return False
+                return None   # unresolved: logged by the caller, never a silent split
             time.sleep(10 * fail_attempts)
 
 
@@ -208,6 +238,7 @@ def stitch(paragraphs: List[str], api_key: str, sleep: float,
         start_i = 1
 
     total = len(paragraphs)
+    unresolved: List[tuple[int, str, str]] = []
 
     i = start_i
     while i < total:
@@ -242,7 +273,13 @@ def stitch(paragraphs: List[str], api_key: str, sleep: float,
             print(f"  → MERGED")
             chunks[-1] = f"{current_tail} {next_para}"
         else:
-            print(f"  → SEPARATE")
+            if should_merge is None:
+                # The model never answered. Keep them apart to make progress, but
+                # record the pair so the split is reviewable rather than invisible.
+                print(f"  → SEPARATE (UNRESOLVED — logged for review)")
+                unresolved.append((i, current_tail[-200:], next_para[:200]))
+            else:
+                print(f"  → SEPARATE")
             chunks.append(next_para)   # add as new independent chunk
 
         i += 1
@@ -254,6 +291,16 @@ def stitch(paragraphs: List[str], api_key: str, sleep: float,
             print(f"\n  ── Saved: {i}/{total} processed, {len(chunks)} chunks so far ──")
 
     save_progress(progress, progress_path)
+
+    if unresolved:
+        review_path = progress_path.parent / "stitch_unresolved.csv"
+        with review_path.open("w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["paragraph_index", "chunk_a_tail", "chunk_b_head"])
+            writer.writerows(unresolved)
+        print(f"\n  ⚠ {len(unresolved)} pairs never got an answer and were split by "
+              f"default — review {review_path}")
+
     return chunks
 
 
@@ -307,11 +354,12 @@ def main() -> int:
                           args.backend)
 
     # Write output
+    labels = chunk_sources(paragraphs, load_sources(input_path), stitched)
     with output_path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["paragraph"])
-        for para in stitched:
-            writer.writerow([para])
+        writer.writerow(["paragraph", "source"])
+        for para, source in zip(stitched, labels):
+            writer.writerow([para, source])
 
     reduction = total - len(stitched)
     print(f"\n{'━'*60}")

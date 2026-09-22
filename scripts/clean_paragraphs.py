@@ -46,14 +46,14 @@ def clean_book(name: str) -> None:
         return
 
     with path.open(newline="", encoding="utf-8") as f:
-        rows = [r["paragraph"] for r in csv.DictReader(f)]
+        rows = [(r["paragraph"], r.get("source", "")) for r in csv.DictReader(f)]
 
     seen: set[str] = set()
-    cleaned: list[str] = []
+    cleaned: list[tuple[str, str]] = []
     dropped_short = 0
     dropped_dupe = 0
 
-    for raw in rows:
+    for raw, source in rows:
         text = clean(raw)
         if len(text) < MIN_PARAGRAPH_LEN:
             dropped_short += 1
@@ -62,13 +62,13 @@ def clean_book(name: str) -> None:
             dropped_dupe += 1
             continue
         seen.add(text)
-        cleaned.append(text)
+        cleaned.append((text, source))
 
     with path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["paragraph"])
-        for text in cleaned:
-            writer.writerow([text])
+        writer.writerow(["paragraph", "source"])
+        for text, source in cleaned:
+            writer.writerow([text, source])
 
     print(
         f"  ✓ {name}: {len(rows)} -> {len(cleaned)} paragraphs "

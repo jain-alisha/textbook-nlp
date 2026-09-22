@@ -134,8 +134,12 @@ def _chunk_bytes(doc, start: int, end: int) -> bytes:
 
 
 def extract_gemini_chunked(pdf_path: Path, api_key: str, pages_per_chunk: int,
-                           workers: int) -> tuple[list[str], list[tuple[int, int]], int]:
-    """Returns (paragraphs in page order, page ranges that fell back, total pages)."""
+                           workers: int) -> tuple[list[tuple[str, str]], list[tuple[int, int]], int]:
+    """Returns ([(paragraph, extractor)] in page order, fallback ranges, total pages).
+
+    Each paragraph carries the extractor that produced it so a mixed book's
+    provenance is recorded in the data rather than only in the run log.
+    """
     import fitz
     from google import genai
     from google.genai import types
@@ -163,7 +167,7 @@ def extract_gemini_chunked(pdf_path: Path, api_key: str, pages_per_chunk: int,
 
             for (s, e, _), (status, paras) in zip(jobs, outcomes):
                 if status == "ok":
-                    done[s] = (e, paras)
+                    done[s] = (e, [(p, "gemini") for p in paras])
                     print(f"    pages {s+1}–{e}: {len(paras)} paragraphs")
                 elif e - s > MIN_SPLIT_PAGES:
                     mid = (s + e) // 2
@@ -171,7 +175,7 @@ def extract_gemini_chunked(pdf_path: Path, api_key: str, pages_per_chunk: int,
                     pending += [(s, mid), (mid, e)]
                 else:
                     print(f"    pages {s+1}–{e}: {status} — using PyMuPDF for these pages")
-                    done[s] = (e, _pymupdf_pages(doc, s, e))
+                    done[s] = (e, [(p, "pymupdf") for p in _pymupdf_pages(doc, s, e)])
                     fallback.append((s, e))
 
     doc.close()
@@ -264,15 +268,15 @@ def main() -> None:
     else:
         if not api_key:
             print("No GEMINI_API_KEY — using PyMuPDF fallback.")
-        paragraphs = extract_pymupdf(args.pdf)
+        paragraphs = [(p, "pymupdf") for p in extract_pymupdf(args.pdf)]
         print(f"PyMuPDF extracted {len(paragraphs)} paragraphs")
 
     out_dir.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["paragraph"])
-        for para in paragraphs:
-            writer.writerow([para])
+        writer.writerow(["paragraph", "source"])
+        for para, source in paragraphs:
+            writer.writerow([para, source])
 
     print(f"\nSaved {len(paragraphs)} paragraphs -> {out_path}")
     print(f"\nNext step:")
