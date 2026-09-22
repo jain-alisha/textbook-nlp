@@ -384,6 +384,22 @@ def main():
             })
 
     print("\n" + "━" * 60)
+    # Record which ensemble arm produced these labels. Groq decommissioned
+    # qwen3-32b mid-project, and nothing in the results CSVs distinguishes labels
+    # made by one model version from another — which silently splits the
+    # inter-model agreement rate across ensembles.
+    manifest_path = data_dir / f"{args.model}_manifest.json"
+    manifest_path.write_text(json.dumps({
+        "model_arm": args.model,
+        "model_id": model_id,
+        "prompt_sha256_12": hashlib.sha256(SYSTEM_PROMPT.encode("utf8")).hexdigest()[:12],
+        "paragraphs_file": para_file,
+        "rows": total,
+        "new_api_calls": processed,
+        "errors": errors,
+        "finished_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+    }, indent=2) + "\n", encoding="utf8")
+
     print("COMPLETE")
     print(f"  Rows written: {total}")
     print(f"  New API calls: {processed}")

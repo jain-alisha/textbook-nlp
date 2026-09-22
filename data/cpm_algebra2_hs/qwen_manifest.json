@@ -1,0 +1,8 @@
+{
+  "model_arm": "qwen",
+  "model_id": "qwen/qwen3-32b",
+  "status": "SUPERSEDED \u2014 decommissioned by Groq; re-classify before use",
+  "provenance": "reconstructed from git history (f8b30a6..c1dc338), not recorded at runtime",
+  "approx_run_date": "2026-03-31",
+  "rows": 2106
+}
