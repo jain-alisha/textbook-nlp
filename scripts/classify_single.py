@@ -27,6 +27,7 @@ import hashlib
 import json
 import os
 import re
+import sys
 import time
 from pathlib import Path
 from typing import Dict, List, Tuple
@@ -47,13 +48,22 @@ VALID_CATEGORIES = {
     "NA",
 }
 
+# The two arms must come from different lineages: inter-model agreement is the
+# reliability metric, and two models from one vendor correlate, inflating
+# agreement without buying independence.
 MODEL_CONFIGS = {
+    "gemini": {
+        "model_id": "gemini-2.5-flash",
+        "provider": "gemini",
+    },
     "qwen": {
         "model_id": "qwen/qwen3.8-27b",
+        "provider": "groq",
         "response_format": {"type": "json_object"},
     },
     "gpt_oss": {
         "model_id": "openai/gpt-oss-120b",
+        "provider": "groq",
         "response_format": {
             "type": "json_schema",
             "json_schema": {
@@ -227,6 +237,62 @@ def parse_response(raw: str) -> Tuple[str, str]:
         return "PARSE_ERROR", raw.strip()[:300]
 
 
+class DailyQuotaExhausted(Exception):
+    """Every further call fails until the quota resets; stop rather than fill
+    the cache with ERROR rows."""
+
+
+_GEMINI_CLIENT = None
+
+
+def _gemini_client():
+    global _GEMINI_CLIENT
+    if _GEMINI_CLIENT is None:
+        from google import genai
+        from google.genai import types
+        key = os.getenv("GEMINI_API_KEY", "").strip()
+        if not key:
+            raise RuntimeError("GEMINI_API_KEY not found in .env")
+        _GEMINI_CLIENT = genai.Client(
+            api_key=key, http_options=types.HttpOptions(timeout=300_000))
+    return _GEMINI_CLIENT
+
+
+def call_gemini(model_id: str, paragraph: str, sleep: float,
+                max_retries: int = 6) -> Tuple[str, str]:
+    from google.genai import types
+
+    config = types.GenerateContentConfig(
+        temperature=0.1,
+        system_instruction=SYSTEM_PROMPT,
+        response_mime_type="application/json",
+        response_schema={
+            "type": "object",
+            "properties": {"reasoning": {"type": "string"},
+                           "category": {"type": "string"}},
+            "required": ["reasoning", "category"],
+        },
+    )
+    attempts = 0
+    while True:
+        try:
+            resp = _gemini_client().models.generate_content(
+                model=model_id,
+                contents=f'Paragraph to classify:\n"""{paragraph}"""',
+                config=config,
+            )
+            time.sleep(sleep)
+            return parse_response(resp.text or "")
+        except Exception as e:
+            if "PerDay" in str(e):
+                raise DailyQuotaExhausted(str(e)) from e
+            attempts += 1
+            print(f"    Gemini error ({attempts}/{max_retries}): {str(e)[:120]}")
+            if attempts >= max_retries:
+                return "ERROR", str(e)[:200]
+            time.sleep(10 * attempts)
+
+
 def call_groq(
     model_id: str,
     paragraph: str,
@@ -295,22 +361,27 @@ def call_groq(
 def main():
     parser = argparse.ArgumentParser(description="Single-model classifier for parallel runs")
     parser.add_argument("--name",        required=True, help="Textbook identifier")
-    parser.add_argument("--model",       required=True, choices=["qwen", "gpt_oss"],
-                        help="Which model to run: qwen | gpt_oss")
+    parser.add_argument("--model",       required=True,
+                        choices=["gemini", "qwen", "gpt_oss"],
+                        help="Which arm to run: gemini | qwen | gpt_oss")
     parser.add_argument("--paragraphs",  default=None,
                         help="Paragraphs CSV filename (default: paragraphs.csv)")
     parser.add_argument("--sleep",       type=float, default=DEFAULT_SLEEP)
     parser.add_argument("--start-fresh", action="store_true")
     args = parser.parse_args()
 
-    api_key = os.getenv("GROQ_API_KEY", "").strip()
-    if not api_key:
-        print("ERROR: GROQ_API_KEY not found in .env")
-        return 1
-
     cfg = MODEL_CONFIGS[args.model]
     model_id = cfg["model_id"]
-    response_format = cfg["response_format"]
+    provider = cfg["provider"]
+    response_format = cfg.get("response_format")
+
+    api_key = os.getenv("GROQ_API_KEY", "").strip()
+    if provider == "groq" and not api_key:
+        print("ERROR: GROQ_API_KEY not found in .env")
+        return 1
+    if provider == "gemini" and not os.getenv("GEMINI_API_KEY", "").strip():
+        print("ERROR: GEMINI_API_KEY not found in .env")
+        return 1
 
     data_dir      = Path("data") / args.name
     para_file  = args.paragraphs if args.paragraphs else "paragraphs.csv"
@@ -359,16 +430,28 @@ def main():
         else:
             short = paragraph[:80].replace("\n", " ")
             print(f"\n[{idx}/{total}] {short}...")
-            cat, reason = call_groq(model_id, paragraph, api_key, args.sleep, response_format)
+            if provider == "gemini":
+                try:
+                    cat, reason = call_gemini(model_id, paragraph, args.sleep)
+                except DailyQuotaExhausted:
+                    print(f"\nERROR: Gemini daily quota exhausted after {processed} new "
+                          f"paragraphs. Cached work is saved; re-run after it resets.",
+                          file=sys.stderr)
+                    return 3
+            else:
+                cat, reason = call_groq(model_id, paragraph, api_key, args.sleep,
+                                        response_format)
             status = f"✓ {cat}" if cat in VALID_CATEGORIES else f"✗ {cat}"
             print(f"  {args.model:<10} {status}")
 
-            append_cache(cache_path, key, model_id, paragraph, cat, reason)
-            cached[key] = (cat, reason)
-            processed += 1
-
             if cat == "ERROR":
+                # Caching a failure would make a re-run skip the paragraph and
+                # bake the error into the results permanently.
                 errors += 1
+            else:
+                append_cache(cache_path, key, model_id, paragraph, cat, reason)
+                cached[key] = (cat, reason)
+            processed += 1
 
             if processed % 10 == 0:
                 pct = 100 * idx / total

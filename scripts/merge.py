@@ -52,87 +52,82 @@ def load_results(path: Path) -> Dict[str, Tuple[str, str]]:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Merge qwen + gpt_oss results into final dataset")
-    parser.add_argument("--name", required=True, help="Textbook identifier (e.g. cpm_algebra2)")
+    parser = argparse.ArgumentParser(description="Merge two classifier arms into final dataset")
+    parser.add_argument("--name", required=True, help="Textbook identifier (e.g. cpm_algebra2_hs)")
+    # The arms must be from different lineages — agreement between two models of
+    # one family measures shared bias, not reliability.
+    parser.add_argument("--arms", nargs=2, default=["gemini", "gpt_oss"],
+                        metavar=("ARM_A", "ARM_B"),
+                        help="Which two arms to merge (default: gemini gpt_oss)")
     args = parser.parse_args()
 
+    arm_a, arm_b = args.arms
     data_dir     = Path("data") / args.name
-    qwen_path    = data_dir / "qwen_results.csv"
-    gpt_oss_path = data_dir / "gpt_oss_results.csv"
+    path_a       = data_dir / f"{arm_a}_results.csv"
+    path_b       = data_dir / f"{arm_b}_results.csv"
     out_path     = data_dir / "classified_results.csv"
     uncertain_path = data_dir / "uncertain_review.csv"
 
-    if not qwen_path.exists():
-        print(f"ERROR: {qwen_path} not found. Run classify_single.py --model qwen first.")
-        return 1
-    if not gpt_oss_path.exists():
-        print(f"ERROR: {gpt_oss_path} not found. Run classify_single.py --model gpt_oss first.")
-        return 1
+    for arm, path in ((arm_a, path_a), (arm_b, path_b)):
+        if not path.exists():
+            print(f"ERROR: {path} not found. Run classify_single.py --model {arm} first.")
+            return 1
 
-    print(f"Loading qwen results from {qwen_path}...")
-    qwen = load_results(qwen_path)
-    print(f"Loading gpt_oss results from {gpt_oss_path}...")
-    gpt_oss = load_results(gpt_oss_path)
+    print(f"Loading {arm_a} results from {path_a}...")
+    res_a = load_results(path_a)
+    print(f"Loading {arm_b} results from {path_b}...")
+    res_b = load_results(path_b)
 
-    # Use qwen's paragraph order as canonical (it should have all paragraphs)
-    all_paragraphs = list(qwen.keys())
-    print(f"Paragraphs in qwen: {len(qwen)}")
-    print(f"Paragraphs in gpt_oss: {len(gpt_oss)}")
+    # Arm A's paragraph order is canonical (it should have all paragraphs)
+    all_paragraphs = list(res_a.keys())
+    print(f"Paragraphs in {arm_a}: {len(res_a)}")
+    print(f"Paragraphs in {arm_b}: {len(res_b)}")
 
-    # Paragraphs only in one model
-    only_qwen    = set(qwen.keys()) - set(gpt_oss.keys())
-    only_gpt_oss = set(gpt_oss.keys()) - set(qwen.keys())
-    if only_qwen:
-        print(f"  ⚠ {len(only_qwen)} paragraphs in qwen only — will be marked UNCERTAIN")
-    if only_gpt_oss:
-        print(f"  ⚠ {len(only_gpt_oss)} paragraphs in gpt_oss only — skipped")
+    only_a = set(res_a.keys()) - set(res_b.keys())
+    only_b = set(res_b.keys()) - set(res_a.keys())
+    if only_a:
+        print(f"  ⚠ {len(only_a)} paragraphs in {arm_a} only — will be marked UNCERTAIN")
+    if only_b:
+        print(f"  ⚠ {len(only_b)} paragraphs in {arm_b} only — skipped")
 
     confirmed_rows = []
     uncertain_rows = []
 
     for para in all_paragraphs:
-        q_label,  q_reason  = qwen.get(para, ("MISSING", ""))
-        g_label,  g_reason  = gpt_oss.get(para, ("MISSING", ""))
+        a_label, a_reason = res_a.get(para, ("MISSING", ""))
+        b_label, b_reason = res_b.get(para, ("MISSING", ""))
 
-        q_valid = q_label in VALID_CATEGORIES
-        g_valid = g_label in VALID_CATEGORIES
+        arm_cols = {
+            f"{arm_a}_label":     a_label,
+            f"{arm_a}_reasoning": a_reason,
+            f"{arm_b}_label":     b_label,
+            f"{arm_b}_reasoning": b_reason,
+        }
 
-        if q_valid and g_valid and q_label == g_label:
+        if (a_label in VALID_CATEGORIES and b_label in VALID_CATEGORIES
+                and a_label == b_label):
             confirmed_rows.append({
-                "paragraph":       para,
-                "final_label":     q_label,
-                "confidence":      "CONFIRMED",
-                "qwen_label":      q_label,
-                "qwen_reasoning":  q_reason,
-                "gpt_oss_label":   g_label,
-                "gpt_oss_reasoning": g_reason,
+                "paragraph":   para,
+                "final_label": a_label,
+                "confidence":  "CONFIRMED",
+                **arm_cols,
             })
         else:
-            uncertain_rows.append({
-                "paragraph":       para,
-                "qwen_label":      q_label,
-                "qwen_reasoning":  q_reason,
-                "gpt_oss_label":   g_label,
-                "gpt_oss_reasoning": g_reason,
-            })
+            uncertain_rows.append({"paragraph": para, **arm_cols})
+
+    arm_fields = [f"{arm_a}_label", f"{arm_a}_reasoning",
+                  f"{arm_b}_label", f"{arm_b}_reasoning"]
 
     # Write classified
     with out_path.open("w", encoding="utf8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=[
-            "paragraph", "final_label", "confidence",
-            "qwen_label", "qwen_reasoning",
-            "gpt_oss_label", "gpt_oss_reasoning",
-        ])
+            "paragraph", "final_label", "confidence", *arm_fields])
         writer.writeheader()
         writer.writerows(confirmed_rows)
 
     # Write uncertain
     with uncertain_path.open("w", encoding="utf8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=[
-            "paragraph",
-            "qwen_label", "qwen_reasoning",
-            "gpt_oss_label", "gpt_oss_reasoning",
-        ])
+        writer = csv.DictWriter(f, fieldnames=["paragraph", *arm_fields])
         writer.writeheader()
         writer.writerows(uncertain_rows)
 
