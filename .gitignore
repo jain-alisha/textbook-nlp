@@ -2,4 +2,6 @@
 .venv/
 __pycache__/
 *.pyc
-pdfs/*.pdf
+# Textbook PDFs are copyrighted and must never reach this public repo. Matched
+# anywhere, not just pdfs/, because files get dropped in the project root too.
+*.pdf

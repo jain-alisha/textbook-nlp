@@ -33,7 +33,11 @@ load_dotenv()
 
 MIN_PARAGRAPH_LEN = 30
 PAGES_PER_CHUNK   = 50
-GEMINI_MODEL      = "gemini-2.5-flash"
+# 3.8-flash over 2.5-flash: on the same 25 CK-12 pages it returned 93 paragraphs
+# (median 283 chars) against 2.5's 264 (median 84), keeping worked examples whole
+# with their solutions and problem lists whole with their parts a–h. It is also
+# ~2x faster. See the changelog in README.md for the full comparison.
+GEMINI_MODEL      = "gemini-3.8-flash"
 MAX_ATTEMPTS      = 3
 MIN_SPLIT_PAGES   = 6
 DEFAULT_WORKERS   = 3
@@ -58,6 +62,35 @@ Example: ["paragraph one", "paragraph two"]
 
 class DailyQuotaExhausted(Exception):
     """Retrying or splitting can't help; every further call fails until reset."""
+
+
+def _quota_diagnosis(err: str) -> str:
+    """Name the quota that was hit.
+
+    A FreeTier quotaId means billing never reached this key's project, which is
+    a configuration problem, not something waiting for a reset will fix — and the
+    two are indistinguishable from a generic "quota exhausted" message.
+    """
+    quota = re.search(r"['\"]quotaId['\"]:\s*['\"]([^'\"]+)", err)
+    metric = re.search(r"['\"]quotaMetric['\"]:\s*['\"]([^'\"]+)", err)
+    value = re.search(r"['\"]quotaValue['\"]:\s*['\"]?(\d+)", err)
+    lines = []
+    if quota:
+        lines.append(f"  quotaId: {quota.group(1)}")
+    if metric:
+        lines.append(f"  metric:  {metric.group(1)}")
+    if value:
+        lines.append(f"  limit:   {value.group(1)} requests/day")
+    if quota and "freetier" in quota.group(1).lower():
+        lines.append("  -> This is the FREE tier. Billing is not applied to this API key's "
+                     "project;\n     waiting for the reset will not help. Check "
+                     "https://ai.dev/rate-limit for the\n     tier the API actually sees, then "
+                     "confirm which project the key belongs to.")
+    elif quota:
+        lines.append("  -> Paid-tier daily cap; re-run after it resets.")
+    if not lines:
+        lines.append(f"  (no quota metadata found) {err[:300]}")
+    return "\n".join(lines)
 
 
 def _parse(raw: str | None) -> list[str] | None:
@@ -250,9 +283,10 @@ def main() -> None:
         try:
             paragraphs, fallback, total_pages = extract_gemini_chunked(
                 args.pdf, api_key, args.chunk_size, args.workers)
-        except DailyQuotaExhausted:
-            print(f"\nERROR: Gemini daily request quota exhausted; nothing saved. "
-                  f"Re-run after the quota resets.", file=sys.stderr)
+        except DailyQuotaExhausted as e:
+            print(f"\nERROR: Gemini daily request quota exhausted; nothing saved.",
+                  file=sys.stderr)
+            print(_quota_diagnosis(str(e)), file=sys.stderr)
             sys.exit(3)
         fb_pages = sum(e - s for s, e in fallback)
         share = fb_pages / total_pages if total_pages else 0.0

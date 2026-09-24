@@ -53,7 +53,11 @@ VALID_CATEGORIES = {
 # agreement without buying independence.
 MODEL_CONFIGS = {
     "gemini": {
-        "model_id": "gemini-2.5-flash",
+        # Pinned to 3.8 rather than 2.5-flash, which is closed to new API projects
+        # and so cannot be re-run reproducibly. Changed while zero Gemini labels
+        # existed; once this arm has written labels, changing it splits the corpus
+        # the way the retired qwen3-32b did.
+        "model_id": "gemini-3.8-flash",
         "provider": "gemini",
     },
     "qwen": {
@@ -433,10 +437,11 @@ def main():
             if provider == "gemini":
                 try:
                     cat, reason = call_gemini(model_id, paragraph, args.sleep)
-                except DailyQuotaExhausted:
+                except DailyQuotaExhausted as e:
+                    from extract import _quota_diagnosis
                     print(f"\nERROR: Gemini daily quota exhausted after {processed} new "
-                          f"paragraphs. Cached work is saved; re-run after it resets.",
-                          file=sys.stderr)
+                          f"paragraphs. Cached work is saved.", file=sys.stderr)
+                    print(_quota_diagnosis(str(e)), file=sys.stderr)
                     return 3
             else:
                 cat, reason = call_groq(model_id, paragraph, api_key, args.sleep,
