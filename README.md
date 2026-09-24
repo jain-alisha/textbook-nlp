@@ -218,6 +218,28 @@ paragraph across two arms — so it is cheaper end to end.
 error pedagogy *and* ordinary content, so one label per paragraph is lossier than before. It does
 move CK-12 closer to the CPM books' granularity, which helps cross-publisher comparison.
 
+**First full run — `ck12_algebra1_hs`, 714 pages, 50 pages/chunk:** 1,811 paragraphs (2.54/page,
+median 395 chars), of which 1,805 from Gemini and **6 from PyMuPDF — 1% of pages**. Contrast the
+previous Era 2 run of the same book: 713 paragraphs whose first two rows were the copyright page.
+The new run drops front matter entirely and opens on real content.
+
+Two things the 25-page benchmark had not revealed:
+
+1. **RECITATION blocks are common on copyrighted textbook content** — 4 of the 13 initial 50-page
+   chunks (31%) came back with a non-STOP finish reason. This is the model declining to reproduce
+   the text, not an error.
+2. **Halving reliably resolves them, because the refusal is localised.** Every blocked range
+   recovered at 25 or 12 pages except one 6-page stretch (363–368). The split ladder is therefore
+   doing real work — it isolates the few pages the model won't touch and salvages the rest — and it
+   is the reason a 31% block rate cost only 1% fallback. Expect ~1.7x the request count from splits
+   when budgeting.
+
+**Stitching is now nearly redundant for 3.8-extracted books.** Only 3 of 1,805 Gemini paragraphs
+(0.17%) begin mid-sentence, about the number of chunk boundaries in the run; the other three
+mid-sentence rows are PyMuPDF's. A full `stitch.py` pass over 1,811 paragraphs to fix 3 of them is a
+poor trade given that stage's history. A boundary-only pass — testing just the last and first
+paragraph of adjacent chunks — would cover the same defects in ~20 comparisons.
+
 ### 2026-09-23 — CPM edition split and extraction eras documented
 
 Established that the CPM corpus straddles 2nd and 3rd editions, and that extractor identity is not
