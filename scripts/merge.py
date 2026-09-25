@@ -75,6 +75,50 @@ def load_results(path: Path, arm: str | None = None) -> Dict[str, dict]:
     return out
 
 
+def source_index(data_dir: Path, arm: str) -> tuple[str, Dict[str, int]]:
+    """Map each paragraph to its 1-based row number in the extraction it came from.
+
+    Row number in paragraphs.csv is the only stable per-paragraph identifier the
+    pipeline has — it is what lets a finding be located in the book again.
+    """
+    manifest = data_dir / f"{arm}_manifest.json"
+    src_name = "paragraphs.csv"
+    if manifest.exists():
+        try:
+            src_name = json.loads(manifest.read_text()).get("paragraphs_file") or src_name
+        except json.JSONDecodeError:
+            pass
+    src = data_dir / src_name
+    idx: Dict[str, int] = {}
+    if src.exists():
+        for i, r in enumerate(csv.DictReader(src.open(encoding="utf8")), start=1):
+            para = (r.get("paragraph") or "").strip()
+            if para and para not in idx:   # first occurrence wins for repeated text
+                idx[para] = i
+    return src_name, idx
+
+
+def write_findings(data_dir: Path, book: str, rows: list[dict], src_name: str) -> Path:
+    """Every non-NA paragraph, identified by book and row number.
+
+    Written as its own file because this is the output the research question is
+    actually about; classified_results.csv is ~99% NA and is the audit trail.
+    """
+    findings = [r for r in rows if r["final_label"] not in ("NA", *BAD)]
+    findings.sort(key=lambda r: (r["para_num"] if isinstance(r["para_num"], int) else 1 << 30))
+    cols = ["book", "para_num", "final_label", "status", "verification", "tier",
+            "source_file", "paragraph"]
+    extra = [c for c in rows[0] if c.endswith(("_label", "_reasoning", "_confidence",
+                                              "_considered"))] if rows else []
+    path = data_dir / "findings.csv"
+    with path.open("w", encoding="utf8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=cols + extra, extrasaction="ignore")
+        w.writeheader()
+        for r in findings:
+            w.writerow({**r, "book": book, "source_file": src_name})
+    return path
+
+
 def check_staleness(data_dir: Path, arm: str, labelled: set[str]) -> list[str]:
     """Compare a results file's paragraph set against the extraction it claims.
 
@@ -143,6 +187,8 @@ def merge_two_stage(data_dir: Path, args) -> int:
             return 2
         print("\n  --allow-stale given; continuing anyway.")
 
+    src_name, para_idx = source_index(data_dir, args.stage1_arm)
+
     rows, uncertain = [], []
     for para, a in s1.items():
         b = s2.get(para)
@@ -167,6 +213,8 @@ def merge_two_stage(data_dir: Path, args) -> int:
                 status, final = "ERROR", a_lab
 
         row = {
+            "book": args.name,
+            "para_num": para_idx.get(para, ""),
             "paragraph": para,
             "final_label": final,
             "status": status,
@@ -195,10 +243,13 @@ def merge_two_stage(data_dir: Path, args) -> int:
         w.writeheader()
         w.writerows(uncertain)
 
+    findings_path = write_findings(data_dir, args.name, rows, src_name)
+
     by_status = Counter(r["status"] for r in rows)
     by_verif = Counter(r["verification"] for r in rows)
     by_tier = Counter(r["tier"] for r in rows)
     positives = [r for r in rows if r["final_label"] not in ("NA", *BAD)]
+    unnumbered = sum(1 for r in positives if not isinstance(r["para_num"], int))
 
     manifest = {
         "book": args.name,
@@ -231,7 +282,11 @@ def merge_two_stage(data_dir: Path, args) -> int:
     print(f"\n  positives: {len(positives)} ({len(positives)/max(len(rows),1):.2%})")
     for lbl, n in Counter(r["final_label"] for r in positives).most_common():
         print(f"    {lbl:<28} {n:>5}")
-    print(f"\n  {out_path}\n  {unc_path}\n  {data_dir/'dataset_manifest.json'}")
+    if unnumbered:
+        print(f"  !! {unnumbered} findings could not be matched to a row number in "
+              f"{src_name}")
+    print(f"\n  {out_path}\n  {unc_path}\n  {findings_path}  <- the non-NA paragraphs"
+          f"\n  {data_dir/'dataset_manifest.json'}")
     return 0
 
 
@@ -254,13 +309,16 @@ def merge_census(data_dir: Path, args) -> int:
             print("\nRefusing to merge mismatched inputs. Pass --allow-stale to override.")
             return 2
 
+    src_name, para_idx = source_index(data_dir, arm_a)
     rows, uncertain = [], []
     for para, a in res_a.items():
         b = res_b.get(para, {"label": "MISSING", "reasoning": ""})
         agree = (a["label"] in VALID_CATEGORIES and b["label"] in VALID_CATEGORIES
                  and a["label"] == b["label"])
-        row = {"paragraph": para,
-               "final_label": a["label"] if agree else a["label"],
+        row = {"book": args.name,
+               "para_num": para_idx.get(para, ""),
+               "paragraph": para,
+               "final_label": a["label"],
                "status": "CONFIRMED" if agree else "UNCERTAIN",
                "verification": "dual_arm",
                "tier": "census",
@@ -277,8 +335,11 @@ def merge_census(data_dir: Path, args) -> int:
             w = csv.DictWriter(f, fieldnames=fields)
             w.writeheader()
             w.writerows(data)
+    findings_path = write_findings(data_dir, args.name, rows, src_name)
     conf = sum(1 for r in rows if r["status"] == "CONFIRMED")
+    pos = sum(1 for r in rows if r["final_label"] not in ("NA", *BAD))
     print(f"MERGE COMPLETE — {conf}/{len(rows)} confirmed, {len(uncertain)} uncertain")
+    print(f"  {pos} non-NA paragraphs -> {findings_path}")
     return 0
 
 

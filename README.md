@@ -333,16 +333,40 @@ restricted to verified labels must exclude `single_arm` rows.** `status` is
 `CONFIRMED` / `UNCERTAIN` / `UNVERIFIED`, and `tier` distinguishes `C_control` from
 `C_unsampled`.
 
+Each book also gets **`findings.csv`** — every non-NA paragraph with `book`,
+`para_num` (its 1-based row in the extraction it came from, the only stable
+per-paragraph identifier the pipeline has), `final_label`, `status`, `verification`
+and the full text. `scripts/collect_findings.py` concatenates these into
+`data/findings_all.csv` and prints per-book rates per 1,000 paragraphs, since raw
+counts favour whichever book was split into more paragraphs. `--verified-only`
+excludes `single_arm` rows.
+
 `merge.py` also refuses to build a dataset when a label file's paragraph set does
 not match the extraction its manifest names — re-extracting a book replaces its
 paragraphs wholesale, and nothing in the CSVs themselves reveals that the labels
 now describe discarded text. `--allow-stale` overrides it.
 
-**Still outstanding:** `qwen3:14b` mislabelled *"Find the opposite of each of the
-following"* as `COMMON_ERROR_ALERT` during the recall audit — on unfiltered text.
-Its job is now narrower (discriminating among candidates the screener already
-flagged, not scanning raw prose cold), so that error does not straightforwardly
-carry over. It needs a probe built for the new task, not the voided earlier one.
+**A retracted concern, kept because the mistake is instructive.** During the recall
+audit `qwen3:14b` labelled a paragraph beginning *"Example 6: Find the opposite of
+each of the following"* as `COMMON_ERROR_ALERT`, which was recorded here as a likely
+misclassification and evidence that a 14B model might be too weak for the arm. It
+was not a misclassification. The paragraph ends: *"A common mistake in this example
+is to assume that the opposite of (x−3) is (x+3). Avoid this mistake!"* The label is
+correct, and the judgement was wrong because it was made from a 70-character
+preview rather than the paragraph. Both arms independently label it correctly and
+cite that sentence.
+
+This also happens to be direct evidence for the Era 4 extraction change: the
+error-pedagogy signal sits in the last sentence of a 700-character unit that opens
+as a routine worked example. Under 2.5-flash's fragmentation the example and the
+warning would very likely have become separate paragraphs, leaving the example
+labelled `NA` and the pedagogy attached to a stray fragment. Coarser units preserve
+the context the label depends on.
+
+**Still outstanding:** `qwen3:14b` has not been validated for the job it now has —
+discriminating among candidates the screener already flagged, rather than scanning
+raw prose cold. That needs a probe built for the new task, with human labels, not
+the voided earlier one and not more model-vs-model agreement.
 
 ### 2026-09-23 — CPM edition split and extraction eras documented
 
