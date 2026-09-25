@@ -410,7 +410,15 @@ def call_groq(
         ],
         "temperature": 0.1,
         "response_format": response_format,
-        "max_tokens": 500,
+        # 500 was too small once the schema grew to four fields: gpt-oss-120b emits
+        # its own reasoning trace *before* the JSON document, so a long trace leaves
+        # too little budget to close the object and Groq rejects the whole call with
+        # 400 json_validate_failed ("max completion tokens reached before generating
+        # a valid document"). That is a hard 400, not a transient error, so it is not
+        # retried -- the paragraph just fails. Same failure mode that capped
+        # stitch.py's merge replies earlier in this project. Headroom is nearly free
+        # here: unused completion tokens are not billed.
+        "max_tokens": 3000,
     }
     headers = {
         "Authorization": f"Bearer {api_key}",

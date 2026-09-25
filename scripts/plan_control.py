@@ -158,9 +158,12 @@ def main() -> int:
     for s, (p, c) in sorted(by_series.items()):
         print(f"  {s:8} pool {p:6}  control {c:5}  "
               f"pool share {p/total_pool:5.1%} vs control share {c/max(sum(alloc.values()),1):5.1%}")
-    est_hours = sum(alloc.values()) * 11.7 / 3600
+    n = sum(alloc.values())
     print(f"\n  {out}")
-    print(f"  control alone is ~{est_hours:.1f} h of local stage-2 inference")
+    # Both rates are measured: 11.7s/paragraph for local qwen3:14b, and Groq's
+    # gpt-oss-120b at roughly $0.00024/paragraph on the stage-1 token profile.
+    print(f"  control alone: ~${n * 0.00024:.2f} on Groq gpt-oss-120b, "
+          f"or ~{n * 11.7 / 3600:.1f} h if run locally on qwen3:14b")
     print(f"  next: route.py per book (it reads this plan), then stage 2")
     return 0
 
