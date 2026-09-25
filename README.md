@@ -21,7 +21,15 @@ textbook_errors/
       progress.json              # checkpoint — classify.py resumes from here
   scripts/
     extract.py                   # PDF -> paragraphs.csv
-    classify.py                  # paragraphs.csv -> classified_results.csv
+    stitch.py                    # rejoin paragraphs split across chunk boundaries
+    clean_paragraphs.py          # strip watermarks / bullet runs
+    classify_single.py           # one arm -> <arm>_results.csv          (stage 1)
+    plan_control.py              # proportional control allocation -> control_plan.json
+    route.py                     # stage-1 labels -> stage2_worklist.csv (tiers A/B/C)
+    merge.py                     # -> classified_results.csv + findings.csv
+    collect_findings.py          # all books -> findings_all.csv
+    stage2_report.py             # per-book agreement + recall bound
+    stage2_corpus_report.py      # per-series + corpus bounds, comparability check
     analyze.py                   # (stub) summary statistics
   .env                           # API keys — never commit this
   requirements.txt
@@ -53,16 +61,42 @@ python scripts/extract.py pdfs/cpm_algebra2_hs.pdf --name cpm_algebra2_hs
 
 Output: `data/cpm_algebra2_hs/paragraphs.csv`
 
-### 2. Classify paragraphs
+### 2. Classify — the two-stage pipeline
+
+Stage 1 screens every paragraph with Gemini. Run it for every book first, because the
+control allocation in step 2b is computed across the whole corpus.
 
 ```bash
-python scripts/classify.py --name cpm_algebra2_hs
+# 2a. stage 1, per book
+python scripts/classify_single.py --name cpm_algebra2_hs --model gemini
+
+# 2b. allocate the control sample proportionally across ALL books (once)
+python scripts/plan_control.py --target 3000
+
+# 2c. route each book into tiers A/B/C, then verify the subset locally (free)
+python scripts/route.py --name cpm_algebra2_hs
+python scripts/classify_single.py --name cpm_algebra2_hs --model qwen_local \
+    --paragraphs stage2_worklist.csv --out qwen_local_stage2 --sleep 0
+
+# 2d. build the dataset
+python scripts/merge.py --name cpm_algebra2_hs
 ```
 
-Output:
-- `data/cpm_algebra2_hs/classified_results.csv` — confirmed (2/2) votes
-- `data/cpm_algebra2_hs/uncertain_review.csv` — rows where models disagreed or errored
-- `data/cpm_algebra2_hs/progress.json` — checkpoint; re-running skips already-classified paragraphs
+Per-book output:
+- `classified_results.csv` — every paragraph, with `final_label`, `status`,
+  `verification` (`dual_arm` / `single_arm`) and `tier`
+- `findings.csv` — the non-NA paragraphs only, with `book` and `para_num`
+- `uncertain_review.csv` — dual-arm disagreements
+- `dataset_manifest.json` — counts by status, verification and tier
+
+Then corpus-wide:
+
+```bash
+python scripts/collect_findings.py            # -> data/findings_all.csv
+python scripts/stage2_corpus_report.py        # per-series + corpus recall bounds
+```
+
+Requires `ollama serve` running with `qwen3:14b` pulled for the stage-2 arm.
 
 ### 3. Analyze results (stub)
 
@@ -307,10 +341,55 @@ it deletes exactly the cases the second arm is for. The prompt now returns
 new fields read as `unknown`, which routes them to stage 2 rather than letting a
 missing field pass as confident.
 
-Tier C is sized deliberately: because stage 2 is free, the control can be spent
-generously. `--control-n 2000` buys a recall floor near 95%, where 80 would permit
-17%. `stage2_report.py` prints the bound and warns when it is too loose to mean
-anything.
+**Tier C uses stratified sampling with proportional allocation.** Strata are books,
+and each book's control is strictly proportional to its confident-NA pool:
+
+    n_b = N × P_b / Σ P
+
+`scripts/plan_control.py --target N` computes the allocation across every book with
+stage-1 results and writes `data/control_plan.json`; `route.py` reads that plan
+rather than taking a per-book number. Integer shares use the largest-remainder
+method so they sum to exactly `N`, and a book whose share exceeds its pool is capped
+with the freed quota redistributed, so capping never silently shrinks the total.
+
+Proportional allocation is the point, not a convenience: every confident-NA
+paragraph in the corpus gets the same inclusion probability `N/ΣP` regardless of
+which book it sits in, so pooled and per-series estimates are unbiased without
+reweighting — and **each series' share of the control automatically equals its share
+of the pool**, which is what the per-series bounds need. `route.py` records
+`control_source` in `stage2_strata.json`, and `stage2_corpus_report.py` warns if any
+book was routed with an explicit `--control-n`, since that breaks proportionality and
+biases pooled estimates toward the over-sampled book.
+
+**The bound is reported per series, not per book.** An earlier per-book default of
+2,000 was wrong in a way worth recording: correct at corpus level, it silently became
+a *full census* per book, because a 1,811-paragraph book has only ~1,540
+confident-NA paragraphs. That is 82 hours of local inference instead of ~21. The
+per-book floor check in `route.py` is now advisory only — no claim in this study is
+of the form "in Saxon specifically, recall was Y%", so a per-book guarantee costs
+time for nothing.
+
+Per series is nevertheless the right unit, and *not* a single pooled number. Every
+headline claim here is cross-series ("CPM uses more error pedagogy than Saxon"), and
+a pooled 90% floor is perfectly compatible with 96% recall on CPM and 65% on Saxon —
+differential recall would masquerade as a finding. That is the same failure mode that
+killed the prefilter, so `stage2_corpus_report.py` reports each series' miss rate
+with a Wilson interval and states plainly whether the intervals overlap.
+
+Bounds are given in both forms, because the relative one misleads at this base rate:
+
+| form | example | note |
+|---|---|---|
+| absolute | "at most 19 missed paragraphs in a 5,400 pool" | the honest statement |
+| relative | "recall ≥ 65%" | unstable: reads low only because ~36 positives is a small denominator |
+
+Sizing note, from the measured base rates: a 90% *per-series* floor would need 4,420
+control paragraphs for CK-12 (87% of its pool) and 5,310 for Saxon (97%) — it
+degenerates into the census, because the bound is limited by how few positives exist
+rather than by control size. Only CPM, with ~3x the positives, saves anything. A
+target around 3,000 (~10 h) gives per-series absolute bounds that are worth stating;
+tightening the relative floor further is not worth the hours, because a
+human-labelled stratified probe has to underwrite that number anyway.
 
 **Kappa is now reported over the routed strata, not corpus-wide.** This is a design
 choice, not a limitation. Over a corpus that is ~99% `NA`, agreement is dominated
