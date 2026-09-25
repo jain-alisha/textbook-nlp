@@ -30,17 +30,31 @@ ZERO_WIDTH_SPACE_RE = re.compile("​")
 
 WHITESPACE_RE = re.compile(r"\s+")
 
+# CPM's running page header ("Core Connections Course 2", "Core Connections
+# Geometry", ...) fused onto the start of the following paragraph's text on
+# alternating pages -- e.g. "Core Connections Course 2 1-51. Janelle wants...".
+# Surveyed all five books this applies to (2026-09-25): the header is always this
+# exact fixed string, immediately followed by real content in every instance
+# checked -- a page number, a section label ("Closure", "Review & Preview"), or
+# straight into prose. A strict prefix match is safe here because the string
+# itself never overlaps with genuine paragraph content; it is not a heuristic
+# guess at where a header "probably" ends.
+CPM_HEADER_RE = re.compile(
+    r"^\s*Core Connections (?:Course [123]|Algebra [12]|Geometry)\s*"
+)
+
 
 def clean(paragraph: str) -> str:
     text = WATERMARK_RE.sub(" ", paragraph)
+    text = CPM_HEADER_RE.sub("", text)
     text = BULLET_RUN_RE.sub(" ", text)
     text = ZERO_WIDTH_SPACE_RE.sub("", text)
     text = WHITESPACE_RE.sub(" ", text).strip()
     return text
 
 
-def clean_book(name: str) -> None:
-    path = Path("data") / name / "paragraphs.csv"
+def clean_book(name: str, filename: str = "paragraphs.csv") -> None:
+    path = Path("data") / name / filename
     if not path.exists():
         print(f"  ✗ {name}: {path} not found, skipping")
         return
@@ -80,10 +94,18 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--name", nargs="+", required=True,
                          help="One or more textbook identifiers under data/.")
+    parser.add_argument("--also-stitched", action="store_true",
+                         help="Also clean paragraphs_stitched.csv where present -- "
+                              "needed because stitching ran before this header-strip "
+                              "existed, so the header text is baked into the merges.")
     args = parser.parse_args()
 
     for name in args.name:
         clean_book(name)
+        if args.also_stitched:
+            stitched = Path("data") / name / "paragraphs_stitched.csv"
+            if stitched.exists():
+                clean_book(name, "paragraphs_stitched.csv")
 
 
 if __name__ == "__main__":

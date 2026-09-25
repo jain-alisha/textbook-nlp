@@ -274,6 +274,60 @@ mid-sentence rows are PyMuPDF's. A full `stitch.py` pass over 1,811 paragraphs t
 poor trade given that stage's history. A boundary-only pass — testing just the last and first
 paragraph of adjacent chunks — would cover the same defects in ~20 comparisons.
 
+### 2026-09-25 — Structural audit of the "leave alone" list; CPM Geometry moves off it
+
+The re-extraction list had been built by era-dating (when a book was extracted) and,
+for Saxon Course 3, by paragraph-count and median-length statistics alone. Those
+stats can look exactly like a good extraction while the text underneath is a
+PyMuPDF reading-order dump — Saxon Course 3 is 1.00 paragraph/page with a median of
+1,384 chars, indistinguishable by those numbers from Era 2 CPM, but 31% of its
+paragraphs contain letter-spaced text (`A C K N O W L E D G E M E N T S`) that
+survives a raw text layer and would not survive a real transcription.
+
+Once that gap was named, the same structural check — letter-spacing, inline margin
+notes, ligatures — was run against the 5 CPM books that had been sitting on the
+"leave alone" list on the strength of being clean Era 2 runs, never checked this
+way. Four came back clean (1.6–5.6% letter-spacing, plausibly genuine spaced
+headings; 0% inline margin notes): `cpm_course1_ms`, `cpm_course2_ms`,
+`cpm_course3_ms`, `cpm_algebra1_hs`. **`cpm_geometry_hs` did not** — 24.8%
+letter-spaced, 11.6% with a margin-note title fused mid-word into problem text:
+
+> `Core Connections Geometry ETHODS AND MEANINGS MATH NOTES The Perimeter and
+> Area of a Figure 1-25. Read the Math Notes box...`
+
+(`M[ETHODS AND MEANINGS]` — a running header collided with a margin box title and a
+problem number, all folded into one paragraph by PyMuPDF's reading order.) It moves
+to the re-extraction list, now 7 books instead of 6. `scripts/run_reextract.sh` and
+the eras section above are updated; the estimate in the 2026-09-24 entry below still
+approximately holds since one 891-page book is a small addition to 5,109.
+
+**The four books that stayed clean still needed a fix, just not re-extraction.**
+Half their paragraphs carry CPM's running page header fused onto the start of the
+following paragraph — `"Core Connections Course 2 1-51. Janelle wants..."`. Surveyed
+across all five books: the header is always the fixed string
+`"Core Connections " + {Course N | Algebra N | Geometry}`, immediately followed by
+real content (a page number, a section label, or straight into prose) in every
+instance checked, so a strict prefix strip is safe — it is a literal match, not a
+guess at where a header "probably" ends. Added to `clean_paragraphs.py` as
+`CPM_HEADER_RE` and applied to `cpm_course1_ms`, `cpm_course2_ms`, `cpm_course3_ms`,
+`cpm_algebra1_hs` (both `paragraphs.csv` and `paragraphs_stitched.csv` — stitching
+ran before this fix existed, so the header text was baked into merged paragraphs
+too). One residual match remains by design: `cpm_course2_ms` contains one front-cover
+paragraph, `"Core Connections 3RD EDITION COURSE"`, which the regex correctly leaves
+alone because it is not followed by a course name.
+
+**Stage 2's arm is `gpt-oss-120b` on Groq, not `qwen3:14b` locally.** Groq's spend
+alert has cleared. At the measured stage-1 token profile (~1,093 in / ~130 out) the
+full routed workload costs roughly $3.50 on Groq's pricing — far below Gemini's, and
+Groq's LPU throughput removes the ~47-hour wall-clock cost a full local run would
+have taken (14,400 calls × the measured 11.7s/paragraph — a number that had been
+miscalculated as "~13h" before being checked against the pipeline's own measured
+rate). `gpt-oss-120b` was chosen specifically over Groq's `qwen/qwen3.8-27b`: the
+latter is a preview-tier model, the same tier that silently decommissioned
+`qwen3-32b` earlier in this project, and hosting it faster does not remove that
+risk. `gpt-oss-120b` is the stable non-preview model, and tier B — the screener's own
+boundary cases — is exactly where the larger, more capable model matters most.
+
 ### 2026-09-24 — Two-stage classification; the regex prefilter failed instructively
 
 **The negative result first, because it is the more useful half.**
