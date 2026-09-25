@@ -28,6 +28,23 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 
+def wilson(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
+    """Wilson score interval for a binomial proportion.
+
+    Used instead of a bare k/n because the control samples are small and the rate
+    is near zero, where the normal approximation misbehaves badly — and because a
+    point estimate from 2 observed misses would otherwise be reported with a
+    precision it does not have. Degrades to the rule-of-three-style bound at k=0.
+    """
+    if n == 0:
+        return (0.0, 1.0)
+    p = k / n
+    d = 1 + z * z / n
+    centre = (p + z * z / (2 * n)) / d
+    half = z * ((p * (1 - p) / n + z * z / (4 * n * n)) ** 0.5) / d
+    return (max(0.0, centre - half), min(1.0, centre + half))
+
+
 def kappa(a: list[str], b: list[str]) -> float:
     """Cohen's kappa. Returns nan when undefined (single category, or n == 0)."""
     n = len(a)
@@ -109,19 +126,27 @@ def main() -> int:
     if ctrl and tp:
         misses = [(p, b) for p, a, b in ctrl if b not in ("NA", "ERROR", "PARSE_ERROR", "")]
         pool, n = strata["tier_C_pool"], len(ctrl)
+        lo, hi = wilson(len(misses), n)
+        fn_pt, fn_lo, fn_hi = pool * len(misses) / n, pool * lo, pool * hi
+        rec = lambda fn: tp / (tp + fn)
         if misses:
-            rate = len(misses) / n
-            fn = pool * rate
             print(f"\nRECALL ESTIMATE: {len(misses)}/{n} control paragraphs were non-NA "
-                  f"for stage 2\n  -> est. {fn:.0f} missed positives in the "
-                  f"{pool}-paragraph confident-NA pool\n  -> recall ~{tp/(tp+fn):.1%}")
+                  f"for stage 2")
+            print(f"  miss rate {len(misses)/n:.2%}, 95% CI [{lo:.2%}, {hi:.2%}] (Wilson)")
+            print(f"  -> est. {fn_pt:.0f} missed positives in the {pool}-paragraph "
+                  f"confident-NA pool, CI [{fn_lo:.0f}, {fn_hi:.0f}]")
+            # A higher miss rate means lower recall, so the interval inverts.
+            print(f"  -> recall ~{rec(fn_pt):.1%}, 95% CI [{rec(fn_hi):.1%}, {rec(fn_lo):.1%}]")
+            if rec(fn_hi) < 0.75:
+                print(f"  !! The lower bound is weak. A few observed misses move this a "
+                      f"lot at n={n};\n     raise --control-n and re-run — the arm is free.")
         else:
-            fn_hi = pool * 3 / n   # rule of three, 95%
             print(f"\nRECALL BOUND: 0/{n} control paragraphs were non-NA for stage 2.")
-            print(f"  95% upper bound on the miss rate is 3/{n} = {3/n:.3%}")
+            print(f"  95% upper bound on the miss rate: {hi:.3%} (Wilson; "
+                  f"rule of three gives {3/n:.3%})")
             print(f"  -> at most ~{fn_hi:.0f} missed positives in the {pool}-paragraph pool")
-            print(f"  -> recall >= {tp/(tp+fn_hi):.1%}")
-            if tp / (tp + fn_hi) < 0.9:
+            print(f"  -> recall >= {rec(fn_hi):.1%}")
+            if rec(fn_hi) < 0.9:
                 print(f"  !! Loose. Raise --control-n and re-run stage 2; the arm is free.")
         print("\n  Note: stage 2 is a second model, not ground truth. This bounds "
               "agreement-\n  based recall only; a human-labelled probe set remains "

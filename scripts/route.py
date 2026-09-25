@@ -55,8 +55,16 @@ def main() -> int:
     ap.add_argument("--stage1", default="gemini_results.csv",
                     help="Stage-1 results CSV (default: gemini_results.csv)")
     ap.add_argument("--arm", default="gemini", help="Stage-1 arm name, for column prefixes")
-    ap.add_argument("--control-n", type=int, default=600,
-                    help="Confident-NA paragraphs to sample as control (default: 600)")
+    # 2000, not a few hundred: this is the number that buys a recall floor around
+    # 95%. Stage 2 is free, so a smaller default would only set up the exact "ran
+    # fine, bound is meaningless" trap that stage2_report.py has to warn about.
+    ap.add_argument("--control-n", type=int, default=2000,
+                    help="Confident-NA paragraphs to sample as control (default: 2000)")
+    ap.add_argument("--allow-loose-control", action="store_true",
+                    help="Proceed even when the control sample is too small to bound "
+                         "recall usefully and a larger sample was available")
+    ap.add_argument("--min-recall-floor", type=float, default=0.90,
+                    help="Refuse to route below this projected recall floor (default: 0.90)")
     ap.add_argument("--seed", type=int, default=20260924)
     ap.add_argument("--out", default="stage2_worklist.csv")
     args = ap.parse_args()
@@ -98,7 +106,22 @@ def main() -> int:
     random.seed(args.seed)
     control = random.sample(pool, min(args.control_n, len(pool)))
 
-    worklist = ([(r, "A_positive") for r in tiers["A_positive"]]
+    # Refuse a control too small to bound recall — but only when sampling more would
+    # actually help. Once the whole pool is sampled the bound is as tight as this
+    # book allows, and there is nothing to fix by raising --control-n.
+    tp = len(tiers["A_positive"])
+    if tp and control:
+        floor = tp / (tp + len(pool) * 3 / len(control))
+        room_to_grow = len(control) < len(pool)
+        if floor < args.min_recall_floor and room_to_grow and not args.allow_loose_control:
+            print(f"ERROR: a {len(control)}-paragraph control over a {len(pool)}-paragraph "
+                  f"pool bounds recall at only {floor:.1%},\n  below the "
+                  f"{args.min_recall_floor:.0%} floor. Stage 2 is free — raise "
+                  f"--control-n (up to {len(pool)}),\n  or pass --allow-loose-control "
+                  f"to accept the weaker bound deliberately.", file=sys.stderr)
+            return 1
+
+    worklist =([(r, "A_positive") for r in tiers["A_positive"]]
                 + [(r, "B_boundary") for r in tiers["B_boundary"]]
                 + [(r, "C_control") for r in control])
 

@@ -324,6 +324,20 @@ free use at 50 requests/day, so it cannot serve a census. Local `qwen3:14b` was
 measured at 11.7s/paragraph, which is ~80 hours for a census and a few hours for a
 routed subset. The two-stage design is what makes a free arm viable.
 
+`merge.py` produces the per-book dataset from the routed results. Every paragraph
+appears in `classified_results.csv` with a **`verification`** column: `dual_arm`
+where both arms saw it (tiers A, B and the sampled part of C), `single_arm` for the
+confident-NA majority that only Gemini ever saw. That majority is real and is
+recorded per row rather than left implicit in the routing arithmetic — **any count
+restricted to verified labels must exclude `single_arm` rows.** `status` is
+`CONFIRMED` / `UNCERTAIN` / `UNVERIFIED`, and `tier` distinguishes `C_control` from
+`C_unsampled`.
+
+`merge.py` also refuses to build a dataset when a label file's paragraph set does
+not match the extraction its manifest names — re-extracting a book replaces its
+paragraphs wholesale, and nothing in the CSVs themselves reveals that the labels
+now describe discarded text. `--allow-stale` overrides it.
+
 **Still outstanding:** `qwen3:14b` mislabelled *"Find the opposite of each of the
 following"* as `COMMON_ERROR_ALERT` during the recall audit — on unfiltered text.
 Its job is now narrower (discriminating among candidates the screener already
