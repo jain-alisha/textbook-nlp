@@ -1,0 +1,82 @@
+book,para_num,final_label,status,verification,tier,source_file,paragraph,final_label,gemini_label,gemini_confidence,gemini_considered,gemini_reasoning,gpt_oss_or_label,gpt_oss_or_reasoning
+ck12_algebra1_hs,5,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example 2
+
+Let x = 12. Find the value of 2x − 7.
+
+To find the solution, we substitute 12 for x in the given expression. Every time we see x, we replace it with 12.
+
+2x − 7 = 2(12) − 7
+= 24 − 7
+= 17
+
+Note: At this stage of the problem, we place the substituted value in parentheses. We do this to make the written-out problem easier to follow, and to avoid mistakes. (If we didn’t use parentheses and also forgot to add a multiplication sign, we would end up turning 2x into 212 instead of 2 times 12!)",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,The note explicitly explains a specific error that occurs when parentheses are omitted (turning 2x into 212 instead of 2 times 12) to help the reader avoid this mistake.,COMMON_ERROR_ALERT,"The paragraph contains a warning about a specific mistake (forgetting parentheses and multiplication sign) that students might make, which matches the COMMON_ERROR_ALERT pattern."
+ck12_algebra1_hs,218,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example 6: Find the opposite of each of the following: a) 19.6 b) −4/9 c) x d) xy^2 e) (x−3). Solution: Since we know that opposite numbers are on opposite sides of zero, we can simply multiply each expression by -1. This changes the sign of the number to its opposite—if it’s negative, it becomes positive, and vice versa. a) The opposite of 19.6 is -19.6. b) The opposite of −4/9 is 4/9. c) The opposite of x is −x. d) The opposite of xy^2 is −xy^2. e) The opposite of (x−3) is −(x−3), or (3−x). Note: With the last example you must multiply the entire expression by -1. A common mistake in this example is to assume that the opposite of (x−3) is (x+3). Avoid this mistake!",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text explicitly points out a frequent error with the phrase 'A common mistake in this example is to assume that the opposite of (x−3) is (x+3). Avoid this mistake!', warning the reader about what not to do.",COMMON_ERROR_ALERT,"The paragraph warns about a frequent mistake (assuming opposite of (x−3) is (x+3)) and tells students to avoid it, which matches the COMMON_ERROR_ALERT category."
+ck12_algebra1_hs,727,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Write an Equation For a Line of Best Fit
+Once you draw the line of best fit, you can find its equation by using two points on the line. Finding the equation of the line of best fit is also called linear regression.
+Caution: Make sure you don’t get caught making a common mistake. Sometimes the line of best fit won’t pass straight through any of the points in the original data set. This means that you can’t just use two points from the data set –you need to use two points that are on the line, which might not be in the data set at all.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,The paragraph explicitly warns the reader with 'Caution: Make sure you don't get caught making a common mistake' and explains what not to do when choosing points for a line of best fit.,COMMON_ERROR_ALERT,"The paragraph warns readers about a frequent mistake (using data points instead of points on the line) and tells them to be careful, which matches a common error alert."
+ck12_algebra1_hs,995,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Product Rule for Exponents: x^n · x^m = x^(n+m)
+There are some easy mistakes you can make with this rule, however. Let’s see how to avoid them.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text warns the reader that there are easy mistakes commonly made with the product rule and explicitly states how to avoid them, functioning as a common error alert/warning.",COMMON_ERROR_ALERT,"The paragraph warns about possible mistakes with the exponent product rule, fitting the pattern of a common error alert."
+ck12_algebra1_hs,996,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example 3
+Multiply 2^2 · 2^3.
+
+Solution
+2^2 · 2^3 = 2^5 = 32
+Note that when you use the product rule you don’t multiply the bases. In other words, you must avoid the common error of writing 2^2 · 2^3 = 4^5. You can see this is true if you multiply out each expression: 4 times 8 is definitely 32, not 1024.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text explicitly warns the reader about a frequent mistake, stating 'you must avoid the common error of writing 2^2 · 2^3 = 4^5'.",COMMON_ERROR_ALERT,"The paragraph warns readers about a frequent mistake (writing 2^2·2^3 = 4^5) and tells them to avoid it, matching a common error alert."
+ck12_algebra1_hs,999,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Power Rule for Exponents: (x^n)^m = x^(n·m)
+If we have a product of more than one term inside the parentheses, then we have to distribute the exponent over all the factors, like distributing multiplication over addition. For example:
+(x^2 y)^4 = (x^2)^4 · (y)^4 = x^8 y^4.
+
+Or, writing it out the long way:
+(x^2 y)^4 = (x^2 y)(x^2 y)(x^2 y)(x^2 y) = (x · x · y)(x · x · y)(x · x · y)(x · x · y) = x · x · x · x · x · x · x · x · y · y · y · y = x^8 y^4
+
+Note that this does NOT work if you have a sum or difference inside the parentheses! For example, (x+y)^2 ≠ x^2 + y^2. This is an easy mistake to make, but you can avoid it if you remember what an exponent means: if you multiply out (x+y)^2 it becomes (x+y)(x+y), and that’s not the same as x^2 + y^2. We’ll learn how we can simplify this expression in a later chapter.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,The text explicitly warns students against a frequent misconception ('(x+y)^2 ≠ x^2 + y^2') and calls it an 'easy mistake to make' while explaining how to avoid it.,COMMON_ERROR_ALERT,"The paragraph warns students about a frequent mistake (applying exponent rule to sums) and tells them to be careful, matching COMMON_ERROR_ALERT."
+ck12_algebra1_hs,1144,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Sure enough, the middle terms are the same. How about if the expression we square is a difference instead of a sum? (a − b)^2 = (a − b)(a − b) = a^2 − ab − ab + b^2 = a^2 − 2ab + b^2. It looks like the middle two terms are the same in general whenever we square a binomial. The general pattern is: to square a binomial, take the square of the first term, add or subtract twice the product of the terms, and add the square of the second term. You should remember these formulas: (a + b)^2 = a^2 + 2ab + b^2 and (a − b)^2 = a^2 − 2ab + b^2. Remember! Raising a polynomial to a power means that we multiply the polynomial by itself however many times the exponent indicates. For instance, (a + b)^2 = (a + b)(a + b). Don’t make the common mistake of thinking that (a + b)^2 = a^2 + b^2! To see why that’s not true, try substituting numbers for a and b into the equation (for example, a = 4 and b = 3), and you will see that it is not a true statement. The middle term, 2ab, is needed to make the equation work.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text explicitly warns students: 'Don’t make the common mistake of thinking that (a + b)^2 = a^2 + b^2!', which directly alerts readers to a frequent misconception.",COMMON_ERROR_ALERT,"The paragraph explicitly warns about a frequent mistake (thinking (a+b)^2 = a^2 + b^2) and tells students not to make that error, matching the COMMON_ERROR_ALERT pattern."
+ck12_algebra1_hs,1555,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example 1
+
+Divide.
+a) (8x^2−4x+16) / 2
+b) (3x^2+6x−1) / x
+c) (−3x^2−18x+6) / (9x)
+
+Solution
+a) (8x^2−4x+16) / 2 = 8x^2/2 − 4x/2 + 16/2 = 4x^2 − 2x + 8
+b) (3x^3+6x−1) / x = 3x^3/x + 6x/x − 1/x = 3x^2 + 6 − 1/x
+c) (−3x^2−18x+6) / (9x) = − 3x^2/(9x) − 18x/(9x) + 6/(9x) = − x/3 − 2 + 2/(3x)
+
+A common error is to cancel the denominator with just one term in the numerator.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,The paragraph provides a worked example and concludes by warning the reader that 'A common error is to cancel the denominator with just one term in the numerator.',COMMON_ERROR_ALERT,"The paragraph includes a statement warning about a frequent mistake ('A common error is...'), which matches the definition of COMMON_ERROR_ALERT."
+ck12_algebra1_hs,1556,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Consider the quotient (3x+4) / 4.
+
+Remember that the denominator of 4 is common to both the terms in the numerator. In other words we are dividing both of the terms in the numerator by the number 4.
+
+The correct way to simplify is:
+(3x+4) / 4 = 3x/4 + 4/4 = 3x/4 + 1
+
+A common mistake is to cross out the number 4 from the numerator and the denominator, leaving just 3x. This is incorrect, because the entire numerator needs to be divided by 4.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,EXPLICIT_ERROR_DETECTION,"The text explicitly warns students about a frequent error with the phrase 'A common mistake is...', explaining why canceling out the 4 is incorrect.",COMMON_ERROR_ALERT,"The paragraph warns about a frequent mistake students make, using the phrase 'A common mistake is...'."
+ck12_algebra1_hs,1568,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"When reducing fractions, you are only allowed to cancel common factors from the denominator but NOT common terms. For example, in the expression (x+1)·(x−3)
+(x+2)·(x−3), we can cross out the (x−3) factor because (x−3)
+(x−3) = 1. But in the expression x^2+1
+x^2−5 we can’t just cross out the x^2 terms.
+Why can’t we do that? When we cross out terms that are part of a sum or a difference, we’re violating the order of operations (PEMDAS). Remember, the fraction bar means division. When we perform the operation x^2+1
+x^2−5, we’re really performing the division (x^2 + 1) ÷ (x^2 − 5) —and the order of operations says that we must perform the operations inside the parentheses before we can perform the division.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text warns against a classic, frequent algebra mistake (canceling common terms instead of common factors) and explains why that operation violates mathematical rules.",COMMON_ERROR_ALERT,"The paragraph warns about a typical mistake (cancelling terms that are part of a sum/difference) and explains why it is wrong, without asking the reader to locate or fix a specific error."
+ck12_algebra1_hs,1569,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Using numbers instead of variables makes it more obvious that canceling individual terms doesn’t work. You can see that 9+1
+9−5 = 10/4 = 2.5 —but if we canceled out the 9’s first, we’d get 1/-5, or -0.2, instead.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,medium,NA,The text demonstrates why a well-known common algebraic mistake (canceling individual terms across addition/subtraction in fractions) is mathematically invalid using an arithmetic counterexample.,COMMON_ERROR_ALERT,"The paragraph warns readers about a mistake (incorrectly canceling terms) that students often make, without asking them to locate or correct a specific error."
+ck12_algebra1_hs,1591,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Divide Rational Expressions Involving Polynomials
+Just as with ordinary fractions, we first rewrite the division problem as a multiplication problem and then proceed with the multiplication as outlined in the previous example.
+Note: Remember that a/b ÷ c/d = a/b · d/c. The first fraction remains the same and you take the reciprocal of the second fraction. Do not fall into the common trap of flipping the first fraction.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text warns readers not to fall into the 'common trap' of flipping the first fraction when dividing, which is an explicit alert about a frequent error.",COMMON_ERROR_ALERT,"The paragraph warns students about a frequent mistake ('Do not fall into the common trap of flipping the first fraction'), which matches a COMMON_ERROR_ALERT."
+ck12_algebra1_hs,1660,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example 6
+Find the odds of the following events:
+a) Tossing a coin and getting heads.
+b) Rolling a die and getting a 3.
+c) Tossing 4 coins and getting exactly 3 tails.
+Solution
+The key to finding odds is looking at how many outcomes result in the event and how many do not:
+a) The sample space consists of 2 outcomes: 1 heads, 1 not-heads. The odds of getting heads are 1 : 1 (one to one, or even).
+b) The sample space consists of 6 outcomes: 1 three and 5 not-three. The odds of getting three are 1 : 5 (one to five).
+c) Look back at example 4, where we found the sample space for tossing 4 coins. The sample space consists of 4 outcomes where exactly 3 tails came up and 12 outcomes when they did not. So the odds of getting 3 tails are 3 : 12 = 1 : 4 (one to four).
+Look carefully at part b above. This illustrates the need to avoid confusion between odds and probability. We know that the probability of getting a 3 is P(3) = 1/6 or “one in six,” but the odds describes the same event with the ratio 1 : 5 or “one to five”.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text explicitly alerts the reader to 'avoid confusion between odds and probability', pointing out how probability (1/6) and odds (1:5) differ to prevent a common mistake.",COMMON_ERROR_ALERT,"The paragraph includes a warning to avoid confusing odds with probability, which alerts readers to a common mistake."
+ck12_algebra1_hs,1711,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Find the Probability of Independent Events
+If the result of one event has no bearing on the probability of the second event, we call them independent events. For example, if you flip a coin 3 times and get heads 3 times, what is the probability that the next flip will result in tails? Many people think that the previous run of heads somehow influences the flip to make tails more likely, but in reality the previous flips have no bearing on the outcome of the new flip –how could they? The coin doesn’t have a brain or a memory.
+(The idea that tails is more likely after a run of heads is called the Gambler’s Fallacy, and it probably arises from people getting confused about something called prior probability. Now that you’ve learned a little about probability, you know that getting three heads and one tail is a little more likely than getting four heads on four coin flips, so before you flip the coin, you’d expect that it’s more likely you’ll get three heads than four heads. But after you’ve already flipped the coin three times, the chances of getting heads on the first three flips don’t matter any more, because you already got those three heads; the probability of getting those first three heads has gone from 12.5% to 100%! So the only probability that still matters is the probability of getting heads on the one flip remaining, which is just the same as it always is on a single coin flip: 50%.)
+Because one flip of the coin has no effect on the outcome of any other flips, each flip of the coin counts as an independent event.
+To find the probability of multiple independent events happening together, we multiply the individual probabilities:
+For independent events : P(A and B) = P(A)·P(B)",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text highlights a widespread misconception ('Many people think that the previous run of heads somehow influences the flip...') known as the Gambler's Fallacy, explaining why this error occurs and clarifying the correct mathematical reasoning.",COMMON_ERROR_ALERT,"The paragraph warns readers about a frequent misconception (the gambler's fallacy) and tells them not to be misled, matching the COMMON_ERROR_ALERT pattern."

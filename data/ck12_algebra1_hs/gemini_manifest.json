@@ -1,0 +1,12 @@
+{
+  "model_arm": "gemini",
+  "model_id": "gemini-3.8-flash",
+  "prompt_sha256_12": "d6479bb86afb",
+  "paragraphs_file": "paragraphs.csv",
+  "output_file": "gemini_results.csv",
+  "rows": 1811,
+  "tiers": null,
+  "new_api_calls": 74,
+  "errors": 0,
+  "finished_utc": "2026-09-25T05:56:31Z"
+}

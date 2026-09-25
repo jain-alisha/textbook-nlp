@@ -1,0 +1,29 @@
+{
+  "model_arm": "gpt_oss_or",
+  "model_id": "openai/gpt-oss-120b",
+  "prompt_sha256_12": "d6479bb86afb",
+  "paragraphs_file": "stage2_worklist.csv",
+  "output_file": "gpt_oss_or_stage2.csv",
+  "rows": 708,
+  "tiers": {
+    "A_positive": 14,
+    "B_boundary": 323,
+    "C_control": 371
+  },
+  "new_api_calls": 687,
+  "errors": 0,
+  "provider": "openrouter",
+  "serving_providers": {
+    "AkashML": 220,
+    "DekaLLM": 206,
+    "DeepInfra": 189,
+    "Crusoe": 72
+  },
+  "provider_routing": {
+    "quantizations": [
+      "bf16"
+    ],
+    "allow_fallbacks": true
+  },
+  "finished_utc": "2026-09-25T08:07:22Z"
+}
