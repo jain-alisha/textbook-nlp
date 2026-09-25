@@ -240,6 +240,96 @@ mid-sentence rows are PyMuPDF's. A full `stitch.py` pass over 1,811 paragraphs t
 poor trade given that stage's history. A boundary-only pass — testing just the last and first
 paragraph of adjacent chunks — would cover the same defects in ~20 comparisons.
 
+### 2026-09-24 — Two-stage classification; the regex prefilter failed instructively
+
+**The negative result first, because it is the more useful half.**
+
+To avoid paying for two LLM arms over ~25,000 paragraphs, a deliberately broad
+regex prefilter was built to pass only plausible candidates. On `ck12_algebra1_hs`
+it passed 12.7%, which looked like an 8x saving. It does not survive contact with
+the rest of the corpus.
+
+*It does not transfer across series.* Per-paragraph pass rate ranges from 2.6%
+(`saxon_course2_ms`) to 44.5% (`cpm_geometry_hs`) — a 17-fold spread:
+
+| series | paragraphs | pass % | hits/1k chars |
+|---|---|---|---|
+| cpm | 6,147 | 28.4% | 0.54 |
+| ck12 | 3,463 | 17.3% | 0.33 |
+| saxon | 13,200 | 4.4% | 0.26 |
+
+Normalising per 1,000 characters (necessary, because the eras extract at very
+different granularities) narrows but does not close the gap: CPM still shows ~2x
+the trigger density. Worse, the subpatterns `who is correct` and `students often`
+fire **only** in CPM — zero occurrences in CK-12 and Saxon. The filter encodes
+CPM's vocabulary, so a CPM-vs-others finding would be partly an artifact of the
+instrument.
+
+*And it cannot be cheaply validated — this is the decisive part.* An audit labelled
+80 filter-accepted and 80 filter-rejected paragraphs per series with the Gemini
+arm. It found 0 false negatives, which sounds like perfect recall and is nearly
+uninformative. By the rule of three, 0/80 puts the 95% upper bound on the miss rate
+at 3.75%; against the real rejected-pool sizes that permits:
+
+| series | rejected pool | FN upper bound | TP | recall lower bound |
+|---|---|---|---|---|
+| ck12 | 1,572 | 59 | 12 | **16.9%** |
+| cpm | 501 | 19 | 13 | **41.1%** |
+| saxon | 724 | 27 | 5 | **15.9%** |
+
+The audit is equally consistent with the filter catching everything and with it
+missing five positives in six. The reason is the base rate: error pedagogy runs at
+**0.55%–1.72% of paragraphs**. Bounding false negatives tightly at that rarity
+requires labelling essentially the whole rejected pool — which is the census the
+filter existed to avoid.
+
+**So the flaw is structural, not a matter of better trigger words.** Any cheap
+prefilter for a ~1% phenomenon is unfalsifiable by construction. No iteration on
+the regex escapes that, and the filter was dropped rather than tuned.
+
+**Replacement: the LLM screens, and routing is explicit.** Stage 1 runs the Gemini
+arm over every paragraph (~$16 corpus-wide, no vocabulary assumption to validate).
+Stage 2 runs a local, free `qwen3:14b` arm over a routed subset — `scripts/route.py`
+assigns every paragraph to one of:
+
+| tier | rule | purpose |
+|---|---|---|
+| **A positive** | stage-1 label != NA | verify the findings |
+| **B boundary** | NA, but confidence < high **or** a category was `considered` | the screener's own hesitation |
+| **C control** | confident NA, nothing considered | random sample; bounds what the design misses |
+
+Tier B required changing the prompt. It previously ended *"When in doubt between an
+error category and NA, always choose NA"* — which collapsed boundary cases into
+plain `NA` and recorded nothing. Merely conservative under a census; under routing
+it deletes exactly the cases the second arm is for. The prompt now returns
+`confidence` and `considered`, and a smoke test put **8 of 22 paragraphs in tier B**
+— all previously indistinguishable from confident `NA`. Cache entries lacking the
+new fields read as `unknown`, which routes them to stage 2 rather than letting a
+missing field pass as confident.
+
+Tier C is sized deliberately: because stage 2 is free, the control can be spent
+generously. `--control-n 2000` buys a recall floor near 95%, where 80 would permit
+17%. `stage2_report.py` prints the bound and warns when it is too loose to mean
+anything.
+
+**Kappa is now reported over the routed strata, not corpus-wide.** This is a design
+choice, not a limitation. Over a corpus that is ~99% `NA`, agreement is dominated
+by both arms trivially concurring on obvious non-cases, which inflates kappa
+without evidencing reliability on the judgement that matters.
+
+**Groq is no longer required.** It is blocked by a spend *alert* threshold rather
+than exhausted funds, but the second arm is now local and free either way. Also
+checked: OpenRouter serves `qwen/qwen3.8-27b:free` — the exact model — but caps
+free use at 50 requests/day, so it cannot serve a census. Local `qwen3:14b` was
+measured at 11.7s/paragraph, which is ~80 hours for a census and a few hours for a
+routed subset. The two-stage design is what makes a free arm viable.
+
+**Still outstanding:** `qwen3:14b` mislabelled *"Find the opposite of each of the
+following"* as `COMMON_ERROR_ALERT` during the recall audit — on unfiltered text.
+Its job is now narrower (discriminating among candidates the screener already
+flagged, not scanning raw prose cold), so that error does not straightforwardly
+carry over. It needs a probe built for the new task, not the voided earlier one.
+
 ### 2026-09-23 — CPM edition split and extraction eras documented
 
 Established that the CPM corpus straddles 2nd and 3rd editions, and that extractor identity is not
