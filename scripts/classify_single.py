@@ -94,6 +94,35 @@ MODEL_CONFIGS = {
         "model_id": "qwen3:14b",
         "provider": "ollama",
     },
+    # The stage-2 arm in use. Same model as `gpt_oss` above, served through
+    # OpenRouter rather than Groq, because Groq's free tier caps this model at
+    # 8,000 TPM (~6.5 paragraphs/minute) and the paid tier was not available.
+    #
+    # It is a SEPARATE arm rather than a provider flag on `gpt_oss` so the two
+    # never share a cache file: the cache path is f"{arm}_cache.jsonl", and both
+    # arms carry the same model_id, so merging them would silently mix labels
+    # served at different numeric precisions under one identity.
+    #
+    # `quantizations: ["bf16"]` is load-bearing. OpenRouter serves this model at
+    # fp4, fp8, bf16 and fp16 depending on which provider it routes to, and by
+    # default it picks on price/availability per request. Unpinned, one corpus
+    # could be labelled at several precisions with nothing recording which --
+    # the same class of silent inconsistency as the qwen3-32b ensemble split.
+    "gpt_oss_or": {
+        "model_id": "openai/gpt-oss-120b",
+        "provider": "openrouter",
+        "response_format": {"type": "json_object"},
+        # quantizations is a hard filter, so fallbacks can only ever land on another
+        # bf16 provider -- precision stays pinned either way. allow_fallbacks is True
+        # because pinning to a single provider queued everything behind one host's
+        # capacity (~6.4 paragraphs/min, no better than the Groq tier it replaced).
+        # Which providers actually served is recorded in the manifest's
+        # serving_providers, so the pin is verified from responses, not assumed.
+        "provider_routing": {
+            "quantizations": ["bf16"],
+            "allow_fallbacks": True,
+        },
+    },
 }
 
 SYSTEM_PROMPT = """You are an expert educational researcher. Your task is to classify
@@ -351,6 +380,75 @@ def call_gemini(model_id: str, paragraph: str, sleep: float,
             time.sleep(10 * attempts)
 
 
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+
+# Set by call_openrouter from each response so the manifest can record which
+# provider actually served the run, rather than only which one was requested.
+SERVING_PROVIDERS: dict[str, int] = {}
+
+
+def call_openrouter(model_id: str, paragraph: str, api_key: str, sleep: float,
+                    response_format: dict | None, provider_routing: dict | None,
+                    max_retries: int = 8) -> Verdict:
+    """OpenRouter, with the serving provider pinned by numeric precision.
+
+    OpenRouter multiplexes one model string across many providers at different
+    quantizations and picks on price/availability by default. `provider_routing`
+    restricts that choice to a `quantizations` allow-list, so every provider it can
+    fall back to still satisfies the precision pin -- `allow_fallbacks` only
+    controls whether it may use more than one such provider, not whether precision
+    is enforced. See MODEL_CONFIGS["gpt_oss_or"] for why fallbacks are allowed.
+    """
+    payload = {
+        "model": model_id,
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": f'Paragraph to classify:\n"""{paragraph}"""'},
+        ],
+        "temperature": 0.1,
+        "max_tokens": 3000,
+    }
+    if response_format:
+        payload["response_format"] = response_format
+    if provider_routing:
+        payload["provider"] = provider_routing
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+
+    rate_limit_attempts = 0
+    attempts = 0
+    while True:
+        try:
+            resp = requests.post(OPENROUTER_URL, headers=headers, json=payload, timeout=120)
+            if resp.status_code == 429:
+                rate_limit_attempts += 1
+                wait = min(10 * (2 ** (rate_limit_attempts - 1)), 120)
+                print(f"    Rate limited (#{rate_limit_attempts}) — waiting {wait}s...")
+                time.sleep(wait)
+                continue
+            resp.raise_for_status()
+            body = resp.json()
+            if "error" in body and not body.get("choices"):
+                raise RuntimeError(str(body["error"])[:200])
+            SERVING_PROVIDERS[body.get("provider", "?")] = \
+                SERVING_PROVIDERS.get(body.get("provider", "?"), 0) + 1
+            msg = body["choices"][0]["message"]
+            # Some providers put the model's chain of thought in `reasoning` and
+            # leave `content` null; the JSON document we want is in `content`.
+            raw = (msg.get("content") or "").strip()
+            if not raw:
+                raise RuntimeError(
+                    f"empty content (finish_reason="
+                    f"{body['choices'][0].get('finish_reason')})")
+            time.sleep(sleep)
+            return parse_response(raw)
+        except Exception as e:
+            attempts += 1
+            print(f"    OpenRouter error ({attempts}/{max_retries}): {str(e)[:150]}")
+            if attempts >= max_retries:
+                return Verdict("ERROR", str(e)[:200], "unknown", "")
+            time.sleep(5 * attempts)
+
+
 OLLAMA_URL = os.getenv("OLLAMA_HOST", "http://localhost:11434").rstrip("/") + "/api/chat"
 
 
@@ -495,6 +593,9 @@ def main():
     if provider == "gemini" and not os.getenv("GEMINI_API_KEY", "").strip():
         print("ERROR: GEMINI_API_KEY not found in .env")
         return 1
+    if provider == "openrouter" and not os.getenv("OPENROUTER_API_KEY", "").strip():
+        print("ERROR: OPENROUTER_API_KEY not found in .env")
+        return 1
 
     data_dir      = Path("data") / args.name
     para_file  = args.paragraphs if args.paragraphs else "paragraphs.csv"
@@ -571,6 +672,11 @@ def main():
                     return 3
             elif provider == "ollama":
                 v = call_ollama(model_id, paragraph, args.sleep)
+            elif provider == "openrouter":
+                v = call_openrouter(model_id, paragraph,
+                                    os.getenv("OPENROUTER_API_KEY", "").strip(),
+                                    args.sleep, response_format,
+                                    cfg.get("provider_routing"))
             else:
                 v = call_groq(model_id, paragraph, api_key, args.sleep,
                               response_format)
@@ -619,6 +725,11 @@ def main():
         "tiers": dict(__import__("collections").Counter(tier_of.values())) or None,
         "new_api_calls": processed,
         "errors": errors,
+        "provider": provider,
+        # Which provider OpenRouter actually routed to, counted per response. The
+        # request pins a quantization, but only the responses prove what served it.
+        "serving_providers": dict(SERVING_PROVIDERS) or None,
+        "provider_routing": cfg.get("provider_routing"),
         "finished_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     }, indent=2) + "\n", encoding="utf8")
 
