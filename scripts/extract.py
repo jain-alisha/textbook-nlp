@@ -42,6 +42,14 @@ MAX_ATTEMPTS      = 3
 MIN_SPLIT_PAGES   = 6
 DEFAULT_WORKERS   = 3
 MAX_FALLBACK_SHARE = 0.2
+# Hard per-call wall-clock deadlines. A 25-page chunk completes in ~90-150s, so
+# these are generous; they exist only to convert a hung socket into a normal
+# chunk failure. See _with_deadline for the incident that motivated them.
+CHUNK_DEADLINE    = 420
+UPLOAD_DEADLINE   = 180
+# Lowest believable yield. Real books run 0.98-3.3 paragraphs/page; anything
+# near zero means the pages rendered blank, not that the book is empty.
+MIN_PARAGRAPHS_PER_PAGE = 0.25
 
 GEMINI_PROMPT = """You are processing a section of a math textbook PDF. Extract all instructional paragraphs as a JSON array of strings.
 
@@ -62,6 +70,21 @@ Example: ["paragraph one", "paragraph two"]
 
 class DailyQuotaExhausted(Exception):
     """Retrying or splitting can't help; every further call fails until reset."""
+
+
+def _is_terminal_billing_error(err: str) -> bool:
+    """True for failures that no retry, split, or wait can fix.
+
+    "PerDay" is a daily quota (resets). A 402 / "prepayment credits are
+    depleted" is an empty balance and does NOT reset -- but it was reaching the
+    generic retry path, so a run that hit it would retry every chunk three times
+    with backoff and then silently degrade the whole book to PyMuPDF. Both
+    conditions should stop the run instead.
+    """
+    e = err.lower()
+    return ("perday" in e
+            or "prepayment credits are depleted" in e
+            or ("402" in e and "resource_exhausted" in e))
 
 
 def _quota_diagnosis(err: str) -> str:
@@ -104,6 +127,31 @@ def _parse(raw: str | None) -> list[str] | None:
     return [s for s in (str(p).strip() for p in data) if len(s) >= MIN_PARAGRAPH_LEN]
 
 
+def _with_deadline(fn, seconds: int):
+    """Run fn() with a hard wall-clock deadline, raising TimeoutError if it hangs.
+
+    The SDK's own `timeout` did not save us: on 2026-09-25 three chunks got
+    "Server disconnected without sending a response" and the run then sat idle
+    for 2.5 hours -- alive, 1.3s of CPU, producing nothing -- because pool.map
+    was blocked on a request that never returned or errored. A per-call deadline
+    turns that silent hang into an ordinary chunk failure the retry/split ladder
+    already knows how to handle.
+
+    The worker thread is abandoned rather than cancelled (Python cannot kill a
+    thread blocked in a socket read); it dies with the process. That is
+    acceptable here because the alternative is losing the whole run.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+    from concurrent.futures import TimeoutError as FuturesTimeout
+    pool = ThreadPoolExecutor(max_workers=1)
+    try:
+        return pool.submit(fn).result(timeout=seconds)
+    except FuturesTimeout as e:
+        raise TimeoutError(f"no response within {seconds}s") from e
+    finally:
+        pool.shutdown(wait=False)
+
+
 def _gemini_chunk(client, data: bytes, label: str) -> tuple[str, list[str]]:
     """Returns ("ok", paragraphs), or a failure status with no paragraphs."""
     from google.genai import types
@@ -123,15 +171,16 @@ def _gemini_chunk(client, data: bytes, label: str) -> tuple[str, list[str]]:
         for attempt in range(1, MAX_ATTEMPTS + 1):
             try:
                 if upload is None:
-                    upload = client.files.upload(
+                    upload = _with_deadline(lambda: client.files.upload(
                         file=io.BytesIO(data),
                         config=types.UploadFileConfig(mime_type="application/pdf",
                                                       display_name=f"{label}.pdf"),
-                    )
-                resp = client.models.generate_content(
-                    model=GEMINI_MODEL, contents=[upload, GEMINI_PROMPT], config=config)
+                    ), UPLOAD_DEADLINE)
+                resp = _with_deadline(lambda: client.models.generate_content(
+                    model=GEMINI_MODEL, contents=[upload, GEMINI_PROMPT],
+                    config=config), CHUNK_DEADLINE)
             except Exception as e:
-                if "PerDay" in str(e):
+                if _is_terminal_billing_error(str(e)):
                     raise DailyQuotaExhausted(str(e)) from e
                 print(f"    {label}: attempt {attempt}/{MAX_ATTEMPTS} failed: {str(e)[:140]}")
                 time.sleep(15 * attempt)
@@ -264,6 +313,8 @@ def main() -> None:
                         help=f"Pages per Gemini chunk (default: {PAGES_PER_CHUNK}).")
     parser.add_argument("--workers", type=int, default=DEFAULT_WORKERS,
                         help=f"Chunks sent to Gemini concurrently (default: {DEFAULT_WORKERS}).")
+    parser.add_argument("--allow-low-yield", action="store_true",
+                        help="Save even if the paragraph yield per page is implausibly low.")
     parser.add_argument("--allow-fallback", action="store_true",
                         help=f"Save even if more than {MAX_FALLBACK_SHARE:.0%} of pages "
                              "had to use PyMuPDF.")
@@ -299,6 +350,22 @@ def main() -> None:
                   f"not overwriting {out_path}. Re-run later, or pass --allow-fallback.",
                   file=sys.stderr)
             sys.exit(2)
+
+        # Yield guard. The fallback guard above only catches chunks that FAILED;
+        # it cannot catch chunks that "succeed" with an empty array. On
+        # 2026-09-25 saxon_course2_ms.pdf (a scan whose image streams fail zlib
+        # decompression) gave Gemini blank pages, every chunk returned ok with 0
+        # paragraphs, the fallback share computed as 0%, and the run exited 0
+        # after overwriting 6,943 good paragraphs with an empty file.
+        yield_per_page = len(paragraphs) / total_pages if total_pages else 0.0
+        if yield_per_page < MIN_PARAGRAPHS_PER_PAGE and not args.allow_low_yield:
+            print(f"\nERROR: only {len(paragraphs)} paragraphs from {total_pages} pages "
+                  f"({yield_per_page:.3f}/page, floor {MIN_PARAGRAPHS_PER_PAGE}).\n"
+                  f"  That is far below any real textbook and usually means the PDF "
+                  f"rendered blank\n  (corrupt or image-only scan). NOT overwriting "
+                  f"{out_path}.\n  Check the PDF, or pass --allow-low-yield if this is "
+                  f"genuinely correct.", file=sys.stderr)
+            sys.exit(4)
     else:
         if not api_key:
             print("No GEMINI_API_KEY — using PyMuPDF fallback.")

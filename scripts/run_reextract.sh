@@ -32,9 +32,12 @@
 
 set -u
 
-NAMES=(ck12_algebra1_hs ck12_geometry_hs ck12_algebra2_hs cpm_algebra2_hs
+# ck12_algebra1_hs is NOT in this list: it was re-extracted under Era 4 on
+# 2026-09-25 (1,811 paragraphs, 1% PyMuPDF fallback) and is the book the whole
+# Era 4 comparison was measured on. Re-running it would overwrite good data.
+NAMES=(ck12_geometry_hs ck12_algebra2_hs cpm_algebra2_hs
        cpm_geometry_hs saxon_course1_ms saxon_course2_ms saxon_course3_ms)
-PDFS=(pdfs/ck12_algebra1_hs.pdf pdfs/ck12_geometry_hs.pdf pdfs/ck12_algebra2_hs.pdf
+PDFS=(pdfs/ck12_geometry_hs.pdf pdfs/ck12_algebra2_hs.pdf
       pdfs/cpm_algebra2_hs_v2.pdf pdfs/cpm_geometry_hs.pdf
       pdfs/saxon_course1_ms.pdf pdfs/saxon_course2_ms.pdf pdfs/saxon_course3_ms.pdf)
 
