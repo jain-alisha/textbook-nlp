@@ -324,6 +324,50 @@ class DailyQuotaExhausted(Exception):
     the cache with ERROR rows."""
 
 
+# Hard per-call deadline. A classification call takes ~1.3s; 120s is ~90x that.
+# It exists because the SDK's own timeout does not reliably fire: on 2026-09-25
+# a stage-1 run dropped to 3 paragraphs in 18 minutes after a single "Server
+# disconnected" error, blocked on a socket that never returned or raised. The
+# same failure mode cost extract.py 2.5 hours earlier the same day.
+CALL_DEADLINE = 120
+
+
+def _with_deadline(fn, seconds: int = CALL_DEADLINE):
+    """Run fn() with a wall-clock deadline, raising TimeoutError if it hangs.
+
+    Implemented with SIGALRM, not a worker thread. A thread-pool version was
+    tried first and did not work: the run still wedged with 0.02s of CPU over 56
+    minutes and no timeout raised, because the block was not where
+    `future.result(timeout=...)` could observe it. SIGALRM interrupts the main
+    thread wherever it is, including inside a C-level socket read (the syscall
+    returns EINTR and the handler runs), which is what this needs.
+
+    Safe here only because this script is single-threaded and processes
+    paragraphs sequentially on the main thread -- signal handlers can only be
+    installed from, and only fire on, the main thread.
+    """
+    import signal
+
+    def _fire(signum, frame):
+        raise TimeoutError(f"no response within {seconds}s")
+
+    old = signal.signal(signal.SIGALRM, _fire)
+    signal.alarm(seconds)
+    try:
+        return fn()
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, old)
+
+
+def _is_terminal_billing_error(err: str) -> bool:
+    """Failures no retry can fix: daily quota, or an empty prepaid balance."""
+    e = err.lower()
+    return ("perday" in e
+            or "prepayment credits are depleted" in e
+            or ("402" in e and "resource_exhausted" in e))
+
+
 _GEMINI_CLIENT = None
 
 
@@ -363,15 +407,15 @@ def call_gemini(model_id: str, paragraph: str, sleep: float,
     attempts = 0
     while True:
         try:
-            resp = _gemini_client().models.generate_content(
+            resp = _with_deadline(lambda: _gemini_client().models.generate_content(
                 model=model_id,
                 contents=f'Paragraph to classify:\n"""{paragraph}"""',
                 config=config,
-            )
+            ))
             time.sleep(sleep)
             return parse_response(resp.text or "")
         except Exception as e:
-            if "PerDay" in str(e):
+            if _is_terminal_billing_error(str(e)):
                 raise DailyQuotaExhausted(str(e)) from e
             attempts += 1
             print(f"    Gemini error ({attempts}/{max_retries}): {str(e)[:120]}")
