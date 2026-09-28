@@ -3,48 +3,48 @@
   "mode": "two-stage",
   "stage1_arm": "gemini",
   "stage2_arm": "gpt_oss_or",
-  "rows": 712,
+  "rows": 1878,
   "by_status": {
-    "UNVERIFIED": 383,
-    "CONFIRMED": 311,
-    "UNCERTAIN": 18
+    "CONFIRMED": 529,
+    "UNVERIFIED": 1324,
+    "UNCERTAIN": 25
   },
   "by_verification": {
-    "single_arm": 383,
-    "dual_arm": 329
+    "dual_arm": 554,
+    "single_arm": 1324
   },
   "by_tier": {
-    "C_unsampled": 383,
-    "C_control": 129,
-    "B_boundary": 179,
-    "A_positive": 21
+    "C_control": 158,
+    "C_unsampled": 1324,
+    "B_boundary": 371,
+    "A_positive": 25
   },
-  "positives": 21,
-  "positive_rate": 0.02949,
+  "positives": 25,
+  "positive_rate": 0.01331,
   "strata": {
     "book": "cpm_course2_ms",
     "stage1_file": "gemini_results.csv",
     "stage1_arm": "gemini",
-    "n_paragraphs": 712,
+    "n_paragraphs": 1927,
     "n_stage1_errors": 0,
-    "tier_A_positive": 21,
-    "tier_B_boundary": 179,
-    "tier_C_pool": 512,
-    "tier_C_sampled": 129,
+    "tier_A_positive": 25,
+    "tier_B_boundary": 381,
+    "tier_C_pool": 1521,
+    "tier_C_sampled": 160,
     "seed": 20260924,
-    "positive_rate": 0.02949,
+    "positive_rate": 0.01297,
     "allocation": {
-      "control_n": 129,
-      "pool": 512,
-      "pool_share": 0.257805,
-      "sampled_share_of_pool": 0.251953,
+      "control_n": 160,
+      "pool": 1521,
+      "pool_share": 0.053498,
+      "sampled_share_of_pool": 0.105194,
       "series": "cpm",
       "tiers": {
-        "A_positive": 21,
-        "B_boundary": 179,
-        "C_control_pool": 512,
+        "A_positive": 25,
+        "B_boundary": 381,
+        "C_control_pool": 1521,
         "errors": 0,
-        "n_rows": 712
+        "n_rows": 1927
       }
     },
     "control_source": "plan"

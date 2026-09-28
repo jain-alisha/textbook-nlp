@@ -1,0 +1,53 @@
+{
+  "book": "cpm_course1_ms",
+  "mode": "two-stage",
+  "stage1_arm": "gemini",
+  "stage2_arm": "gpt_oss_or",
+  "rows": 1647,
+  "by_status": {
+    "CONFIRMED": 470,
+    "UNVERIFIED": 1149,
+    "UNCERTAIN": 28
+  },
+  "by_verification": {
+    "dual_arm": 498,
+    "single_arm": 1149
+  },
+  "by_tier": {
+    "C_control": 138,
+    "C_unsampled": 1149,
+    "B_boundary": 327,
+    "A_positive": 33
+  },
+  "positives": 33,
+  "positive_rate": 0.02004,
+  "strata": {
+    "book": "cpm_course1_ms",
+    "stage1_file": "gemini_results.csv",
+    "stage1_arm": "gemini",
+    "n_paragraphs": 1669,
+    "n_stage1_errors": 0,
+    "tier_A_positive": 33,
+    "tier_B_boundary": 330,
+    "tier_C_pool": 1306,
+    "tier_C_sampled": 138,
+    "seed": 20260924,
+    "positive_rate": 0.01977,
+    "allocation": {
+      "control_n": 138,
+      "pool": 1306,
+      "pool_share": 0.045936,
+      "sampled_share_of_pool": 0.105666,
+      "series": "cpm",
+      "tiers": {
+        "A_positive": 33,
+        "B_boundary": 330,
+        "C_control_pool": 1306,
+        "errors": 0,
+        "n_rows": 1669
+      }
+    },
+    "control_source": "plan"
+  },
+  "staleness_problems": null
+}

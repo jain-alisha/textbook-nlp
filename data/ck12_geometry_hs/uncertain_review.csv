@@ -1,0 +1,123 @@
+book,para_num,paragraph,final_label,status,verification,tier,gemini_label,gemini_confidence,gemini_considered,gemini_reasoning,gpt_oss_or_label,gpt_oss_or_reasoning
+ck12_geometry_hs,46,"The two rulers above are NOT DRAWN TO SCALE. Anytime you see this statement, it means that the measured length is not actually the distance apart that it is labeled. Different problems and examples will be labeled this way because it can be difficult to draw problems in this text to full scale. You should never assume that objects are drawn to scale. Always rely on the measurements or markings given in a diagram.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"The text explains a textbook convention ('NOT DRAWN TO SCALE') and provides a general rule of thumb ('never assume...'), but does not explicitly describe a student mistake or use typical error alert phrasing.",COMMON_ERROR_ALERT,"The paragraph warns students not to assume drawings are to scale, highlighting a frequent mistake, which matches the COMMON_ERROR_ALERT category."
+ck12_geometry_hs,87,"Classifying Angles
+
+By looking at the protractor we measure angles from 0◦ to 180◦. Angles can be classified, or grouped, into four different categories.
+
+Straight Angle: When an angle measures 180◦. The angle measure of a straight line. The rays that form this angle are called opposite rays.
+
+Right Angle: When an angle measures 90◦.
+
+Notice the half-square, marking the angle. This marking is always used to mark right, or 90◦, angles.
+
+Acute Angles: Angles that measure between 0◦ and 90◦.
+
+Obtuse Angles: Angles that measure between 90◦ and 180◦.
+
+It is important to note that 90◦ is NOT an acute angle and 180◦ is NOT an obtuse angle.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The text provides standard mathematical definitions of angle types, with a clarifying note on boundary cases (90 and 180 degrees) rather than explicitly warning about a common student mistake.",COMMON_ERROR_ALERT,"The paragraph warns the reader not to mistake right angles for acute angles and straight angles for obtuse angles, which is a typical common mistake warning."
+ck12_geometry_hs,141,36. Error Analysis Erica is looking at a geometric figure and trying to determine which parts are congruent. She wrote AB = CD. Is this correct? Why or why not?,INCORRECT_TO_CORRECT,UNCERTAIN,dual_arm,A_positive,INCORRECT_TO_CORRECT,medium,EXPLICIT_ERROR_DETECTION,"The item is an 'Error Analysis' problem focusing on a named student's (Erica's) proposed answer and asks whether it is correct and why, aiming to detect and explain the error in her notation/reasoning.",EXPLICIT_ERROR_DETECTION,"The paragraph presents a named student's statement and asks the reader to determine if it is correct, i.e., to locate any error, which matches explicit error detection."
+ck12_geometry_hs,231,"Example 9: Arthur is making figures for a graphic art project. He drew polygons and some of their diagonals.
+Based on these examples, Arthur made this conjecture:
+If a convex polygon has n sides, then there are n−3 triangles drawn from any given vertex of the polygon.
+Is Arthur’s conjecture correct? Can you find a counterexample to the conjecture?
+
+Solution: The conjecture appears to be correct. If Arthur draws other polygons, in every case he will be able to draw n−3 triangles if the polygon has n sides.
+Notice that we have not proved Arthur’s conjecture, but only found several examples that hold true. This type of conjecture would need to be proven by induction.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,INCORRECT_TO_CORRECT,"The problem presents a student's conjecture and asks whether it is correct or if a counterexample exists. It does not state or imply that the work is wrong, nor does it ask to find an error or compare conflicting methods.",EXPLICIT_ERROR_DETECTION,"The paragraph asks the reader to determine if the conjecture is correct and to find a counterexample, i.e., to locate a possible error in the stated claim."
+ck12_geometry_hs,272,"Example 4: Here are two true statements. Be careful!
+If ∠A and ∠B are a linear pair, then m∠A + m∠B = 180°.
+m∠1 = 90° and m∠2 = 90°.
+What conclusion can you draw from these two statements?
+
+Solution: Here there is NO conclusion. These statements are in the form:
+p → q
+q
+
+We cannot conclude that ∠1 and ∠2 are a linear pair. We are told that m∠1 = 90° and m∠2 = 90° and while 90° + 90° = 180°, this does not mean they are a linear pair. Here are two counterexamples.
+In both of these counterexamples, ∠1 and ∠2 are right angles. In the first, they are vertical angles and in the second, they are two angles in a rectangle.
+This is called the Converse Error because the second statement is the conclusion of the first, like the converse of a statement.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The text presents a standard math example teaching the formal logical fallacy known as the Converse Error, warning the reader with 'Be careful!'. While it warns against invalid reasoning, it is teaching the curriculum concept rather than explicitly warning about a common student mistake.",COMMON_ERROR_ALERT,"The paragraph warns readers about a logical mistake (the converse error) and advises caution, matching a common error alert."
+ck12_geometry_hs,275,"Example 7a: Determine the conclusion from the true statements below.
+If you are not in Chicago, then you can’t be on the L.
+Bill is in Chicago.
+
+Solution: If we were to rewrite this symbolically, it would look like:
+∼ p →∼ q
+p
+
+This is not in the form of the Law of Contrapositive or the Law of Detachment, so there is no logical conclusion. You cannot conclude that Bill is on the L because he could be anywhere in Chicago. This is an example of the Inverse Error because the second statement is the negation of the hypothesis, like the beginning of the inverse of a statement.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,The text explains a logic problem and defines a formal logical fallacy ('Inverse Error') rather than highlighting student errors or offering pedagogical error alerts.,COMMON_ERROR_ALERT,"The paragraph warns about a specific logical mistake (the Inverse Error) that students might make, without asking the reader to locate or correct an error."
+ck12_geometry_hs,607,"AAS Congruence: A variation on ASA is AAS, which is Angle-Angle-Side. Recall that for ASA you need two angles and the side between them. But, if you know two pairs of angles are congruent, then the third pair will also be congruent by the 3rd Angle Theorem. Therefore, you can prove a triangle is congruent whenever you have any two angles and a side. Be careful to note the placement of the side for ASA and AAS. As shown in the pictures above, the side is between the two angles for ASA and it is not for AAS.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The text provides standard conceptual explanation distinguishing ASA from AAS, advising readers to note the side placement without explicitly calling out a common student error or mistake.",COMMON_ERROR_ALERT,"The paragraph warns the reader to be careful about side placement, which is a caution about a potential mistake, fitting the COMMON_ERROR_ALERT pattern."
+ck12_geometry_hs,801,"In questions 28 and 29 explain why the conclusion is false.
+28. Conclusion: m∠C < m∠B < m∠A
+29. Conclusion: AB < DC
+30. If AB is a median of △CAT and CA > AT, explain why ∠ABT is acute. You may wish to draw a diagram.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,EXPLICIT_ERROR_DETECTION,"The prompt asks students to explain why a given conclusion is false, which is a logic/proof refutation exercise rather than finding an error in a student's worked solution.",EXPLICIT_ERROR_DETECTION,"The paragraph presents conclusions and asks the reader to explain why they are false, requiring identification of the error in the statements."
+ck12_geometry_hs,939,"Example 5: Find the other two angle measures in the kites below.
+Solution:
+a) The two angles left are the non-vertex angles, which are congruent.
+130° + 60° + x + x = 360°
+2x = 170°
+x = 85° Both angles are 85°.
+b) The other non-vertex angle is also 94°. To find the fourth angle, subtract the other three angles from 360°.
+90° + 94° + 94° + x = 360°
+x = 82°
+Be careful with the definition of a kite. The congruent pairs are distinct. This means that a rhombus and square cannot be a kite.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The text contains a solved example with a cautionary note ('Be careful with the definition of a kite...'). While it warns the reader about a potential definitional pitfall, it does not explicitly frame it as a common student mistake or error.",COMMON_ERROR_ALERT,"The paragraph includes a warning about a misconception (students might think a rhombus or square can be a kite) and advises careful attention to the definition, matching the COMMON_ERROR_ALERT pattern."
+ck12_geometry_hs,1161,"When you take the square root of an equation, usually the answer is +17 or -17. Because we are looking for length, we only use the positive answer. Length is never negative.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"The text explains why the negative square root is discarded in a geometric context (length cannot be negative), which is standard instructional explanation rather than an explicit warning about a common student error.",COMMON_ERROR_ALERT,"The paragraph warns readers not to use the negative square‑root when dealing with lengths, i.e., it alerts to a common mistake."
+ck12_geometry_hs,1285,"There are a few important things to note about the way we write these ratios. First, keep in mind that the abbreviations sin x, cos x, and tan x are all functions. Each ratio can be considered a function of the angle (see Chapter 10). Second, be careful when using the abbreviations that you still pronounce the full name of each function. When we write sin x it is still pronounced sine, with a long “i”. When we write cos x, we still say co-sine. And when we write tan x, we still say tangent.
+An easy way to remember ratios is to use the pneumonic SOH-CAH-TOA.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"The text provides general instructional advice and tips regarding pronunciation and mnemonics, without highlighting a specific student mathematical error or warning about a common mistake.",COMMON_ERROR_ALERT,"The paragraph warns readers to be careful about a potential mistake (mispronouncing function abbreviations), which matches the pattern of a common error alert."
+ck12_geometry_hs,1295,"Example 6: Find the value of each variable. Round your answer to the nearest hundredth.
+Solution: Here, we are given the adjacent leg to 42°. To find c, we need to use cosine and to find d we will use tangent.
+cos 42° = 9/c
+tan 42° = d/9
+c · cos 42° = 9
+9 · tan 42° = d
+c = 9 / cos 42° ≈ 12.11
+d ≈ 8.10
+Notice in both of these examples, you should only use the information that you are given. For example, you should not use the found value of b to find a (in Example 5) because b is an approximation. Use exact values to give the most accurate answers. However, in both examples you could have also used the complementary angle to the one given.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"This is a worked example with explanatory notes advising the student to use exact given values rather than rounded approximations. While it advises what not to do ('you should not use...'), it is general procedural guidance rather than an explicit warning about a common student misconception.",COMMON_ERROR_ALERT,"The paragraph warns students not to use an approximated value in further calculations, highlighting a common mistake to avoid."
+ck12_geometry_hs,1340,24. Tommy then continued the problem and set up the equation: cos 36.9° = 21/h. By solving this equation he found that the hypotenuse was 26.3 units. Did he use the correct trigonometric ratio here? Is his answer correct? Why or why not?,NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,INCORRECT_TO_CORRECT,"A named student's work is presented and the reader is asked to evaluate whether the ratio and answer are correct, but it does not explicitly state that the work contains an error or directly instruct to find/fix a mistake.",INCORRECT_TO_CORRECT,"The paragraph presents a named student's work (Tommy) and asks the reader to evaluate whether his trigonometric ratio and answer are correct, i.e., to find and correct any error."
+ck12_geometry_hs,1352,"Unlike the previous sections in this chapter, with the Laws of Sines and Cosines, we have been using values that we have found to find other values. With these two laws, you have to use values that are not given. Just keep in mind to always wait until the very last step to put anything into your calculator. This will ensure that you have the most accurate answer.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"The text provides general advice on calculator rounding to maintain accuracy, rather than explicitly warning about a common error or mistake.",COMMON_ERROR_ALERT,"The paragraph warns readers to avoid a common mistake (using the calculator too early) to ensure accuracy, matching the warning style of a common error alert."
+ck12_geometry_hs,1419,"Central Angles & Arcs
+
+Central Angle: The angle formed by two radii of the circle with its vertex at the center of the circle.
+
+In the picture to the right, the central angle would be ∠BAC. Every central angle divides a circle into two arcs. In this case the arcs are BC and BDC. Notice the ⌒ above the letters. To label an arc, always use this curve above the letters. Do not confuse BC and ⌒BC.
+
+Arc: A section of the circle.
+
+If D was not on the circle, we would not be able to tell the difference between ⌒BC and ⌒BDC. There are 360° in a circle, where a semicircle is half of a circle, or 180°. m∠EFG = 180°, because it is a straight angle, so m⌒EHG = 180° and m⌒EJG = 180°.
+
+Semicircle: An arc that measures 180°.",COMMON_ERROR_ALERT,UNCERTAIN,dual_arm,A_positive,COMMON_ERROR_ALERT,high,NA,The text contains a direct warning alerting students not to make a specific error: 'Do not confuse BC and ⌒BC.' This matches the explicit signals for COMMON_ERROR_ALERT.,NA,"The paragraph only provides definitions and explanations of central angles and arcs without prompting error detection, correction, comparison, or warning about common mistakes."
+ck12_geometry_hs,1500,"Example 4: Find the measure of x.
+a)
+b)
+c)
+Solution: For all of the above problems we can use Theorem 9-13.
+a) x = (125° - 27°)/2 = 98°/2 = 49°
+b) 40° is not the intercepted arc. Be careful! The intercepted arc is 120°, (360° - 200° - 40°). Therefore, x = (200° - 120°)/2 = 80°/2 = 40°.
+c) First, we need to find the other intercepted arc, 360° - 265° = 95°. x = (265° - 95°)/2 = 170°/2 = 85°",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"This is a standard worked example, though part (b) includes a cautionary note ('40° is not the intercepted arc. Be careful!') warning the reader against a potential pitfall.",COMMON_ERROR_ALERT,"The paragraph warns the reader about a specific mistake ('40° is not the intercepted arc. Be careful!'), which matches the pattern of a common error alert."
+ck12_geometry_hs,1521,"Example 4: Find the value of the missing segment.
+
+Solution: Use Theorem 9-16. Square the tangent and set it equal to the outer part times the whole secant.
+a) x^2 = 4(4+12)
+x^2 = 4 · 16 = 64
+x = 8
+b) 20^2 = y(y+30)
+400 = y^2 + 30y
+0 = y^2 + 30y − 400
+0 = (y+40)(y−10)
+y = -40, 10
+When you have to factor a quadratic equation to find an answer, always eliminate the negative answer(s). Length is never negative.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,This is a standard worked example showing how to solve for segment lengths using a geometric theorem. The concluding remark provides procedural advice regarding extraneous negative solutions rather than explicitly highlighting a common student error.,COMMON_ERROR_ALERT,"The paragraph includes a warning that negative answers should be eliminated because length cannot be negative, which alerts the reader to a common mistake."
+ck12_geometry_hs,1523,"19. Error Analysis Describe and correct the error in finding y.
+10 · 10 = y · 15y
+100 = 15y^2
+20/3 = y^2
+2√15 / 3 = y ← y is not correct",EXPLICIT_ERROR_DETECTION,UNCERTAIN,dual_arm,A_positive,EXPLICIT_ERROR_DETECTION,high,INCORRECT_TO_CORRECT,"The problem presents a sample of incorrect work with an explicit prompt to describe and correct the error, without referencing a named student.",INCORRECT_TO_CORRECT,"The paragraph presents a student's incorrect work and asks the reader to describe and correct the error, matching the error‑focused prompt of INCORRECT_TO_CORRECT."
+ck12_geometry_hs,1529,"Example 2: Find the center and radius of the following circles.
+a) (x−3)^2 + (y−1)^2 = 25
+b) (x+2)^2 + (y−5)^2 = 49
+Solution:
+a) Rewrite the equation as (x−3)^2 + (y−1)^2 = 5^2. Therefore, the center is (3, 1) and the radius is 5.
+b) Rewrite the equation as (x−(−2))^2 + (y−5)^2 = 7^2. From this, the center is (-2, 5) and the radius is 7.
+When finding the center of a circle always take the opposite sign of what the value is in the equation.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"This is a standard worked example accompanied by a procedural tip. It does not mention a common error, student mistake, or ask the reader to find/correct any errors.",COMMON_ERROR_ALERT,"The paragraph includes a warning about a typical sign error when finding the center of a circle, which matches a common error alert."
+ck12_geometry_hs,1698,"Segments of a Circle
+The last part of a circle that we can find the area of is called a segment, not to be confused with a line segment.
+Segment of a Circle: The area of a circle that is bounded by a chord and the arc with the same endpoints as the chord.",COMMON_ERROR_ALERT,UNCERTAIN,dual_arm,A_positive,COMMON_ERROR_ALERT,high,NA,"The text explicitly warns the reader 'not to be confused with a line segment', which aligns with the COMMON_ERROR_ALERT category signal 'do not confuse X with Y'.",NA,The paragraph only provides a definition and clarification; it does not ask students to find or correct errors.
+ck12_geometry_hs,2096,"Reflections over Parallel Lines Theorem: If you compose two reflections over parallel lines that are h units apart, it is the same as a single translation of 2h units.
+Be careful with this theorem. Notice, it does not say which direction the translation is in. So, to apply this theorem, you would still need to visualize, or even do, the reflections to see in which direction the translation would be.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,The text offers a cautionary note and caveat about applying the theorem rather than warning about a specific common student mistake or error.,COMMON_ERROR_ALERT,"The paragraph warns readers about a potential misunderstanding (direction of translation) and advises caution, matching the pattern of a common mistake alert."

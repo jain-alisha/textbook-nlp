@@ -1,0 +1,134 @@
+book,para_num,paragraph,final_label,status,verification,tier,gemini_label,gemini_confidence,gemini_considered,gemini_reasoning,gpt_oss_or_label,gpt_oss_or_reasoning
+ck12_algebra2_hs,143,"Notice in the second inequality, we did not write x > -1. This is because what is inside the absolute value sign can be positive or negative. Therefore, if x is negative, then -x > 1. It is a very important difference between the two inequalities. Therefore, for the first solution, we leave the inequality sign the same and for the second solution we need to change the sign of the answer AND flip the inequality sign.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The text explains why a certain incorrect-looking step was avoided during a solution, providing direct mathematical instruction rather than explicitly framing it as a common student mistake or error alert.",COMMON_ERROR_ALERT,"The paragraph warns the reader not to write x > -1 and explains why that would be an error, which matches a common error alert."
+ck12_algebra2_hs,185,"Important Note: Always reduce your slope fractions. Also, if the numerator or denominator of a slope is negative, then the slope is negative. If they are both negative, then we have a negative number divided by a negative number, which is positive, thus a positive slope.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,This is an instructional note providing mathematical rules for simplifying slope fractions and managing signs. It does not mention student errors or warn about typical mistakes.,COMMON_ERROR_ALERT,"The paragraph warns the reader about a common sign mistake when working with slope fractions, fitting the COMMON_ERROR_ALERT category."
+ck12_algebra2_hs,197,"2. First, find the slope.
+m = (-8 - (-4))/(-1 - 9) = -4/-10 = 2/5
+Now, find the y-intercept. We will use the second point. Remember, it does not matter which point you use.
+-8 = 2/5(-1) + b
+-8 = -2/5 + b
+-7 3/5 = b
+The equation of the line is y = 2/5 x - 7 3/5 or y = 2/5 x - 38/5.
+When your y-intercept is a fraction, make sure it is reduced. Double-check with your teacher on how s/he wants you to leave your answer.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"This is a standard step-by-step worked example showing how to find the equation of a line, with general instructional advice on simplifying fractions. There is no mention of common errors or incorrect work.",COMMON_ERROR_ALERT,"The paragraph includes a warning to students to reduce fractional y-intercepts, which alerts them to a common mistake."
+ck12_algebra2_hs,316,"Example B
+Use a table to graph y = |x|−5. Determine the domain and range.
+Solution: Be careful! Here, the minus 5 is not inside the absolute value. So, first take the absolute value of the x−value and then subtract 5. In cases like these, the range can include negative numbers.
+TABLE 2.3:
+x |x|−5 y
+−3 |−3|−5 -2
+-2 |−2|−5 -3
+-1 |−1|−5 -4
+0 |0|−5 -5
+1 |1|−5 -4
+2 |2|−5 -3
+3 |3|−5 -2
+Here, the graph shifts down 5 when compared to the parent graph. The domain will be all real numbers, x ∈ R, and the range will be all real numbers greater than or equal to -5, y ∈ [−5,∞).
+In these three absolute value graphs, you may have noticed that there is a minimum point. This point is called the vertex. For example, in Example B, the vertex is (0, -5). The vertex can also be a maximum. See the next example.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The text contains a warning ('Be careful! Here, the minus 5 is not inside the absolute value'), but it is part of a standard worked example rather than an explicit discussion of a student error.",COMMON_ERROR_ALERT,"The paragraph warns students not to make the mistake of placing the -5 inside the absolute value, which matches a common error alert."
+ck12_algebra2_hs,329,"Example C
+
+Use a graphing calculator to graph y = |4x+1|−2. Find the vertex, domain, and range.
+
+Solution: For the TI-83/84
+1. Press the Y = button.
+2. Clear any previous functions (press CLEAR) and turn off any previous plots (arrow up to Plot 1 and press ENTER).
+3. Press the MATH button, arrow over to NUM and highlight 1:abs(. Press ENTER.
+4. Type in the remaining portion of the function. The screen:
+\Y1 = abs(4X+1)−2
+5. Press GRAPH. If your screen is off, press ZOOM, scroll down to 6:ZStandard, and press ENTER.
+The graph looks like:
+
+As you can see from the graph, the vertex is not (-1, -2). The y−coordinate is -2, but the 4 inside the absolute value affects the x− coordinate. Set what is inside the absolute value equal to zero to solve for the x−coordinate of the vertex.
+4x+1 = 0
+4x = −1
+x = −1/4
+The vertex is (−1/4, −2). From the previous concept, we know that the domain is all real numbers. The range will be any number greater than and including -2. In this function, the ‘a’ term was inside the absolute value. When this happens, it will always affect the x−coordinate of the vertex.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"The text explains an instructional example step-by-step. While it points out that the vertex is not (-1, -2) to clarify how the coefficient inside the absolute value affects the coordinate, it does not explicitly frame this as a student mistake or issue a direct warning.",COMMON_ERROR_ALERT,"The paragraph warns the reader that a common misconception (thinking the vertex is (-1, -2)) is incorrect and explains the correct reasoning, fitting the COMMON_ERROR_ALERT pattern."
+ck12_algebra2_hs,488,"Example A: Solve the system using linear combinations: 4x + y = 0, x - 3y = 26. Solution: Here we have coefficients of y that are opposite signs (one is positive and one is negative). We can get opposite values if we multiply the first equation by 3. Be careful; make sure you multiply the entire equation, including the constant, by 3: 3(4x + y = 0) => 12x + 3y = 0. Now we can use this new equation in our system to eliminate y and solve for x: 12x + 3y = 0; + x - 3y = 26; 13x = 26; x = 2. Now, find y: 4(2) + y = 0; 8 + y = 0; y = -8. Solution: (2, -8). Check your answer: 4(2) + (-8) = 8 - 8 = 0; (2) - 3(-8) = 2 + 24 = 26. * Note that we could have used the other equation to find y in the final step. ** From the beginning, we could have multiplied the second equation by -4 instead to cancel out the x variable.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"This is primarily a standard worked example. While it includes the cautionary phrase 'Be careful; make sure you multiply the entire equation, including the constant', it functions as general instructional advice rather than explicitly flagging a student misconception.",COMMON_ERROR_ALERT,"The paragraph includes a warning ('Be careful; make sure you multiply the entire equation, including the constant, by 3') that alerts the reader to a specific mistake students might make, fitting the COMMON_ERROR_ALERT category."
+ck12_algebra2_hs,604,"Investigation: Limitations to Matrix Multiplication
+
+Part 1:
+Note the dimensions of the following matrices. Attempt to multiply the matrices together. What do you notice?
+
+1. [-2 3; 1 -5] · [1 -4]
+
+2. [-2; 3; 5] · [4; -1; 0]
+
+3. [5; -1] · [-3 1; 4 3]
+
+1. These matrices are 2×2 and 1×2. When we try to multiply them together, there is no element to multiply the values in the second column by as shown below:
+[-2 3; 1 -5] · [1 -4] = [-2(1) + 3(?)  -2(-4) + 3(?); 1(1) + -5(?)  1(-4) + -5(?)]
+
+2. These matrices are both 3×1. Look what happens when we attempt to multiply:
+[-2; 3; 5] · [4; -1; 0] = [-2(4) + ?(-1) + ?(0)]
+We can see right away that we have a problem.
+
+3. In this case we have a 2×1 and a 2×2 matrix. Again we have trouble multiplying:
+[5; -1] · [-3 1; 4 2] = [5(-3) + ?(4)]
+
+Requirement: In order to multiply two matrices, A and B, the number of columns in matrix A must be equal to the number of rows in column B.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,EXPLICIT_ERROR_DETECTION,"The text presents an instructional investigation illustrating why certain matrix dimensions cannot be multiplied, rather than presenting student errors or warnings about common misconceptions.",COMMON_ERROR_ALERT,"The paragraph warns about a mistake (trying to multiply matrices with incompatible dimensions) and states the requirement to avoid it, fitting the warning style of COMMON_ERROR_ALERT, though it lacks explicit 'students often' phrasing."
+ck12_algebra2_hs,620,"For problems 11 and 12, the calculator will give you an error. Can you explain why? Is it an error you can work around or is the problem just not possible? If you can work around the issue, complete the problem.
+
+11. [2 -3] ([-1 11; 3 -7] + [4 -2; 0 9])
+
+12. ([2; -5] + [-3; 7]) [-6 1; 4 8]",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,EXPLICIT_ERROR_DETECTION,"The prompt asks why a calculator displays an error message, which relates to matrix dimensions/properties rather than detecting a human mistake in a worked solution. It fits standard instructional problem sets rather than error-focused pedagogy.",EXPLICIT_ERROR_DETECTION,"The paragraph states that the calculator will give an error and asks the reader to explain why, i.e., to locate the source of the error."
+ck12_algebra2_hs,1111,"Answers
+1. First, you can separate this number into two different roots, √[4]{625} · √[4]{z^8}. Now, simplify each root.
+√[4]{625} · √[4]{z^8} = √[4]{5^4} · √[4]{z^4 · z^4} = 5z^2
+When looking at the z^8, think about how many z^4 you can even pull out of the fourth root. The answer is 2, or a z^2, outside of the radical.
+2. 32 = 2^5, which means there are not 7 2’s that can be pulled out of the radical. Same with the x^5 and the y. Therefore, you cannot simplify the expression any further.
+3. Write out 9216 in the prime factorization and place factors into groups of 5.
+√[5]{9216} = √[5]{2 · 2 · 2 · 2 · 2 · 2 · 2 · 2 · 2 · 2 · 3 · 3} = √[5]{2^5 · 2^5 · 3^2} = 2 · 2√[5]{3^2} = 4√[5]{9}
+4. Reduce the fraction, separate the numerator and denominator and simplify.
+√[3]{40/175} = √[3]{8/35} = √[3]{2^3} / √[3]{35} = 2 / √[3]{35} · √[3]{35^2} / √[3]{35^2} = (2√[3]{1225}) / 35
+In the red step, we rationalized the denominator by multiplying the top and bottom by √[3]{35^2}, so that the denominator would be √[3]{35^3} or just 35. Be careful when rationalizing the denominator with higher roots!",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"This paragraph consists of standard solution steps and explanations for problems, ending with a general cautionary tip ('Be careful when rationalizing...') rather than pointing out a specific common error.",COMMON_ERROR_ALERT,"The paragraph mainly provides solution steps, but includes a cautionary statement ""Be careful when rationalizing the denominator with higher roots!"" which warns about a potential mistake, fitting the COMMON_ERROR_ALERT pattern."
+ck12_algebra2_hs,1177,"ALWAYS check your answers when solving radical equations. Sometimes, you will solve an equation, get a solution, and then plug it back in and it will not work. These types of solutions are called extraneous solutions and are not actually considered solutions to the equation.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The text explains the concept of extraneous solutions and gives general instructional advice to check answers, rather than explicitly warning about a common student mistake or error.",COMMON_ERROR_ALERT,"The paragraph warns students to check their answers to avoid extraneous solutions, which is a typical common mistake warning."
+ck12_algebra2_hs,1312,"Example A
+Solve log_2(x+5) = 9.
+Solution: There are two different ways to solve this equation. The first is to use the definition of a logarithm.
+log_2(x+5) = 9
+2^9 = x+5
+512 = x+5
+507 = x
+The second way to solve this equation is to put everything into the exponent of a 2, and then use the inverse property.
+2^(log_2(x+5)) = 2^9
+x+5 = 512
+x = 507
+Make sure to check your answers for logarithmic equations. There can be times when you get an extraneous solution.
+log_2(507+5) = 9 → log_2 512 = 9",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,The paragraph presents a standard worked example showing two correct methods and advises checking for extraneous solutions without highlighting an error or common misconception.,COMMON_ERROR_ALERT,"The paragraph warns the reader to check answers because extraneous solutions can occur, which is a warning about a common mistake rather than asking to find or correct an error."
+ck12_algebra2_hs,1365,"Example A
+
+Graph y = (x + 3)/(2x^2 + 11x - 6). Find all asymptotes, intercepts, the domain and range.
+
+Solution: In this example the degree of the numerator is less than the degree of the denominator. Whenever this happens the horizontal asymptote will be y = 0, or the x-axis. Now, even though the x-axis is the horizontal asymptote, there will still be a zero at x = -3 (solving the numerator for x and setting it equal to zero). The vertical asymptotes will be the solutions to 2x^2 + 11x - 6 = 0. Factoring this quadratic, we have (2x - 1)(x + 6) = 0 and the solutions are x = 1/2 and -6. The y-intercept is (0, -1/2). At this point, we can plug our function into the graphing calculator to get the general shape.
+
+Because the middle portion crosses over the horizontal asymptote, the range will be all real numbers. The domain is x ∈ ℝ; x ≠ -6; x ≠ 1/2.
+
+Be careful when graphing any rational function. This function does not look like the graph to the left in a TI-83/84. This is because the calculator does not have the ability to draw the asymptotes separately and wants to make the function continuous. Make sure to double-check the table (2nd → GRAPH) to find where the function is undefined.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,The text is a standard worked example that includes a cautionary note about graphing calculator limitations rather than explicitly calling out a common student error.,COMMON_ERROR_ALERT,"The paragraph includes a warning about a typical mistake when graphing rational functions with a calculator, fitting the COMMON_ERROR_ALERT pattern."
+ck12_algebra2_hs,1405,"Example B
+
+Subtract (x^2 - 4)/(x - 3) - (2x - 1)/(x - 3).
+
+Solution: You need to be a little more careful with subtraction. The entire expression in the second numerator is being subtracted. Think of the minus sign like distributing -1 to that numerator.
+(x^2 - 4)/(x - 3) - (2x - 1)/(x - 3) = (x^2 - 4 - (2x + 1))/(x - 3) = (x^2 - 4 - 2x - 1)/(x - 3) = (x^2 - 2x - 3)/(x - 3)
+
+At this point, factor the numerator if possible.
+(x^2 - 2x - 3)/(x - 3) = ((x - 3)(x + 1))/(x - 3) = x + 1",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"This is a standard worked example providing instructional guidance on distributing the negative sign. It does not explicitly mention a student error or common mistake, though it cautions the reader to be careful.",COMMON_ERROR_ALERT,"The paragraph warns the reader to be careful with subtraction, indicating a typical mistake, matching a common error alert rather than asking the reader to find or correct an error."
+ck12_algebra2_hs,1437,Example A: Solve x/(2x-3) = 3x/(x+11). Solution: Use cross-multiplication to solve the problem. You can use the example above as a guideline. 3x(2x - 3) = x(x + 11) -> 6x^2 - 9x = x^2 + 11x -> 5x^2 - 20x = 0 -> 5x(x - 4) = 0 -> x = 0 and 4. Check your answers. It is possible to get extraneous solutions with rational expressions. For x = 0: 0/(2*0 - 3) = (3*0)/(0 + 11) -> 0/-3 = 0/11 -> 0 = 0. For x = 4: 4/(2*4 - 3) = (3*4)/(4 + 11) -> 4/5 = 12/15 -> 4/5 = 4/5.,NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"This is a standard worked example showing the correct steps to solve a rational equation and check for extraneous solutions, without any error analysis.",COMMON_ERROR_ALERT,"The paragraph includes a warning about extraneous solutions, which is a typical mistake with rational expressions, fitting the COMMON_ERROR_ALERT pattern, though the main focus is solving the problem."
+ck12_algebra2_hs,1661,"Example C
+Find the nth term rule for the geometric sequence in which a5 = 8 and a10 = 1/4.
+Solution: Using the same method at the previous example, we can solve for r and a1. Then, write the general rule.
+Equation 1: a5 = 8, so 8 = a1r^4, solving for a1 we get a1 = 8/r^4.
+Equation 2: a10 = 1/4, so 1/4 = a1r^9, solving for a1 we get a1 = (1/4)/r^9.
+8/r^4 = (1/4)/r^9
+8r^9 = 1/4 r^4
+8r^9 / (8r^4) = (1/4 r^4) / (8r^4)
+r^5 = 1/32
+∛5{r^5} = ∛5{1/32}
+r = 1/2
+Thus, a1 = 8 / (1/2)^4 = 8 / (1/16) = 8/1 · 16/1 = 128.
+The nth term rule is an = (3/8)(2)^{n−1}.
+* Note: In solving the equation above for r we divided both sides by r^4. In general it is not advisable to divide both sides of an equation by the variable because we may lose a possible solution, r = 0. However, in this case, r ≠ 0 since it is the common ratio in a geometric sequence.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The paragraph is primarily a standard worked example, concluding with a cautionary mathematical note explaining why dividing by a variable is generally risky but permitted here.",COMMON_ERROR_ALERT,"The paragraph includes a warning about a common mistake (dividing by a variable may lose solutions), which matches the COMMON_ERROR_ALERT category."
+ck12_algebra2_hs,1740,"More Guidance The way we just wrote out 5 × 4 × 3 × 2 × 1 can also be expressed as a factorial. A factorial is the product of a number with each number less than itself. We use the notation, 5!, which is read as “five factorial” to represent the expression 5×4×3×2×1. It is important to note that 0!= 1!= 1. Students are often perplexed that both zero and one factorial are equal to one but think back to the context for illustration. If you want to arrange zero items, how many ways can you do it? If you want to arrange one item, how many ways can you do it? There is only one way to “arrange” zero or one item. To evaluate a factorial on the TI-83 or 84 graphing calculator, type in the number, then press MATH→NUM, 4!. Press ENTER to evaluate.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The text explains the concept of factorials and addresses why students are often perplexed by 0! = 1, but it does not warn against a specific mistake or incorrect calculation.",COMMON_ERROR_ALERT,"The paragraph warns that students are often perplexed about zero and one factorial being equal to one, which is a common mistake."
+ck12_algebra2_hs,1903,"Example B: Use trigonometric ratios to find x and y. Solution: First identify or label the sides with respect to the given acute angle. So, x is opposite, y is hypotenuse (note that it is the hypotenuse because it is the side opposite the right angle, it may be adjacent to the given angle but the hypotenuse cannot be the adjacent side) and 6 is the adjacent side. To find x, we must use the given length of 6 in our ratio too. So we are using opposite and adjacent. Since tangent is the ratio of opposite over adjacent we get: tan 35° = x/6 => x = 6 tan 35° (multiply both sides by 6) => x ≈ 4.20 (Use the calculator to evaluate-type in 6TAN(35) ENTER). NOTE: make sure that your calculator is in DEGREE mode. To check, press the MODE button and verify that DEGREE is highlighted (as opposed to RADIAN). If it is not, use the arrow buttons to go to DEGREE and press ENTER. The default mode is radian, so if your calculator is reset or the memory is cleared it will go back to radian mode until you change it. To find y using trig ratios and the given length of 6, we have adjacent and hypotenuse so we'll use cosine: cos 35° = 6/y => cos 35°/1 = 6/y (set up a proportion to solve for y) => 6 = y cos 35° (cross multiply) => y = 6/cos 35° (divide by cos 35°) => y = 7.32 (Use the calculator to evaluate-type in 6/TAN(35) ENTER). Alternatively, we could find y using the value we found for x and the Pythagorean theorem: 4.20^2 + 6^2 = y^2 => 53.64 = y^2 => y ≈ 7.32. The downside of this method is that if we miscalculated our x value, we will double down on our mistake and guarantee an incorrect y value. In general you will help avoid this kind of mistake if you use the given information whenever possible.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The text is a standard worked example showing how to solve for sides using trigonometric ratios. While it discusses a strategic pitfall ('The downside of this method is that if we miscalculated our x value... In general you will help avoid this kind of mistake'), it is pedagogical advice within an example rather than a dedicated common error warning.",COMMON_ERROR_ALERT,"The paragraph warns the reader about potential mistakes (calculator mode, propagating an error from x to y) and advises how to avoid them, fitting a common error alert."
+ck12_algebra2_hs,1918,"Example C: Solve the right triangle shown below. Round all answers to the nearest tenth. Solution: We can solve for either angle A or angle B first. If we choose to solve for angle B first, then 8 is the hypotenuse and 5 is the opposite side length so we will use the sine ratio. sin B = 5/8 => m∠B = sin^-1(5/8) ≈ 38.7°. Now we can find A two different ways. Method 1: We can using trigonometry and the cosine ratio: cos A = 5/8 => m∠A = cos^-1(5/8) ≈ 51.3°. Method 2: We can subtract m∠B from 90°: 90° − 38.7° = 51.3° since the acute angles in a right triangle are always complimentary. Either method is valid, but be careful with Method 2 because a miscalculation of angle B would make the measure you get for angle A incorrect as well.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The text is primarily a worked example showing two methods to solve a right triangle, concluding with a cautionary note about error propagation if Method 2 is used. While it advises caution ('be careful with Method 2 because a miscalculation...'), it does not highlight a specific common mistake or student misconception.",COMMON_ERROR_ALERT,"The paragraph warns the reader to be careful with Method 2 because a miscalculation could lead to an error, which matches the pattern of a common error alert."
+ck12_algebra2_hs,2036,"Note: Be careful to put parenthesis around the entire numerator and entire denominator on the calculator to ensure the proper order of operations. Your calculator screen should look like this:
+cos⁻¹((12² + 18² - 21²)/(2(12)(18)))",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,The text offers a cautionary calculator tip ('Be careful to put parenthesis...') rather than explicitly warning about a common mistake or stating what students frequently do wrong.,COMMON_ERROR_ALERT,The paragraph warns students to use parentheses correctly on a calculator to avoid a common mistake with order of operations.
+ck12_algebra2_hs,2194,"In general, sin(a+b) ≠ sina+sinb and similar statements can be made for the other sum and difference formulas.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The text points out a common mathematical misconception (distributing sine over addition), but states it as a mathematical fact rather than explicitly warning about student errors or phrasing it with typical warning language.",COMMON_ERROR_ALERT,"The paragraph warns that a common misconception (sin(a+b)=sina+sinb) is false, which matches a common error alert."

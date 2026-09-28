@@ -1,0 +1,28 @@
+{
+  "book": "saxon_course3_ms",
+  "stage1_file": "gemini_results.csv",
+  "stage1_arm": "gemini",
+  "n_paragraphs": 5032,
+  "n_stage1_errors": 0,
+  "tier_A_positive": 6,
+  "tier_B_boundary": 403,
+  "tier_C_pool": 4623,
+  "tier_C_sampled": 488,
+  "seed": 20260924,
+  "positive_rate": 0.00119,
+  "allocation": {
+    "control_n": 488,
+    "pool": 4623,
+    "pool_share": 0.162604,
+    "sampled_share_of_pool": 0.105559,
+    "series": "saxon",
+    "tiers": {
+      "A_positive": 6,
+      "B_boundary": 403,
+      "C_control_pool": 4623,
+      "errors": 0,
+      "n_rows": 5032
+    }
+  },
+  "control_source": "plan"
+}

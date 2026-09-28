@@ -1,0 +1,28 @@
+{
+  "book": "cpm_algebra2_hs",
+  "stage1_file": "gemini_results.csv",
+  "stage1_arm": "gemini",
+  "n_paragraphs": 2920,
+  "n_stage1_errors": 0,
+  "tier_A_positive": 44,
+  "tier_B_boundary": 482,
+  "tier_C_pool": 2394,
+  "tier_C_sampled": 253,
+  "seed": 20260924,
+  "positive_rate": 0.01507,
+  "allocation": {
+    "control_n": 253,
+    "pool": 2394,
+    "pool_share": 0.084204,
+    "sampled_share_of_pool": 0.105681,
+    "series": "cpm",
+    "tiers": {
+      "A_positive": 44,
+      "B_boundary": 482,
+      "C_control_pool": 2394,
+      "errors": 0,
+      "n_rows": 2920
+    }
+  },
+  "control_source": "plan"
+}

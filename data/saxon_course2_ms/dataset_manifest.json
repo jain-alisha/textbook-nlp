@@ -1,0 +1,53 @@
+{
+  "book": "saxon_course2_ms",
+  "mode": "two-stage",
+  "stage1_arm": "gemini",
+  "stage2_arm": "gpt_oss_or",
+  "rows": 4753,
+  "by_status": {
+    "CONFIRMED": 872,
+    "UNVERIFIED": 3855,
+    "UNCERTAIN": 26
+  },
+  "by_verification": {
+    "dual_arm": 898,
+    "single_arm": 3855
+  },
+  "by_tier": {
+    "C_control": 455,
+    "C_unsampled": 3855,
+    "B_boundary": 434,
+    "A_positive": 9
+  },
+  "positives": 9,
+  "positive_rate": 0.00189,
+  "strata": {
+    "book": "saxon_course2_ms",
+    "stage1_file": "gemini_results.csv",
+    "stage1_arm": "gemini",
+    "n_paragraphs": 4754,
+    "n_stage1_errors": 0,
+    "tier_A_positive": 9,
+    "tier_B_boundary": 434,
+    "tier_C_pool": 4311,
+    "tier_C_sampled": 455,
+    "seed": 20260924,
+    "positive_rate": 0.00189,
+    "allocation": {
+      "control_n": 455,
+      "pool": 4311,
+      "pool_share": 0.15163,
+      "sampled_share_of_pool": 0.105544,
+      "series": "saxon",
+      "tiers": {
+        "A_positive": 9,
+        "B_boundary": 434,
+        "C_control_pool": 4311,
+        "errors": 0,
+        "n_rows": 4754
+      }
+    },
+    "control_source": "plan"
+  },
+  "staleness_problems": null
+}

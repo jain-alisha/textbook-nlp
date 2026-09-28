@@ -217,6 +217,53 @@ Newest first. This records *why* things changed, which git history alone doesn't
 entries below are reversals of earlier decisions, and the reasoning is what keeps them from being
 re-litigated. Add an entry whenever a pipeline stage, model, or corpus decision changes.
 
+### 2026-09-28 — Full corpus run complete: extraction, stage 1, stage 2, merge, corpus report
+
+All 12 books (the 11 planned books plus `saxon_course2_ms`, whose original PDF had corrupt
+zlib image streams and was replaced) now have Era 4 extraction, Gemini stage-1 classification,
+`gpt-oss-120b` (OpenRouter) stage-2 verification, and a merged `classified_results.csv`.
+
+**Corpus-wide result** (`stage2_corpus_report.py --stage1-arm gemini --stage2-arm gpt_oss_or
+--stage2 gpt_oss_or_results.csv`):
+
+| series | tier-C pool | control sampled | misses | recall floor |
+|---|---|---|---|---|
+| ck12 | 5,276 | 557 (10.6%) | 0 | ≥51.3% |
+| cpm | 10,452 | 1,102 (10.5%) | 0 | ≥84.6% |
+| saxon | 12,703 | 1,341 (10.6%) | 0 | ≥30.6% |
+| **corpus** | **28,431** | **3,000 (10.6%)** | **0** | **≥87.5%** |
+
+Zero misses across the entire proportionally-allocated 3,000-paragraph control sample. The
+cross-series comparability check — the reason `plan_control.py` allocates strictly proportionally
+by book rather than a flat per-book quota — comes back clean: `ck12 [0%, 0.685%]`,
+`cpm [0%, 0.347%]`, `saxon [0%, 0.286%]`, all overlapping. No evidence Gemini's recall differs
+by series, which matters because CPM's positive rate (~1.5–1.7%) is 15–80x Saxon's (~0.02–0.12%)
+— this result is what lets that gap be read as a genuine pedagogical difference between series
+rather than a series-specific blind spot in stage 1.
+
+Saxon's own recall floor (30.6%) is wide only because it has few confirmed positives (16) relative
+to its pool size — a small numerator loosens the bound even at 0 misses, not a defect in the data.
+
+**Two operational notes from this run, for next time:**
+- Gemini's `generate_requests_per_model_per_day` cap (10,000/project) was hit twice reaching this
+  point. A second API key on a separately-provisioned project (AI Studio key format `AQ.…`, vs. the
+  original Cloud Console `AIzaSy…` key) let stage 1 run two books in parallel against independent
+  quota pools — see `GEMINI_API_KEY_2` in `.env`. Total combined usage never crossed 10k either way,
+  so shared-vs-separate quota pools couldn't be empirically confirmed, but the different provisioning
+  path and clean parallel completion are consistent with separate pools.
+- Stage 2 (OpenRouter) hit the same silent-hang failure mode `extract.py`'s `_with_deadline` was
+  built to catch — a connection that doesn't honor its stated timeout and blocks forever instead of
+  erroring. `classify_single.py`'s OpenRouter path does not yet have that guard; the run was rescued
+  by manually detecting zero progress and restarting (the cache made this a 1-paragraph loss, not a
+  re-run). Worth porting `_with_deadline` to `call_openrouter` before the next large run.
+
+Stage-2 also surfaced its own false negatives, not just false positives in stage 1: of 16 tier-A
+paragraphs where `gpt-oss-120b` disagreed with Gemini, at least one (a CPM "Rhianna" problem, a
+direct named-student dispute) is a stage-2 miss, not a stage-1 overcall — confirmed against an
+independent hand-check earlier in this run. `merge.py` routes every stage-1/stage-2 disagreement to
+`status="UNCERTAIN"` rather than resolving it either way, so this and the other 15 disagreements are
+sitting in each book's `uncertain_review.csv` for a manual pass, not silently lost.
+
 ### 2026-09-24 — Extraction moved to `gemini-3.8-flash`
 
 `gemini-2.5-flash` now returns 404 for newly created API projects ("no longer available to new

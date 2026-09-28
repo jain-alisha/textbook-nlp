@@ -1,0 +1,51 @@
+book,para_num,final_label,status,verification,tier,source_file,paragraph,final_label,gemini_label,gemini_confidence,gemini_considered,gemini_reasoning,gpt_oss_or_label,gpt_oss_or_reasoning
+ck12_geometry_hs,44,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example 1: Determine how long the line segment is, in inches. Round to the nearest quarter-inch. Solution: To measure this line segment with a ruler, it is very important to line up the “0” with the one of the endpoints. DO NOT USE THE EDGE OF THE RULER. This segment is about 3.5 inches (in) long.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,medium,NA,"The text explicitly warns the reader with 'DO NOT USE THE EDGE OF THE RULER', warning against a frequent pitfall when measuring, which functions as an error alert.",COMMON_ERROR_ALERT,"The paragraph warns the reader not to use the edge of the ruler, a specific mistake to avoid, matching a common error alert."
+ck12_geometry_hs,114,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Midpoints
+
+Midpoint: A point on a line segment that divides it into two congruent segments.
+
+Because AB = BC, B is the midpoint of AC.
+
+Midpoint Postulate: Any line segment will have exactly one midpoint.
+
+This might seem self-explanatory. However, be careful, this postulate is referring to the midpoint, not the lines that pass through the midpoint, which is infinitely many.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,medium,NA,"The text warns the reader with 'be careful, this postulate is referring to the midpoint, not the lines that pass through the midpoint', alerting them against a common conceptual confusion.",COMMON_ERROR_ALERT,"The paragraph warns readers about a potential misunderstanding of the Midpoint Postulate, which matches a common error alert."
+ck12_geometry_hs,141,INCORRECT_TO_CORRECT,UNCERTAIN,dual_arm,A_positive,paragraphs.csv,36. Error Analysis Erica is looking at a geometric figure and trying to determine which parts are congruent. She wrote AB = CD. Is this correct? Why or why not?,INCORRECT_TO_CORRECT,INCORRECT_TO_CORRECT,medium,EXPLICIT_ERROR_DETECTION,"The item is an 'Error Analysis' problem focusing on a named student's (Erica's) proposed answer and asks whether it is correct and why, aiming to detect and explain the error in her notation/reasoning.",EXPLICIT_ERROR_DETECTION,"The paragraph presents a named student's statement and asks the reader to determine if it is correct, i.e., to locate any error, which matches explicit error detection."
+ck12_geometry_hs,399,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"35. Error Analysis Nadia is working on Problem 31. Here is her proof: TABLE 3.4: Statement 1. l || m, s || t Reason Given; Statement 2. ∠4 ≅ ∠15 Reason Alternate Exterior Angles Theorem; Statement 3. ∠15 ≅ ∠14 Reason Same Side Interior Angles Theorem; Statement 4. ∠14 ≅ ∠9 Reason Vertical Angles Theorem; Statement 5. ∠4 ≅ ∠9 Reason Transitive PoC. What happened? Explain what is needed to be done to make the proof correct.",INCORRECT_TO_CORRECT,INCORRECT_TO_CORRECT,high,EXPLICIT_ERROR_DETECTION,"A named student (Nadia) presents her flawed proof, and the problem asks what happened and how to make it correct.",INCORRECT_TO_CORRECT,"The paragraph presents Nadia's incorrect proof and asks the reader to identify the mistake and explain how to correct it, matching the INCORRECT_TO_CORRECT pattern."
+ck12_geometry_hs,435,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"30. What is wrong in the following diagram, given that j || k?",EXPLICIT_ERROR_DETECTION,EXPLICIT_ERROR_DETECTION,high,NA,"The prompt asks the reader to identify what is wrong in a given diagram without mentioning a specific student, fitting explicit error detection.",EXPLICIT_ERROR_DETECTION,"The prompt asks the reader to identify what is wrong in a given diagram, which is a direct request to locate an error."
+ck12_geometry_hs,1104,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"27. Error Analysis
+Casey attempts to solve for a in the diagram using the proportion
+5/a = 6/5
+What did Casey do wrong? Write the correct proportion and solve for a.",INCORRECT_TO_CORRECT,INCORRECT_TO_CORRECT,high,EXPLICIT_ERROR_DETECTION,"A named student (Casey) presents an incorrect proportion, and the prompt asks what Casey did wrong and to correct it.",INCORRECT_TO_CORRECT,"The paragraph presents a named student's incorrect work and asks the reader to identify the error and correct it, fitting the INCORRECT_TO_CORRECT pattern."
+ck12_geometry_hs,1339,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"23. Tommy was solving the triangle below and made a mistake. What did he do wrong?
+tan⁻¹(21/28) ≈ 36.9°",INCORRECT_TO_CORRECT,INCORRECT_TO_CORRECT,high,EXPLICIT_ERROR_DETECTION,"The text presents a named student's (Tommy) incorrect work and asks the reader to identify what he did wrong, which fits INCORRECT_TO_CORRECT.",INCORRECT_TO_CORRECT,"The paragraph mentions a named student (Tommy) who made a mistake and asks the reader to identify what he did wrong, fitting the INCORRECT_TO_CORRECT pattern."
+ck12_geometry_hs,1341,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,25. How could Tommy have found the hypotenuse in the triangle another way and avoided making his mistake?,INCORRECT_TO_CORRECT,INCORRECT_TO_CORRECT,high,EXPLICIT_ERROR_DETECTION,"The prompt references a specific named student (Tommy) who made an error and asks how to avoid/remedy that mistake using another method, reflecting an incorrect-to-correct instructional design.",INCORRECT_TO_CORRECT,"The paragraph references a named student (Tommy) who made a mistake and asks how he could have avoided it, prompting the reader to correct the error."
+ck12_geometry_hs,1419,COMMON_ERROR_ALERT,UNCERTAIN,dual_arm,A_positive,paragraphs.csv,"Central Angles & Arcs
+
+Central Angle: The angle formed by two radii of the circle with its vertex at the center of the circle.
+
+In the picture to the right, the central angle would be ∠BAC. Every central angle divides a circle into two arcs. In this case the arcs are BC and BDC. Notice the ⌒ above the letters. To label an arc, always use this curve above the letters. Do not confuse BC and ⌒BC.
+
+Arc: A section of the circle.
+
+If D was not on the circle, we would not be able to tell the difference between ⌒BC and ⌒BDC. There are 360° in a circle, where a semicircle is half of a circle, or 180°. m∠EFG = 180°, because it is a straight angle, so m⌒EHG = 180° and m⌒EJG = 180°.
+
+Semicircle: An arc that measures 180°.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,The text contains a direct warning alerting students not to make a specific error: 'Do not confuse BC and ⌒BC.' This matches the explicit signals for COMMON_ERROR_ALERT.,NA,"The paragraph only provides definitions and explanations of central angles and arcs without prompting error detection, correction, comparison, or warning about common mistakes."
+ck12_geometry_hs,1523,EXPLICIT_ERROR_DETECTION,UNCERTAIN,dual_arm,A_positive,paragraphs.csv,"19. Error Analysis Describe and correct the error in finding y.
+10 · 10 = y · 15y
+100 = 15y^2
+20/3 = y^2
+2√15 / 3 = y ← y is not correct",EXPLICIT_ERROR_DETECTION,EXPLICIT_ERROR_DETECTION,high,INCORRECT_TO_CORRECT,"The problem presents a sample of incorrect work with an explicit prompt to describe and correct the error, without referencing a named student.",INCORRECT_TO_CORRECT,"The paragraph presents a student's incorrect work and asks the reader to describe and correct the error, matching the error‑focused prompt of INCORRECT_TO_CORRECT."
+ck12_geometry_hs,1555,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Area of a Parallelogram
+Recall that a parallelogram is a quadrilateral whose opposite sides are parallel.
+To find the area of a parallelogram, make it into a rectangle.
+From this, we see that the area of a parallelogram is the same as the area of a rectangle.
+Area of a Parallelogram: The area of a parallelogram is A = bh.
+Be careful! The height of a parallelogram is always perpendicular to the base. This means that the sides are not the height.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text contains a warning ('Be careful!') clarifying that the sides are not the height, which warns against a common pitfall when calculating parallelogram area.",COMMON_ERROR_ALERT,"The paragraph warns students about a frequent misunderstanding regarding the height of a parallelogram, matching the COMMON_ERROR_ALERT pattern."
+ck12_geometry_hs,1698,COMMON_ERROR_ALERT,UNCERTAIN,dual_arm,A_positive,paragraphs.csv,"Segments of a Circle
+The last part of a circle that we can find the area of is called a segment, not to be confused with a line segment.
+Segment of a Circle: The area of a circle that is bounded by a chord and the arc with the same endpoints as the chord.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text explicitly warns the reader 'not to be confused with a line segment', which aligns with the COMMON_ERROR_ALERT category signal 'do not confuse X with Y'.",NA,The paragraph only provides a definition and clarification; it does not ask students to find or correct errors.
+ck12_geometry_hs,1922,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example 3: Find the surface area of the figure below.
+Solution: This is a hemisphere. Be careful when finding the surface area of a hemisphere because you need to include the area of the base. If the question asked for the lateral surface area, then your answer would not include the bottom.
+SA = πr^2 + 1/2 4πr^2
+= π(6^2) + 2π(6^2)
+= 36π + 72π = 108π cm^2",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,medium,NA,"The solution explicitly cautions the reader ('Be careful when finding the surface area of a hemisphere because you need to include the area of the base'), warning against the common mistake of omitting the base or confusing total with lateral surface area.",COMMON_ERROR_ALERT,"The paragraph warns students to be careful about including the base area when finding a hemisphere's surface area, which is a typical mistake, matching COMMON_ERROR_ALERT."

@@ -1,0 +1,28 @@
+{
+  "book": "ck12_geometry_hs",
+  "stage1_file": "gemini_results.csv",
+  "stage1_arm": "gemini",
+  "n_paragraphs": 2125,
+  "n_stage1_errors": 0,
+  "tier_A_positive": 13,
+  "tier_B_boundary": 231,
+  "tier_C_pool": 1881,
+  "tier_C_sampled": 198,
+  "seed": 20260924,
+  "positive_rate": 0.00612,
+  "allocation": {
+    "control_n": 198,
+    "pool": 1881,
+    "pool_share": 0.06616,
+    "sampled_share_of_pool": 0.105263,
+    "series": "ck12",
+    "tiers": {
+      "A_positive": 13,
+      "B_boundary": 231,
+      "C_control_pool": 1881,
+      "errors": 0,
+      "n_rows": 2125
+    }
+  },
+  "control_source": "plan"
+}

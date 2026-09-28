@@ -5,17 +5,17 @@
   "stage2_arm": "gpt_oss_or",
   "rows": 1811,
   "by_status": {
-    "CONFIRMED": 686,
-    "UNVERIFIED": 1103,
+    "CONFIRMED": 471,
+    "UNVERIFIED": 1318,
     "UNCERTAIN": 22
   },
   "by_verification": {
-    "dual_arm": 708,
-    "single_arm": 1103
+    "dual_arm": 493,
+    "single_arm": 1318
   },
   "by_tier": {
-    "C_control": 371,
-    "C_unsampled": 1103,
+    "C_control": 156,
+    "C_unsampled": 1318,
     "A_positive": 14,
     "B_boundary": 323
   },
@@ -30,14 +30,14 @@
     "tier_A_positive": 14,
     "tier_B_boundary": 323,
     "tier_C_pool": 1474,
-    "tier_C_sampled": 371,
+    "tier_C_sampled": 156,
     "seed": 20260924,
     "positive_rate": 0.00773,
     "allocation": {
-      "control_n": 371,
+      "control_n": 156,
       "pool": 1474,
-      "pool_share": 0.742195,
-      "sampled_share_of_pool": 0.251696,
+      "pool_share": 0.051845,
+      "sampled_share_of_pool": 0.105834,
       "series": "ck12",
       "tiers": {
         "A_positive": 14,

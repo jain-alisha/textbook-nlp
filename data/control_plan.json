@@ -1,15 +1,15 @@
 {
-  "target": 500,
-  "allocated": 500,
-  "total_confident_na_pool": 1986,
+  "target": 3000,
+  "allocated": 3000,
+  "total_confident_na_pool": 28431,
   "method": "stratified, strata=books, proportional allocation, largest remainder",
   "arm": "gemini",
   "allocation": {
     "ck12_algebra1_hs": {
-      "control_n": 371,
+      "control_n": 156,
       "pool": 1474,
-      "pool_share": 0.742195,
-      "sampled_share_of_pool": 0.251696,
+      "pool_share": 0.051845,
+      "sampled_share_of_pool": 0.105834,
       "series": "ck12",
       "tiers": {
         "A_positive": 14,
@@ -19,18 +19,158 @@
         "n_rows": 1811
       }
     },
-    "cpm_course2_ms": {
-      "control_n": 129,
-      "pool": 512,
-      "pool_share": 0.257805,
-      "sampled_share_of_pool": 0.251953,
+    "ck12_algebra2_hs": {
+      "control_n": 203,
+      "pool": 1921,
+      "pool_share": 0.067567,
+      "sampled_share_of_pool": 0.105674,
+      "series": "ck12",
+      "tiers": {
+        "A_positive": 11,
+        "B_boundary": 318,
+        "C_control_pool": 1921,
+        "errors": 0,
+        "n_rows": 2250
+      }
+    },
+    "ck12_geometry_hs": {
+      "control_n": 198,
+      "pool": 1881,
+      "pool_share": 0.06616,
+      "sampled_share_of_pool": 0.105263,
+      "series": "ck12",
+      "tiers": {
+        "A_positive": 13,
+        "B_boundary": 231,
+        "C_control_pool": 1881,
+        "errors": 0,
+        "n_rows": 2125
+      }
+    },
+    "cpm_algebra1_hs": {
+      "control_n": 188,
+      "pool": 1786,
+      "pool_share": 0.062819,
+      "sampled_share_of_pool": 0.105263,
       "series": "cpm",
       "tiers": {
-        "A_positive": 21,
-        "B_boundary": 179,
-        "C_control_pool": 512,
+        "A_positive": 30,
+        "B_boundary": 421,
+        "C_control_pool": 1786,
         "errors": 0,
-        "n_rows": 712
+        "n_rows": 2237
+      }
+    },
+    "cpm_algebra2_hs": {
+      "control_n": 253,
+      "pool": 2394,
+      "pool_share": 0.084204,
+      "sampled_share_of_pool": 0.105681,
+      "series": "cpm",
+      "tiers": {
+        "A_positive": 44,
+        "B_boundary": 482,
+        "C_control_pool": 2394,
+        "errors": 0,
+        "n_rows": 2920
+      }
+    },
+    "cpm_course1_ms": {
+      "control_n": 138,
+      "pool": 1306,
+      "pool_share": 0.045936,
+      "sampled_share_of_pool": 0.105666,
+      "series": "cpm",
+      "tiers": {
+        "A_positive": 33,
+        "B_boundary": 330,
+        "C_control_pool": 1306,
+        "errors": 0,
+        "n_rows": 1669
+      }
+    },
+    "cpm_course2_ms": {
+      "control_n": 160,
+      "pool": 1521,
+      "pool_share": 0.053498,
+      "sampled_share_of_pool": 0.105194,
+      "series": "cpm",
+      "tiers": {
+        "A_positive": 25,
+        "B_boundary": 381,
+        "C_control_pool": 1521,
+        "errors": 0,
+        "n_rows": 1927
+      }
+    },
+    "cpm_course3_ms": {
+      "control_n": 149,
+      "pool": 1414,
+      "pool_share": 0.049734,
+      "sampled_share_of_pool": 0.105375,
+      "series": "cpm",
+      "tiers": {
+        "A_positive": 27,
+        "B_boundary": 296,
+        "C_control_pool": 1414,
+        "errors": 0,
+        "n_rows": 1737
+      }
+    },
+    "cpm_geometry_hs": {
+      "control_n": 214,
+      "pool": 2031,
+      "pool_share": 0.071436,
+      "sampled_share_of_pool": 0.105367,
+      "series": "cpm",
+      "tiers": {
+        "A_positive": 41,
+        "B_boundary": 386,
+        "C_control_pool": 2031,
+        "errors": 0,
+        "n_rows": 2458
+      }
+    },
+    "saxon_course1_ms": {
+      "control_n": 398,
+      "pool": 3769,
+      "pool_share": 0.132567,
+      "sampled_share_of_pool": 0.105598,
+      "series": "saxon",
+      "tiers": {
+        "A_positive": 1,
+        "B_boundary": 396,
+        "C_control_pool": 3769,
+        "errors": 0,
+        "n_rows": 4166
+      }
+    },
+    "saxon_course2_ms": {
+      "control_n": 455,
+      "pool": 4311,
+      "pool_share": 0.15163,
+      "sampled_share_of_pool": 0.105544,
+      "series": "saxon",
+      "tiers": {
+        "A_positive": 9,
+        "B_boundary": 434,
+        "C_control_pool": 4311,
+        "errors": 0,
+        "n_rows": 4754
+      }
+    },
+    "saxon_course3_ms": {
+      "control_n": 488,
+      "pool": 4623,
+      "pool_share": 0.162604,
+      "sampled_share_of_pool": 0.105559,
+      "series": "saxon",
+      "tiers": {
+        "A_positive": 6,
+        "B_boundary": 403,
+        "C_control_pool": 4623,
+        "errors": 0,
+        "n_rows": 5032
       }
     }
   }

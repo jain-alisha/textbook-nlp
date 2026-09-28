@@ -1,0 +1,96 @@
+book,para_num,final_label,status,verification,tier,source_file,paragraph,final_label,gemini_label,gemini_confidence,gemini_considered,gemini_reasoning,gpt_oss_or_label,gpt_oss_or_reasoning
+ck12_algebra2_hs,47,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Guided Practice
+Simplify the expressions below.
+1. 6s − 7t + 12t − 10s
+2. 7y^2 − 9x^2 + y^2 − 14x + 3x^2 − 4
+Answers
+1. Combine the s’s and the t’s.
+6s − 7t + 12t − 10s
+(6s − 10s) + (−7t + 12t)
+−4s + 5t
+2. Group together the like terms.
+7y^2 − 9x^2 + y^2 − 14x + 3x^2 − 4
+(−9x^2 + 3x^2) + (7y^2 + y^2) − 14x − 4
+−6x^2 + 8y^2 − 14x − 4
+Notice in #1, we did not write (6s − 10s) − (7t + 12t) in the second step. This would lead us to an incorrect answer. Whenever grouping together like terms and one is negative (or being subtracted), always change the operator to addition and make the number negative.
+In #2, we can also take out the Greatest Common Factor of -2 from each term using the Distributive Property. This would reduce to −2(3x^2 − 4y^2 + 7x + 2). In this case, we take out a -2 so that the first term is positive.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text explicitly warns the reader against making a specific mistake in step 2 ('Notice in #1, we did not write... This would lead us to an incorrect answer') and provides a rule to avoid it.",COMMON_ERROR_ALERT,"The paragraph warns about a mistake that can occur when grouping like terms and explains how to avoid it, matching the pattern of a common error alert."
+ck12_algebra2_hs,445,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Guided Practice 3: Solve the following system using substitution. If there is no unique solution, state whether there is no solution or infinitely many solutions: 3x - 5y = 0, -2x + 6y = 0. Answer: Solving the second equation for x we get: x = 3y. Now, we can substitute this into the first equation to solve for y: 3(3y) - 5y = 0; 9y - 5y = 0; 4y = 0; y = 0. Now we can use this value of y to find x: x = 3y; x = 3(0); x = 0. Therefore, this system has a solution at (0, 0). After solving systems that result in 0 = 0, it is easy to get confused by a result with zeros for the variables. It is perfectly okay for the intersection of two lines to occur at (0, 0).",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,medium,NA,The text warns students about a frequent point of confusion ('it is easy to get confused by a result with zeros for the variables') following a worked example.,COMMON_ERROR_ALERT,"The paragraph includes a warning that students may get confused by a zero solution, which alerts readers to a potential mistake."
+ck12_algebra2_hs,760,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,Problem Set: 15. Error Analysis Spencer is given the following problem: Multiply (2x−5)^2. Here is his work: (2x−5)^2 = (2x)^2 − 5^2 = 4x^2 − 25. His teacher tells him the answer is 4x^2 − 20x + 25. What did Spencer do wrong? Describe his error and correct the problem.,INCORRECT_TO_CORRECT,INCORRECT_TO_CORRECT,high,EXPLICIT_ERROR_DETECTION,"A named student's (Spencer) incorrect work is presented, and the student is explicitly asked to find what he did wrong, describe his error, and correct the problem.",INCORRECT_TO_CORRECT,"The paragraph presents a named student's incorrect solution, asks the reader to identify the mistake and correct it, which matches the INCORRECT_TO_CORRECT pattern."
+ck12_algebra2_hs,858,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example A
+Solve 3x² - 9x + 11 = 0
+
+Solution:
+1. Write the polynomial so that x² and x are on the left side of the equation and the constants on the right.
+3x² - 9x = -11
+
+2. Pull out a from everything on the left side. Even if b is not divisible by a, the coefficient of x² needs to be 1 in order to complete the square.
+3(x² - 3x + ___) = -11
+
+3. Now, complete the square. Determine what number would make a perfect square trinomial. To do this, divide the x-term by 2 and square that number, or (b/2)².
+(b/2)² = (3/2)² = 9/4
+
+4. Add this number to the interior of the parenthesis on the left side. On the right side, you will need to add a · (b/2)² to keep the equation balanced.
+3(x² - 3x + 9/4) = -11 + 27/4
+
+5. Factor the left side and simplify the right.
+3(x - 3/2)² = -17/4
+
+6. Solve by using square roots.
+(x - 3/2)² = -17/12
+x - 3/2 = ± (i√17)/(2√3) · √3/√3
+x = 3/2 ± √51/6 i
+
+Be careful with the addition of step 2 and the changes made to step 4. A very common mistake is to add (b/2)² to both sides, without multiplying by a for the right side.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text contains a direct warning at the end alerting students that 'A very common mistake is to add (b/2)² to both sides, without multiplying by a for the right side.'",COMMON_ERROR_ALERT,"The paragraph ends with a warning about a frequent mistake students make, explicitly labeling it as a common mistake."
+ck12_algebra2_hs,863,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"16. Error Analysis Examine the worked out problem below.
+4x² - 48x + 11 = 0
+4(x² - 12x + ___) = -11
+4(x² - 12x + 36) = -11 + 36
+4(x - 6)² = 25
+(x - 6)² = 25/4
+x - 6 = ±5/2
+x = 6 ± 5/2 → 17/2, 7/2
+Plug the answers into the original equation to see if they work. If not, find the error and correct it.",EXPLICIT_ERROR_DETECTION,EXPLICIT_ERROR_DETECTION,high,INCORRECT_TO_CORRECT,"The text presents a worked-out problem under an 'Error Analysis' prompt and asks the reader to identify and correct the mistake, but without a named student.",EXPLICIT_ERROR_DETECTION,"The paragraph presents a worked solution with an error and asks the reader to locate and correct it, without naming a student, matching EXPLICIT_ERROR_DETECTION."
+ck12_algebra2_hs,912,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example A
+Graph y = −3x^2 + 14x − 8 using a graphing calculator.
+Solution: Using a TI-83/84, press the Y = button. Enter in the equation. Be careful not to confuse the negative sign and the subtraction sign. The equation should look like y = −3x^2 + 14x − 8 or y = −3x^2 + 14x − 8. Press GRAPH.
+If your graph does not look like this one, there may be an issue with your window. Press ZOOM and then 6:ZStandard, ENTER. This should give you the standard window.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text explicitly warns students with 'Be careful not to confuse the negative sign and the subtraction sign', directly matching the signals for COMMON_ERROR_ALERT.",COMMON_ERROR_ALERT,"The paragraph warns students not to confuse the negative sign with the subtraction sign, which is a typical mistake, fitting the COMMON_ERROR_ALERT category."
+ck12_algebra2_hs,1183,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example A
+Solve \sqrt{4x+1}-x = -1
+
+Solution: Now we have an x that is not under the radical. We will still isolate the radical.
+\sqrt{4x+1}-x = -1
+\sqrt{4x+1} = x-1
+Now, we can square both sides. Be careful when squaring x-1, the answer is not x^2-1.
+(\sqrt{4x+1})^2 = (x-1)^2
+4x+1 = x^2-2x+1
+This problem is now a quadratic. To solve quadratic equations, we must either factor, when possible or use the Quadratic Formula. Combine like terms and set one side equal to zero.
+4x+1 = x^2-2x+1
+0 = x^2-6x
+0 = x(x-6)
+x = 0 or 6
+Check both solutions: \sqrt{4(0)+1}-1 = \sqrt{0+1}-1 = 1-1 = 0 \neq -1. 0 is an extraneous solution. \sqrt{4(6)+1}-6 = \sqrt{24+1}-6 = 5-6 = -1. Therefore, 6 is the only solution.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text explicitly warns the reader about a common mistake during the worked example ('Be careful when squaring x-1, the answer is not x^2-1').",COMMON_ERROR_ALERT,"The paragraph includes a warning to students about a specific mistake (squaring x-1 incorrectly), which matches the COMMON_ERROR_ALERT category."
+ck12_algebra2_hs,1195,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Function Operations
+
+Objective
+To add, subtract, multiply, divide and compose two or more functions.
+
+Guidance
+As you saw in the Review Queue, we have already dealt with adding, subtracting, and multiplying functions. To add and subtract, you combine like terms (see the Adding and Subtracting Polynomials concept). When multiplying, you either FOIL or use the “box” method (see the Multiplying Polynomials concept). When you add, subtract, or multiply functions, it is exactly the same as what you would do with polynomials, except for the notation. Notice, in the Review Queue, we didn’t write out the entire function, just f(x) - g(x), for example. Let’s continue:
+f(x) - g(x) = (x+5) - (x^2-4x+8)
+= x+5-x^2+4x-8
+= -x^2+5x-3
+Distribute the negative sign to the second function and combine like terms. Be careful! f(x) - g(x) \neq g(x) - f(x). Also, this new function, f(x) - g(x) has a different domain and range that either f(x) or g(x).",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,medium,NA,The text contains a warning ('Be careful! f(x) - g(x) \neq g(x) - f(x)') cautioning students against the common mistake of assuming function subtraction is commutative.,COMMON_ERROR_ALERT,"The paragraph warns students not to confuse the order of subtraction, a typical mistake, matching the COMMON_ERROR_ALERT pattern."
+ck12_algebra2_hs,1376,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Guidance
+
+Recall that a rational function is a function, f(x), such that f(x) = p(x)/q(x), where p(x) and q(x) are both polynomials. A rational expression, is just p(x)/q(x). Like any fraction, a rational expression can be simplified. To simplify a rational expression, you will need to factor the polynomials, determine if any factors are the same, and then cancel out any like factors.
+
+Fraction: 9/15 = (3 · 3)/(3 · 5) = 3/5
+Rational Expression: (x^2 + 6x + 9)/(x^2 + 8x + 15) = ((x + 3)(x + 3))/((x + 3)(x + 5)) = (x + 3)/(x + 5)
+
+With both fractions, we broke apart the numerator and denominator into the prime factorization. Then, we canceled the common factors.
+
+Important Note: (x + 3)/(x + 5) is completely factored. Do not cancel out the x’s! 3x/(5x) reduces to 3/5, but (x + 3)/(x + 5) does not because of the addition sign. To prove this, we will plug in a number for x to and show that the fraction does not reduce to 3/5. If x = 2, then (2 + 3)/(2 + 5) = 5/7 ≠ 3/5.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,The text warns the reader against an extremely common algebraic mistake ('Important Note: ... Do not cancel out the x’s!') and explains why canceling terms across addition is incorrect.,COMMON_ERROR_ALERT,"The paragraph warns readers not to cancel terms with addition, highlighting a frequent mistake, which matches the COMMON_ERROR_ALERT pattern."
+ck12_algebra2_hs,1771,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Guidance Combinations of a subset of a larger set of objects refer to the number of ways we can choose items in any order. For comparison, look at the table below to see when order matters and when order doesn’t matter. TABLE 12.1: Combinations vs Permutations: • Ways to select the members of a committee from a larger population / Ways to select specific officers in a club—president, vice president, treasurer, etc. • Ways to select a set number of pizza toppings from a larger list of choices / Ways to select and arrange scoops of ice cream on a cone • Ways to select books from a reading list / Ways to select and order in which to read books selected from a reading list. The simplest way to describe the difference between a combination and a permutation is to say that in a combination the order doesn’t matter. The members of a committee could be selected in any order but the officers in a club are assigned a specific position and therefore the order does matter. Be careful of the use of these words in the real world as they are sometimes misused. For example, a locker combination. The ways to select and order the three numbers for a locker combination is not actually a combination, but a permutation since the order does matter.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,The text explicitly warns students ('Be careful of the use of these words in the real world as they are sometimes misused') about the common real-world misconception of calling a locker lock's code a combination rather than a permutation.,COMMON_ERROR_ALERT,"The paragraph warns readers about a common misuse of the term 'combination', which matches the definition of a COMMON_ERROR_ALERT."
+ck12_algebra2_hs,1940,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"More Guidance
+A reference angle is the acute angle between the terminal side of an angle and the x –axis. The diagram below shows the reference angles for terminal sides of angles in each of the four quadrants.
+Note: A reference angle is never determined by the angle between the terminal side and the y –axis. This is a common error for students, especially when the terminal side appears to be closer to the y –axis than the x –axis.",COMMON_ERROR_ALERT,COMMON_ERROR_ALERT,high,NA,"The text explicitly alerts students to a common mistake ('This is a common error for students...'), warning them not to determine reference angles using the y-axis.",COMMON_ERROR_ALERT,"The paragraph warns about a frequent student mistake, explicitly labeling it a common error."

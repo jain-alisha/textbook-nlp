@@ -1,0 +1,53 @@
+{
+  "book": "ck12_algebra2_hs",
+  "mode": "two-stage",
+  "stage1_arm": "gemini",
+  "stage2_arm": "gpt_oss_or",
+  "rows": 2249,
+  "by_status": {
+    "CONFIRMED": 512,
+    "UNVERIFIED": 1717,
+    "UNCERTAIN": 20
+  },
+  "by_verification": {
+    "dual_arm": 532,
+    "single_arm": 1717
+  },
+  "by_tier": {
+    "C_control": 203,
+    "C_unsampled": 1717,
+    "B_boundary": 318,
+    "A_positive": 11
+  },
+  "positives": 11,
+  "positive_rate": 0.00489,
+  "strata": {
+    "book": "ck12_algebra2_hs",
+    "stage1_file": "gemini_results.csv",
+    "stage1_arm": "gemini",
+    "n_paragraphs": 2250,
+    "n_stage1_errors": 0,
+    "tier_A_positive": 11,
+    "tier_B_boundary": 318,
+    "tier_C_pool": 1921,
+    "tier_C_sampled": 203,
+    "seed": 20260924,
+    "positive_rate": 0.00489,
+    "allocation": {
+      "control_n": 203,
+      "pool": 1921,
+      "pool_share": 0.067567,
+      "sampled_share_of_pool": 0.105674,
+      "series": "ck12",
+      "tiers": {
+        "A_positive": 11,
+        "B_boundary": 318,
+        "C_control_pool": 1921,
+        "errors": 0,
+        "n_rows": 2250
+      }
+    },
+    "control_source": "plan"
+  },
+  "staleness_problems": null
+}

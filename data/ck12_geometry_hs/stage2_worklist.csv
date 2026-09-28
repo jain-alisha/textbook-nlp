@@ -1,0 +1,1850 @@
+paragraph,tier,stage1_gemini_label,stage1_gemini_confidence
+"Example 1: Determine how long the line segment is, in inches. Round to the nearest quarter-inch. Solution: To measure this line segment with a ruler, it is very important to line up the “0” with the one of the endpoints. DO NOT USE THE EDGE OF THE RULER. This segment is about 3.5 inches (in) long.",A_positive,COMMON_ERROR_ALERT,medium
+"Midpoints
+
+Midpoint: A point on a line segment that divides it into two congruent segments.
+
+Because AB = BC, B is the midpoint of AC.
+
+Midpoint Postulate: Any line segment will have exactly one midpoint.
+
+This might seem self-explanatory. However, be careful, this postulate is referring to the midpoint, not the lines that pass through the midpoint, which is infinitely many.",A_positive,COMMON_ERROR_ALERT,medium
+36. Error Analysis Erica is looking at a geometric figure and trying to determine which parts are congruent. She wrote AB = CD. Is this correct? Why or why not?,A_positive,INCORRECT_TO_CORRECT,medium
+"35. Error Analysis Nadia is working on Problem 31. Here is her proof: TABLE 3.4: Statement 1. l || m, s || t Reason Given; Statement 2. ∠4 ≅ ∠15 Reason Alternate Exterior Angles Theorem; Statement 3. ∠15 ≅ ∠14 Reason Same Side Interior Angles Theorem; Statement 4. ∠14 ≅ ∠9 Reason Vertical Angles Theorem; Statement 5. ∠4 ≅ ∠9 Reason Transitive PoC. What happened? Explain what is needed to be done to make the proof correct.",A_positive,INCORRECT_TO_CORRECT,high
+"30. What is wrong in the following diagram, given that j || k?",A_positive,EXPLICIT_ERROR_DETECTION,high
+"27. Error Analysis
+Casey attempts to solve for a in the diagram using the proportion
+5/a = 6/5
+What did Casey do wrong? Write the correct proportion and solve for a.",A_positive,INCORRECT_TO_CORRECT,high
+"23. Tommy was solving the triangle below and made a mistake. What did he do wrong?
+tan⁻¹(21/28) ≈ 36.9°",A_positive,INCORRECT_TO_CORRECT,high
+25. How could Tommy have found the hypotenuse in the triangle another way and avoided making his mistake?,A_positive,INCORRECT_TO_CORRECT,high
+"Central Angles & Arcs
+
+Central Angle: The angle formed by two radii of the circle with its vertex at the center of the circle.
+
+In the picture to the right, the central angle would be ∠BAC. Every central angle divides a circle into two arcs. In this case the arcs are BC and BDC. Notice the ⌒ above the letters. To label an arc, always use this curve above the letters. Do not confuse BC and ⌒BC.
+
+Arc: A section of the circle.
+
+If D was not on the circle, we would not be able to tell the difference between ⌒BC and ⌒BDC. There are 360° in a circle, where a semicircle is half of a circle, or 180°. m∠EFG = 180°, because it is a straight angle, so m⌒EHG = 180° and m⌒EJG = 180°.
+
+Semicircle: An arc that measures 180°.",A_positive,COMMON_ERROR_ALERT,high
+"19. Error Analysis Describe and correct the error in finding y.
+10 · 10 = y · 15y
+100 = 15y^2
+20/3 = y^2
+2√15 / 3 = y ← y is not correct",A_positive,EXPLICIT_ERROR_DETECTION,high
+"Area of a Parallelogram
+Recall that a parallelogram is a quadrilateral whose opposite sides are parallel.
+To find the area of a parallelogram, make it into a rectangle.
+From this, we see that the area of a parallelogram is the same as the area of a rectangle.
+Area of a Parallelogram: The area of a parallelogram is A = bh.
+Be careful! The height of a parallelogram is always perpendicular to the base. This means that the sides are not the height.",A_positive,COMMON_ERROR_ALERT,high
+"Segments of a Circle
+The last part of a circle that we can find the area of is called a segment, not to be confused with a line segment.
+Segment of a Circle: The area of a circle that is bounded by a chord and the arc with the same endpoints as the chord.",A_positive,COMMON_ERROR_ALERT,high
+"Example 3: Find the surface area of the figure below.
+Solution: This is a hemisphere. Be careful when finding the surface area of a hemisphere because you need to include the area of the base. If the question asked for the lateral surface area, then your answer would not include the bottom.
+SA = πr^2 + 1/2 4πr^2
+= π(6^2) + 2π(6^2)
+= 36π + 72π = 108π cm^2",A_positive,COMMON_ERROR_ALERT,medium
+"Line: Infinitely many points that extend forever in both directions. A line, like a point, does not take up space. It has direction, location and is always straight. Lines are one-dimensional because they only have length (no width). A line can be named or identified using any two points on that line or with a lower-case, italicized letter. This line can be labeled line PQ, line QP or just g. You would say “line PQ,” “line QP,” or “line g,” respectively. Notice that the line over the PQ and QP has arrows over both the P and Q. The order of P and Q does not matter.",B_boundary,NA,high
+"Line Segment: Part of a line with two endpoints. Or a line that stops at both ends. Line segments are labeled by their endpoints, AB or BA. Notice that the bar over the endpoints has NO arrows. Order does not matter.",B_boundary,NA,high
+"Ray: Part of a line with one endpoint and extends forever in the other direction. A ray is labeled by its endpoint and one other point on the line. Of lines, line segments and rays, rays are the only one where order matters. When labeling, always write the endpoint under the side WITHOUT the arrow, ray CD or ray DC.",B_boundary,NA,high
+"When making geometric drawings, you need to be sure to be clear and label. For example, if you draw a line, be sure to include arrows at both ends. Make sure you label your points, lines, and planes clearly, and refer to them by name when writing explanations.",B_boundary,NA,high
+"Know What? Revisited: If you take the triangles and move them so that the point that met at the center of the square was on the outside, you would get the figure at the right. However, you could also argue that this is not a shape because it has a square hole in the center of it. Another shape that can be made from the four triangles is a rectangle. Part of geometry is justifying and explaining reasoning. You could reason that both of these answers are acceptable.",B_boundary,NA,high
+"For 14-23, determine if the following statements are ALWAYS true, SOMETIMES true, or NEVER true. 14. Any two distinct points are collinear. 15. Any three points determine a plane. 16. A line is composed to two rays with a common endpoint. 17. A line segment is infinitely many points between two endpoints. 18. A point takes up space. 19. A line is one-dimensional. 20. Any four distinct points are coplanar. 21. Ray AB could be read “ray AB” or “ray BA.” 22. Line AB could be read “line AB” or “line BA.” 23. Theorems are proven true with postulates. 24. Two of the above statements are “never.” Explain why. 25. Four of the above statements are “sometimes.” Explain why.",B_boundary,NA,high
+"As a reminder, inch-rulers are usually divided up by 1/8-in. (or 0.125 in) segments. Centimeter rulers are divided up by 1/10-centimenter (or 0.1 cm) segments.",B_boundary,NA,high
+"The two rulers above are NOT DRAWN TO SCALE. Anytime you see this statement, it means that the measured length is not actually the distance apart that it is labeled. Different problems and examples will be labeled this way because it can be difficult to draw problems in this text to full scale. You should never assume that objects are drawn to scale. Always rely on the measurements or markings given in a diagram.",B_boundary,NA,high
+Example 3: What is the distance marked on the ruler below? The ruler is in centimeters. Solution: Find the absolute value of difference between the numbers shown. The line segment spans from 3 cm to 8 cm. |8 - 3| = |5| = 5. The line segment is 5 cm long. Notice that you also could have done |3 - 8| = |-5| = 5.,B_boundary,NA,high
+"Know What? Back to the building blocks. Every block has its own dimensions, angles and measurements. Using a protractor, find the measure of the three outlined angles in the “castle” below. Also, determine which other angles are equal to these measurements. Use appropriate angle markings. Do not measure any arcs.",B_boundary,NA,high
+"Two Rays = One Angle
+
+In #1 above, the figure was a ray. It is labeled →AB, with the arrow over the point that is NOT the endpoint. When two rays have the same endpoint, an angle is created.
+
+Here, →BA and →BC meet to form an angle. An angle is labeled with an “∠” symbol in front of the three letters used to label it. This angle can be labeled ∠ABC or ∠CBA. Always put the vertex in the middle of the three points. It doesn’t matter which side point is written first.
+
+Angle: When two rays have the same endpoint.
+Vertex: The common endpoint of the two rays that form an angle.
+Sides: The two rays that form an angle.",B_boundary,NA,high
+"Example 3: What is the measure of the angle shown below?
+
+Solution: This angle is not lined up with 0◦, so use subtraction to find its measure. It does not matter which scale you use.
+Using the inner scale, |140−25|= 125◦
+Using the outer scale, |165−40|= 125◦",B_boundary,NA,high
+"Classifying Angles
+
+By looking at the protractor we measure angles from 0◦ to 180◦. Angles can be classified, or grouped, into four different categories.
+
+Straight Angle: When an angle measures 180◦. The angle measure of a straight line. The rays that form this angle are called opposite rays.
+
+Right Angle: When an angle measures 90◦.
+
+Notice the half-square, marking the angle. This marking is always used to mark right, or 90◦, angles.
+
+Acute Angles: Angles that measure between 0◦ and 90◦.
+
+Obtuse Angles: Angles that measure between 90◦ and 180◦.
+
+It is important to note that 90◦ is NOT an acute angle and 180◦ is NOT an obtuse angle.",B_boundary,NA,medium
+"Review Questions
+
+For questions 1-10, determine if the statement is true or false. If you answered FALSE for any question, state why.
+
+1. Two angles always add up to be greater than 90◦.
+2. 180◦ is an obtuse angle.
+3. 180◦ is a straight angle.
+4. Two perpendicular lines intersect to form four right angles.
+5. A construction uses a protractor and a ruler.
+6. For an angle ∠ABC,C is the vertex.
+7. For an angle ∠ABC,AB and BC are the sides.
+8. The m in front of m∠ABC means measure.
+9. Angles are always measured in degrees.
+10. The Angle Addition Postulate says that an angle is equal to the sum of the smaller angles around it.",B_boundary,NA,high
+"Congruence
+
+You could argue that another word for equal is congruent. However, the two differ slightly.
+
+Congruent: When two geometric figures have the same shape and size.
+
+We label congruence with a ≅ sign. Notice the ~ above the = sign. AB ≅ BA means that AB is congruent to BA. If we know two segments or angles are congruent, then their measures are also equal. If two segments or angles have the same measure, then, they are also congruent.
+
+TABLE 1.1:
+Equal: used with measurement; mAB = AB = 5 cm; m∠ABC = 60◦
+Congruent: used with figures; AB ≅ BA; ∠ABC ≅ ∠CBA",B_boundary,NA,high
+"Example 3: If M(3,−1) is the midpoint of AB and B(7,−6), find A.
+
+Solution: Plug what you know into the midpoint formula.
+((7+xA)/2, (-6+yA)/2) = (3,−1)
+(7+xA)/2 = 3 and (-6+yA)/2 = −1
+7+xA = 6 and −6+yA = −2
+xA = −1 and yA = 4
+A is (−1,4).
+
+Another way to find the other endpoint is to find the difference between M and B and then duplicate it on the other side of M.
+
+x− values: 7−3 = 4, so 4 on the other side of 3 is 3−4 = −1
+y− values: −6−(−1) = −5, so -5 on the other side of -1 is −1−(−5) = 4
+
+A is still (-1, 4). You may use either method.",B_boundary,NA,high
+"37. Challenge Use the Midpoint Formula to solve for the x−value of the midpoint and the y−value of the midpoint. Then, use this formula to solve #34. Do you get the same answer?",B_boundary,NA,high
+"Complementary Angles
+
+Complementary: When two angles add up to 90◦.
+
+Complementary angles do not have to be congruent to each other, nor do they have to be next to each other.",B_boundary,NA,high
+"Example 2: The two angles below are complementary. Find the measure of each angle.
+
+Solution: Again, the two angles add up to 90◦. Make an equation.
+8r +9◦ +7r +5◦ = 90◦
+15r +14◦ = 90◦
+15r = 76◦
+r ≈ 5.1◦
+
+However, this is not what the question asks for. You need to plug r back into each expression to find each angle.
+For m∠GHI: 8(5.1◦) +9◦ = 49.8◦, so m∠GHI ≈ 49.8◦.
+For m∠JKL: 7(5.1◦) +5◦ = 40.7◦, so m∠JKL ≈ 40.7◦.",B_boundary,NA,high
+"Supplementary Angles
+
+Supplementary: When two angles add up to 180◦.
+
+Just like complementary angles, supplementary angles do not have to be congruent or touching.",B_boundary,NA,high
+"Linear Pairs
+
+Adjacent Angles: Two angles that have the same vertex, share a side, and do not overlap.
+
+∠PSQ and ∠QSR are adjacent.
+∠PQR and ∠PQS are NOT adjacent because they overlap.",B_boundary,NA,high
+"Example 6: Are ∠CDA and ∠DAB a linear pair? Are they supplementary?
+
+Solution: The two angles are not a linear pair because they do not have the same vertex. However, they are supplementary, 120◦ +60◦ = 180◦.",B_boundary,NA,high
+"Vertical Angles
+
+Vertical Angles: Two non-adjacent angles formed by intersecting lines.
+∠1 and ∠3 are vertical angles
+∠2 and ∠4 are vertical angles
+
+Notice that these angles are labeled with numbers. You can tell that these are labels because they do not have a degree symbol.",B_boundary,NA,high
+"For 8-15, determine if the statement is ALWAYS true, SOMETIMES true or NEVER true.
+8. Vertical angles are congruent.
+9. Linear pairs are congruent.
+10. Complementary angles add up to 180◦.
+11. Supplementary angles add up to 180◦
+12. Adjacent angles share a vertex.
+13. Adjacent angles overlap.
+14. Complementary angles are 45◦.
+15. The complement of x◦ is (90−x)◦.",B_boundary,NA,high
+"Example 1: Which of the figures below are not triangles?
+
+Solution: B is not a triangle because it hasone curved side. D is not a closed shape, so it is not a triangle either.",B_boundary,NA,high
+"Classifying by Sides
+
+These classifications have to do with the sides of the triangle and their relationships to each other.
+Scalene Triangle: When a triangles sides are all different lengths.
+Isosceles Triangle: When at least two sides of a triangle are congruent.
+Equilateral Triangle: When all the sides of a triangle are congruent.
+Note that by the definitions, an equilateral triangle is also an isosceles triangle.",B_boundary,NA,high
+"Example 6: Which of the figures below is a polygon?
+
+Solution: The easiest way to identify the polygon is to identify which shapes are not polygons. B and C each have at least one curved side, so they cannot be polygons. D has all straight sides, but one of the vertices is not at the endpoint of the adjacent side, so it is not a polygon either. A is the only polygon.",B_boundary,NA,high
+"Example 7: Which of the figures below is not a polygon?
+
+Solution: C is a three-dimensional shape, so it does not lie within one plane, so it is not a polygon.",B_boundary,NA,high
+"Convex and Concave Polygons
+
+Polygons can be either convex or concave. Think of the term concave as referring to a cave, or “caving in”. A concave polygon has a section that “points inward” toward the middle of the shape. All stars are concave polygons.
+
+A convex polygon does not share this property.",B_boundary,NA,high
+"8. In an isosceles triangle, can the angles opposite the congruent sides be obtuse?",B_boundary,NA,high
+17. Explain why the following figures are NOT polygons:,B_boundary,NA,high
+"Review Queue
+1. Look at the patterns of numbers below. Determine the next three numbers in the list. Describe the pattern.
+a. 1, 2, 3, 4, 5, 6, _____, _____, _____
+b. 3, 6, 9, 12, 15, _____, _____, _____
+c. 1, 4, 9, 16, 25, _____, _____, _____
+2. Are the statements below true or false? If they are false, state why.
+a. Perpendicular lines form four right angles.
+b. Angles that are congruent are also equal.
+c. Linear pairs are always congruent.
+3. For the line, y = 3x+1, make an x−y table for x = 1,2,3,4, and 5. What do you notice? How does it relate to 1b?",B_boundary,NA,high
+"Example 7: Find the 8th term in the list of numbers as well as the rule.
+2, 3/4, 4/9, 5/16, 6/25 ...
+
+Solution: First, change 2 into a fraction, or 2/1. So, the pattern is now 2/1, 3/4, 4/9, 5/16, 6/25 ... Separate the top and the bottom of the fractions into two different patterns. The top is 2, 3, 4, 5, 6. It increases by 1 each time, so the 8th term’s numerator is 9. The denominators are the square numbers, so the 8th term’s denominator is 10^2 or 100. Therefore, the 8th term is 9/100. The rule for this pattern is (n+1)/n^2.",B_boundary,NA,high
+"To summarize:
+• If the same number is added from one term to the next, then you multiply n by it.
+• If the same number is multiplied from one term to the next, then you would multiply the first term by increasing powers of this number. n or n−1 is in the exponent of the rule.
+• If the pattern has fractions, separate the numerator and denominator into two different patterns. Find the rule for each separately.",B_boundary,NA,high
+"Conjecture: An “educated guess” that is based on examples in a pattern.
+Numerous examples may make you believe a conjecture. However, no number of examples can actually prove a conjecture. It is always possible that the next example would show that the conjecture is false.",B_boundary,NA,high
+"Example 8: Here’s an algebraic equation and a table of values for n and with the result for t.
+t = (n−1)(n−2)(n−3)
+
+TABLE 2.3:
+n | (n−1)(n−2)(n−3) | t
+1 | (0)(−1)(−2) | 0
+2 | (1)(0)(−1) | 0
+3 | (2)(1)(0) | 0
+
+After looking at the table, Pablo makes this conjecture:
+The value of (n−1)(n−2)(n−3) is 0 for any whole number value of n.
+Is this a valid, or true, conjecture?
+
+Solution: No, this is not a valid conjecture. If Pablo were to continue the table to n = 4, he would have seen that (n−1)(n−2)(n−3) = (4−1)(4−2)(4−3) = (3)(2)(1) = 6.
+In this example n = 4 is called a counterexample.",B_boundary,NA,high
+Counterexample: An example that disproves a conjecture.,B_boundary,NA,high
+"Example 9: Arthur is making figures for a graphic art project. He drew polygons and some of their diagonals.
+Based on these examples, Arthur made this conjecture:
+If a convex polygon has n sides, then there are n−3 triangles drawn from any given vertex of the polygon.
+Is Arthur’s conjecture correct? Can you find a counterexample to the conjecture?
+
+Solution: The conjecture appears to be correct. If Arthur draws other polygons, in every case he will be able to draw n−3 triangles if the polygon has n sides.
+Notice that we have not proved Arthur’s conjecture, but only found several examples that hold true. This type of conjecture would need to be proven by induction.",B_boundary,NA,high
+"We all use inductive reasoning in our daily lives. The process consists of making observations, recognizing a pattern and making a generalization or conjecture. Read the following examples of reasoning in the real world and determine if they are examples of Inductive reasoning. Do you think the conjectures are true or can you give a counterexample?
+
+21. For the last three days Tommy has gone for a walk in the woods near his house at the same time of day. Each time he has seen at least one deer. Tommy reasons that if he goes for a walk tomorrow at the same time, he will see deer again.
+22. Maddie likes to bake. She especially likes to take recipes and make substitutions to try to make them healthier. She might substitute applesauce for sugar or oat flour for white flour. She has noticed that she needs to add more baking powder or baking soda than the recipe indicates in these situations in order for the baked goods to rise appropriately.
+23. One evening Juan saw a chipmunk in his backyard. He decided to leave a slice of bread with peanut butter on it for the creature to eat. The next morning the bread was gone. Juan concluded that chipmunks like to eat bread with peanut butter.
+24. Describe an instance in your life when either you or someone you know used inductive reasoning to correctly make a conclusion.
+25. Describe an instance when you observed someone using invalid reasoning skills.",B_boundary,NA,high
+"Review Queue
+Find the next figure or term in the pattern.
+1. 5, 8, 12, 17, 23,...
+2. 2/5, 3/6, 4/7, 5/9, 6/10,...
+3.
+4. Find a counterexample for the following conjectures.
+a. If it is April, then it is Spring Break.
+b. If it is June, then I am graduating.",B_boundary,NA,high
+"Keep in mind that conditional statements might not always be written in the “if-then” form. Here are a few examples.
+
+Statement 1: If you work overtime, then you’ll be paid time-and-a-half.
+Statement 2: I’ll wash the car if the weather is nice.
+Statement 3: If 2 divides evenly into x, then x is an even number.
+Statement 4: I’ll be a millionaire when I win monopoly.
+Statement 5: All equiangular triangles are equilateral.
+
+Statements 1 and 3 are written in the “if-then” form. The hypothesis of Statement 1 is “you work overtime.” The conclusion is “you’ll be paid time-and-a-half.”
+So, if Sarah works overtime, then what will happen? From Statement 1, we can conclude that she will be paid time-and-a-half.
+If 2 goes evenly into 16, what can you conclude? From Statement 3, we know that 16 must be an even number.
+Statement 2 has the hypothesis after the conclusion. Even though the word “then” is not there, the statement can be rewritten as: If the weather is nice, then I’ll wash the car. If the word “if” is in the middle of a conditional statement, the hypothesis is always after it.
+Statement 4 uses the word “when” instead of “if.” It should be treated like Statement 2, so it can be written as: If I win monopoly, then I will be a millionaire.
+Statement 5 “if” and “then” are not there, but can be rewritten as: If a triangle is equiangular, then it is equilateral.",B_boundary,NA,high
+"Converse, Inverse, and Contrapositive of a Conditional Statement
+
+Look at Statement 2 again: If the weather is nice, then I’ll wash the car.
+This can be rewritten using letters to represent the hypothesis and conclusion.
+If p, then q. p = the weather is nice
+q = I’ll wash the car
+Or, p → q
+In addition to these positives, we can also write the negations, or “not”s of p and q. The symbolic version of not p, is ∼ p.
+∼ p = the weather is not nice
+∼ q = I won’t wash the car
+Using these negations and switching the order of p and q, we can create three more conditional statements.",B_boundary,NA,high
+"Converse: q → p: If I wash the car, then the weather is nice.
+Inverse: ∼ p →∼ q: If the weather is not nice, then I won’t wash the car.
+Contrapositive: ∼ q →∼ p: If I don’t wash the car, then the weather is not nice.
+
+If we accept “If the weather is nice, then I’ll wash the car” as true, then the converse and inverse are not necessarily true. However, if we take original statement to be true, then the contrapositive is also true. We say that the contrapositive is logically equivalent to the original if-then statement.",B_boundary,NA,high
+"Example 1: Use the statement: If n > 2, then n^2 > 4.
+a) Find the converse, inverse, and contrapositive.
+b) Determine if the statements from part a are true or false. If they are false, find a counterexample.
+
+Solution: The original statement is true.
+Converse: If n^2 > 4, then n > 2. False. n could be −3, making n^2 = 9.
+Inverse: If n < 2, then n^2 < 4. False. Again, if n = −3, then n^2 = 9.
+Contrapositive: If n^2 < 4, then n < 2. True, the only square number less than 4 is 1, which has square roots of 1 or -1, both less than 2.",B_boundary,NA,high
+"Example 3: Use the statement: Any two points are collinear.
+a) Find the converse, inverse, and contrapositive.
+b) Determine if the statements from part a are true or false. If they are false, find a counterexample.
+
+Solution: First, change the statement into an “if-then” statement: If two points are on the same line, then they are collinear.
+Converse: If two points are collinear, then they are on the same line. True.
+Inverse: If two points are not on the same line, then they are not collinear. True.
+Contrapositive: If two points are not collinear, then they do not lie on the same line. True.",B_boundary,NA,high
+"Example 6: p : x < 10    q : 2x < 50
+a) Is p → q true? If not, find a counterexample.
+b) Is q → p true? If not, find a counterexample.
+c) Is ∼ p →∼ q true? If not, find a counterexample.
+d) Is ∼ q →∼ p true? If not, find a counterexample.
+
+Solution:
+p → q : If x < 10, then 2x < 50. True.
+q → p : If 2x < 50, then x < 10. False, x = 15 would be a counterexample.
+∼ p →∼ q : If x > 10, then 2x > 50. False, x = 15 would also work here.
+∼ q →∼ p : If 2x > 50, then x > 10. True.",B_boundary,NA,high
+"7. Write the converse, inverse, and contrapositive of #1. Determine if they are true or false. If they are false, find a counterexample.
+8. Write the converse, inverse, and contrapositive of #5. Determine if they are true or false. If they are false, find a counterexample.
+9. Write the converse, inverse, and contrapositive of #6. Determine if they are true or false. If they are false, find a counterexample.",B_boundary,NA,high
+"For questions 13-16, use the statement: If AB = 5 and BC = 5, then B is the midpoint of AC.
+
+13. If this is the converse, what is the original statement? Is it true?
+14. If this is the original statement, what is the inverse? Is it true?
+15. Find a counterexample of the statement.
+16. Find the contrapositive of the original statement from #13.",B_boundary,NA,high
+"17. What is the inverse of the inverse of p → q? HINT: Two wrongs make a right in math!
+18. What is the one-word name for the converse of the inverse of an if-then statement?
+19. What is the one-word name for the inverse of the converse of an if-then statement?
+20. What is the contrapositive of the contrapositive of an if-then statement?",B_boundary,NA,high
+"25. p : x = 4    q : x^2 = 16
+a. Is p → q true? If not, find a counterexample.
+b. Is q → p true? If not, find a counterexample.
+c. Is ∼ p →∼ q true? If not, find a counterexample.
+d. Is ∼ q →∼ p true? If not, find a counterexample.
+
+26. p : x = −2    q : −x+3 = 5
+a. Is p → q true? If not, find a counterexample.
+b. Is q → p true? If not, find a counterexample.
+c. Is ∼ p →∼ q true? If not, find a counterexample.
+d. Is ∼ q →∼ p true? If not, find a counterexample.
+
+27. p : the measure of ∠ABC = 90°    q : ∠ABC is a right angle
+a. Is p → q true? If not, find a counterexample.
+b. Is q → p true? If not, find a counterexample.
+c. Is ∼ p →∼ q true? If not, find a counterexample.
+d. Is ∼ q →∼ p true? If not, find a counterexample.
+
+28. p : the measure of ∠ABC = 45°    q : ∠ABC is an acute angle
+a. Is p → q true? If not, find a counterexample.
+b. Is q → p true? If not, find a counterexample.
+c. Is ∼ p →∼ q true? If not, find a counterexample.
+d. Is ∼ q →∼ p true? If not, find a counterexample.",B_boundary,NA,high
+"Review Queue
+1. Write the converse, inverse, and contrapositive of the following statement:
+Football players wear shoulder pads.
+2. Is the converse, inverse or contrapositive of #1 true? If not, find a counterexample.
+3. If flowers are in bloom, then it is spring.
+If it is spring, then the weather is nice.
+So, if flowers are blooming, what can we conclude?",B_boundary,NA,high
+"Know What? In a fictitious far-away land, a poor peasant is awaiting his fate from the king. He is standing in a stadium, filled with spectators pointing and wondering what is going to happen. Finally, the king directs everyone’s attention to two doors, at the floor level with the peasant. Both doors have signs on them, which are below:
+
+TABLE 2.4:
+Door A: IN THIS ROOM THERE IS A LADY, AND IN THE OTHER ROOM THERE IS A TIGER.
+Door B: IN ONE OF THESE ROOMS THERE IS A LADY, AND IN ONE OF THE OTHER ROOMS THERE IS A TIGER.
+
+The king states, “Only one of these statements is true. If you pick correctly, you will find the lady. If not, the tiger will be waiting for you.” Which door should the peasant pick?",B_boundary,NA,high
+"Example 4: Here are two true statements. Be careful!
+If ∠A and ∠B are a linear pair, then m∠A + m∠B = 180°.
+m∠1 = 90° and m∠2 = 90°.
+What conclusion can you draw from these two statements?
+
+Solution: Here there is NO conclusion. These statements are in the form:
+p → q
+q
+
+We cannot conclude that ∠1 and ∠2 are a linear pair. We are told that m∠1 = 90° and m∠2 = 90° and while 90° + 90° = 180°, this does not mean they are a linear pair. Here are two counterexamples.
+In both of these counterexamples, ∠1 and ∠2 are right angles. In the first, they are vertical angles and in the second, they are two angles in a rectangle.
+This is called the Converse Error because the second statement is the conclusion of the first, like the converse of a statement.",B_boundary,NA,medium
+"Example 7a: Determine the conclusion from the true statements below.
+If you are not in Chicago, then you can’t be on the L.
+Bill is in Chicago.
+
+Solution: If we were to rewrite this symbolically, it would look like:
+∼ p →∼ q
+p
+
+This is not in the form of the Law of Contrapositive or the Law of Detachment, so there is no logical conclusion. You cannot conclude that Bill is on the L because he could be anywhere in Chicago. This is an example of the Inverse Error because the second statement is the negation of the hypothesis, like the beginning of the inverse of a statement.",B_boundary,NA,high
+"Inductive vs. Deductive Reasoning: You have now worked with both inductive and deductive reasoning. They are different but not opposites. Inductive reasoning means reasoning from examples or patterns. Enough examples might make you suspect that a relationship is always true. But, until you go beyond the inductive stage, you can’t be absolutely sure that it is always true. That is, you cannot prove something is true with inductive reasoning. That’s where deductive reasoning takes over. Let’s say we have a conjecture that was arrived at inductively, but is not proven. We can use the Law of Detachment, Law of Contrapositive, Law of Syllogism, and other logic rules to prove this conjecture.",B_boundary,NA,high
+To Recap: • Start truth tables with all the possible combinations of truths. For 2 variables there are 4 combinations for 3 variables there are 8. You always start a truth table this way. • Do any negations on the any of the variables. • Do any combinations in parenthesis. • Finish with completing what the problem was asking for.,B_boundary,NA,high
+"Know What? Revisited: Analyze the two statements on the doors. Door A: IN THIS ROOM THERE IS A LADY, AND IN THE OTHER ROOM THERE IS A TIGER. Door B: IN ONE OF THESE ROOMS THERE IS A LADY, AND IN ONE OF THE OTHER ROOMS THERE IS A TIGER. We know that one door is true, so the other one must be false. Let’s assume that Door A is true. That means the lady is behind Door A and the tiger is behind Door B. However, if we read Door B carefully, it says “in one of these rooms,” which means the lady could be behind either door, which is actually the true statement. So, because Door B is the true statement, Door A is false and the tiger is actually behind it. Therefore, the peasant should pick Door B.",B_boundary,NA,high
+Write a truth table for the following variables. 21. p∧ ∼ p 22. ∼ p∨ ∼ q 23. p∧(q∨ ∼ q) 24. (p∧q)∨ ∼ r 25. p∨(∼ q∨r) 26. p∧(q∨ ∼ r) 27. The only difference between 24 and 26 is the placement of the parenthesis. How does the truth table differ? 28. When is p∨q∨r true?,B_boundary,NA,high
+"Is the following a valid argument? If so, what law is being used? HINT: Statements could be out of order. 29. p → q, r → p, ∴ r → q 30. p → q, r → q, ∴ p → r 31. p →∼ r, r, ∴∼ p 32. ∼ q → r, q, ∴∼ r 33. p → (r → s), p, ∴ r → s 34. r → q, r → s, ∴ q → s",B_boundary,NA,high
+"Know What? Three identical triplets are sitting next to each other. The oldest is Sara and she always tells the truth. The next oldest is Sue and she always lies. Sally is the youngest of the three. She sometimes lies and sometimes tells the truth. Scott came over one day and didn’t know who was who, so he asked each of them one question. Scott asked the sister that was sitting on the left, “Which sister is in the middle?” and the answer he received was, “That’s Sara.” Scott then asked the sister in the middle, “What is your name?” The response given was, “I’m Sally.” Scott turned to the sister on the right and asked, “Who is in the middle?” The sister then replied, “She is Sue.” Who was who?",B_boundary,NA,high
+"Prove Move: (A subsection that will help you with proofs throughout the book.) When completing a proof, a few things to keep in mind: • Number each step. • Start with the given information. • Statements with the same reason can (or cannot) be combined into one step. It is up to you. For example, steps 1 and 2 above could have been one step. And, in step 5, the two statements could have been written separately. • Draw a picture and mark it with the given information. • You must have a reason for EVERY statement. • The order of the statements in the proof is not fixed. For example, steps 3, 4, and 5 could have been interchanged and it would still make sense.",B_boundary,NA,high
+"Prove Move: Use symbols and abbreviations for words within proofs. For example, ≅ was used in place of the word congruent above. You could also use ∠ for the word angle.",B_boundary,NA,high
+"Proof of the Right Angle Theorem: Given: ∠A and ∠B are right angles. Prove: ∠A ≅ ∠B. TABLE 2.20: Statement 1. ∠A and ∠B are right angles Reason: Given; Statement 2. m∠A = 90° and m∠B = 90° Reason: Definition of right angles; Statement 3. m∠A = m∠B Reason: Transitive PoE; Statement 4. ∠A ≅ ∠B Reason: ≅ angles have = measures. This theorem may seem redundant, but anytime right angles are mentioned, you need to use this theorem to say the angles are congruent.",B_boundary,NA,high
+"Same Angle Supplements Theorem: If two angles are supplementary to the same angle then the angles are congruent. So, if m∠A + m∠B = 180° and m∠C + m∠B = 180°, then m∠A = m∠C. Using numbers to illustrate, we could say that if ∠A is supplementary to an angle measuring 56°, then m∠A = 124°. ∠C is also supplementary to 56°, so it too is 124°. Therefore, m∠A = m∠C. This example, however, does not constitute a proof.",B_boundary,NA,high
+"Vertical Angles Theorem: Recall the Vertical Angles Theorem from Chapter 1. We will do a formal proof here. Given: Lines k and m intersect. Prove: ∠1 ≅ ∠3 and ∠2 ≅ ∠4. TABLE 2.22: Statement 1. Lines k and m intersect Reason: Given; Statement 2. ∠1 and ∠2 are a linear pair, ∠2 and ∠3 are a linear pair, ∠3 and ∠4 are a linear pair Reason: Definition of a Linear Pair; Statement 3. ∠1 and ∠2 are supplementary, ∠2 and ∠3 are supplementary, ∠3 and ∠4 are supplementary Reason: Linear Pair Postulate; Statement 4. m∠1+m∠2 = 180°, m∠2+m∠3 = 180°, m∠3+m∠4 = 180° Reason: Definition of Supplementary Angles; Statement 5. m∠1+m∠2 = m∠2+m∠3, m∠2+m∠3 = m∠3+m∠4 Reason: Substitution PoE; Statement 6. m∠1 = m∠3, m∠2 = m∠4 Reason: Subtraction PoE; Statement 7. ∠1 ≅ ∠3, ∠2 ≅ ∠4 Reason: ≅ angles have = measures. In this proof we combined everything. You could have done two separate proofs, one for ∠1 ≅ ∠3 and one for ∠2 ≅ ∠4.",B_boundary,NA,high
+"Notice that this is a different construction from a perpendicular bisector. To see a demonstration of this construction, go to: http://www.mathsisfun.com/geometry/construct-perpnotline.html",B_boundary,NA,high
+"Notice that this is a different construction from a perpendicular bisector. To see a demonstration of this construction, go to: http://www.mathsisfun.com/geometry/construct-perponline.html",B_boundary,NA,high
+"Corresponding Angles Postulate: If two parallel lines are cut by a transversal, then the corresponding angles are congruent. If l || m and both are cut by t, then ∠1 ≅ ∠5, ∠2 ≅ ∠6, ∠3 ≅ ∠7, and ∠4 ≅ ∠8. l must be parallel to m in order to use this postulate. Recall that a postulate is just like a theorem, but does not need to be proven. We can take it as true and use it just like a theorem from this point.",B_boundary,NA,high
+"Proof of Alternate Interior Angles Theorem Given: l || m Prove: ∠3 ≅ ∠6 TABLE 3.1: Statement 1. l || m Reason Given; Statement 2. ∠3 ≅ ∠7 Reason Corresponding Angles Postulate; Statement 3. ∠7 ≅ ∠6 Reason Vertical Angles Theorem; Statement 4. ∠3 ≅ ∠6 Reason Transitive PoC. There are several ways we could have done this proof. For example, Step 2 could have been ∠2 ≅ ∠6 for the same reason, followed by ∠2 ≅ ∠3. We could have also proved that ∠4 ≅ ∠5.",B_boundary,NA,high
+Same Side Interior Angles Theorem: Same side interior angles have a different relationship that the previously discussed angle pairs.,B_boundary,NA,high
+"Review Queue Answer the following questions. 1. Write the converse of the following statements: a. If it is summer, then I am out of school. b. I will go to the mall when I am done with my homework. c. If two parallel lines are cut by a transversal, then the corresponding angles are congruent. 2. Are any of the three converses from #1 true? Why or why not? Give a counterexample. 3. Determine the value of x if l || m.",B_boundary,NA,high
+"Know What? Here is a picture of the support beams for the Coronado Bridge in San Diego. This particular bridge, called a girder bridge, is usually used in straight, horizontal situations. The Coronado Bridge is diagonal, so the beams are subject to twisting forces (called torque). This can be fixed by building a curved bridge deck. To aid the curved bridge deck, the support beams should not be parallel. If they are, the bridge would be too fragile and susceptible to damage.",B_boundary,NA,high
+"Notice that the Corresponding Angles Postulate was not used in this proof. The Transitive Property is the reason for Step 3 because we do not know if l is parallel to m until we are done with the proof. You could conclude that if we are trying to prove two lines are parallel, the converse theorems will be used. And, if we are proving two angles are congruent, we must be given that the two lines are parallel.",B_boundary,NA,medium
+"The final converse theorem is of the Same Side Interior Angles Theorem. Remember that these angles are not congruent when lines are parallel, they are supplementary. Converse of the Same Side Interior Angles Theorem: If two lines are cut by a transversal and the consecutive interior angles are supplementary, then the lines are parallel.",B_boundary,NA,medium
+"For Questions 3-5, fill in the blanks in the proofs below. 3. Given: l || m, p || q Prove: ∠1 ≅ ∠2. TABLE 3.6: Statement 1. l || m (Reason: 1.); Statement 2. (Reason: 2. Corresponding Angles Postulate); Statement 3. p || q (Reason: 3.); Statement 4. (Reason: 4.); Statement 5. ∠1 ≅ ∠2 (Reason: 5.).",B_boundary,NA,high
+"5. Given: ∠1 ≅ ∠2, ∠3 ≅ ∠4 Prove: l || m. TABLE 3.8: Statement 1. ∠1 ≅ ∠2 (Reason: 1.); Statement 2. l || n (Reason: 2.); Statement 3. ∠3 ≅ ∠4 (Reason: 3.); Statement 4. (Reason: 4. Converse of Alternate Interior Angles Theorem); Statement 5. l || m (Reason: 5.).",B_boundary,NA,high
+"Review Queue: Determine if the following statements are true or false. If they are true, write the converse. If they are false, find a counter example. 1. Perpendicular lines form four right angles. 2. A right angle is greater than or equal to 90°. Find the slope between the two given points. 3. (-3, 4) and (-3, 1). 4. (6, 7) and (-5, 7)",B_boundary,NA,high
+"Example 2: Find the slope between (-8, 3) and (2, -2). Solution: m = (-2−3)/(2−(-8)) = -5/10 = -1/2. This is a negative slope. Instead of “rising,” the negative slope means that you would “fall,” when finding points on the line.",B_boundary,NA,high
+"Example 5: Find the equation of the line that is parallel to y = −1/3 x + 4 and passes through (9, -5). Recall that the equation of a line in this form is called the slope-intercept form and is written as y = mx+b where m is the slope and b is the y−intercept. Here, x and y represent any coordinate pair, (x, y) on the line. Solution: We know that parallel lines have the same slope, so the line we are trying to find also has m = −1/3. Now, we need to find the y−intercept. 4 is the y−intercept of the given line, not our new line. We need to plug in 9 for x and -5 for y (this is our given coordinate pair that needs to be on the line) to solve for the new y−intercept (b). -5 = −1/3(9) + b; -5 = −3 + b; -2 = b. Therefore, the equation of line is y = −1/3 x − 2. Reminder: the final equation contains the variables x and y to indicate that the line contains and infinite number of points or coordinate pairs that satisfy the equation. Parallel lines always have the same slope and different y−intercepts.",B_boundary,NA,high
+"Example 7: Find the equation of the line that is perpendicular to y = −1/3 x + 4 and passes through (9, -5). Solution: First, the slope is the reciprocal and opposite sign of −1/3. So, m = 3. Now, we need to find the y−intercept. 4 is the y−intercept of the given line, not our new line. We need to plug in 9 for x and -5 for y to solve for the new y−intercept (b). -5 = 3(9) + b; -5 = 27 + b; -32 = b. Therefore, the equation of line is y = 3x−32.",B_boundary,NA,high
+"Example 1: Find the distance between (4, -2) and (-10, 3).
+
+Solution: Plug in (4, -2) for (x1, y1) and (-10, 3) for (x2, y2) and simplify.
+
+d = √((-10 − 4)^2 + (3 + 2)^2)
+= √((-14)^2 + (5^2)) Distances are always positive!
+= √(196 + 25)
+= √221 ≈ 14.87 units",B_boundary,NA,high
+"Shortest Distance between Two Parallel Lines
+
+The shortest distance between two parallel lines is the length of the perpendicular segment between them. It doesn’t matter which perpendicular line you choose, as long as the two points are on the lines. Recall that there are infinitely many perpendicular lines between two parallel lines.
+
+Notice that all of the pink segments are the same length. So, when picking a perpendicular segment, be sure to pick one with endpoints that are integers.",B_boundary,NA,high
+"Example 8: Find m∠C.
+Solution: Using the Exterior Angle Theorem, m∠C + 16° = 121°. Subtracting 16° from both sides, m∠C = 105°.
+It is important to note that if you forget the Exterior Angle Theorem, you can do this problem just like we solved Example 7.",B_boundary,NA,high
+"Example 9: Algebra Connection Find the value of x and the measure of each angle.
+Solution: Set up an equation using the Exterior Angle Theorem.
+(4x + 2)° + (2x - 9)° = (5x + 13)°
+(6x - 7)° = (5x + 13)°
+x = 20°
+Substituting 20° back in for x, the two interior angles are (4(20) + 2)° = 82° and (2(20) - 9)° = 31°. The exterior angle is (5(20) + 13)° = 113°. Double-checking our work, notice that 82° + 31° = 113°. If we had done the problem incorrectly, this check would not have worked.",B_boundary,NA,high
+"Know What? Revisited The Bermuda Triangle is an acute scalene triangle. The angle measures are in the picture below. Your measured angles should be within a degree or two of these measures. The angles should add up to 180°. However, because your measures are estimates using a protractor, they might not exactly add up.
+The angle measures in the picture are the measures from a map (which is flat). Because the earth is curved, in real life the measures will be slightly different.",B_boundary,NA,high
+"Creating Congruence Statements
+Looking at Example 1, we know that the two triangles are congruent because the three angles and three sides are congruent to the three angles and three sides in the other triangle.
+When stating that two triangles are congruent, the order of the letters is very important. Corresponding parts must be written in the same order. Using Example 1, we would have:
+∠A and ∠L are ≅, ∠B and ∠M are ≅, ∠C and ∠N are ≅
+△ABC ≅ △LMN
+Notice that the congruent sides also line up within the congruence statement.
+AB ≅ LM, BC ≅ MN, AC ≅ LN
+We can also write this congruence statement several other ways, as long as the congruent angles match up. For example, we can also write △ABC ≅ △LMN as:
+△ACB ≅ △LNM, △BCA ≅ △MNL
+△BAC ≅ △MLN, △CBA ≅ △NML
+△CAB ≅ △NLM
+One congruence statement can always be written six ways. Any of the six ways above would be correct when stating that the two triangles in Example 1 are congruent.",B_boundary,NA,high
+"Third Angle Theorem: If two angles in one triangle are congruent to two angles in another triangle, then the third pair of angles must also congruent.
+In other words, for triangles △ABC and △DEF, ∠A ≅ ∠D and ∠B ≅ ∠E, then ∠C ≅ ∠F.
+Notice that this theorem does not state that the triangles are congruent. That is because if two sets of angles are congruent, the sides could be different lengths. See the picture to the left.",B_boundary,NA,high
+"Know What? The “ideal” measurements in a kitchen from the sink, refrigerator and oven are as close to an equilateral triangle as possible. Your parents are remodeling theirs to be as close to this as possible and the measurements are in the picture at the left, below. Your neighbor’s kitchen has the measurements on the right.
+Are the two triangles congruent? Why or why not?",B_boundary,NA,high
+"Example 1: Write a triangle congruence statement based on the diagram below:
+Solution: From the tic marks, we know AB ≅ LM, AC ≅ LK, BC ≅ MK. Using the SSS Postulate we know the two triangles are congruent. Lining up the corresponding sides, we have △ABC ≅ △LMK.
+Don’t forget ORDER MATTERS when writing triangle congruence statements. Here, we lined up the sides with one tic mark, then the sides with two tic marks, and finally the sides with three tic marks.",B_boundary,NA,medium
+"TABLE 4.5: Statement Reason 1. AB ≅ DE, C is the midpoint of AE and DB Given 2. AC ≅ CE, BC ≅ CD Definition of a midpoint 3. △ACB ≅ △ECD SSS Postulate. Make sure that you clearly state the three sets of congruent sides BEFORE stating that the triangles are congruent.",B_boundary,NA,high
+"SAS Triangle Congruence Postulate: First, it is important to note that SAS refers to Side-Angle-Side. The placement of the word Angle is important because it indicates that the angle that you are given is between the two sides.",B_boundary,NA,high
+"So, in addition to SSS congruence, we now have SAS. Both of these postulates can be used to say that two triangles are congruent. When doing proofs, you might be able to use either SSS or SAS to prove that two triangles are congruent. There is no set way to complete a proof, so when faced with the choice to use SSS or SAS, it does not matter. Either would be correct.",B_boundary,NA,high
+"SSS in the Coordinate Plane: In the coordinate plane, the easiest way to show two triangles are congruent is to find the lengths of the 3 sides in each triangle. Finding the measure of an angle in the coordinate plane can be a little tricky, so we will avoid it in this text. Therefore, you will only need to apply SSS in the coordinate plane. To find the lengths of the sides, you will need to use the distance formula, √((x2 - x1)² + (y2 - y1)²).",B_boundary,NA,high
+"Constructions: 26. Construct a triangle with sides of length 5cm, 3cm, 2cm. 27. Copy the triangle below using a straightedge and compass. 28. Use the two sides and the given angle to construct △ABC. 29. Use the two sides and the given angle to construct △ABC. 30. Was the information given in problem 29 in SAS order? If not, your triangle may not be the only triangle that you can construct using the given information. Construct the second possible triangle.",B_boundary,NA,high
+"ASA Congruence: Like SAS, ASA refers to Angle-Side-Angle. The placement of the word Side is important because it indicates that the side that you are given is between the two angles.",B_boundary,NA,high
+"AAS Congruence: A variation on ASA is AAS, which is Angle-Angle-Side. Recall that for ASA you need two angles and the side between them. But, if you know two pairs of angles are congruent, then the third pair will also be congruent by the 3rd Angle Theorem. Therefore, you can prove a triangle is congruent whenever you have any two angles and a side. Be careful to note the placement of the side for ASA and AAS. As shown in the pictures above, the side is between the two angles for ASA and it is not for AAS.",B_boundary,NA,medium
+"Example 4: Can you prove that the following triangles are congruent? Why or why not? Solution: Even though KL ≅ ST, they are not corresponding. Look at the angles around KL, ∠K and ∠L. ∠K has one arc and ∠L is unmarked. The angles around ST are ∠S and ∠T. ∠S has two arcs and ∠T is unmarked. In order to use AAS, ∠S needs to be congruent to ∠K. They are not congruent because the arcs marks are different. Therefore, we cannot conclude that these two triangles are congruent.",B_boundary,NA,high
+"HL Congruence Theorem: If the hypotenuse and leg in one right triangle are congruent to the hypotenuse and leg in another right triangle, then the two triangles are congruent. The markings in the picture are enough to say △ABC ≅ △XYZ. Notice that this theorem is only used with a hypotenuse and a leg. If you know that the two legs of a right triangle are congruent to two legs of another triangle, the two triangles would be congruent by SAS, because the right angle would be between them. We will not prove this theorem here because we have not proven the Pythagorean Theorem yet.",B_boundary,NA,high
+"AAA and SSA Relationships: There are two other side-angle relationships that we have not discussed: AAA and SSA. AAA implied that all the angles are congruent, however, that does not mean the triangles are congruent. As you can see, △ABC and △PRQ are not congruent, even though all the angles are. These triangles are similar, a topic that will be discussed later in this text. SSA relationships do not prove congruence either. In review problems 29 and 30 of the last section you illustrated an example of how SSA could produce two different triangles. △ABC and △DEF below are another example of SSA. ∠B and ∠D are not the included angles between the congruent sides, so we cannot prove that these two triangles are congruent. Notice, that two different triangles can be drawn even though AB ≅ DE, AC ≅ EF, and m∠B = m∠D. You might have also noticed that SSA could also be written ASS. This is true, however, in this text we will write SSA.",B_boundary,NA,high
+"Triangle Congruence Recap: To recap, here is a table of all of the possible side-angle relationships and if you can use them to determine congruence or not. TABLE 4.13: Side-Angle Relationship | Picture | Determine Congruence? SSS | Yes | △ABC ≅ △LKM; SAS | Yes | △ABC ≅ △XYZ; ASA | Yes | △ABC ≅ △XYZ; AAS (or SAA) | Yes | △ABC ≅ △YZX; HL | Yes, Right Triangles Only | △ABC ≅ △XYZ; SSA (or ASS) | NO; AAA | NO",B_boundary,NA,high
+"Because ΔDEG ≅ ΔFEG, we know that ∠EGD ≅ ∠EGF by CPCTC. Thes two angles are also a linear pair, so they are congruent supplements, or 90° each. Therefore, EG ⊥ DF.
+Additionally, DG ≅ GF by CPCTC, so G is the midpoint of DF. This means that EG is the perpendicular bisector of DF, in addition to being the angle bisector of ∠DEF.
+Isosceles Triangle Theorem: The angle bisector of the vertex angle in an isosceles triangle is also the perpendicular bisector to the base.
+This is ONLY true for the vertex angle. We will prove this theorem in the review questions for this section.",B_boundary,NA,high
+"Determine if the following statements are ALWAYS, SOMETIMES, or NEVER true. Explain your reasoning.
+18. Base angles of an isosceles triangle are congruent.
+19. Base angles of an isosceles triangle are complementary.
+20. Base angles of an isosceles triangle can be equal to the vertex angle.
+21. Base angles of an isosceles triangle can be right angles.
+22. Base angles of an isosceles triangle are acute.",B_boundary,NA,high
+"Example 1: Draw the midsegment DF between AB and BC. Use appropriate tic marks.
+Solution: Find the midpoints of AB and BC using your ruler. Label these points D and F. Connect them to create the midsegment.
+Don’t forget to put the tic marks, indicating that D and F are midpoints, AD ≅ DB and BF ≅ FC.",B_boundary,NA,high
+"17. Fill in the blanks in the Angle Bisector Theorem Converse. Given: AD ≅ DC, such that AD and DC are the shortest distances to BA and BC Prove: BD bisects ∠ABC
+
+TABLE 5.4:
+Statement Reason
+1.
+2. The shortest distance from a point to a line is perpendicular.
+3. ∠DAB and ∠DCB are right angles
+4. ∠DAB ≅ ∠DCB
+5. BD ≅ BD
+6. ΔABD ≅ ΔCBD
+7. CPCTC
+8. BD bisects ∠ABC",B_boundary,NA,high
+"Notice that a median is very different from a perpendicular bisector or an angle bisector. A perpendicular bisector also goes through the midpoint, but it does not necessarily go through the vertex of the opposite side. And, unlike an angle bisector, a median does not necessarily bisect the angle.",B_boundary,NA,medium
+"Example 2: Find the other two medians of ΔLMN.
+
+Solution: Repeat the process from Example 1 for sides LN and LM. Be sure to always include the appropriate tick marks to indicate midpoints.",B_boundary,NA,high
+"Centroid: The point of concurrency for the medians of a triangle.
+
+Unlike the circumcenter and incenter, the centroid does not have anything to do with circles. It has a different property.",B_boundary,NA,high
+"Investigation 5-4: Constructing an Altitude for an Obtuse Triangle
+Tools Needed: pencil, paper, compass, ruler
+1. Draw an obtuse triangle. Label it △ABC, like the picture to the right. Extend side AC, beyond point A.
+2. Using Investigation 3-2, construct a perpendicular line to AC, through B.
+The altitude does not have to extend past side AC, as it does in the picture. Technically the height is only the vertical distance from the highest vertex to the opposite side.",B_boundary,NA,high
+"Another way to find the centroid of a triangle in the coordinate plane is to find the midpoint of one side and then find the point two thirds of the way from the third vertex to this point. To find the point two thirds of the way from point A(x1, y1) to B(x2, y2) use the formula: ((x1 + 2x2)/3, (y1 + 2y2)/3). Use this method to find the centroid in the following problems.
+27. (-1, 3), (5, -2) and (-1, -4)
+28. (1, -2), (-5, 4) and (7, 7)
+29. Use the coordinates (x1, y1), (x2, y2) and (x3, y3) and the method used in the last two problems to find a formula for the centroid of a triangle in the coordinate plane.
+30. Use your formula from problem 29 to find the centroid of the triangle with vertices (2, -7), (-5, 1) and (6, -9).",B_boundary,NA,high
+"Know What? Two mountain bike riders leave from the same parking lot and headin opposite directions, on two different trails. The first ridergoes 8 miles due west, then rides due south for 15 miles. The second rider goes 6 miles due east, then changes direction and rides 20° east of due north for 17 miles. Both riders have been travelling for 23 miles, but which one is further from the parking lot?",B_boundary,NA,high
+"Example 2: List the angles in order, from largest to smallest.
+Solution: Just like with the sides, the largest angle is opposite the longest side. The longest side is BC, so the largest angle is ∠A. Next would be ∠B and finally ∠A is the smallest angle.",B_boundary,NA,high
+"Triangle Inequality Theorem
+Can any three lengths make a triangle? The answer is no. There are limits on what the lengths can be. For example, the lengths 1, 2, 3 cannot make a triangle because 1 + 2 = 3, so they would all lie on the same line. The lengths 4, 5, 10 also cannot make a triangle because 4 + 5 = 9.
+The arc marks show that the two sides would never meet to form a triangle.
+Triangle Inequality Theorem: The sum of the lengths of any two sides of a triangle must be greater than the length of the third.",B_boundary,NA,high
+"Example 3: Do the lengths below make a triangle?
+a) 4.1, 3.5, 7.5
+b) 4, 4, 8
+c) 6, 7, 8
+Solution: Even though the Triangle Inequality Theorem says “the sum of the length of any two sides,” really, it is referring to the sum of the lengths of the two shorter sides must be longer than the third.
+a) 4.1 + 3.5 > 7.5 Yes, these lengths could make a triangle.
+b) 4 + 4 = 8 No, not a triangle. Two lengths cannot equal the third.
+c) 6 + 7 > 8 Yes, these lengths could make a triangle.",B_boundary,NA,high
+"Example 4: Find the possible lengths of the third side of a triangle if the other two sides are 10 and 6.
+Solution: The Triangle Inequality Theorem can also help you determine the possible range of the third side of a triangle. The two given sides are 6 and 10, so the third side, s, can either be the shortest side or the longest side. For example s could be 5 because 6 + 5 > 10. It could also be 15 because 6 + 10 > 15. Therefore, we write the possible values of s as a range, 4 < s < 16.
+Notice the range is no less than 4, and not equal to 4. The third side could be 4.1 because 4.1 + 6 would be greater than the third side, 10. For the same reason, s cannot be greater than 16, but it could 15.9. In this case, s would be the longest side and 10 + 6 must be greater than s to form a triangle.
+If two sides are lengths a and b, then the third side, s, has the range a − b < s < a + b.",B_boundary,NA,high
+"Determine if the sets of lengths below can make a triangle. If not, state why.
+7. 6, 6, 13
+8. 1, 2, 3
+9. 7, 8, 10
+10. 5, 4, 3
+11. 23, 56, 85
+12. 30, 40, 50",B_boundary,NA,high
+"19. List the sides from shortest to longest.
+20. Compare m∠1 and m∠2. What can you say about m∠3 and m∠4?
+In questions 21-23, compare the measures of a and b.
+21.
+22.
+23.",B_boundary,NA,high
+"In questions 28 and 29 explain why the conclusion is false.
+28. Conclusion: m∠C < m∠B < m∠A
+29. Conclusion: AB < DC
+30. If AB is a median of △CAT and CA > AT, explain why ∠ABT is acute. You may wish to draw a diagram.",B_boundary,NA,medium
+"Until now, we have proved theorems true by direct reasoning, where conclusions are drawn from a series of facts and previously proven theorems. However, we cannot always use direct reasoning to prove every theorem.
+Indirect Proof: When the conclusion from a hypothesis is assumed false (or opposite of what it states) and then a contradiction is reached from the given or deduced statements.
+The easiest way to understand indirect proofs is by example. You may choose to use the two-column format or a paragraph proof. First we will explore indirect proofs with algebra and then geometry.",B_boundary,NA,high
+"Indirect Proofs in Algebra
+Example 1: If x = 2, then 3x − 5 ≠ 10. Prove this statement is true by contradiction.
+Solution: In an indirect proof the first thing you do is assume the conclusion of the statement is false. In this case, we will assume the opposite of 3x − 5 ≠ 10
+If x = 2, then 3x − 5 = 10
+Now, proceed with this statement, as if it is true. Solve for x.
+3x − 5 = 10
+3x = 15
+x = 5
+x = 5 contradicts the given statement that x = 2. Hence, our assumption is incorrect and 3x − 5 cannot equal 10.",B_boundary,NA,high
+"Example 2: If n is an integer and n^2 is odd, then n is odd. Prove this is true indirectly.
+Solution: First, assume the opposite of “n is odd.”
+n is even.
+Now, square n and see what happens.
+If n is even, then n = 2a, where a is any integer.
+n^2 = (2a)^2 = 4a^2
+This means that n^2 is a multiple of 4. No odd number can be divided evenly by an even number, so this contradicts our assumption that n is even. Therefore, n must be odd if n^2 is odd.",B_boundary,NA,high
+"Indirect Proofs in Geometry
+Example 3: If △ABC is isosceles, then the measure of the base angles cannot be 92°. Prove this indirectly.
+Solution: Assume the opposite of the conclusion.
+The measure of the base angles is 92°.
+If the base angles are 92°, then they add up to 184°. This contradicts the Triangle Sum Theorem that says all triangles add up to 180°. Therefore, the base angles cannot be 92°.",B_boundary,NA,high
+"Example 4: Prove the SSS Inequality Theorem is true by contradiction.
+Solution: The SSS Inequality Theorem says: “If two sides of a triangle are congruent to two sides of another triangle, but the third side of the first triangle is longer than the third side of the second triangle, then the included angle of the first triangle is greater in measure than the included angle of the second triangle.” First, assume the opposite of the conclusion.
+The included angle of the first triangle is less than or equal to the included angle of the second triangle.
+If the included angles are equal then the two triangles would be congruent by SAS and the third sides would be congruent by CPCTC. This contradicts the hypothesis of the original statement “the third side of the first triangle is longer than the third side of the second.” Therefore, the included angle of the first triangle must be larger than the included angle of the second.",B_boundary,NA,high
+"To summarize:
+• Assume the opposite of the conclusion (second half) of the statement.
+• Proceed as if this assumption is true to find the contradiction.
+• Once there is a contradiction, the original statement is true.
+• DO NOT use specific examples. Use variables so that the contradiction can be generalized.",B_boundary,NA,high
+"Review Questions
+Prove the following statements true indirectly.
+1. If n is an integer and n^2 is even, then n is even.
+2. If m∠A ≠ m∠B in △ABC, then △ABC is not equilateral.
+3. If x > 3, then x^2 > 9.
+4. The base angles of an isosceles triangle are congruent.
+5. If x is even and y is odd, then x + y is odd.
+6. In △ABE, if ∠A is a right angle, then ∠B cannot be obtuse.
+7. If A, B, and C are collinear, then AB + BC = AC (Segment Addition Postulate).
+8. If a collection of nickels and dimes is worth 85 cents, then there must be an odd number of nickels.
+9. Hugo is taking a true/false test in his Geometry class. There are five questions on the quiz. The teacher gives her students the following clues: The last answer on the quiz is not the same as the fourth answer. The third answer is true. If the fourth answer is true, then the one before it is false. Use an indirect proof to prove that the last answer on the quiz is true.
+10. On a test of 15 questions, Charlie claims that his friend Suzie must have gotten at least 10 questions right. Another friend, Larry, does not agree and suggests that Suzie could not have gotten that many correct. Rebecca claims that Suzie certainly got at least one question correct. If only one of these statements is true, how many questions did Suzie get right?",B_boundary,NA,high
+"As you can see, there are two sets of exterior angles for any vertex on a polygon. It does not matter which set you use because one set is just the vertical angles of the other, making the measurement equal. In the picture to the left, the color-matched angles are vertical angles and congruent.",B_boundary,NA,high
+30. Challenge Each interior angle forms a linear pair with an exterior angle. In a regular polygon you can use two different formulas to find the measure of each exterior angle. One way is 360◦/n and the other is 180◦ − ((n−2)180◦)/n (180◦ minus Equiangular Polygon Formula). Use algebra to show these two expressions are equivalent.,B_boundary,NA,high
+"Example 2: Algebra Connection Find the values of x and y.
+Solution: Opposite sides are congruent, so we can set each pair equal to each other and solve both equations.
+6x−7 = 2x+9
+4x = 16
+x = 4
+
+y^2 + 3 = 12
+y^2 = 9
+y = 3 or −3
+Even though y = 3 or -3, lengths cannot be negative, so y = 3.",B_boundary,NA,high
+"Review Queue
+1. Write the converses of: the Opposite Sides Theorem, Opposite Angles Theorem, Consecutive Angles Theorem and the Parallelogram Diagonals Theorem.
+2. Are any of these converses true? If not, find a counterexample.
+3. Plot the points A(2,2), B(4,−2), C(−2,−4), and D(−6,−2).
+a. Find the slopes of AB, BC, CD, and AD. Is ABCD a parallelogram?
+b. Find the point of intersection of the diagonals. Does this go along with what you found in part a?",B_boundary,NA,high
+"Are these converses true? The answer is yes. Each of these converses can be a way to show that a quadrilateral is a parallelogram. However, the Consecutive Angles Converse can be a bit tricky, considering you would have to show that each angle is supplementary to its neighbor (∠A and ∠B, ∠B and ∠C, ∠C and ∠D, and ∠A and ∠D). We will not use this converse.",B_boundary,NA,high
+"Example 5: Is the quadrilateral RSTU a parallelogram?
+Solution: Let’s use the Parallelogram Diagonals Converse to determine if RSTU is a parallelogram. Find the midpoint of each diagonal.
+Midpoint of RT = ((-4+3)/2, (3-4)/2) = (-0.5, -0.5)
+Midpoint of SU = ((4-5)/2, (5-5)/2) = (-0.5, 0)
+Because the midpoint is not the same, RSTU is not a parallelogram.",B_boundary,NA,high
+"Theorem 6-14: A parallelogram is a rectangle if and only if the diagonals are congruent.
+Notice, we did not say any quadrilateral. There are quadrilaterals that have congruent diagonals and are not parallelograms.",B_boundary,NA,medium
+"Example 5: Find the other two angle measures in the kites below.
+Solution:
+a) The two angles left are the non-vertex angles, which are congruent.
+130° + 60° + x + x = 360°
+2x = 170°
+x = 85° Both angles are 85°.
+b) The other non-vertex angle is also 94°. To find the fourth angle, subtract the other three angles from 360°.
+90° + 94° + 94° + x = 360°
+x = 82°
+Be careful with the definition of a kite. The congruent pairs are distinct. This means that a rhombus and square cannot be a kite.",B_boundary,NA,medium
+"Hint: If you are only given a set of points when determining what type of quadrilateral a figure is, always plot the points and graph. The visual will help you decide which direction to go.
+Example 8: Determine what type of quadrilateral ABCD is. A(−3,3), B(1,5), C(4,−1), D(1,−5). Simplify all radicals.
+Solution: First, graph ABCD. This will make it easier to figure out what type of quadrilateral it is. From the graph, we can tell this is not a parallelogram. Find the slopes of BC and AD to see if they are parallel.
+Slope of BC = (5−(-1))/(1−4) = 6/(-3) = −2
+Slope of AD = (3−(-5))/(-3−1) = 8/(-4) = −2
+We now know BC || AD. This is a trapezoid. To determine if it is an isosceles trapezoid, find AB and CD.
+AB = √((-3−1)^2 + (3−5)^2) = √((-4)^2 + (-2)^2) = √20 = 2√5
+CD = √((4−1)^2 + (-1−(-5))^2) = √(3^2 + 4^2) = √25 = 5
+AB ≠ CD, therefore this is only a trapezoid.",B_boundary,NA,high
+"Example 9: Determine what type of quadrilateral EFGH is.
+E(5,−1), F(11,−3), G(5,−5), H(−1,−3)
+Solution: To contrast with Example 8, we will not graph this example. Let’s find the length of all four sides.
+EF = √((5−11)^2 + (-1−(-3))^2) = √((-6)^2 + 2^2) = √40 = 2√10
+FG = √((11−5)^2 + (-3−(-5))^2) = √(6^2 + 2^2) = √40 = 2√10
+GH = √((5−(-1))^2 + (-5−(-3))^2) = √(6^2 + (-2)^2) = √40 = 2√10
+HE = √((-1−5)^2 + (-3−(-1))^2) = √((-6)^2 + (-2)^2) = √40 = 2√10
+All four sides are equal. That means, this quadrilateral is either a rhombus or a square. The difference between the two is that a square has four 90° angles and congruent diagonals. Let’s find the length of the diagonals.
+EG = √((5−5)^2 + (-1−(-5))^2) = √(0^2 + 4^2) = √16 = 4
+FH = √((11−(-1))^2 + (-3−(-3))^2) = √(12^2 + 0^2) = √144 = 12
+The diagonals are not congruent, so EFGH is a rhombus.",B_boundary,NA,high
+"Example 2: What is the ratio, in simplest form, of Honey Wheat bagels to total bagels sold?
+
+Solution: Remember that order matters. Because the Honey Wheat is listed first, that is the number that comes first in the ratio (on in the numerator of the fraction). Find the total number of bagels sold.
+80+30+25+20+45+50 = 250
+The ratio is then 50/250 = 1/5, 1:5, or 1 to 5.
+We call the ratio 50:250 and 1:5 equivalent because one reduces to the other.",B_boundary,NA,high
+"Example 4: Solve the proportions.
+a) 4/5 = x/30
+b) (y+1)/8 = 5/20
+c) 6/5 = (2x+5)/(x-2)
+
+Solution: To solve a proportion, you need to cross-multiply.
+a) 4/5 = x/30
+4 · 30 = 5 · x
+120 = 5x
+24 = x
+
+b) (y+1)/8 = 5/20
+(y+1) · 20 = 5 · 8
+20y + 20 = 40
+20y = 20
+y = 1
+
+c) 6/5 = (2x+4)/(x-2)
+6 · (x-2) = 5 · (2x+4)
+6x - 12 = 10x + 20
+-32 = 4x
+-8 = x",B_boundary,NA,high
+"Think of the Cross-Multiplication Theorem as a shortcut. Without this theorem, you would have to go through all of these steps every time to solve a proportion.",B_boundary,NA,high
+"Given the true proportion, 10/6 = 15/d = x/y and d, x, and y are nonzero, determine if the following proportions are also true.
+25. 10/y = x/6
+26. 15/10 = d/6
+27. (6+10)/10 = (y+x)/x
+28. 15/x = y/d",B_boundary,NA,high
+"Example 1: Suppose ΔABC ∼ ΔJKL. Based on the similarity statement, which angles are congruent and which sides are proportional?
+
+Solution: Just like a congruence statement, the congruent angles line up within the statement. So, ∠A ≅ ∠J, ∠B ≅ ∠K, and ∠C ≅ ∠L. The same is true of the proportional sides. We write the sides in a proportion, AB/JK = BC/KL = AC/JL.
+Because of the corollaries we learned in the last section, the proportions in Example 1 could be written several different ways. For example, AB/BC = JK/KL. Make sure to line up the corresponding proportional sides.",B_boundary,NA,high
+"Example 3: ABCD is a rectangle with length 12 and width 8. UVWX is a rectangle with length 24 and width 18. Are these two rectangles similar?
+
+Solution: Draw a picture. First, all the corresponding angles need to be congruent. In rectangles, all the angles are congruent, so this condition is satisfied. Now, let’s see if the sides are proportional. 8/12 = 2/3, 18/24 = 3/4. 2/3 ≠ 3/4. This tells us that the sides are not in the same proportion, so the rectangles are not similar. We could have also set up the proportion as 12/24 = 1/2 and 8/18 = 4/9. 1/2 ≠ 4/9, so you would end up with the same conclusion.",B_boundary,NA,high
+"Example 7: ΔABC ∼ ΔMNP. The perimeter of ΔABC is 150 and AB = 32 and MN = 48. Find the perimeter of ΔMNP.
+
+Solution: From the similarity statement, AB and MN are corresponding sides. So, the scale factor is 32/48 = 2/3 or 3/2. The perimeter of ΔMNP is 2/3(150) = 100.",B_boundary,NA,high
+"Review Questions
+Determine if the following statements are true or false.
+1. All equilateral triangles are similar.
+2. All isosceles triangles are similar.
+3. All rectangles are similar.
+4. All rhombuses are similar.
+5. All squares are similar.
+6. All congruent polygons are similar.
+7. All similar polygons are congruent.
+8. All regular pentagons are similar.",B_boundary,NA,high
+"Review Queue
+1. a. Find the measures of x and y.
+b. The two triangles are similar. Find w and z.
+2. Use the true proportion 6/8 = x/28 = 27/y to answer the following questions.
+a. Find x and y.
+b. Write another true proportion.
+c. Is 28/8 = (6+x)/12 true? If you solve for x, is it the same as in part a?",B_boundary,NA,high
+"Example 2: Determine if the following two triangles are similar. If so, write the similarity statement.
+Solution: m∠C = 39◦ and m∠F = 59◦. The angles are not equal, △ABC and △DEF are not similar.",B_boundary,NA,high
+"Example 4: A tree outside Ellie’s building casts a 125 foot shadow. At the same time of day, Ellie casts a 5.5 foot shadow. If Ellie is 4 feet 10 inches tall, how tall is the tree?
+Solution: Draw a picture. From the picture to the right, we see that the tree and Ellie are parallel, therefore the two triangles are similar to each other. Write a proportion.
+(4 ft, 10 in) / (x ft) = (5.5 ft) / (125 ft)
+Notice that our measurements are not all in the same units. Change both numerators to inches and then we can cross multiply.
+58 in / x ft = 66 in / 125 ft → 58(125) = 66(x)
+7250 = 66x
+x ≈ 109.85 ft",B_boundary,NA,high
+"Answer questions 6-9 about trapezoid ABCD.
+6. Name two similar triangles. How do you know they are similar?
+7. Write a true proportion.
+8. Name two other triangles that might not be similar.
+9. If AB = 10, AE = 7, and DC = 22, find AC. Be careful!",B_boundary,NA,high
+"10. Writing How many angles need to be congruent to show that two triangles are similar? Why?
+11. Writing How do congruent triangles and similar triangles differ? How are they the same?",B_boundary,NA,high
+"Example 4: Are there any similar triangles? How do you know?
+Solution: ∠A is shared by △EAB and △DAC, so it is congruent to itself. If AE/AD = AB/AC then, by SAS Similarity, the two triangles would be similar.
+9/(9+3) = 12/(12+5)
+9/12 = 3/4 ≠ 12/17
+Because the proportion is not equal, the two triangles are not similar.",B_boundary,NA,high
+"Use the diagram to answer questions 6-10. AB || DE.
+6. Find BD.
+7. Find DC.
+8. Find DE.
+9. Find AC.
+10. We know that BD/DC = AE/EC and BA/DE = BC/DC. Why is BA/DE ≠ BD/DC?",B_boundary,NA,high
+"Example 4: Find the perimeters of KLMN and K'L'M'N'. Compare this to the scale factor.
+Solution: The perimeter of KLMN = 12+8+12+8 = 40. The perimeter of K'L'M'N' = 24+16+24+16 = 80. The ratio of the perimeters is 80:40 or 2:1, which is the same as the scale factor.",B_boundary,NA,high
+"Example 5: ΔABC is a dilation of ΔDEF. If P is the center of dilation, what is the scale factor?
+Solution: Because ΔABC is a dilation of ΔDEF, we know that the triangles are similar. Therefore the scale factor is the ratio of the sides. Since ΔABC is smaller than the original, ΔDEF, the scale factor is going to be a fraction less than one, 12/20 = 3/5.
+If ΔDEF was the dilated image, the scale factor would have been 5/3.
+If the dilated image is smaller than the original, then the scale factor is 0 < k < 1.
+If the dilated image is larger than the original, then the scale factor is k > 1.",B_boundary,NA,high
+"When you take the square root of an equation, usually the answer is +17 or -17. Because we are looking for length, we only use the positive answer. Length is never negative.",B_boundary,NA,high
+"You might recall that the distance formula was presented as d = √((x_2 - x_1)^2 + (y_2 - y_1)^2), with the first and second points switched. It does not matter which point is first as long as x and y are both first in each parenthesis. In Example 7, we could have switched A and B and would still get the same answer.
+
+d = √((5 - 1)^2 + (2 - 5)^2)
+= √((4)^2 + (-3)^2)
+= √(16 + 9) = √25 = 5
+
+Also, just like the lengths of the sides of a triangle, distances are always positive.",B_boundary,NA,high
+18. Writing Explain the two different ways you can show that a triangle in the coordinate plane is a right triangle.,B_boundary,NA,high
+"Example 6: Find the geometric mean of 18 and 54.
+Solution: x = √(18 · 54) = √(18 · 18 · 3) = 18√3
+
+Notice that in both of these examples, we did not actually multiply the two numbers together, but kept them separate. This made it easier to simplify the radical.",B_boundary,NA,high
+"Example 8: Find the value of x and y.
+
+Solution: Use theorem 8-7 to solve for x and y.
+20/x = x/35
+x^2 = 20 · 35
+x = √(20 · 35)
+x = 10√7
+
+15/y = y/35
+y^2 = 15 · 35
+y = √(15 · 35)
+y = 5√21
+
+You could also use the Pythagorean Theorem to solve for y, once x has been solved for.
+(10√7)^2 + y^2 = 35^2
+700 + y^2 = 1225
+y = √525 = 5√21
+
+Either method is acceptable.",B_boundary,NA,high
+"Solution: Again, use the x : x : x√2 ratio, but in these two we are given the hypotenuse. We need to solve for x in the ratio.
+a) 12√2 = x√2
+12 = x
+b) x√2 = 16
+x = 16/√2 · √2/√2 = 16√2 / 2 = 8√2
+In part b, we rationalized the denominator. Whenever there is a radical in the denominator of a fraction, multiply the top and bottom by that radical. This will cancel out the radical from the denominator and reduce the fraction.",B_boundary,NA,high
+"30-60-90 Corollary: If a triangle is a 30-60-90 triangle, then its sides are in the extended ratio x : x√3 : 2x.
+Step 5 in the above investigation proves the 30-60-90 Corollary. The shortest leg is always x, the longest leg is always x√3, and the hypotenuse is always 2x. If you ever forget this corollary, then you can still use the Pythagorean Theorem.",B_boundary,NA,high
+"Know What? Revisited The line that the vertical height is perpendicular to is the diagonal of the square base. This length (blue) is the same as the hypotenuse of an isosceles right triangle because half of a square is an isosceles right triangle. So, the diagonal is 230√2. Therefore, the base of the right triangle with 146.5 as the leg is half of 230√2 or 115√2. Do the Pythagorean Theorem to find the edge.
+edge = √((115√2)² + 146.5²) ≈ 218.9 m
+In order for the sides to be equilateral triangles, this length should be 230 meters. It is not, so the triangles are isosceles.",B_boundary,NA,high
+"In trigonometry, sides are named in reference to a particular angle. The hypotenuse of a triangle is always the same, but the terms adjacent and opposite depend on which angle you are referencing. A side adjacent to an angle is the leg of the triangle that helps form the angle. A side opposite to an angle is the leg of the triangle that does not help form the angle. We never reference the right angle when referring to trig ratios.
+a is adjacent to ∠B. a is opposite ∠A.
+b is adjacent to ∠A. b is opposite ∠B.
+c is the hypotenuse.",B_boundary,NA,high
+"There are a few important things to note about the way we write these ratios. First, keep in mind that the abbreviations sin x, cos x, and tan x are all functions. Each ratio can be considered a function of the angle (see Chapter 10). Second, be careful when using the abbreviations that you still pronounce the full name of each function. When we write sin x it is still pronounced sine, with a long “i”. When we write cos x, we still say co-sine. And when we write tan x, we still say tangent.
+An easy way to remember ratios is to use the pneumonic SOH-CAH-TOA.",B_boundary,NA,high
+"A few important points:
+• Always reduce ratios when you can.
+• Use the Pythagorean Theorem to find the missing side (if there is one).
+• The tangent ratio can be bigger than 1 (the other two cannot).
+• If two right triangles are similar, then their sine, cosine, and tangent ratios will be the same (because they will reduce to the same ratio).
+• If there is a radical in the denominator, rationalize the denominator.",B_boundary,NA,high
+"Example 4: Find the indicated trigonometric value, using your calculator.
+a) sin 78°
+b) cos 60°
+c) tan 15°
+Solution: Depending on your calculator, you enter the degree first, and then press the correct trig button or the other way around. For TI-83s and TI-84s you press the trig button first, followed by the angle. Also, make sure the mode of your calculator is in DEGREES.
+a) sin 78° = 0.9781
+b) cos 60° = 0.5
+c) tan 15° = 0.2679",B_boundary,NA,high
+"Example 6: Find the value of each variable. Round your answer to the nearest hundredth.
+Solution: Here, we are given the adjacent leg to 42°. To find c, we need to use cosine and to find d we will use tangent.
+cos 42° = 9/c
+tan 42° = d/9
+c · cos 42° = 9
+9 · tan 42° = d
+c = 9 / cos 42° ≈ 12.11
+d ≈ 8.10
+Notice in both of these examples, you should only use the information that you are given. For example, you should not use the found value of b to find a (in Example 5) because b is an approximation. Use exact values to give the most accurate answers. However, in both examples you could have also used the complementary angle to the one given.",B_boundary,NA,medium
+"In order to actually find the measure of the angles, you will need you use your calculator. On most scientific and graphing calculators, the buttons look like [SIN⁻¹], [COS⁻¹], and [TAN⁻¹]. Typically, you might have to hit a shift or 2nd button to access these functions. For example, on the TI-83 and 84, [2nd][SIN] is [SIN⁻¹]. Again, make sure the mode is in degrees.",B_boundary,NA,high
+"Solving Triangles
+Now that we know how to use inverse trigonometric ratios to find the measure of the acute angles in a right triangle, we can solve right triangles. To solve a right triangle, you would need to find all sides and angles in a right triangle, using any method. When solving a right triangle, you could use sine, cosine or tangent, inverse sine, inverse cosine, or inverse tangent, or the Pythagorean Theorem. Remember when solving right triangles to only use the values that you are given.",B_boundary,NA,high
+"Example 5: Solve the right triangle.
+Solution: Even though, there are no angle measures given, we know that the two acute angles are congruent, making them both 45°. Therefore, this is a 45-45-90 triangle. You can use the trigonometric ratios or the special right triangle ratios.
+Trigonometric Ratios
+tan 45° = 15/BC, BC = 15 / tan 45° = 15
+sin 45° = 15/AC, AC = 15 / sin 45° ≈ 21.21
+45-45-90 Triangle Ratios
+BC = AB = 15, AC = 15√2 ≈ 21.21",B_boundary,NA,high
+16. Writing Explain when to use a trigonometric ratio to find a side length of a right triangle and when to use the Pythagorean Theorem.,B_boundary,NA,high
+24. Tommy then continued the problem and set up the equation: cos 36.9° = 21/h. By solving this equation he found that the hypotenuse was 26.3 units. Did he use the correct trigonometric ratio here? Is his answer correct? Why or why not?,B_boundary,NA,medium
+"Unlike the previous sections in this chapter, with the Laws of Sines and Cosines, we have been using values that we have found to find other values. With these two laws, you have to use values that are not given. Just keep in mind to always wait until the very last step to put anything into your calculator. This will ensure that you have the most accurate answer.",B_boundary,NA,high
+"Recall that when we learned how to prove that triangles were congruent we determined that SSA (two sides and an angle not included) did not determine a unique triangle. When we are using the Law of Sines to solve a triangle and we are given two sides and the angle not included, we may have two possible triangles. Problem 14 illustrates this.",B_boundary,NA,high
+15. Does the triangle that you found in problem 14 meet the requirements of the given information in problem 13? How are the two different m∠C related? Draw the two possible triangles overlapping to visualize this relationship.,B_boundary,NA,high
+"It is beyond the scope of this text to determine when there will be two possible triangles, but the concept of the possibility is something worth noting at this time.",B_boundary,NA,high
+Notice that the common internal tangent passes through the space between the two circles. Common external tangents stay on the top or bottom of both circles.,B_boundary,NA,high
+"Minor Arc: An arc that is less than 180°.
+
+Major Arc: An arc that is greater than 180°. Always use 3 letters to label a major arc.
+
+An arc can be measured in degrees or in a linear measure (cm, ft, etc.). In this chapter we will use degree measure. The measure of the minor arc is the same as the measure of the central angle that corresponds to it. The measure of the major arc equals to 360° minus the measure of the minor arc. In order to prevent confusion, major arcs are always named with three letters; the letters that denote the endpoints of the arc and any other point on the major arc. When referring to the measure of an arc, always place an “m” in from of the label.",B_boundary,NA,high
+"Example 3: Is the converse of Theorem 10-4 true?
+
+Solution: The converse of Theorem 10-4 would be: A diameter is also the perpendicular bisector of a chord. This is not a true statement, see the counterexample to the right.",B_boundary,NA,high
+"Know What? Revisited In the picture, the chords from ⊙A and ⊙E are congruent and the chords from ⊙B, ⊙C, and ⊙D are also congruent. We know this from Theorem 10-3. All five chords are not congruent because all five circles are not congruent, even though the central angle for the circles is the same.",B_boundary,NA,high
+"30. Fill in the blanks of one proof of the Inscribed Angle Theorem.
+Given: Inscribed ∠ABC and diameter BD Prove: m∠ABC = 1/2 mAC
+TABLE 9.2:
+Statement Reason
+1. Inscribed ∠ABC and diameter BD
+m∠ABE = x° and m∠CBE = y°
+2. x° + y° = m∠ABC
+3. All radii are congruent
+4. Definition of an isosceles triangle
+5. m∠EAB = x° and m∠ECB = y°
+6. m∠AED = 2x° and m∠CED = 2y°
+7. mAD = 2x° and mDC = 2y°
+8. Arc Addition Postulate
+9. mAC = 2x° + 2y°
+10. Distributive PoE
+11. mAC = 2m∠ABC
+12. m∠ABC = 1/2 mAC",B_boundary,NA,high
+"Example 3: Find x.
+a)
+b)
+c)
+Solution: Use Theorem 9-12 and write an equation.
+a) The intercepted arcs for x are 129° and 71°.
+x = (129° + 71°)/2 = 200°/2 = 100°
+b) Here, x is one of the intercepted arcs for 40°.
+40° = (52° + x)/2
+80° = 52° + x
+38° = x
+c) x is supplementary to the angle that the average of the given intercepted arcs. We will call this supplementary angle y.
+y = (19° + 107°)/2 = 126°/2 = 63° This means that x = 117°; 180° - 63°",B_boundary,NA,high
+"Example 4: Find the measure of x.
+a)
+b)
+c)
+Solution: For all of the above problems we can use Theorem 9-13.
+a) x = (125° - 27°)/2 = 98°/2 = 49°
+b) 40° is not the intercepted arc. Be careful! The intercepted arc is 120°, (360° - 200° - 40°). Therefore, x = (200° - 120°)/2 = 80°/2 = 40°.
+c) First, we need to find the other intercepted arc, 360° - 265° = 95°. x = (265° - 95°)/2 = 170°/2 = 85°",B_boundary,NA,medium
+"Example 2: Algebra Connection Solve for x.
+
+Solution: Again, we can use Theorem 9-13. Set up an equation and solve for x.
+a) 8 · 24 = (3x+1)· 12
+192 = 36x+12
+180 = 36x
+5 = x
+b) 32 · 21 = (x−9)(x−13)
+672 = x^2 − 22x + 117
+0 = x^2 − 22x − 555
+0 = (x−37)(x+15)
+x = 37, −15
+However, x ≠ −15 because length cannot be negative, so x = 37.",B_boundary,NA,high
+"Example 3: Find the value of the missing variable.
+
+Solution: Use Theorem 9-15 to set up an equation. For both secants, you multiply the outer portion of the secant by the whole.
+a) 18 ·(18+x) = 16 ·(16+24)
+324+18x = 256+384
+18x = 316
+x = 17 5/9
+b) x ·(x+x) = 9 · 32
+2x^2 = 288
+x^2 = 144
+x = 12
+x ≠ −12 because length cannot be negative.",B_boundary,NA,high
+"Example 4: Find the value of the missing segment.
+
+Solution: Use Theorem 9-16. Square the tangent and set it equal to the outer part times the whole secant.
+a) x^2 = 4(4+12)
+x^2 = 4 · 16 = 64
+x = 8
+b) 20^2 = y(y+30)
+400 = y^2 + 30y
+0 = y^2 + 30y − 400
+0 = (y+40)(y−10)
+y = -40, 10
+When you have to factor a quadratic equation to find an answer, always eliminate the negative answer(s). Length is never negative.",B_boundary,NA,high
+"The center does not always have to be on (0, 0). If it is not, then we label the center (h, k) and would use the distance formula to find the length of the radius.
+r = √((x−h)^2 + (y−k)^2)
+If you square both sides of this equation, then we would have the standard equation of a circle.
+Standard Equation of a Circle: The standard equation of a circle with center (h, k) and radius r is r^2 = (x−h)^2 + (y−k)^2.",B_boundary,NA,high
+"Example 2: Find the center and radius of the following circles.
+a) (x−3)^2 + (y−1)^2 = 25
+b) (x+2)^2 + (y−5)^2 = 49
+Solution:
+a) Rewrite the equation as (x−3)^2 + (y−1)^2 = 5^2. Therefore, the center is (3, 1) and the radius is 5.
+b) Rewrite the equation as (x−(−2))^2 + (y−5)^2 = 7^2. From this, the center is (-2, 5) and the radius is 7.
+When finding the center of a circle always take the opposite sign of what the value is in the equation.",B_boundary,NA,high
+"Know What? Ed’s parents are getting him a new bed. He has decided that he would like a king bed. Upon further research, Ed discovered there are two types of king beds, an Eastern (or standard) King and a California King. The Eastern King has 76'' × 80'' dimensions, while the California King is 72'' × 84'' (both dimensions are width × length). Which bed has a larger area to lie on? Which one has a larger perimeter? If Ed is 6’4”, which bed makes more sense for him to buy?",B_boundary,NA,high
+"Areas and Perimeters of Squares and Rectangles
+Perimeter: The distance around a shape. Or, the sum of all the edges of a two-dimensional figure.
+The perimeter of any figure must have a unit of measurement attached to it. If no specific units are given (feet, inches, centimeters, etc), write “units.”",B_boundary,NA,high
+"You are probably familiar with the area of squares and rectangles from a previous math class. Recall that you must always establish a unit of measure for area. Area is always measured in square units, square feet (ft.2), square inches (in.2), square centimeters (cm.2), etc. Make sure that the length and width are in the same units before applying any area formula. If no specific units are given, write “units2.”",B_boundary,NA,high
+"Area Postulates
+Congruent Areas Postulate: If two figures are congruent, they have the same area.
+This postulate needs no proof because congruent figures have the same amount of space inside them. However, two figures with the same area are not necessarily congruent.",B_boundary,NA,high
+"Example 10: Find the area of the figure below.
+Solution: Divide the figure into a triangle and a rectangle with a small rectangle cut out of the lower right-hand corner.
+A = Atop triangle + Arectangle − Asmall triangle
+A = (1/2 · 6 · 9) + (9 · 15) + (1/2 · 3 · 6)
+A = 27 + 135 + 9
+A = 171 units2",B_boundary,NA,high
+"12. Write the converse of the Congruent Areas Postulate. Determine if it is a true statement. If not, write a counterexample. If it is true, explain why.",B_boundary,NA,high
+"Review Queue
+Find the area the shaded regions in the figures below.
+1.
+2. ABCD is a square.
+3. ABCD is a square.
+4. Find the area of #1 using a different method.",B_boundary,NA,high
+"Example 3: Find the perimeter and area of the rhombi below.
+a)
+b)
+Solution: In a rhombus, all four triangles created by the diagonals are congruent.
+a) To find the perimeter, you must find the length of each side, which would be the hypotenuse of one of the four triangles. Use the Pythagorean Theorem.
+122 + 82 = side2
+144 + 64 = side2
+side = √208 = 4√13
+P = 4(4√13) = 16√13
+A = 1/2 · 16 · 24
+A = 192
+b) Here, each triangle is a 30-60-90 triangle with a hypotenuse of 14. From the special right triangle ratios the short leg is 7 and the long leg is 7√3.
+P = 4 · 14 = 56
+A = 1/2 · 7 · 7√3 = (49√3)/2 ≈ 42.44",B_boundary,NA,high
+"Example 2: Find the ratio of the areas of the rhombi below. The rhombi are similar.
+Solution: There are two ways to approach this problem. One way would be to use the Pythagorean Theorem to find the length of the 3rd side in the triangle and then apply the area formulas and make a ratio. The second, and easier way, would be to find the ratio of the sides and then square that. (3/5)2 = 9/25",B_boundary,NA,high
+"The circumference can also be called the perimeter of a circle. However, we use the term circumference for circles because they are round. The term perimeter is reserved for figures with straight sides. In order to find the formula for the circumference of a circle, we first need to determine the ratio between the circumference and diameter of a circle.",B_boundary,NA,high
+"Depending on the directions in a given problem, you can either leave the answer in terms of π or multiply it out and get an approximation. Make sure you read the directions.",B_boundary,NA,high
+"Example 4: Find the perimeter of the square. Is it more or less than the circumference of the circle? Why?
+
+Solution: The perimeter is P = 4(10) = 40 in. In order to compare the perimeter with the circumference we should change the circumference into a decimal.
+
+C = 10π ≈ 31.42 in. This is less than the perimeter of the square, which makes sense because the circle is smaller than the square.",B_boundary,NA,high
+"Know What? Revisited The entire length of the crust, or the circumference of the pizza is 14π ≈ 44 in. In the picture to the right, the top piece of pizza is if it is cut into 8 pieces. Therefore, for 1/8 of the pizza, one piece would have 44/8 ≈ 5.5 inches of crust. The bottom piece of pizza is if the pizza is cut into 10 pieces. For 1/10 of the crust, one piece would have 44/10 ≈ 4.4 inches of crust.",B_boundary,NA,high
+"Know What? Back to the pizza. In the previous section, we found the length of the crust for a 14 in pizza. However, crust typically takes up some area on a pizza. Leave your answers in terms of π and reduced improper fractions.
+
+a) Find the area of the crust of a deep-dish 16 in pizza. A typical deep-dish pizza has 1 in of crust around the toppings.
+b) A thin crust pizza has 1/2- in of crust around the edge of the pizza. Find the area of a thin crust 16 in pizza.
+c) Which piece of pizza has more crust? A twelfth of the deep dish pizza or a fourth of the thin crust pizza?",B_boundary,NA,high
+"Example 2: If the area of a circle is 20π, what is the radius?
+
+Solution: Work backwards on this problem. Plug in the area and solve for the radius.
+
+20π = πr^2
+20 = r^2
+r = √20 = 2√5
+
+Just like the circumference, we will leave our answers in terms of π, unless otherwise specified. In Example 2, the radius could be ±2√5, however the radius is always positive, so we do not need the negative answer.",B_boundary,NA,high
+Another way to write the sector formula is A = (central angle/360^∘) · πr^2.,B_boundary,NA,high
+"In the review questions, make sure you know how the answer is wanted. If the directions say “leave in terms of π and simplest radical form,” your answer would be the first one above. If it says “give an approximation,” your answer would be the second. It is helpful to leave your answer in simplest radical form and in terms of π because that is the most accurate answer. However, it is also nice to see what the approximation of the answer is, to see how many square units something is.",B_boundary,NA,high
+"Know What? Revisited The area of the crust for a deep-dish pizza is 8^2π − 7^2π = 15π. The area of the crust of the thin crust pizza is 8^2π − 7.5^2π = 31/4 π. One-twelfth of the deep dish pizza has 15/12 π or 5/4 π in^2 of crust. One-fourth of the thin crust pizza has 31/16 π in^2. To compare the two measurements, it might be easier to put them both into decimals. 5/4 π ≈ 3.93 in^2 and 31/16 π ≈ 6.09 in^2. From this, we see that one-fourth of the thin-crust pizza has more crust than one-twelfth of the deep dish pizza.",B_boundary,NA,high
+"29. Carlos has 400 ft of fencing to completely enclose an area on his farm for an animal pen. He could make the area a square or a circle. If he uses the entire 400 ft of fencing, how much area is contained in the square and the circle? Which shape will yield the greatest area?",B_boundary,NA,high
+"A regular 20-gon and a regular 40-gon are inscribed in a circle with a radius of 15 units.
+19. Find the perimeter of both figures.
+20. Find the circumference of the circle.
+21. Which of the perimeters is closest to the circumference of the circle? Why do you think that is?
+22. Find the area of both figures.
+23. Find the area of the circle.
+24. Which of the areas is closest to the area of the circle? Why do you think that is?",B_boundary,NA,high
+31. What is the area of a regular polygon with 100 sides and radius of 9 in? What is the area of a circle with radius 9 in? How do these areas compare? Can you explain why?,B_boundary,NA,high
+"Each polygon in a polyhedron is called a face. The line segment where two faces intersect is called an edge and the point of intersection of two edges is a vertex. There are no gaps between the edges or vertices in a polyhedron. Examples of polyhedrons include a cube, prism, or pyramid. Non-polyhedrons are cones, spheres, and cylinders because they have sides that are not polygons.",B_boundary,NA,high
+"Example 4: A three-dimensional figure has 10 vertices, 5 faces, and 12 edges. Is it a polyhedron?
+Solution: Plug in all three numbers into Euler’s Theorem.
+
+F + V = E + 2
+5 + 10 = 12 + 2
+15 ≠ 14
+
+Because the two sides are not equal, this figure is not a polyhedron.",B_boundary,NA,high
+7. Writing Describe the difference between lateral surface area and total surface area.,B_boundary,NA,high
+"29. An open top box is made by cutting out 2 in by 2 in squares from the corners of a large square piece of cardboard. Using the picture as a guide, find an expression for the surface area of the box. If the surface area is 609 in^2, find the length of x. Remember, there is no top.",B_boundary,NA,high
+"Surface Area of a Regular Pyramid: If B is the area of the base and P is the perimeter of the base and l is the slant height, then SA = B + 1/2 Pl. If you ever forget this formula, use the net. Each triangular face is congruent, plus the area of the base. This way, you do not have to remember a formula, just a process, which is the same as finding the area of a prism.",B_boundary,NA,high
+"Example 2: A typical shoe box is 8 in by 14 in by 6 in. What is the volume of the box? Solution: We can assume that a shoe box is a rectangular prism. Therefore, we can use the formula above. V = (8)(14)(6) = 672 in^2",B_boundary,NA,high
+"Volume of any Prism: If we further analyze the formula for the volume of a rectangular prism, we would see that l · w is equal to the area of the base of the prism, a rectangle. If the bases are not rectangles, this would still be true, however we would have to rewrite the equation a little. Volume of a Prism: If the area of the base of a prism is B and the height is h, then the volume is V = B · h. Notice that “B” is not always going to be the same. So, to find the volume of a prism, you would first find the area of the base and then multiply it by the height.",B_boundary,NA,high
+"Example 3: You have a small, triangular prism shaped tent. How much volume does it have, once it is set up? Solution: First, we need to find the area of the base. That is going to be B = 1/2(3)(4) = 6 ft^2. Multiplying this by 7 we would get the entire volume. The volume is 42 ft^3. Even though the height in this problem does not look like a “height,” it is, when referencing the formula. Usually, the height of a prism is going to be the last length you need to use.",B_boundary,NA,high
+"Know What? Revisited Even though it doesn’t look like it, the trapezoid is considered the base of this prism. The area of the trapezoids are 1/2(4 + 8)25 = 150 ft^2. Multiply this by the height, 10 ft, and we have that the volume is 1500 ft^3. To determine the number of gallons that are needed, divide 1500 by 7.48. 1500 / 7.48 ≈ 200.53 gallons are needed to fill the pool.",B_boundary,NA,high
+"Review Queue: 1. Find the volume of a square prism with 8 inch base edges and a 12 inch height. 2. Find the volume of a cylinder with a diameter of 8 inches and a height of 12 inches. 3. In your answers from #1 and #2, which volume is bigger? Why do you think that is? 4. Find the surface area of a square pyramid with 10 inch base edges and a height of 12 inches.",B_boundary,NA,high
+"Example 4: A rectangular pyramid has a base area of 56 cm^2 and a volume of 224 cm^3. What is the height of the pyramid?
+Solution: The formula for the volume of a pyramid works for any pyramid, as long as you can find the area of the base.
+224 = 56h
+4 = h",B_boundary,NA,high
+"A regular tetrahedron has four equilateral triangles as its faces. Use the diagram to answer questions 16-19.
+16. What is the area of the base of this regular tetrahedron?
+17. What is the height of this figure? Be careful!
+18. Find the volume. Leave your answer in simplest radical form.
+19. Challenge If the sides are length s, what is the volume?",B_boundary,NA,high
+"Example 5: Find the surface area of the following solid.
+Solution: This solid is a cylinder with a hemisphere on top. Because it is one fluid solid, we would not include the bottom of the hemisphere or the top of the cylinder because they are no longer on the surface of the solid. Below, ""LA"" stands for lateral area.
+SA = LA_cylinder + LA_hemisphere + A_base circle
+= πrh + 1/2 4πr^2 + πr^2
+= π(6)(13) + 2π6^2 + π6^2
+= 78π + 72π + 36π
+= 186π in^2",B_boundary,NA,high
+"Example 6: Find the volume of a sphere with a radius of 9 m.
+Solution: Use the formula above.
+V = 4/3 π6^3
+= 4/3 π(216)
+= 288π",B_boundary,NA,high
+"Example 8: Find the volume of the following solid.
+Solution: To find the volume of this solid, we need the volume of a cylinder and the volume of the hemisphere.
+V_cylinder = π6^2(13) = 78π
+V_hemisphere = 1/2 (4/3 π6^3) = 36π
+V_total = 78π + 36π = 114π in^3",B_boundary,NA,high
+"Multi-Step Problems
+27. Answer the following:
+a. What is the surface area of a cylinder?
+b. Adjust your answer from part a for the case where r = h.
+c. What is the surface area of a sphere?
+d. What is the relationship between your answers to parts b and c? Can you explain this?",B_boundary,NA,high
+"The component form of AB combines the horizontal distance traveled and the vertical distance traveled. We write the component form of AB as ⟨3,7⟩ because AB travels 3 units to the right and 7 units up. Notice the brackets are pointed, ⟨3,7⟩, not curved.",B_boundary,NA,high
+"If the image does not intersect the preimage, find the midpoint between a preimage and its image. This point is on the line of reflection. You will need to determine if the line is vertical or horizontal.",B_boundary,NA,high
+"Reflection over y = −x: If (x, y) is reflected over the line y = −x, then the image is (−y,−x).
+At first glance, it does not look like P and P' follow the rule above. However, when you switch 1 and -1 you would have (-1, 1). Then, take the opposite sign of both, (1, -1). Therefore, when a point is on the line of reflection, it will be its own reflection.
+From all of these examples, we notice that a reflection is an isometry.",B_boundary,NA,high
+"Example 3: Find the coordinates of ABCD after a 270◦ rotation.
+Solution: Using the rule, we have:
+(x, y) → (y,−x)
+A(−4,5) → A'(5,4)
+B(1,2) → B'(2,−1)
+C(−6,−2) → C'(−2,6)
+D(−8,3) → D'(3,8)
+While we can rotate any image any amount of degrees, only 90◦, 180◦ and 270◦ have special rules. To rotate a figure by an angle measure other than these three, you must use Investigation 12-1.",B_boundary,NA,high
+"Review Queue
+1. Reflect ABCD over the x−axis. Find the coordinates of A'B'C'D'.
+2. Translate A'B'C'D' such that (x, y) → (x+4, y). Find the coordinates of A''B''C''D''.
+3. Now, start over. Translate ABCD such that (x, y) → (x+4, y). Find the coordinates of A'B'C'D'.
+4. Reflect A'B'C'D' from #3 over the x−axis. Find the coordinates of A''B''C''D''. Are they the same as #2?",B_boundary,NA,high
+"Example 3: Reflect ∆ABC over y = 3 and y = −5.
+Solution: Unlike a glide reflection, order matters. Therefore, you would reflect over y = 3 first, followed by a reflection of this image (red triangle) over y = −5. Your answer would be the green triangle in the graph below.",B_boundary,NA,high
+"Reflections over Parallel Lines Theorem: If you compose two reflections over parallel lines that are h units apart, it is the same as a single translation of 2h units.
+Be careful with this theorem. Notice, it does not say which direction the translation is in. So, to apply this theorem, you would still need to visualize, or even do, the reflections to see in which direction the translation would be.",B_boundary,NA,medium
+"Use the graph of the triangle below to answer questions 11-15.
+11. Reflect the preimage over y = −1 followed by y = −7. Write the new coordinates.
+12. What one transformation is this double reflection the same as?
+13. What one translation would move the image back to the preimage?
+14. Start over. Reflect the preimage over y = −7, then y = −1. How is this different from #11?
+15. Write the rules for #11 and #14. How do they differ?",B_boundary,NA,high
+"Use the graph of the trapezoid below to answer questions 16-20.
+16. Reflect the preimage over y = −x then the y−axis. Write the new coordinates.
+17. What one transformation is this double reflection the same as?
+18. What one transformation would move the image back to the preimage?
+19. Start over. Reflect the preimage over the y−axis, then y = −x. How is this different from #16?
+20. Write the rules for #16 and #19. How do they differ?",B_boundary,NA,high
+"For 26-28, describe the following real world objects in geometric terms. 26. The walls of your classroom and the intersections of these walls with each other and the floor or ceiling. What about where two walls and the floor intersect? 27. The spokes of a bicycle wheel. What about their intersection? 28. Cities on a map. What geometric figure would you draw to measure the distance between them?",C_control,NA,high
+23. The volume of a square pyramid is 72 square inches and the base edge is 4 inches. What is the height?,C_control,NA,high
+"Area Addition Postulate: If a figure is composed of two or more parts that do not overlap each other, then the area of the figure is the sum of the areas of the parts.",C_control,NA,high
+"12.6 Extension: Tessellations
+Learning Objectives
+• Determine whether or not a given shape will tessellate.
+• Draw your own tessellation.",C_control,NA,high
+"Example 1: Find the sine, cosine and tangent ratios of ∠A.
+Solution: First, we need to use the Pythagorean Theorem to find the length of the hypotenuse.
+5² + 12² = h²
+13 = h
+So, sin A = 12/13, cos A = 5/13, and tan A = 12/5.",C_control,NA,high
+"Review Questions
+Quadrilateral ABCD is inscribed in ⊙E. Find:
+1. m∠DBC
+2. mBC
+3. mAB
+4. m∠ACD
+5. m∠ADC
+6. m∠ACB",C_control,NA,high
+"30. Krista has a rectangular garden with dimensions 2 ft by 3 ft. She uses 2/3 of a bottle of fertilizer to cover this area. Her friend, Hadleigh, has a garden with dimensions that are 1.5 times as long. How many bottles of fertilizer will she need?",C_control,NA,high
+"Find the equation of the line that is perpendicular to the given line and passes through (2, 3). 34. y = 2/3 x−5 35. y = − 1/4 x+9",C_control,NA,high
+"Review Queue
+Find the lengths of the missing sides. Round your answer to the nearest hundredth.
+1.
+2.
+3. Draw an isosceles right triangle with legs of length 3. What is the hypotenuse?
+4. Use the triangle from #3, to find the sine, cosine, and tangent of 45°.
+5. Explain why tan 45° = 1.",C_control,NA,high
+"Examining Patterns Below is a table that shows the sine, cosine, and tangent values for eight different angle measures. Answer the following questions.
+TABLE 8.5:
+10° 20° 30° 40° 50° 60° 70° 80°
+Sine 0.1736 0.3420 0.5 0.6428 0.7660 0.8660 0.9397 0.9848
+Cosine 0.9848 0.9397 0.8660 0.7660 0.6428 0.5 0.3420 0.1736
+Tangent 0.1763 0.3640 0.5774 0.8391 1.1918 1.7321 2.7475 5.6713
+26. What value is equal to sin 40°?
+27. What value is equal to cos 70°?
+28. Describe what happens to the sine values as the angle measures increase.
+29. Describe what happens to the cosine values as the angle measures increase.
+30. What two numbers are the sine and cosine values between?
+31. Find tan 85°, tan 89°, and tan 89.5° using your calculator. Now, describe what happens to the tangent values as the angle measures increase.
+32. Explain why all of the sine and cosine values are less than one. (hint: think about the sides in the triangle and the relationships between their lengths)",C_control,NA,high
+"7. Sketch a right cone. Label the height, slant height, and radius.",C_control,NA,high
+"Find the area of the shaded region. Round your answer to the nearest hundredth.
+23.
+24. The quadrilateral is a square.
+25.
+26.
+27.
+28.",C_control,NA,high
+"Volume of a Cone
+The volume of cone has the same relationship with a cylinder as pyramid does with a prism. If the bases of a cone and a cylinder are the same, then the volume of a cone will be one-third the volume of the cylinder.
+Volume of a Cone: If r is the radius of a cone and h is the height, then the volume is V = 1/3 πr^2h.",C_control,NA,high
+"27. Construction Using your ruler, draw a line segment that is 7 cm long. Then use your compass to construct the perpendicular bisector, What is the measure of each segment?",C_control,NA,high
+"11. A cone has a volume of 15π and is similar to another larger cone. If the scale factor is 5:9, what is the volume of the larger cone?",C_control,NA,high
+13. Find the perimeter of ΔBIG and ΔHAT. What is the ratio of the perimeters?,C_control,NA,high
+"Example 8: Algebra Connection Find the value of x and AB.
+Solution: First, AB is half of 34, or 17. To find x, set 3x - 1 equal to 17.
+3x - 1 = 17
+3x = 18
+x = 6",C_control,NA,high
+"Know What? Revisited First, we can use the Pythagorean Theorem to find the length of the second diagonal.
+90^2 + 90^2 = d^2
+8100 + 8100 = d^2
+16200 = d^2
+d = 127.3
+This means that the diagonals are equal. If the diagonals are equal, the other two sides of the diamond are also 90 feet. Therefore, the baseball diamond is a parallelogram, and more specifically, it is a square.",C_control,NA,high
+"Know What? Your parents decide they want to put a pool in the backyard. They agree on a pool where the shallow end will be 4 ft. and the deep end will be 8 ft. The pool will be 10 ft. by 25 ft. How much siding do they need to buy to cover the sides and bottom of the pool? If the siding is $25.00 a square yard, how much will it cost to enclose the pool?",C_control,NA,high
+"Example 1: Graph x^2 + y^2 = 9.
+Solution: This circle is centered at the origin. It’s radius is the square root of 9, or 3. The easiest way to graph a circle is to plot the center, and then go out 3 units in every direction and connect them to form a circle.",C_control,NA,high
+"SSS for Similar Triangles
+If you do not know any angle measures, can you say two triangles are similar? Let’s investigate this to see. You will need to recall Investigation 4-2, Constructing a Triangle, given Three Sides.",C_control,NA,high
+"Example 2: Find the number of faces, vertices, and edges in the octagonal prism.
+
+Solution: Because this is a polyhedron, we can use Euler’s Theorem to find either the number of faces, vertices or edges. It is easiest to count the faces, there are 10 faces. If we count the vertices, there are 16. Using this, we can solve for E in Euler’s Theorem.
+
+F + V = E + 2
+10 + 16 = E + 2
+24 = E There are 24 edges.",C_control,NA,high
+"20. Do the lengths 4√3, 4√6 and 8√3 make a special right triangle? If so, which one?",C_control,NA,high
+"6. Trace △FAD onto a piece of paper with the perpendicular bisector. Construct another perpendicular bisector. What is the point of concurrency called? Use this information to draw the appropriate circle.
+7. Trace △FAD onto a piece of paper with the angle bisector. Construct another angle bisector. What is the point of concurrency called? Use this information to draw the appropriate circle.
+8. Trace △FAD onto a piece of paper with the median. Construct another median. What is the point of concurrency called? What are its properties?
+9. Trace △FAD onto a piece of paper with the altitude. Construct another altitude. What is the point of concurrency called? Which points of concurrency can lie outside a triangle?
+10. A triangle has sides with length x + 6 and 2x − 1. Find the range of the third side.",C_control,NA,high
+"Review Questions
+1. Fill in the table.
+TABLE 6.3:
+# of sides | # of triangles from one vertex | triangles × 180◦ (sum) | Each angle in a regular n−gon | Sum of the exterior angles
+3 | 1 | 180◦ | 60◦
+4 | 2 | 360◦ | 90◦
+5 | 3 | 540◦ | 108◦
+6 | 4 | 720◦ | 120◦
+7
+8
+9
+10
+11
+12",C_control,NA,high
+"7.4 Similarity by SSS and SAS
+Learning Objectives
+• Use SSS and SAS to determine whether triangles are similar.
+• Apply SSS and SAS to solve problems about similar triangles.",C_control,NA,high
+"For questions 25-28, it might be helpful to recall #25 from section 8.1.
+25. What is the height of an equilateral triangle with sides of length 3 in?
+26. What is the area of an equilateral triangle with sides of length 5 ft?
+27. A regular hexagon has sides of length 3 in. What is the area of the hexagon? (Hint: the hexagon is made up a 6 equilateral triangles.)
+28. The area of an equilateral triangle is 36√3. What is the length of a side?",C_control,NA,high
+"Review Queue: 1. Write a two-column proof. Given: AD ≅ DC, AB ≅ CB Prove: △DAB ≅ △DCB 2. Is △PON ≅ △MOL? Why or why not? 3. If △DEF ≅ △PQR, can it be assumed that: a) ∠F ≅ ∠R? Why or why not? b) EF ≅ PR? Why or why not?",C_control,NA,high
+"Now our circle looks like a parallelogram. The area of this parallelogram is A = bh = πr·r = πr^2.
+
+To see an animation of this derivation, see http://www.rkm.com.au/ANIMATIONS/animation-Circle-Area-Derivation.html , by Russell Knightley.",C_control,NA,high
+"29. Construction Draw a straight angle (180◦). Then, use your compass to construct the angle bisector. What kind of angle did you just construct?",C_control,NA,high
+"Example 6: Algebra Connection Find the values of x and y.
+Solution: Let’s start with y. Both sides are equal, so set the two expressions equal to each other and solve for y.
+5y - 1 = 2y + 11
+3y = 12
+y = 4
+For x, we need to use two (2x + 5)° expressions because this is an isosceles triangle and that is the base angle measurement. Set all the angles equal to 180° and solve.
+(2x + 5)° + (2x + 5)° + (3x - 5)° = 180°
+(7x + 5)° = 180°
+7x = 175°
+x = 25°",C_control,NA,high
+"Review Queue
+
+Classify the triangles below by their angles and sides.
+1.
+2.
+3.
+4. How many degrees are in a straight angle? Draw and label a straight angle, ∠ABC.",C_control,NA,high
+15. ∠DEF in triangle ΔDEF is bisected by EU. Find x and y.,C_control,NA,high
+"Example 5: Using the cylinders from Example 4, if the surface area of the smaller cylinder is 1536π cm^2, what is the surface area of the larger cylinder?
+Solution: Set up a proportion using the ratio of the areas, 16:25.
+16/25 = 1536π/A
+16A = 38400π
+A = 2400π cm^2",C_control,NA,high
+"Additionally, any two lines or line segments can intersect to form four angles. If the two lines intersect to form right angles, we say the lines are perpendicular.
+
+Perpendicular: When two lines intersect to form four right angles.
+
+Even though all four angles are 90◦, only one needs to be marked. It can be assumed thatall four are 90◦.
+The symbol for perpendicular is ⊥, so these two lines would be labeled l⊥m or ←→AC⊥←→DE.
+There are several other ways to label these two intersecting lines. This picture shows two perpendicular lines, four right angles, four 90◦ angles, and even two straight angles, ∠ABC and ∠DBE.",C_control,NA,high
+"Texas Instruments Resources
+
+In the CK-12 Texas Instruments Geometry FlexBook® resource, there are graphing calculator activities designed to supplement the objectives for some of the lessons in this chapter. See http://www.ck12.org/flexr/chapter/9686 .",C_control,NA,high
+"Example 6: Find the distance between the centers of the two circles. Reduce all radicals. Solution: The distance between the two circles is AB. They are not tangent, however, AD ⊥ DC and DC ⊥ CB. Let’s add BE, such that EDCB is a rectangle. Then, use the Pythagorean Theorem to find AB. 5² + 55² = AC², 25 + 3025 = AC², 3050 = AC², AC = √3050 = 5√122.",C_control,NA,high
+"For questions 16-18, determine if ABCD is a parallelogram.
+16. A(8,−1), B(6,5), C(−7,2), D(−5,−4)
+17. A(−5,8), B(−2,9), C(3,4), D(0,3)
+18. A(−2,6), B(4,−4), C(13,−7), D(4,−10)",C_control,NA,high
+"It is said that a cone is generated from rotating a right triangle around one leg in a circle. Notice that a cone has a slant height, just like a pyramid. The surface area of a cone is a little trickier, however. We know that the base is a circle, but we need to find the formula for the curved side that tapers up from the base. Unfolding a cone, we have the net:",C_control,NA,high
+"Example 6: Determine the coordinates of ΔABC and ΔA'B'C' and find the scale factor.
+Solution: The coordinates of ΔABC are A(2,1), B(5,1) and C(3,6). The coordinates of ΔA'B'C' are A'(6,3), B'(15,3) and C'(9,18). By looking at the corresponding coordinates, each is three times the original. That means k = 3.
+Again, the center, original point, and dilated point are collinear. Therefore, you can draw a ray from the origin to C', B', and A' such that the rays pass through C, B, and A, respectively.",C_control,NA,high
+"90◦ Rotation
+Similar to the 180◦ rotation, a 90◦ rotation (counterclockwise) is an isometry. Each image will be the same distance away from the origin as its preimage, but rotated 90◦.",C_control,NA,high
+Know What? Revisited The net of the first shape is a regular tetrahedron and the second is the net of a regular octahedron.,C_control,NA,high
+"Review Queue
+Solve the following inequalities.
+1. 4x − 9 ≤ 19
+2. −5 > −2x + 13
+3. 2/3 x + 1 ≥ 13
+4. −7 < 3x − 1 < 14",C_control,NA,high
+"Polygons
+
+Polygon: Any closed planar figure that is made entirely of line segments that intersect at their endpoints.
+
+Polygons can have any number of sides and angles, but the sides can never be curved. The segments are called the sides of the polygons, and the points where the segments intersect are called vertices. The easiest way to identify a polygon is to look for a closed figure with no curved sides.",C_control,NA,high
+"Learning Objectives
+• Understand the properties of isosceles and equilateral triangles.
+• Use the Base Angles Theorem and its converse.
+• Prove an equilateral triangle is also equiangular.",C_control,NA,high
+"28. Michael has a triangular shaped garden with sides of length 3, 5 and 6 meters. He wishes to make a path along the perpendicular bisector of the angle between the sides of length 3 m and 5 m. Where will the path intersect the third side?",C_control,NA,high
+"17. Fill in the blanks in the proof below. Given: The triangle to the right with interior angles and exterior angles.
+Prove: m∠4 + m∠5 + m∠6 = 360°
+Only use the blue set of exterior angles for this proof.
+TABLE 4.3:
+Statement | Reason
+1. Triangle with interior and exterior angles. | Given
+2. m∠1 + m∠2 + m∠3 = 180° | 
+3. ∠3 and ∠4 are a linear pair, ∠2 and ∠5 are a linear pair, and ∠1 and ∠6 are a linear pair | 
+4. | Linear Pair Postulate (do all 3)
+5. m∠1 + m∠6 = 180°, m∠2 + m∠5 = 180°, m∠3 + m∠4 = 180° | 
+6. m∠1 + m∠6 + m∠2 + m∠5 + m∠3 + m∠4 = 540° | 
+7. m∠4 + m∠5 + m∠6 = 360° |",C_control,NA,high
+"Pythagorean Theorem Proofs
+The first proof below is similar to the one done earlier in this lesson. Use the picture below to answer the following questions.
+27. Find the area of the square with sides (a + b).
+28. Find the sum of the areas of the square with sides c and the right triangles with legs a and b.
+29. The areas found in the previous two problems should be the same value. Set the expressions equal to each other and simplify to get the Pythagorean Theorem.",C_control,NA,high
+"Determine whether the given segment is tangent to ⊙K.
+18.
+19.
+20.",C_control,NA,high
+"The Distance Formula
+Another application of the Pythagorean Theorem is the Distance Formula. We have already been using the Distance Formula in this text, but we can prove it here.",C_control,NA,high
+"Below are two similar square pyramids with a volume ratio of 8:27. The base lengths are equal to the heights. Use this to answer questions 16-21.
+16. What is the scale factor?
+17. What is the ratio of the surface areas?
+18. Find h, x and y.
+19. Find w and z.
+20. Find the volume of both pyramids.
+21. Find the lateral surface area of both pyramids.",C_control,NA,high
+"Theorem 7-7 can be expanded to any number of parallel lines with any number of transversals. When this happens all corresponding segments of the transversals are proportional.
+Example 5: Find a, b, and c.
+Solution: Look at the corresponding segments. Only the segment marked “2” is opposite a number, all the other segments are opposite variables. That means we will be using this ratio, 2:3 in all of our proportions.
+a/2 = 9/3 → 3a = 18 → a = 6
+2/4 = 3/b → 2b = 12 → b = 6
+2/3 = 3/c → 2c = 9 → c = 4.5
+There are several ratios you can use to solve this example. To solve for b, you could have used the proportion 6/4 = 9/b, which will still give you the same answer.",C_control,NA,high
+"Two Reflections The vertices of ∆DEF are D(6,−2),E(8,−4), and F(3,−7). Use this information to answer questions 22-25.
+22. Plot ∆DEF on the coordinate plane.
+23. Reflect ∆DEF over x = 2. Find the coordinates of ∆D'E'F'.
+24. Reflect ∆D'E'F' over x = −4. Find the coordinates of ∆D''E''F''.
+25. What one transformation would be the same as this double reflection?",C_control,NA,high
+"For questions 25-27, use △ABC with A(−3,0), B(−1.5,3) and C(0,0) and △DEF with D(0,2), E(1,4) and F(2,2).
+25. Find AB, BC, AC, DE, EF and DF.
+26. Use these values to find the following proportions: AB/DE, BC/EF and AC/DF.
+27. Are these triangles similar? Justify your answer.",C_control,NA,high
+"Know What? George wants to measure the height of a flagpole. He is 6 feet tall and his shadow is 10 feet long. At the same time, the shadow of the flagpole was 85 feet long. How tall is the flagpole?",C_control,NA,high
+"Investigation 7-3: SAS Similarity
+Tools Needed: paper, pencil, ruler, protractor, compass
+1. Using Investigation 4-3, construct a triangle with sides 6 cm and 4 cm and the included angle is 45◦.
+2. Repeat Step 1 and construct another triangle with sides 12 cm and 8 cm and the included angle is 45◦.
+3. Measure the other two angles in both triangles. What do you notice?
+4. Measure the third side in each triangle. Make a ratio. Is this ratio the same as the ratios of the sides you were given?",C_control,NA,high
+"Example 6: Mark everything you have learned from the Midsegment Theorem on ΔABC above.
+Solution: Let’s draw two different triangles, one for the congruent sides, and one for the parallel lines.
+Because the midsegments are half the length of the sides they are parallel to, they are congruent to half of each of those sides (as marked). Also, this means that all four of the triangles in ΔABC, created by the midsegments are congruent by SSS.
+As for the parallel midsegments and sides, several congruent angles are formed. In the picture to the right, the pink and teal angles are congruent because they are corresponding or alternate interior angles. Then, the purple angles are congruent by the 3rd Angle Theorem.",C_control,NA,high
+"Marking Angles and Segments in a Diagram
+
+With all these segments and angles, we need to have different ways to label equal angles and segments.
+
+Angle Markings
+Segment Markings",C_control,NA,high
+"Example 7: The volume of a cone is 484π cm^3 and the height is 12 cm. What is the radius?
+Solution: Plug in what you know to the volume formula.
+484π = 1/3 πr^2(12)
+121 = r^2
+11 = r",C_control,NA,high
+"15. The ratio of the surface areas of two cubes is 64:225. If the volume of the smaller cube is 13824 m^3, what is the volume of the larger cube?",C_control,NA,high
+"8.6 Inverse Trigonometric Ratios
+Learning Objectives
+• Use the inverse trigonometric ratios to find an angle in a right triangle.
+• Solve a right triangle.
+• Apply inverse trigonometric ratios to real-life situation and special right triangles.",C_control,NA,high
+"Know What? Revisited: The CoronadoBridge has ∠1 and ∠2, which are corresponding angles. These angles must be equal for the beams to be parallel. ∠1 = 92° and ∠2 = 88° and 92° ≠ 88°, so the beams are not parallel, therefore a sturdy and safe girder bridge.",C_control,NA,high
+"Example 5: Find the value of each variable. Round your answer to the nearest hundredth.
+Solution: We are given the hypotenuse, so we would need to use the sine to find b, because it is opposite 22° and cosine to find a, because it is adjacent to 22°.
+sin 22° = b/30
+cos 22° = a/30
+30 · sin 22° = b
+30 · cos 22° = a
+b ≈ 11.24
+a ≈ 27.82",C_control,NA,high
+"Kites and Trapezoids in the Coordinate Plane
+Example 7: Determine what type of quadrilateral RSTV is. Simplify all radicals.
+Solution: There are two directions you could take here. First, you could determine if the diagonals bisect each other. If they do, then it is a parallelogram and you could proceed like the previous section. Or, you could find the lengths of all the sides. Let’s do this option.
+RS = √((-5−2)^2 + (7−6)^2) = √((-7)^2 + 1^2) = √50 = 5√2
+ST = √((2−5)^2 + (6−(-3))^2) = √((-3)^2 + 9^2) = √90 = 3√10
+RV = √((-5−(-4))^2 + (7−0)^2) = √((-1)^2 + 7^2) = √50 = 5√2
+VT = √((-4−5)^2 + (0−(-3))^2) = √((-9)^2 + 3^2) = √90 = 3√10
+From this we see that the adjacent sides are congruent. Therefore, RSTV is a kite.
+Algebra Review: From now on, this text will ask you to “simplify the radical.” From Algebra, this means that you pull all square numbers (1, 4, 9, 16, 25, ...) out of the radical. Above √50 = √(25 · 2). We know √25 = 5, so √50 = √(25 · 2) = 5√2.",C_control,NA,high
+"Now that we have explored triangles, quadrilaterals, polygons, and circles, we are going to learn how to find the perimeter and area of each. First we will derive each formula and then apply them to different types of polygons and circles. In addition, we will explore the properties of similar polygons, their perimeters and their areas.",C_control,NA,high
+31. The area of a sector of a circle is 2304π and its arc length is 32π. Find the central angle of the sector.,C_control,NA,high
+"Example 2: Find the measures of the arcs in ⊙A. EB is a diameter.
+
+Solution: Because EB is a diameter, m∠EAB = 180°. Each arc is the same as its corresponding central angle.
+
+m⌒BF = m∠FAB = 60°
+m⌒EF = m∠EAF = 120° → m∠EAB − m∠FAB
+m⌒ED = m∠EAD = 38° → m∠EAB − m∠BAC − m∠CAD
+m⌒DC = m∠DAC = 90°
+m⌒BC = m∠BAC = 52°",C_control,NA,high
+"Review Questions
+1. The votes for president in a club election were: Smith : 24 Munoz : 32 Park : 20 Find the following ratios and write in simplest form.
+a. Votes for Munoz to Smith
+b. Votes for Park to Munoz
+c. Votes for Smith to total votes
+d. Votes for Smith to Munoz to Park",C_control,NA,high
+"For questions 1-8, solve each equation and justify each step. 1. 3x+11 = −16 2. 7x−3 = 3x−35 3. (2/3)g+1 = 19 4. (1/2)MN = 5 5. 5m∠ABC = 540° 6. 10b−2(b+3) = 5b 7. (1/4)y + 5/6 = 1/3 8. (1/4)AB + (1/3)AB = 12 + (1/2)AB",C_control,NA,high
+"Review Queue
+1. Determine if the following sets of numbers are Pythagorean triples.
+a. 14, 48, 50
+b. 9, 40, 41
+c. 12, 43, 44
+2. Do the following lengths make a right triangle? How do you know?
+a. √5, 3, √14
+b. 6, 2√3, 8
+c. 3√2, 4√2, 5√2",C_control,NA,high
+"Defining Midsegment
+Midsegment: A line segment that connects two midpoints of adjacent sides of a triangle.",C_control,NA,high
+29. How could you prove your conjecture from problem 28?,C_control,NA,high
+"Investigation 7-4: Triangle Proportionality
+Tools Needed: pencil, paper, ruler
+1. Draw △ABC. Label the vertices.
+2. Draw XY so that X is on AB and Y is on BC. X and Y can be anywhere on these sides.
+3. Is △XBY ∼ △ABC? Why or why not? Measure AX, XB, BY, and YC. Then set up the ratios AX/XB and YC/YB. Are they equal?
+4. Draw a second triangle, △DEF. Label the vertices.
+5. Draw XY so that X is on DE and Y is on EF AND XY || DF.
+6. Is △XEY ∼ △DEF? Why or why not? Measure DX, XE, EY, and YF. Then set up the ratios DX/XE and FY/YE. Are they equal?",C_control,NA,high
+22. The lateral surface area of a cylinder is 30π m^2 and the circumference is 10π m. What is the volume of the cylinder?,C_control,NA,high
+32. Describe how this construction could be changed so that ∠B is the right angle in the triangle.,C_control,NA,high
+"12. m∠C = 133°, m∠B = 25°, AB = 48",C_control,NA,high
+"Review Queue
+1. Solve the proportions.
+a. 6/x = 10/15
+b. 4/7 = (2x+1)/42
+c. 5/8 = (x-2)/2x
+2. In the picture, AB/XZ = BC/XY = AC/YZ.
+a. Find AB.
+b. Find BC.",C_control,NA,high
+"Proof of Theorem 8-3
+Given: In △ABC, a^2 + b^2 > c^2, where c is the longest side. In △LMN, ∠N is a right angle.
+Prove: △ABC is an acute triangle. (all angles are less than 90°)
+
+TABLE 8.1:
+Statement Reason
+1. In △ABC, a^2 + b^2 > c^2, and c is the longest side. In △LMN, ∠N is a right angle. | Given
+2. a^2 + b^2 = h^2 | Pythagorean Theorem
+3. c^2 < h^2 | Transitive PoE
+4. c < h | Take the square root of both sides
+5. ∠C is the largest angle in △ABC. | The largest angle is opposite the longest side.
+6. m∠N = 90° | Definition of a right angle
+7. m∠C < m∠N | SSS Inequality Theorem
+8. m∠C < 90° | Transitive PoE
+9. ∠C is an acute angle. | Definition of an acute angle
+10. △ABC is an acute triangle. | If the largest angle is less than 90°, then all the angles are less than 90°.
+
+The proof of Theorem 8-4 is very similar and is in the review questions.",C_control,NA,high
+"Fill in the blanks in the proofs below. 15. Given: AE ≅ DE, BE ≅ CE Prove: △ABE ≅ △DCE. TABLE 4.7: Statement Reason 1. [blank] 1. [blank] 2. ∠AEB ≅ ∠DEC 2. [blank] 3. △ABE ≅ △DCE 3. [blank]",C_control,NA,high
+6. Two prisms have a scale factor of 1:4. What is the ratio of their surface areas?,C_control,NA,high
+"Example 6: The area of a regular hexagon is 54√3 and the perimeter is 36. Find the length of the sides and the apothem.
+Solution: Plug in what you know into both the area and the perimeter formulas to solve for the length of a side and the apothem.
+P = sn
+36 = 6s
+s = 6
+A = 1/2 aP
+54√3 = 1/2 a(36)
+54√3 = 18a
+3√3 = a",C_control,NA,high
+"Example 8: Algebra Connection: For segment HK, suppose that J is between H and K. If HJ = 2x + 4, JK = 3x + 3, and KH = 22, find the lengths of HJ and JK. Solution: Use the Segment Addition Postulate and then substitute what we know. HJ + JK = KH; (2x + 4) + (3x + 3) = 22; 5x + 7 = 22; 5x = 15; x = 3. So, if x = 3, then HJ = 10 and JK = 12.",C_control,NA,high
+"Investigation 8-1: Proof of the Pythagorean Theorem
+Tools Needed: pencil, 2 pieces of graph paper, ruler, scissors, colored pencils (optional)
+1. On the graph paper, draw a 3 in. square, a 4 in. square, a 5 in square and a right triangle with legs of 3 and 4 inches.
+2. Cut out the triangle and square and arrange them like the picture on the right.
+3. This theorem relies on area. Recall from a previous math class, that the area of a square is length times width. But, because the sides are the same you can rewrite this formula as Asquare = length × width = side × side = side². So, the Pythagorean Theorem can be interpreted as (square with side a)² + (square with side b)² = (square with side c)². In this Investigation, the sides are 3, 4 and 5 inches. What is the area of each square?
+4. Now, we know that 9 + 16 = 25, or 3² + 4² = 5². Cut the smaller squares to fit into the larger square, thus proving the areas are equal.",C_control,NA,high
+"Congruent Triangles
+Recall that two figures are congruent if and only if they have exactly the same size and shape.
+Congruent Triangles: Two triangles are congruent if the three corresponding angles and sides are congruent.
+△ABC and △DEF are congruent because
+AB ≅ DE, ∠A ≅ ∠D
+BC ≅ EF and ∠B ≅ ∠E
+AC ≅ DF, ∠C ≅ ∠F
+When referring to corresponding congruent parts of triangles it is called Corresponding Parts of Congruent Triangles are Congruent, or CPCTC.",C_control,NA,high
+Fill in the blanks about the diagram to the left. 1. x is the ___________. 2. The slant height is ________. 3. y is the ___________. 4. The height is ________. 5. The base is _______. 6. The base edge is ________.,C_control,NA,high
+"Tangent to a Circle Theorem: A line is tangent to a circle if and only if the line is perpendicular to the radius drawn to the point of tangency. To prove this theorem, the easiest way to do so is indirectly (proof by contradiction). Also, notice that this theorem uses the words “if and only if,” making it a biconditional statement. Therefore, the converse of this theorem is also true.",C_control,NA,high
+"Example 3: For further exploration, try the following:
+1. Cut out an acute triangle from a sheet of paper.
+2. Fold the triangle over one side so that the side is folded in half. Crease.
+3. Repeat for the other two sides. What do you notice?
+
+Solution: The folds (blue dashed lines)are the perpendicular bisectors and cross at the circumcenter.",C_control,NA,high
+10. The length and width of a rectangle are in a 4:7 ratio. The perimeter of the rectangle is 352. What are the length and width?,C_control,NA,high
+"Law of Contrapositive
+
+Example 5: The following two statements are true.
+If a student is in Geometry, then he or she has passed Algebra I.
+Daniel has not passed Algebra I.
+What can you conclude from these two statements?
+
+Solution: These statements are in the form:
+p → q
+∼ q
+
+Not q is the beginning of the contrapositive (∼ q →∼ p), therefore the logical conclusion is not p: Daniel is not in Geometry.
+This example is called the Law of Contrapositive.
+
+Law of Contrapositive: Suppose that p → q is a true statement and given ∼ q. Then, you can conclude ∼ p.
+Recall that the logical equivalent to a conditional statement is its contrapositive. Therefore, the Law of Contrapositive is a logical argument.",C_control,NA,high
+"For questions 21-25, find the measure of the lettered angles in the picture below. 21. a 22. b 23. c 24. d 25. e (hint: e is complementary to b)",C_control,NA,high
+"Corresponding Angles: Two angles that are in the ""same place"" with respect to the transversal, but on different lines. Imagine sliding the four angles formed with line l down to line m. The angles which match up are corresponding. ∠2 and ∠6 are corresponding angles.",C_control,NA,high
+"Example 9: What is the distance between the two points shown below? Solution: Because this line is horizontal, look at the change in the x-coordinates. |(-4) - 3| = |-7| = 7. The distance between the two points is 7 units.",C_control,NA,high
+7. Name the geometric figure below in two different ways.,C_control,NA,high
+"Determine if the following descriptions refer to the incenter or circumcenter of the triangle.
+18. A lighthouse on a triangular island is equidistant to the three coastlines.
+19. A hospital is equidistant to three cities.
+20. A circular walking path passes through three historical landmarks.
+21. A circular walking path connects three other straight paths.",C_control,NA,high
+"The proof of the Cross-Multiplication Theorem is an algebraic proof. Recall that multiplying by 2/2, b/b, or d/d = 1 because it is the same number divided by itself (b ÷ b = 1).
+
+Proof of the Cross-Multiplication Theorem
+a/b = c/d
+Multiply the left side by d/d and the right side by b/b.
+a/b · d/d = c/d · b/b
+ad/bd = bc/bd
+The denominators are the same, so the numerators are equal.
+ad = bc",C_control,NA,high
+"Review Questions
+
+Find the slope between the two given points.
+
+1. (4, -1) and (-2, -3)
+2. (-9, 5) and (-6, 2)
+3. (7, 2) and (-7, -2)
+4. (-6, 0) and (-1, -10)
+5. (1, -2) and (3, 6)
+6. (-4, 5) and (-4, -3)",C_control,NA,high
+"Parallelograms in the Coordinate Plane
+Example 4: Determine what type of parallelogram TUNE is: T(0,10), U(4,2), N(−2,−1), and E(−6,7).
+Solution: First, let’s double-check and make sure the diagonals bisect each other.
+Midpoint of EU = ((-6+4)/2, (7+2)/2) = (−1,4.5)
+Midpoint of TN = ((0-2)/2, (10-1)/2) = (−1,4.5)
+Now, let’s see if the diagonals are equal. If they are, then TUNE is a rectangle.
+EU = √((-6−4)^2 + (7−2)^2) = √((-10)^2 + 5^2) = √(100+25) = √125
+TN = √((0+2)^2 + (10+1)^2) = √(2^2 + 11^2) = √(4+121) = √125
+If the diagonals are perpendicular, then TUNE is a square.
+Slope of EU = (7−2)/(-6−4) = -5/10 = -1/2
+Slope of TN = (10+1)/(0+2) = 11/2
+The slope of EU is not the opposite reciprocal of the slope of TN, so we can conclude that TUNE is not a square, it is a rectangle.",C_control,NA,high
+24. The Leaning Tower of Piza currently “leans” at a 4° angle and has a vertical height of 55.86 meters. How tall was the tower when it was originally built?,C_control,NA,high
+"Find the value of x and/or y in ⊙A.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.",C_control,NA,high
+"Review Queue
+1. Draw a chord in a circle.
+2. Draw a diameter in the circle from #1. Is a diameter a chord?
+3. △ABC is an equilateral triangle in ⊙A. Find m⌒BC and m⌒BDC.
+4. △ABC and △ADE are equilateral triangles in ⊙A. List a pair of congruent arcs and chords.",C_control,NA,high
+"What is a Parallelogram?
+Parallelogram: A quadrilateral with two pairs of parallel sides.",C_control,NA,high
+"Investigation 12-2: Double Reflection over Intersecting Lines
+Tools Needed: Example 7, protractor, ruler, pencil
+1. Take your answer from Example 7 and measure the angle of intersection for lines l and m. If you copied it exactly from the text, it should be about 55°.
+2. Draw lines from two corresponding points on the blue triangle and the green triangle. These are the dotted lines in the diagram below.
+3. Measure this angle using your protractor. How does it related to 55°?
+Again, if you copied the image exactly from the text, the angle should be 110°.
+From this investigation, we see that the double reflection over two lines that intersect at a 55° angle is the same as a rotation of 110° counterclockwise, where the point of intersection is the center of rotation. Notice that order would matter in this composition. If we had reflected the blue triangle over m followed by l, then the green triangle would be rotated 110° clockwise.",C_control,NA,high
+"Determine if the following lengths make an acute, right, or obtuse triangle. If they make a right triangle, determine if the lengths are a Pythagorean triple. 10. 11, 12, 13; 11. 16, 30, 34; 12. 20, 25, 42; 13. 10√6, 30, 10√15; 14. 22, 25, 31; 15. 47, 27, 35",C_control,NA,high
+"Chapter 8 explores right triangles in far more depth than Chapters 4 and 5. Recall that a right triangle is a triangle with exactly one right angle. In this chapter, we will first prove the Pythagorean Theorem and its converse, followed by analyzing the sides of certain types of triangles. Then, we will introduce trigonometry, which starts with the tangent, sine and cosine ratios. Finally, we will extend sine and cosine to any triangle, through the Law of Sines and the Law of Cosines.",C_control,NA,high
+"Here is the proof of the Exterior Angle Theorem. From the proof, you can see that this theorem is a combination of the Triangle Sum Theorem and the Linear Pair Postulate.
+Given: △ABC with exterior angle ∠ACD
+Prove: m∠A + m∠B = m∠ACD
+TABLE 4.2:
+Statement | Reason
+1. △ABC with exterior angle ∠ACD | Given
+2. m∠A + m∠B + m∠ACB = 180° | Triangle Sum Theorem
+3. m∠ACB + m∠ACD = 180° | Linear Pair Postulate
+4. m∠A + m∠B + m∠ACB = m∠ACB + m∠ACD | Transitive PoE
+5. m∠A + m∠B = m∠ACD | Subtraction PoE",C_control,NA,high
+13. The volume of a sphere is 36π mi^3. What is the surface area?,C_control,NA,high
+"Pythagorean Triples
+In Example 2, the sides of the triangle were 8, 15, and 17. This combination of numbers is referred to as a Pythagorean triple.
+Pythagorean Triple: A set of three whole numbers that makes the Pythagorean Theorem true.",C_control,NA,high
+Find the volume of the following solids. Round your answers to the nearest hundredth.,C_control,NA,high
+"16. Find the lettered angles, a - f, in the picture to the right. Note that the two lines are parallel.",C_control,NA,high
+"Defining Special Parallelograms
+Rectangles, Rhombuses (the plural is also Rhombi) and Squares are all more specific versions of parallelograms, also called special parallelograms. Taking the theorems we learned in the previous two sections, we have three more new theorems.
+Rectangle Theorem: A quadrilateral is a rectangle if and only if it has four right (congruent) angles.
+Rhombus Theorem: A quadrilateral is a rhombus if and only if it has four congruent sides.",C_control,NA,high
+39. Construction Challenge Use construction tools and the constructions you have learned in this section to construct two 2 in segments that bisect each other. Now connect all four endpoints with segments. What figure have you constructed?,C_control,NA,high
+"31. Prove Theorem 9-12.
+Given: Intersecting chords AC and BD. Prove: m∠a = 1/2(mDC + mAB) HINT: Draw BC and use inscribed angles.",C_control,NA,high
+"Example 1: Determine if the following solids are polyhedrons. If the solid is a polyhedron, name it and determine the number of faces, edges and vertices each has.
+
+a)",C_control,NA,high
+"30. We can use what we have learned in this section in another proof of the Pythagorean Theorem. Use the diagram to fill in the blanks in the proof below.
+
+TABLE 8.4:
+Statement Reason
+1. e/a = ?/(d+e) and d/b = b/? | Theorem 8-7
+2. a^2 = e(d + e) and b^2 = d(d + e) | ?
+3. a^2 + b^2 = ? | Combine equations from #2.
+4. ? | Distributive Property
+5. c = d + e | ?
+6. ? | Substitution PoE",C_control,NA,high
+"Investigation 12-1: Drawing a Rotation of 100◦
+Tools Needed: pencil, paper, protractor, ruler
+1. Draw ∆ABC and a point R outside the circle.
+2. Draw the line segment RB.
+3. Take your protractor, place the center on R and the initial side on RB. Mark a 100◦ angle.
+4. Find B' such that RB = RB'.
+5. Repeat steps 2-4 with points A and C.
+6. Connect A', B', and C' to form ∆A'B'C'.",C_control,NA,high
+"Concurrency of Angle Bisectors Theorem: The angle bisectors of a triangle intersect in a point that is equidistant from the three sides of the triangle.
+
+If AG, BG, and GC are the angle bisectors of the angles in the triangle, then EG = GF = GD.
+
+In other words, EG, FG, and GD are the radii of the inscribed circle.",C_control,NA,high
+"Theorem 6-15: A parallelogram is a rhombus if and only if the diagonals are perpendicular.
+Theorem 6-16: A parallelogram is a rhombus if and only if the diagonals bisect each angle.
+There are no theorems about the diagonals of a square. We know that a square is a rhombus and a rectangle. So, the diagonals of a square have the properties of a rhombus and a rectangle.",C_control,NA,high
+"Review Questions: Use the Law of Sines or Cosines to solve ΔABC. If you are not given a picture, draw one. Round all decimal answers to the nearest tenth.",C_control,NA,high
+"Segment Addition Postulate: If A, B, and C are collinear and B is between A and C, then AB + BC = AC. The picture above illustrates the Segment Addition Postulate. If AB = 5 cm and BC = 12 cm, then AC must equal 5 + 12 or 17 cm. You may also think of this as the “sum of the partial lengths, will be equal to the whole length.”",C_control,NA,high
+"Truth tables use these symbols and are another way to analyze logic. First, let’s relate p and ∼ p. To make it easier, set p as: An even number. Therefore, ∼ p is An odd number. Make a truth table to find out if they are both true. Begin with all the “truths” of p, true (T) or false (F). TABLE 2.5: p: T, F. Next we write the corresponding truth values for ∼ p. ∼ p has the opposite truth values of p. So, if p is true, then ∼ p is false and vice versa. TABLE 2.6: p, ∼ p: T, F; F, T.",C_control,NA,high
+"Volume of a Cylinder: If we use the formula for the volume of a prism, V = Bh, we can find the volume of a cylinder. In the case of a cylinder, the base, or B, would be the area of a circle. Therefore, the volume of a cylinder would be V = (πr^2)h, where πr^2 is the area of the base. Volume of a Cylinder: If the height of a cylinder is h and the radius is r, then the volume would be V = πr^2h. Also, like a prism, Cavalieri’s Principle holds. So, the volumes of an oblique cylinder and a right cylinder have the same formula.",C_control,NA,high
+"Determine if the blue arcs are congruent. If so, state why.
+10.
+11.
+12.",C_control,NA,high
+9. Find the radius of circle with circumference 88 in.,C_control,NA,high
+"Example 3: What information do you need to prove that these two triangles are congruent using: a) ASA? b) AAS? c) SAS? Solution: a) For ASA, we need the angles on the other side of EF and QR. Therefore, we would need ∠F ≅ ∠Q. b) For AAS, we would need the angle on the other side of ∠E and ∠R. ∠G ≅ ∠P. c) For SAS, we would need the side on the other side of ∠E and ∠R. So, we would need EG ≅ RP.",C_control,NA,high
+"Another Proof of the Pythagorean Theorem
+This proof is “more formal,” meaning that we will use letters, a, b, and c to represent the sides of the right triangle. In this particular proof, we will take four right triangles, with legs a and b and hypotenuse c and make the areas equal.
+Agreensquare = c²
+Agreensquare = 4(1/2 ab) + (b - a)²
+= 2ab + b² - 2ab + a²
+= b² + a²",C_control,NA,high
+"Point of Concurrency for Medians
+
+From Example 2, we saw that the three medians of a triangle intersect at one point, just like the perpendicular bisectors and angle bisectors. This point is called the centroid.",C_control,NA,high
+"Polyhedrons, just like polygons, can be convex or concave (also called non-convex). All regular polyhedron are convex. A concave polyhedron is similar to a concave polygon. The polyhedron “caves in,” so that two non-adjacent vertices can be connected by a line segment that is outside the polyhedron.",C_control,NA,high
+"Questions 19-22 build off of each other. You may assume the problems are connected.
+19. Two similar rhombi have areas of 72 units2 and 162 units2. Find the ratio of the areas.
+20. Find the scale factor.
+21. The diagonals in these rhombi are congruent. Find the length of the diagonals and the sides.
+22. What type of rhombi are these quadrilaterals?",C_control,NA,high
+"Example 1: What is the perimeter of a regular octagon with 4 inch sides?
+Solution: If each side is 4 inches and there are 8 sides, that means the perimeter is 8(4 in) = 32 inches.",C_control,NA,high
+"Know What? One use of scale factors and areas is scale drawings. This technique takes a small object, like the handprint to the right, divides it up into smaller squares and then blows up the individual squares. In this Know What? you are going to make a scale drawing of your own hand. Either trace your hand or stamp it on a piece of paper. Then, divide your hand into 9 squares, like the one to the right, probably 2 in×2 in. Take a larger piece of paper and blow up each square to be 6 in×6 in (meaning you need at least an 18 in square piece of paper). Once you have your 6 in×6 in squares drawn, use the proportions and area to draw in your enlarged handprint.",C_control,NA,high
+"Sometimes, Always, Never
+Determine if the following statements are sometimes, always or never true.
+1. A trapezoid is a kite.
+2. A square is a parallelogram.
+3. An isosceles trapezoid is a quadrilateral.
+4. A rhombus is a square.
+5. A parallelogram is a square.
+6. A square is a kite.
+7. A square is a rectangle.
+8. A quadrilateral is a rhombus.",C_control,NA,high
+"Suppose that A(−2,3), B(3,3) and C(1,−3) are three of four vertices of a parallelogram.
+22. Depending on where you choose to put point D, the name of the parallelogram you draw will change. Sketch a picture to show all possible parallelograms. How many can you draw?
+23. If you know the parallelogram is named ABDC, what is the slope of side parallel to AC?
+24. Again, assuming the parallelogram is named ABDC, what is the length of BD?
+25. Find the points of intersection of the diagonals of the three parallelograms formed. Label them X in parallelogram ABCD, Y in parallelogram ADBC and Z in parallelogram ABDC.
+26. Connect the points X, Y and Z to form a triangle. What do you notice about this triangle?",C_control,NA,high
+"Theorem 8-4: If the sum of the squares of the two shorter sides in a right triangle is less than the square of the longest side, then the triangle is obtuse.",C_control,NA,high
+"In this chapter, students will learn about the building blocks of geometry. We will start with the basics: point, line and plane and build upon those terms. From here, students will learn about segments, midpoints, angles, bisectors, angle relationships, and how to classify polygons.",C_control,NA,high
+"Example 6: Algebra Connection Find the measure of each angle and the value of y. Solution: The given angles are alternate exterior angles. Because the lines are parallel, we can set the expressions equal to each other to solve the problem. (3y+53)° = (7y−55)° 108° = 4y 27° = y. If y = 27°, then each angle is 3(27°) + 53°, or 134°.",C_control,NA,high
+"27. Repeat questions 21-25 with ΔREX where R(4,2),E(6,0) and X(0,0).",C_control,NA,high
+"Example 6: In the picture from Example 5, if OP = 17 and QP = 6, what is OQ? Solution: Use the Segment Additional Postulate. OQ + QP = OP, so OQ + 6 = 17, or OQ = 17 - 6 = 11. So, OQ = 11.",C_control,NA,high
+"Challenge For the following patterns find a) the next two terms, b) the 40th term and c) the nth term rule. You will need to think about each of these in a different way. Hint: Double all the values and look for a pattern in their factors. Once you come up with the rule remember to divide it by two to undo the doubling.
+
+26. 2, 5, 9, 14,...
+27. 3, 6, 10, 15,...
+28. 3, 12, 30, 60,...",C_control,NA,high
+"For problems 25-27, determine what kind of quadrilateral ABCD is and find its area.
+25. A(−2,3),B(2,3),C(4,−3),D(−2,−1)
+26. A(0,1),B(2,6),C(8,6),D(13,1)
+27. A(−2,2),B(5,6),C(6,−2),D(−1,−6)",C_control,NA,high
+"Concurrency of Perpendicular Bisectors Theorem: The perpendicular bisectors of the sides of a triangle intersect in a point that is equidistant from the vertices.
+
+If PC, QC, and RC are perpendicular bisectors, then LC = MC = OC.",C_control,NA,high
+"Arc Addition Postulate
+
+Just like the Angle Addition Postulate and the Segment Addition Postulate, there is an Arc Addition Postulate. It is very similar.
+
+Arc Addition Postulate: The measure of the arc formed by two adjacent arcs is the sum of the measures of the two arcs.
+
+Using the picture from Example 3, we would say m⌒AE + m⌒EB = m⌒AEB.",C_control,NA,high
+"Example 1: What is the m∠T?
+Solution: From the Triangle Sum Theorem, we know that the three angles add up to 180°. Set up an equation to solve for ∠T.
+m∠M + m∠A + m∠T = 180°
+82° + 27° + m∠T = 180°
+109° + m∠T = 180°
+m∠T = 71°",C_control,NA,high
+"Review Questions
+
+Fill in the following table. Leave all answers in terms of π.
+
+TABLE 10.1:
+diameter | radius | circumference
+1. 15
+2. 4
+3. 6
+4. 84π
+5. 9
+6. 25π
+7. 2π
+8. 36",C_control,NA,high
+"Example 13: Determine the truths for p∧(∼ q∨r). Solution: First, there are three variables, so we are going to need all the combinations of their truths. For three variables, there are always 8 possible combinations. TABLE 2.9: p, q, r: T, T, T; T, T, F; T, F, T; T, F, F; F, T, T; F, T, F; F, F, T; F, F, F. Next, address the ∼ q. It will just be the opposites of the q column. TABLE 2.10: p, q, r, ∼ q: T, T, T, F; T, T, F, F; T, F, T, T; T, F, F, T; F, T, T, F; F, T, F, F; F, F, T, T; F, F, F, T. Now, let’s do what’s in the parenthesis, ∼ q∨r. Remember, for “or” only ∼ q OR r has to be true. Only use the ∼ q and r columns to determine the values in this column. TABLE 2.11: p, q, r, ∼ q, ∼ q∨r: T, T, T, F, T; T, T, F, F, F; T, F, T, T, T; T, F, F, T, T; F, T, T, F, T; F, T, F, F, F; F, F, T, T, T; F, F, F, T, T. Finally, we can address the entire problem, p∧(∼ q∨r). Use the p and ∼ q∨r to determine the values. Remember, for “and” both p and ∼ q∨r must be true. TABLE 2.12: p, q, r, ∼ q, ∼ q∨r, p∧(∼ q∨r): T, T, T, F, T, T; T, T, F, F, F, F; T, F, T, T, T, T; T, F, F, T, T, T; F, T, T, F, T, F; F, T, F, F, F, F; F, F, T, T, T, F; F, F, F, T, T, F.",C_control,NA,high
+"Given AB, with A(−2, 5) and B(1, −3) find at least two possible points, C, such that △ABC is
+26. right, with right ∠C.
+27. acute, with acute ∠C.
+28. obtuse, with obtuse ∠C.",C_control,NA,high
+"Review Questions
+Use the regular hexagon below to answer the following questions. Each side is 10 cm long.
+1. Each dashed line segment is a(n) ________________.
+2. The red line segment is a(n) __________________.
+3. There are _____ congruent triangles in a regular hexagon.
+4. In a regular hexagon, all the triangles are _________________.
+5. Find the radius of this hexagon.
+6. Find the apothem.
+7. Find the perimeter.
+8. Find the area.",C_control,NA,high
+"Planes can also be parallel or perpendicular. The image to the left shows two parallel planes, with a third blue plane that is perpendicular to both of them. An example of parallel planes could be the top of a table and the floor. The legs would be in perpendicular planes to the table top and the floor.",C_control,NA,high
+"Review Questions
+
+Determine if the arcs below are a minor arc, major arc, or semicircle of ⊙G. EB is a diameter.
+1. ⌒AB
+2. ⌒ABD
+3. ⌒BCE
+4. ⌒CAE
+5. ⌒ABC
+6. ⌒EAB
+7. Are there any congruent arcs? If so, list them.
+8. If m⌒BC = 48°, find m⌒CD.
+9. Using #8, find m⌒CAE.",C_control,NA,high
+"Angle of Elevation: The angle measure from the horizon or horizontal line, up.",C_control,NA,high
+"Example 5: Find the value of the missing variables.
+a)
+b)
+Solution:
+a) x + 80° = 180° by Theorem 9-10. x = 100°.
+y + 71° = 180° by Theorem 9-10. y = 109°.
+b) It is easiest to figure out z first. It is supplementary with 93°, so z = 87°. Second, we can find x. x is an inscribed angle that intercepts the arc 58° + 106° = 164°. Therefore, by the Inscribed Angle Theorem, x = 82°. y is supplementary with x, so y = 98°.",C_control,NA,high
+"9. Make a sketch of segment BT, with A between B and T.",C_control,NA,high
+"Angle Bisector Theorem Converse: If a point is in the interior of an angle and equidistant from the sides, then it lies on the bisector of the angle.",C_control,NA,high
+"Example 9: Find the area and perimeter of the triangle.
+Solution: This is an obtuse triangle. First, to find the area, we need to find the height of the triangle. We are given the two sides of the small right triangle, where the hypotenuse is also the short side of the obtuse triangle. From these values, we see that the height is 4 because this is a 3-4-5 right triangle. The area is A = 1/2 (4)(7) = 14 units2.
+To find the perimeter, we would need to find the longest side of the obtuse triangle. If we used the dotted lines in the picture, we would see that the longest side is also the hypotenuse of the right triangle with legs 4 and 10. Use the Pythagorean Theorem.
+42 + 102 = c2
+16 + 100 = c2
+c = √116 ≈ 10.77
+The perimeter is 7 + 5 + 10.77 = 22.77 units",C_control,NA,high
+"28. The exterior angles of a quadrilateral are x◦, 2x◦, 3x◦, and 4x◦. What is the measure of the smallest angle?",C_control,NA,high
+"But, what if we didn’t have cubes? Let’s generalize this formula for any rectangular prism. Notice that each layer is the same as the area of the base. Then, we multiplied by the height. Here is our formula. Volume of a Rectangular Prism: If a rectangular prism is h units high, w units wide, and l units long, then its volume is V = l · w · h.",C_control,NA,high
+"Example 2: How many triangles are in the diagram below?
+
+Solution: Start by counting the smallest triangles, 16. Now count the triangles that are formed by four of the smaller triangles.
+There are a total of seven triangles of this size, including the inverted one in the center of the diagram. Next, count the triangles that are formed by nine of the smaller triangles. There are three of this size. And finally, there is one triangle formed by the 16 smaller triangles. Adding these numbers together, we get 16+7+3+1 = 27.",C_control,NA,high
+34. Linus has 100 ft of fencing to use in order to enclose a 1200 square foot rectangular pig pen. The pig pen is adjacent to the barn so he only needs to form three sides of the rectangular area as shown below. What dimensions should the pen be?,C_control,NA,high
+"Example 9: What is m∠QRT in the diagram below?
+
+Solution: Using the Angle Addition Postulate, m∠QRT = 15◦ + 30◦ = 45◦.",C_control,NA,high
+26. Find the area of an equilateral triangle with sides of length 8.,C_control,NA,high
+"Example 1: A dot pattern is shown below. How many dots would there be in the bottom row of the 4th figure? What would the total number of dots be in the 6th figure?
+
+Solution: There will be 4 dots in the bottom row of the 4th figure. There is one more dot in the bottom row of each figure than in the previous figure.
+There would be a total of 21 dots in the 6th figure, 6+5+4+3+2+1.",C_control,NA,high
+"Exterior Angles Theorem
+Remote Interior Angles: The two angles in a triangle that are not adjacent to the indicated exterior angle.
+∠A and ∠B are the remote interior angles for exterior angle ∠ACD.",C_control,NA,high
+"Tangents and Radii: The tangent line and the radius drawn to the point of tangency have a unique relationship. Let’s investigate it here. Investigation 9-1: Tangent Line and Radius Property. Tools needed: compass, ruler, pencil, paper, protractor. 1. Using your compass, draw a circle. Locate the center and draw a radius. Label the radius AB, with A as the center. 2. Draw a tangent line, BC, where B is the point of tangency. To draw a tangent line, take your ruler and line it up with point B. Make sure that B is the only point on the circle that the line passes through. 3. Using your protractor, find m∠ABC.",C_control,NA,high
+10. The perimeter of a rectangle is 32. Find two different dimensions that the rectangle could be.,C_control,NA,high
+"Example 2: If an isosceles triangle has base angles with measures of 47°, what is the measure of the vertex angle?
+Solution: Draw a picture and set up an equation to solve for the vertex angle, v.
+47° + 47° + v = 180°
+v = 180° - 47° - 47°
+v = 86°",C_control,NA,high
+"Inverse Cosine: If you know the adjacent side of an angle and the hypotenuse in a right triangle, you can use inverse cosine to find the measure of the angle.
+Inverse cosine is also called arccosine and is labeled cos⁻¹ or arccos.",C_control,NA,high
+"Know What? Revisited In order to find the slope, we need to first find the horizontal distance in the triangle to the right. This triangle represents the incline and the elevation. To find the horizontal distance, or the run, we need to use the Pythagorean Theorem, a^2 + b^2 = c^2, where c is the hypotenuse.
+
+177^2 + run^2 = 1532^2
+31,329 + run^2 = 2,347,024
+run^2 = 2,315,695
+run ≈ 1521.75
+
+The slope is then 177 / 1521.75, which is roughly 3/25.",C_control,NA,high
+"Example 1: Suppose Bea makes the following statements, which are known to be true.
+If Central High School wins today, they will go to the regional tournament.
+Central High School won today.
+What is the logical conclusion?
+
+Solution: This is an example of deductive reasoning. There is one logical conclusion if these two statements are true: Central High School will go to the regional tournament.",C_control,NA,high
+7. Can you draw a triangle with a right angle and an obtuse angle? Why or why not?,C_control,NA,high
+"Determine if the following figures are polyhedra. If so, name the figure and find the number of faces, edges, and vertices.
+9.
+10.
+11.
+12.
+13.
+14.",C_control,NA,high
+"Review Questions
+In the questions below, every rotation is counterclockwise, unless otherwise stated.
+Using Investigation 12-1, rotate each figure around point P the given angle measure.
+1. 50◦
+2. 120◦
+3. 200◦",C_control,NA,high
+"23. Mrs. Smith teaches AP Calculus. Between the first and second years she taught the course her students’ average score improved by 12%. Between the second and third years, the scores increased by 9%. What is the average rate of improvement in her students’ scores?",C_control,NA,high
+"Example 3: In ⊙A, CB is tangent at point B. Find AC. Reduce any radicals. Solution: Because CB is tangent, AB ⊥ CB, making ΔABC a right triangle. We can use the Pythagorean Theorem to find AC. 5² + 8² = AC², 25 + 64 = AC², 89 = AC², AC = √89.",C_control,NA,high
+"26. Construction Using your protractor, draw an angle that is 75◦. Then, use your compass to construct the angle bisector. What is the measure of each angle?",C_control,NA,high
+"8.2 Converse of the Pythagorean Theorem
+Learning Objectives
+• Understand the converse of the Pythagorean Theorem.
+• Identify acute and obtuse triangles from side measures.",C_control,NA,high
+Point of Concurrency: When three or more lines intersect at the same point.,C_control,NA,high
+Postulate 1-5: The intersection of two planes is a line.,C_control,NA,high
+"Notice that each pair of sides is marked parallel. As is the case with the rectangle and square, recall that two lines are parallel when they are perpendicular to the same line. Once we know that a quadrilateral is a parallelogram, we can discover some additional properties.",C_control,NA,high
+"Describe the cross section formed by the intersection of the plane and the solid.
+15.
+16.
+17.",C_control,NA,high
+"Using the Pythagorean Theorem
+The Pythagorean Theorem can be used to find a missing side of any right triangle, to prove that three given lengths can form a right triangle, to find Pythagorean Triples, to derive the Distance Formula, and to find the area of an isosceles triangle. Here are several examples. Simplify all radicals.",C_control,NA,high
+"2. DIAM is a rhombus. Find:
+a. MA
+b. MI
+c. DA
+d. m∠DIA
+e. m∠MOA",C_control,NA,high
+"Example 10: Determine if the following statements are examples of inductive or deductive reasoning. a) Solving an equation for x. b) 1, 10, 100, 1000,... c) Doing an experiment and writing a hypothesis. Solution: Inductive Reasoning = Patterns, Deductive Reasoning = Logic from Facts. a) Deductive Reasoning: Each step follows from the next. b) Inductive Reasoning: This is a pattern. c) Inductive Reasoning: You make a hypothesis or conjecture comes from the patterns that you found in the experiment (not facts). If you were to prove your hypothesis, then you would have to use deductive reasoning.",C_control,NA,high
+"23. An architect wants to build 3 similar right triangles such that the ratio of the middle triangle to the small triangle is the same as the ratio of the largest triangle to the middle triangle. The smallest one has side lengths 5, 12 and 13. The largest triangle has side lengths 45, 108 and 117. What are the lengths of the sides of the middle triangle?",C_control,NA,high
+18. The area of a regular octagon is 695.3 cm^2 and the sides are 12 cm. What is the length of the apothem?,C_control,NA,high
+"Investigation 7-1: Constructing Similar Triangles
+Tools Needed: pencil, paper, protractor, ruler
+1. Draw a 45◦ angle. Extend the horizontal side and then draw a 60◦ angle on the other side of this side. Extend the other side of the 45◦ angle and the 60◦ angle so that they intersect to form a triangle. What is the measure of the third angle? Measure the length of each side.
+2. Repeat Step 1 and make the horizontal side between the 45◦ and 60◦ angle at least 1 inch longer than in Step 1. This will make the entire triangle larger. Find the measure of the third angle and measure the length of each side.
+3. Find the ratio of the sides. Put the sides opposite the 45◦ angles over each other, the sides opposite the 60◦ angles over each other, and the sides opposite the third angles over each other. What happens?",C_control,NA,high
+"7.3 Similarity by AA
+Learning Objectives
+• Determine whether triangles are similar.
+• Understand AA for similar triangles.
+• Solve problems involving similar triangles.",C_control,NA,high
+"Review Queue
+1. Reflect ∆XYZ with vertices X(9,2),Y(2,4) and Z(7,8) over the y−axis. What are the vertices of ∆X'Y'Z'?
+2. Reflect ∆X'Y'Z' over the x−axis. What are the vertices of ∆X''Y''Z''?
+3. How do the coordinates of ∆X''Y''Z'' relate to ∆XYZ?",C_control,NA,high
+"One of the interesting things about compositions is that they can always be written as one rule. What this means is, you don’t necessarily have to perform one transformation followed by the next. You can write a rule and perform them at the same time.",C_control,NA,high
+"Example 1: Look at trapezoid TRAP below. What is m∠A?
+Solution: TRAP is an isosceles trapezoid. So, m∠R = 115°, by Theorem 6-17. To find m∠A, set up an equation.
+115° + 115° + m∠A + m∠P = 360°
+230° + 2m∠A = 360° → m∠A = m∠P
+2m∠A = 130°
+m∠A = 65°
+Notice that m∠R + m∠A = 115° + 65° = 180°. These angles will always be supplementary because of the Consecutive Interior Angles Theorem from Chapter 3. Therefore, the two angles along the same leg (or non-parallel side) are always going to be supplementary. Only in isosceles trapezoids will opposite angles also be supplementary.",C_control,NA,high
+"27. Parallelogram Diagonals Theorem
+Given: ABCD is a parallelogram with diagonals BD and AC Prove: AE ∼= EC, DE ∼= EB",C_control,NA,high
+"Example 4: Find m∠PMN, mPN, m∠MNP, m∠LNP, and mLN.
+Solution:
+m∠PMN = m∠PLN = 68° by Theorem 9-8.
+mPN = 2 · 68° = 136° from the Inscribed Angle Theorem.
+m∠MNP = 90° by Theorem 9-9.
+m∠LNP = 1/2 · 92° = 46° from the Inscribed Angle Theorem.
+To find mLN, we need to find m∠LPN. ∠LPN is the third angle in △LPN, so 68° + 46° + m∠LPN = 180°. m∠LPN = 66°, which means that mLN = 2 · 66° = 132°.",C_control,NA,high
+"7^2 + h^2 = 9^2
+49 + h^2 = 81
+h^2 = 32
+h = √32 = 4√2
+
+Now, use h and b in the formula for the area of a triangle.
+A = 1/2 bh = 1/2(14)(4√2) = 28√2 units^2",C_control,NA,high
+"Example 7: Is l || m? How do you know? Solution: These are Same Side Interior Angles. So, if they add up to 180°, then l || m. 113° + 67° = 180°, therefore l || m.",C_control,NA,high
+"The area of a sector is a fractional part of the area of the circle, just like arc length is a fractional portion of the circumference.",C_control,NA,high
+"Determine if the following triangles are similar. If so, write the similarity theorem and statement.
+13.
+14.
+15.
+16.
+17.
+18.",C_control,NA,high
+"Algebra Connection For 19-24, use algebra to determine the value of variable(s) in each problem.",C_control,NA,high
+"Isosceles Trapezoids
+Previously, we introduced the Base Angles Theorem with isosceles triangles. The theorem states that in an isosceles triangle, the two base angles are congruent. This property holds true for isosceles trapezoids. The two angles along the same base in an isosceles trapezoid will also be congruent. This creates two pairs of congruent angles.
+Theorem 6-17: The base angles of an isosceles trapezoid are congruent.",C_control,NA,high
+"Write a two-column proof.
+19. Given: △ABC ≅ △DEF, AP and DO are altitudes Prove: AP ≅ DO
+20. Given: Isosceles △ABC with legs AB and AC, BD ⊥ DC and CE ⊥ BE Prove: BD ≅ CE",C_control,NA,high
+"Example 4: Write a two-column proof to show that the two triangles are congruent. Given: C is the midpoint of AE and DB Prove: △ACB ≅ △ECD Solution: TABLE 4.6: Statement Reason 1. C is the midpoint of AE and DB Given 2. AC ≅ CE, BC ≅ CD Definition of a midpoint 3. ∠ACB ≅ ∠DCE Vertical Angles Postulate 4. △ACB ≅ △ECD SAS Postulate. In Example 4, we could have only proven the two triangles congruent by SAS. If we were given that AB ≅ DE, then we could have also proven the two triangles congruent by SSS.",C_control,NA,high

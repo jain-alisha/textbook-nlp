@@ -1,6 +1,18 @@
 #!/usr/bin/env python3
 """
+NOT USED — abandoned, kept for reference only.
+
 Rule-based paragraph stitcher — free, instant, no API calls.
+
+Tested on Saxon (2026-09-25) and found to damage Era 4 data: on a 60-paragraph
+sample it merged 48% of paragraphs together, fusing separate numbered problems
+(3-8) into a single blob and destroying 5 problem-number markers. The
+NEW_PROBLEM_RE-style boundary logic this relies on only recognizes CPM's
+"1-51." numbering, not Saxon's "7." style, so it over-merges on any non-CPM
+book. Decision: skip stitching entirely rather than fix the heuristics — see
+README changelog for the full writeup. Nothing in the pipeline calls this
+script; do not wire it back in without re-deriving a per-series boundary rule
+first.
 
 Merges a paragraph into the next one when it looks like a continuation:
   - ends without terminal punctuation (no . ? ! :)  AND is short (<120 chars)

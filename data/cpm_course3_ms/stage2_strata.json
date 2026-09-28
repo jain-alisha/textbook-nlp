@@ -1,0 +1,28 @@
+{
+  "book": "cpm_course3_ms",
+  "stage1_file": "gemini_results.csv",
+  "stage1_arm": "gemini",
+  "n_paragraphs": 1737,
+  "n_stage1_errors": 0,
+  "tier_A_positive": 27,
+  "tier_B_boundary": 296,
+  "tier_C_pool": 1414,
+  "tier_C_sampled": 149,
+  "seed": 20260924,
+  "positive_rate": 0.01554,
+  "allocation": {
+    "control_n": 149,
+    "pool": 1414,
+    "pool_share": 0.049734,
+    "sampled_share_of_pool": 0.105375,
+    "series": "cpm",
+    "tiers": {
+      "A_positive": 27,
+      "B_boundary": 296,
+      "C_control_pool": 1414,
+      "errors": 0,
+      "n_rows": 1737
+    }
+  },
+  "control_source": "plan"
+}

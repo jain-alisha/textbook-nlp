@@ -1,0 +1,73 @@
+book,para_num,paragraph,final_label,status,verification,tier,gemini_label,gemini_confidence,gemini_considered,gemini_reasoning,gpt_oss_or_label,gpt_oss_or_reasoning
+saxon_course3_ms,78,"Notice that the properties of addition and multiplication do not apply to subtraction and division. Order matters when we subtract or divide.
+5 − 3 = 2 but 3 − 5 = −2
+8 ÷ 4 = 2 but 4 ÷ 8 = 1/2",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"The text explains a conceptual property (that subtraction and division are not commutative) by showing examples, rather than explicitly warning about a common student mistake or using warning phrasing.",COMMON_ERROR_ALERT,"The paragraph warns that subtraction and division are not commutative, alerting readers to a common misconception."
+saxon_course3_ms,693,"Example 5: Ivan wants to tile the floor of a kitchen that is 12 feet long and 8 feet wide. The installed tile is $7.89 per square foot. Ivan calculates that the cost to tile the floor is $315.60. Is Ivan’s calculation reasonable?
+
+Solution: The cost is based on the number of square feet. The area of the kitchen is 8 feet × 12 feet, or 96 square feet. We can estimate the cost of tiling the floor by multiplying 100 square feet by $8 per square foot. A reasonable estimate of the cost is $800, which is very different from Ivan’s calculation. Since Ivan’s calculation is not reasonable, he should check his calculations.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,INCORRECT_TO_CORRECT,"This is a worked example demonstrating how to check for reasonableness using estimation. Ivan's error is not analyzed or corrected step-by-step by the reader, making it standard textbook content.",INCORRECT_TO_CORRECT,"The paragraph presents a named student's (Ivan) incorrect calculation and asks the reader to evaluate its reasonableness, which aligns with showing a student's wrong work and prompting error identification."
+saxon_course3_ms,695,"Practice Set
+a. In 2000 the population of Dallas was 1,188,580. Round that number to the nearest hundred thousand.
+b. Round 3.14159 to four decimal places.
+c. The price of regular unleaded gasoline was $2.19 9/10. Round that price to the nearest cent.
+d. Estimate Estimate the height of the ceiling in your classroom in meters and in feet.
+e. Estimate the sum of 3879 and 5276.
+f. Estimate the product of 12 3/8 and 9.75 by rounding each number to the nearest whole number before multiplying.
+g. Evaluate Gus works 39 hours for $9.85 per hour. He calculates that his weekly paycheck should be $38,415. What is a reasonable estimate of what Gus earns? How do you suppose Gus arrived at his calculation?
+h. A rectangular room is 11 3/4 feet long and 10 1/2 feet wide. Grace calculated the area to be about 124 square feet. Explain why her calculation is or is not reasonable.
+i. It is 6:05 p.m. and Eduardo is driving to Dallas. If he is 157 miles away and driving at an average speed of 62 miles per hour, is it reasonable that he can reach Dallas by 9:00 p.m.? Explain your answer.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,INCORRECT_TO_CORRECT,"The paragraph is a mixed practice set on rounding and estimation; while item (g) asks students to diagnose how Gus got an unreasonable calculation, the overall text is standard problem set practice without dedicated error-analysis framing.",INCORRECT_TO_CORRECT,"The paragraph presents named students (Gus, Grace) with incorrect calculations and asks the reader to evaluate the reasonableness and identify the error, fitting the INCORRECT_TO_CORRECT pattern."
+saxon_course3_ms,699,* 4. (6) Explain Brandon said that 48 yards is equal in length to 4 feet. Explain why his statement is unreasonable. Forty-eight yards is equal to how many feet?,INCORRECT_TO_CORRECT,UNCERTAIN,dual_arm,A_positive,INCORRECT_TO_CORRECT,high,EXPLICIT_ERROR_DETECTION,"Brandon's incorrect statement is provided, and the student is asked to explain why it is unreasonable and determine the correct conversion.",EXPLICIT_ERROR_DETECTION,"The paragraph presents a student's incorrect claim and asks the reader to explain why it is unreasonable, i.e., to identify the error."
+saxon_course3_ms,1684,"17. (32) Francisco and Rafael are baseball players. Francisco has had 31 hits in 75 at-bats, while Rafael has had 40 hits in 83 at-bats. Between the two, who is more likely to get a hit in his next at-bat? Explain your answer.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMPARE_AND_CONTRAST,"This is a standard probability word problem comparing two players' statistics, with no student work or error analysis involved.",COMPARE_AND_CONTRAST,"The paragraph presents two named individuals with different data and asks the reader to compare them to determine who is more likely to get a hit, fitting the compare-and-contrast pattern."
+saxon_course3_ms,1736,"Steps: Justification:
+(7.5 × 10^4)(2 × 10^3) Given
+(7.5 × 2)(10^4 × 10^3) Assoc. and Comm. Properties
+15.0 × 10^7 Simplified (but incorrect form)
+1.5 × 10^1 × 10^7 15.0 = 1.5 × 10^1
+1.5 × 10^8 Proper form (10^1 × 10^7 = 10^8)
+
+Look carefully at the last three steps. The coefficient 15.0 is not the correct form. We write 15.0 in scientific notation (1.5 × 10^1) and simplify again.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,This is a worked instructional example demonstrating how to convert an intermediate step into proper scientific notation; it does not ask the student to find an error nor does it warn against a common student misconception.,EXPLICIT_ERROR_DETECTION,"The paragraph points out an error in the presented steps and asks the reader to look carefully to identify the mistake, matching explicit error detection."
+saxon_course3_ms,1915,"Example 1
+Which of the following does not equal 10^(−3)?
+A 1/10^3
+B 1/1000
+C 0.001
+D −1000
+Solution
+An exponential expression with a negative exponent is the reciprocal of the expression with the opposite exponent, as shown in A. Since 10^3 equals 1000, B is just an alternate form of A. Choice C is the decimal equivalent of B. The only number that does not equal 10^(−3) is choice D, −1000.
+A negative exponent does not imply a negative number. Actually, 10^(−3) is a positive number.",NA,UNCERTAIN,dual_arm,B_boundary,NA,medium,COMMON_ERROR_ALERT,"The paragraph is a standard worked multiple-choice example explaining negative exponents. While the final note clarifies that negative exponents do not mean negative numbers, it does not explicitly frame this as an error alert or warning.",COMMON_ERROR_ALERT,"The paragraph warns that a negative exponent does not imply a negative number, highlighting a common misconception."
+saxon_course3_ms,2009,"Example 3: Consider the salaries of the employees of a small business. In an interview, a prospective employee was told that the average salary of employees is $50,000. How might this information be misleading?
+Yearly Salary (in thousands $)
+32 43
+34 45  mean: 50
+32 67  median: 40
+30 85  mode: 32
+37 95  range: 65
+Solution: The interviewer reported the mean salary, which is much higher than the median because of a few salaries which are greater than most of the others. A prospective employee who heard that the average salary is $50,000 would be disappointed if his or her starting salary is near $30,000.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,EXPLICIT_ERROR_DETECTION,"This is a standard instructional example demonstrating how statistical averages (mean vs. median) can be misleading. It does not focus on student errors, student work, or common procedural mistakes.",COMMON_ERROR_ALERT,"The paragraph warns that using the mean salary can be misleading, highlighting a common misunderstanding about averages."
+saxon_course3_ms,2449,"We do not perform computations with a decimal number that has a bar over the repetend. Instead we use the fraction equivalent, or we round the decimal number to an appropriate number of decimal places.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,The text provides standard procedural instruction on how to handle repeating decimals in computation rather than warning about a specific student mistake or analyzing an error.,COMMON_ERROR_ALERT,"The paragraph warns readers not to compute directly with repeating decimals, advising a safer alternative, which matches a common error alert."
+saxon_course3_ms,2450,"Analyze: Which produces a more exact product for multiplying by 0.09 (with bar over 09), multiplying by 1/11 or by 0.0909?",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMPARE_AND_CONTRAST,The problem asks students to compare the precision of two mathematical representations (a fraction versus a rounded decimal) without presenting any student errors or fictional character disagreements.,COMPARE_AND_CONTRAST,"The paragraph asks the reader to compare two different methods (1/11 vs 0.0909) to determine which yields a more exact product, fitting the compare/contrast pattern."
+saxon_course3_ms,2555,"All 45-45-90 triangles have side lengths in the ratio of 1:1:√2. All 30-60-90 triangles have side lengths in the ratio of 1:√3:2. (Some students remember this ratio as 1, 2, √3 noting that the longest side is 2.)",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"The text explains the side length ratios of special right triangles and offers a helpful mnemonic tip for how some students remember them, without warning about an error or presenting incorrect work.",COMMON_ERROR_ALERT,"The paragraph points out a typical student misconception about the side ratio ordering for 30-60-90 triangles, which matches a warning about a common mistake."
+saxon_course3_ms,3407,"Example 2: Consider the following questions proposed for a survey about a new softball diamond. Select the most appropriate (least biased) question and explain your choice.
+1. Wouldn’t you like a new softball diamond at Filly Park?
+2. Which of these describes your desire for a softball diamond at Filly Park: I do not want one / I feel indifferent to the idea / I would like one / I want one built soon.
+3. The city pays for many services under a tight budget, like street lighting, crossing guards in front of schools, and park maintenance. How important is it to you that the city build a softball diamond at Filly Park?
+
+Solution:
+Only question 2 would be an appropriate survey question. With question 1, many people would agree to a new softball diamond. Question 3 sets a tone that may dissuade respondents from stating that they want a new softball diamond.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMPARE_AND_CONTRAST,This is a standard worked example comparing survey questions for bias in statistics. It does not evaluate student work or target a mathematical error/misconception.,COMMON_ERROR_ALERT,"The paragraph warns about common mistakes in survey question wording (bias), which matches the COMMON_ERROR_ALERT category."
+saxon_course3_ms,4197,"New Concept Increasing Knowledge
+When performing algebraic operations, we guard against dividing by zero. For example, the following expression reduces to 3 only if x is not zero:
+3x/x = 3 if x ≠ 0
+We substitute 0 for x and find that when x is 0, the expression equals 0/0. What is the value of 0/0? Try the division with a calculator. Notice that the calculator displays an error message when division by zero is entered. The display is frozen and other calculations cannot be performed until the erroneous entry is cleared.
+We say that division by zero is undefined. In this lesson we will consider why division by zero is not possible.
+As we know, zero lies on the number line with negative numbers to its left and positive numbers to its right.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"The text provides conceptual instruction about why division by zero is undefined and explains what happens on a calculator, rather than explicitly warning about a common student mistake or analyzing an error.",COMMON_ERROR_ALERT,"The paragraph warns the reader about the mistake of dividing by zero, a common error, without presenting a specific student's work or asking to locate an error, fitting the COMMON_ERROR_ALERT category."
+saxon_course3_ms,4204,"Example 2
+The numbers in the multiplication fact 2 × 4 = 8 can be arranged to form two division facts.
+8/4 = 2
+8/2 = 4
+If we attempt to form two division facts for the multiplication fact 2 × 0 = 0, one of the arrangements is not a fact. Which arrangement is not a fact?
+Solution
+The product is 0 and the factors are 2 and 0. So the possible arrangements are:
+Fact: 0/2 = 0
+Not a Fact: 0/0 = 2
+Division by 0 is not defined. The arrangement 0 ÷ 0 = 2 is not a fact.
+The multiplication fact 2 × 0 = 0 does not imply 0 ÷ 0 = 2. Similarly, 3 × 0 = 0 does not imply 0 ÷ 0 = 3. This breakdown in the inverse relationship between multiplication and division when zero is one of the factors is another indication that division by zero is not defined.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,EXPLICIT_ERROR_DETECTION,"This is a standard instructional worked example demonstrating conceptually why division by zero is undefined, rather than analyzing a student error or warning about a common mistake.",EXPLICIT_ERROR_DETECTION,"The paragraph asks the reader to identify which arrangement is not a fact, i.e., locate the error in the presented arrangements, matching the EXPLICIT_ERROR_DETECTION pattern."
+saxon_course3_ms,4227,"When performing calculations with measures, scientists are careful not to include more digits in the results than are justified. We follow this rule to determine the correct number of significant digits when we multiply and divide.
+A product or quotient of two measurements may only have as many significant digits as the measurement with the least number of significant digits.",NA,UNCERTAIN,dual_arm,B_boundary,NA,high,COMMON_ERROR_ALERT,"The text explains a scientific rule regarding significant digits. Although it uses the phrase 'careful not to', it refers to standard practice among scientists rather than warning students about a common student error.",COMMON_ERROR_ALERT,"The paragraph warns readers not to include too many significant digits, a typical mistake, matching the warning style of COMMON_ERROR_ALERT."

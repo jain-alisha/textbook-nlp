@@ -1,0 +1,28 @@
+{
+  "book": "ck12_algebra2_hs",
+  "stage1_file": "gemini_results.csv",
+  "stage1_arm": "gemini",
+  "n_paragraphs": 2250,
+  "n_stage1_errors": 0,
+  "tier_A_positive": 11,
+  "tier_B_boundary": 318,
+  "tier_C_pool": 1921,
+  "tier_C_sampled": 203,
+  "seed": 20260924,
+  "positive_rate": 0.00489,
+  "allocation": {
+    "control_n": 203,
+    "pool": 1921,
+    "pool_share": 0.067567,
+    "sampled_share_of_pool": 0.105674,
+    "series": "ck12",
+    "tiers": {
+      "A_positive": 11,
+      "B_boundary": 318,
+      "C_control_pool": 1921,
+      "errors": 0,
+      "n_rows": 2250
+    }
+  },
+  "control_source": "plan"
+}

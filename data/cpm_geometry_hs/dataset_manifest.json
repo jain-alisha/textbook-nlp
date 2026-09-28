@@ -1,0 +1,53 @@
+{
+  "book": "cpm_geometry_hs",
+  "mode": "two-stage",
+  "stage1_arm": "gemini",
+  "stage2_arm": "gpt_oss_or",
+  "rows": 2446,
+  "by_status": {
+    "CONFIRMED": 614,
+    "UNVERIFIED": 1807,
+    "UNCERTAIN": 25
+  },
+  "by_verification": {
+    "dual_arm": 639,
+    "single_arm": 1807
+  },
+  "by_tier": {
+    "C_control": 213,
+    "C_unsampled": 1807,
+    "B_boundary": 385,
+    "A_positive": 41
+  },
+  "positives": 41,
+  "positive_rate": 0.01676,
+  "strata": {
+    "book": "cpm_geometry_hs",
+    "stage1_file": "gemini_results.csv",
+    "stage1_arm": "gemini",
+    "n_paragraphs": 2458,
+    "n_stage1_errors": 0,
+    "tier_A_positive": 41,
+    "tier_B_boundary": 386,
+    "tier_C_pool": 2031,
+    "tier_C_sampled": 214,
+    "seed": 20260924,
+    "positive_rate": 0.01668,
+    "allocation": {
+      "control_n": 214,
+      "pool": 2031,
+      "pool_share": 0.071436,
+      "sampled_share_of_pool": 0.105367,
+      "series": "cpm",
+      "tiers": {
+        "A_positive": 41,
+        "B_boundary": 386,
+        "C_control_pool": 2031,
+        "errors": 0,
+        "n_rows": 2458
+      }
+    },
+    "control_source": "plan"
+  },
+  "staleness_problems": null
+}
