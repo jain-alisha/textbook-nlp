@@ -375,9 +375,16 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["paragraph", "source"])
-        for para, source in paragraphs:
-            writer.writerow([para, source])
+        # para_id is the 1-based row position at extraction time -- the only
+        # stable per-paragraph identifier the pipeline has. Everything downstream
+        # (classify, route, merge) must key on this, not on paragraph text: two
+        # physically distinct paragraphs can share identical text (CPM's "What
+        # Have I Learned?" boilerplate, repeated CCSS practice-standard blurbs),
+        # and a text-keyed dict silently collapses them into one row. See the
+        # 2026-09-29 changelog entry.
+        writer.writerow(["para_id", "paragraph", "source"])
+        for i, (para, source) in enumerate(paragraphs, start=1):
+            writer.writerow([i, para, source])
 
     print(f"\nSaved {len(paragraphs)} paragraphs -> {out_path}")
     print(f"\nNext step:")

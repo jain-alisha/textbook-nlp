@@ -217,6 +217,57 @@ Newest first. This records *why* things changed, which git history alone doesn't
 entries below are reversals of earlier decisions, and the reasoning is what keeps them from being
 re-litigated. Add an entry whenever a pipeline stage, model, or corpus decision changes.
 
+### 2026-09-29 — `findings.csv` was counting disagreements as confirmed positives
+
+`merge_two_stage()` sets `final_label = a_lab` (the Gemini/stage-1 label) whenever
+the two arms disagree, purely so the row survives in `classified_results.csv` with
+`status="UNCERTAIN"` rather than vanishing. But `write_findings()` and the
+`positives`/`positive_rate` summary both filtered only on `final_label`, not on
+`status` — so every UNCERTAIN row where stage 1 said a category and stage 2 said
+NA (or vice versa) was counted as a *confirmed* finding anyway. **42 rows across
+the corpus were affected** (corpus-wide confirmed positives: 254 -> 212). Concentrated
+in CPM, same as the duplicate-row bug above, though this is an unrelated cause.
+
+Fix: `write_findings()` and the positives count in `merge_two_stage()` /
+`merge_census()` now exclude `status == "UNCERTAIN"` explicitly. Those 42 rows
+were never lost — they were already correctly present in `uncertain_review.csv`
+pending human adjudication — this only stops them from *also* being counted as
+confirmed. Re-ran `merge.py` for all 12 books and `collect_findings.py` to rebuild
+`findings.csv` / `findings_all.csv` (now 212 rows) and `data/uncertain_review_all_books.csv`.
+
+### 2026-09-29 — Stable paragraph IDs; `merge.py` was silently dropping duplicate-text rows
+
+`merge.py`'s `load_results()` keyed its stage-1/stage-2 dicts by paragraph *text*.
+Two physically distinct paragraphs can share identical text — CPM's "What Have I
+Learned?" reflection boilerplate and the CCSS practice-standard blurbs ("Attend to
+precision...", "Look for and make use of structure...") repeat verbatim at the end
+of nearly every chapter — and a text-keyed dict can only ever hold one entry per
+key, so every occurrence past the first silently vanished from `classified_results.csv`.
+
+Quantified against the 2026-09-28 commit: **154 paragraphs across the 12-book
+corpus were missing** from their books' `classified_results.csv`, concentrated in
+CPM (22-49 rows per book; CK-12/Saxon 0-2). Checked every recovered row against
+the previous `findings.csv`: **zero were non-NA** — all 154 were genuine boilerplate,
+so no finding was ever hidden by this bug. The corpus-report numbers (28,431-paragraph
+pool, 3,000 control sample, 0 misses) were never affected either, because `route.py`
+and `plan_control.py` operate on row lists, not paragraph-text dicts, and were never
+vulnerable to this collapse — only the final merge step was.
+
+Fix: `extract.py` now writes a `para_id` column (1-based row position at extraction
+time) into `paragraphs.csv`, and `classify_single.py` / `route.py` carry it through
+`gemini_results.csv` -> `stage2_worklist.csv` -> `gpt_oss_or_results.csv` unchanged.
+`merge.py` now keys everything by `para_id`; `load_results()` raises rather than
+silently falling back if a file predates the column. `check_staleness()` compares
+ID sets instead of text sets, so a labelled duplicate is never mistaken for an orphan.
+
+All 12 books' existing `paragraphs.csv` / `gemini_results.csv` / `gpt_oss_or_results.csv`
+were backfilled with `para_id` **positionally**, not re-run — every backfill step
+verified paragraph text matched 1:1 by position before trusting it, and `route.py`'s
+regenerated `stage2_worklist.csv` was diffed against the committed version to confirm
+the (seeded, deterministic) control sample selection was byte-identical, just with
+the new column added. No API calls were needed or made. `merge.py` was then re-run
+for all 12 books.
+
 ### 2026-09-28 — Full corpus run complete: extraction, stage 1, stage 2, merge, corpus report
 
 All 12 books (the 11 planned books plus `saxon_course2_ms`, whose original PDF had corrupt

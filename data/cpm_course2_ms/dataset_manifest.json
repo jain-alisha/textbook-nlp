@@ -3,24 +3,24 @@
   "mode": "two-stage",
   "stage1_arm": "gemini",
   "stage2_arm": "gpt_oss_or",
-  "rows": 1878,
+  "rows": 1927,
   "by_status": {
-    "CONFIRMED": 529,
-    "UNVERIFIED": 1324,
+    "CONFIRMED": 541,
+    "UNVERIFIED": 1361,
     "UNCERTAIN": 25
   },
   "by_verification": {
-    "dual_arm": 554,
-    "single_arm": 1324
+    "dual_arm": 566,
+    "single_arm": 1361
   },
   "by_tier": {
-    "C_control": 158,
-    "C_unsampled": 1324,
-    "B_boundary": 371,
+    "C_control": 160,
+    "C_unsampled": 1361,
+    "B_boundary": 381,
     "A_positive": 25
   },
-  "positives": 25,
-  "positive_rate": 0.01331,
+  "positives": 19,
+  "positive_rate": 0.00986,
   "strata": {
     "book": "cpm_course2_ms",
     "stage1_file": "gemini_results.csv",

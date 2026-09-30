@@ -49,16 +49,33 @@ VALID_CATEGORIES = {
 BAD = {"", "ERROR", "PARSE_ERROR", "MISSING"}
 
 
-def load_results(path: Path, arm: str | None = None) -> Dict[str, dict]:
-    """Load a results CSV into {paragraph: {label, reasoning, confidence, considered, tier}}."""
-    out: Dict[str, dict] = {}
+def load_results(path: Path, arm: str | None = None) -> Dict[int, dict]:
+    """Load a results CSV into {para_id: {paragraph, label, reasoning, confidence,
+    considered, tier}}.
+
+    Keyed by para_id (the 1-based row position at extraction time), not by
+    paragraph text. Two physically distinct paragraphs can share identical text
+    (CPM's "What Have I Learned?" boilerplate, repeated CCSS practice-standard
+    blurbs are real, observed examples) — a text-keyed dict silently drops every
+    occurrence but one. para_id is stable across every derived file because
+    extract.py, classify_single.py and route.py all preserve row order and write
+    exactly one output row per input row. See the 2026-09-29 changelog entry.
+    """
+    out: Dict[int, dict] = {}
     with path.open(encoding="utf8") as f:
         for row in csv.DictReader(f):
             para = (row.get("paragraph") or "").strip()
             if not para:
                 continue
-            rec = {"label": "", "reasoning": "", "confidence": "", "considered": "",
-                   "tier": (row.get("tier") or "").strip()}
+            pid_raw = (row.get("para_id") or "").strip()
+            if not pid_raw:
+                raise ValueError(
+                    f"{path}: missing para_id. This file predates stable paragraph "
+                    f"IDs — regenerate it (re-run classify_single.py / route.py) "
+                    f"rather than merging text-keyed data.")
+            pid = int(pid_raw)
+            rec = {"paragraph": para, "label": "", "reasoning": "", "confidence": "",
+                   "considered": "", "tier": (row.get("tier") or "").strip()}
             for key, val in row.items():
                 v = (val or "").strip()
                 if arm and not key.startswith(f"{arm}_"):
@@ -71,15 +88,15 @@ def load_results(path: Path, arm: str | None = None) -> Dict[str, dict]:
                     rec["confidence"] = v
                 elif key.endswith("_considered"):
                     rec["considered"] = v
-            out[para] = rec
+            out[pid] = rec
     return out
 
 
-def source_index(data_dir: Path, arm: str) -> tuple[str, Dict[str, int]]:
-    """Map each paragraph to its 1-based row number in the extraction it came from.
+def source_file_name(data_dir: Path, arm: str) -> str:
+    """The extraction file a results CSV claims to come from, for provenance only.
 
-    Row number in paragraphs.csv is the only stable per-paragraph identifier the
-    pipeline has — it is what lets a finding be located in the book again.
+    para_id already gives the row number directly — this no longer needs to
+    build a text-keyed index to find it.
     """
     manifest = data_dir / f"{arm}_manifest.json"
     src_name = "paragraphs.csv"
@@ -88,23 +105,24 @@ def source_index(data_dir: Path, arm: str) -> tuple[str, Dict[str, int]]:
             src_name = json.loads(manifest.read_text()).get("paragraphs_file") or src_name
         except json.JSONDecodeError:
             pass
-    src = data_dir / src_name
-    idx: Dict[str, int] = {}
-    if src.exists():
-        for i, r in enumerate(csv.DictReader(src.open(encoding="utf8")), start=1):
-            para = (r.get("paragraph") or "").strip()
-            if para and para not in idx:   # first occurrence wins for repeated text
-                idx[para] = i
-    return src_name, idx
+    return src_name
 
 
 def write_findings(data_dir: Path, book: str, rows: list[dict], src_name: str) -> Path:
-    """Every non-NA paragraph, identified by book and row number.
+    """Every non-NA paragraph the two arms actually agree on, identified by book
+    and row number.
 
     Written as its own file because this is the output the research question is
     actually about; classified_results.csv is ~99% NA and is the audit trail.
+
+    Excludes status == "UNCERTAIN": that final_label is the screener's own label
+    kept only so the row survives in classified_results.csv, not a confirmed
+    verdict -- merge_two_stage sets it even when the second arm called the same
+    paragraph NA. Counting those as findings overstates the confirmed positive
+    rate; they belong in uncertain_review.csv pending a human decision, not here.
     """
-    findings = [r for r in rows if r["final_label"] not in ("NA", *BAD)]
+    findings = [r for r in rows
+                if r["final_label"] not in ("NA", *BAD) and r["status"] != "UNCERTAIN"]
     findings.sort(key=lambda r: (r["para_num"] if isinstance(r["para_num"], int) else 1 << 30))
     cols = ["book", "para_num", "final_label", "status", "verification", "tier",
             "source_file", "paragraph"]
@@ -119,34 +137,34 @@ def write_findings(data_dir: Path, book: str, rows: list[dict], src_name: str) -
     return path
 
 
-def check_staleness(data_dir: Path, arm: str, labelled: set[str]) -> list[str]:
-    """Compare a results file's paragraph set against the extraction it claims.
+def check_staleness(data_dir: Path, arm: str, labelled: set[int]) -> list[str]:
+    """Compare a results file's para_id set against the extraction it claims.
 
     Re-extracting a book replaces its paragraphs wholesale, which leaves old label
-    files describing text that no longer exists. Nothing in the CSVs themselves
-    reveals that, so it is checked here rather than trusted to memory.
+    files describing rows that no longer exist. Nothing in the CSVs themselves
+    reveals that, so it is checked here rather than trusted to memory. Keyed by
+    para_id, not text, so a labelled duplicate-text row is never mistaken for an
+    orphan just because another row shares its text.
     """
-    manifest = data_dir / f"{arm}_manifest.json"
-    src_name = "paragraphs.csv"
-    if manifest.exists():
-        try:
-            src_name = json.loads(manifest.read_text()).get("paragraphs_file") or src_name
-        except json.JSONDecodeError:
-            pass
+    src_name = source_file_name(data_dir, arm)
     src = data_dir / src_name
     if not src.exists():
         return [f"{arm}: source {src_name} is missing; cannot verify freshness"]
 
-    current = {(r.get("paragraph") or "").strip()
-               for r in csv.DictReader(src.open(encoding="utf8"))}
-    current.discard("")
+    current = set()
+    for r in csv.DictReader(src.open(encoding="utf8")):
+        if not (r.get("paragraph") or "").strip():
+            continue
+        pid_raw = (r.get("para_id") or "").strip()
+        if pid_raw:
+            current.add(int(pid_raw))
     missing = current - labelled          # extracted but never labelled
     orphan = labelled - current           # labelled but no longer in the book
     problems = []
     if orphan:
         problems.append(
             f"{arm}: {len(orphan)} labelled paragraphs are absent from {src_name} "
-            f"— these labels describe discarded text")
+            f"— these labels describe discarded rows")
     if missing:
         problems.append(
             f"{arm}: {len(missing)} paragraphs in {src_name} have no {arm} label "
@@ -187,11 +205,12 @@ def merge_two_stage(data_dir: Path, args) -> int:
             return 2
         print("\n  --allow-stale given; continuing anyway.")
 
-    src_name, para_idx = source_index(data_dir, args.stage1_arm)
+    src_name = source_file_name(data_dir, args.stage1_arm)
 
     rows, uncertain = [], []
-    for para, a in s1.items():
-        b = s2.get(para)
+    for pid, a in s1.items():
+        para = a["paragraph"]
+        b = s2.get(pid)
         tier = (b or {}).get("tier") or "C_unsampled"
         a_lab = a["label"]
 
@@ -214,7 +233,7 @@ def merge_two_stage(data_dir: Path, args) -> int:
 
         row = {
             "book": args.name,
-            "para_num": para_idx.get(para, ""),
+            "para_num": pid,
             "paragraph": para,
             "final_label": final,
             "status": status,
@@ -248,7 +267,11 @@ def merge_two_stage(data_dir: Path, args) -> int:
     by_status = Counter(r["status"] for r in rows)
     by_verif = Counter(r["verification"] for r in rows)
     by_tier = Counter(r["tier"] for r in rows)
-    positives = [r for r in rows if r["final_label"] not in ("NA", *BAD)]
+    # Excludes UNCERTAIN for the same reason write_findings() does: final_label
+    # there is the screener's label kept for completeness, not a confirmed
+    # verdict. Counting it as a positive overstates the confirmed rate.
+    positives = [r for r in rows
+                 if r["final_label"] not in ("NA", *BAD) and r["status"] != "UNCERTAIN"]
     unnumbered = sum(1 for r in positives if not isinstance(r["para_num"], int))
 
     manifest = {
@@ -309,14 +332,15 @@ def merge_census(data_dir: Path, args) -> int:
             print("\nRefusing to merge mismatched inputs. Pass --allow-stale to override.")
             return 2
 
-    src_name, para_idx = source_index(data_dir, arm_a)
+    src_name = source_file_name(data_dir, arm_a)
     rows, uncertain = [], []
-    for para, a in res_a.items():
-        b = res_b.get(para, {"label": "MISSING", "reasoning": ""})
+    for pid, a in res_a.items():
+        para = a["paragraph"]
+        b = res_b.get(pid, {"label": "MISSING", "reasoning": ""})
         agree = (a["label"] in VALID_CATEGORIES and b["label"] in VALID_CATEGORIES
                  and a["label"] == b["label"])
         row = {"book": args.name,
-               "para_num": para_idx.get(para, ""),
+               "para_num": pid,
                "paragraph": para,
                "final_label": a["label"],
                "status": "CONFIRMED" if agree else "UNCERTAIN",
@@ -337,7 +361,8 @@ def merge_census(data_dir: Path, args) -> int:
             w.writerows(data)
     findings_path = write_findings(data_dir, args.name, rows, src_name)
     conf = sum(1 for r in rows if r["status"] == "CONFIRMED")
-    pos = sum(1 for r in rows if r["final_label"] not in ("NA", *BAD))
+    pos = sum(1 for r in rows
+              if r["final_label"] not in ("NA", *BAD) and r["status"] != "UNCERTAIN")
     print(f"MERGE COMPLETE — {conf}/{len(rows)} confirmed, {len(uncertain)} uncertain")
     print(f"  {pos} non-NA paragraphs -> {findings_path}")
     return 0

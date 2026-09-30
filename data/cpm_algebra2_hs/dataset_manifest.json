@@ -3,24 +3,24 @@
   "mode": "two-stage",
   "stage1_arm": "gemini",
   "stage2_arm": "gpt_oss_or",
-  "rows": 2915,
+  "rows": 2920,
   "by_status": {
     "CONFIRMED": 750,
-    "UNVERIFIED": 2136,
+    "UNVERIFIED": 2141,
     "UNCERTAIN": 29
   },
   "by_verification": {
     "dual_arm": 779,
-    "single_arm": 2136
+    "single_arm": 2141
   },
   "by_tier": {
     "C_control": 253,
-    "C_unsampled": 2136,
+    "C_unsampled": 2141,
     "B_boundary": 482,
     "A_positive": 44
   },
-  "positives": 44,
-  "positive_rate": 0.01509,
+  "positives": 37,
+  "positive_rate": 0.01267,
   "strata": {
     "book": "cpm_algebra2_hs",
     "stage1_file": "gemini_results.csv",

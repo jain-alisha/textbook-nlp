@@ -3,24 +3,24 @@
   "mode": "two-stage",
   "stage1_arm": "gemini",
   "stage2_arm": "gpt_oss_or",
-  "rows": 5030,
+  "rows": 5032,
   "by_status": {
     "CONFIRMED": 882,
-    "UNVERIFIED": 4133,
+    "UNVERIFIED": 4135,
     "UNCERTAIN": 15
   },
   "by_verification": {
     "dual_arm": 897,
-    "single_arm": 4133
+    "single_arm": 4135
   },
   "by_tier": {
     "C_control": 488,
-    "C_unsampled": 4133,
+    "C_unsampled": 4135,
     "B_boundary": 403,
     "A_positive": 6
   },
-  "positives": 6,
-  "positive_rate": 0.00119,
+  "positives": 5,
+  "positive_rate": 0.00099,
   "strata": {
     "book": "saxon_course3_ms",
     "stage1_file": "gemini_results.csv",

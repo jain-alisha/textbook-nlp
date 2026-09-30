@@ -3,19 +3,19 @@
   "mode": "two-stage",
   "stage1_arm": "gemini",
   "stage2_arm": "gpt_oss_or",
-  "rows": 2249,
+  "rows": 2250,
   "by_status": {
     "CONFIRMED": 512,
-    "UNVERIFIED": 1717,
+    "UNVERIFIED": 1718,
     "UNCERTAIN": 20
   },
   "by_verification": {
     "dual_arm": 532,
-    "single_arm": 1717
+    "single_arm": 1718
   },
   "by_tier": {
     "C_control": 203,
-    "C_unsampled": 1717,
+    "C_unsampled": 1718,
     "B_boundary": 318,
     "A_positive": 11
   },

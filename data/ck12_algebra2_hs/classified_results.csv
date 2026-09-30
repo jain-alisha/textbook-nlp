@@ -12045,6 +12045,8 @@ Graph the following functions from [π, 3π].
 1. y = -1 + sin x
 2. y = cos(x + π/3) - 2
 3. Find the equation of the cosine curve below.",NA,UNVERIFIED,single_arm,C_unsampled,NA,high,,"The text consists of standard guided practice problems involving graphing trigonometric functions, with no mention or presentation of errors.",,
+ck12_algebra2_hs,2082,"Phase Shift
+The horizontal shift of a trigonometric function.",NA,UNVERIFIED,single_arm,C_unsampled,NA,high,,"The text provides a straightforward glossary definition of 'Phase Shift' with no mention of errors, student work, or pedagogical comparisons.",,
 ck12_algebra2_hs,2083,"Problem Set
 For questions 1-4, match the equation with its graph.
 1. y = sin(x - π/2)

@@ -169,11 +169,16 @@ def main() -> int:
 
     out_path = data_dir / args.out
     with out_path.open("w", encoding="utf8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["paragraph", "tier", f"stage1_{args.arm}_label",
+        w = csv.DictWriter(f, fieldnames=["para_id", "paragraph", "tier",
+                                          f"stage1_{args.arm}_label",
                                           f"stage1_{args.arm}_confidence"])
         w.writeheader()
         for r, tier in worklist:
-            w.writerow({"paragraph": r["paragraph"], "tier": tier,
+            # para_id carries through from stage 1 so merge.py can key stage 2
+            # results by the same stable ID rather than by paragraph text, which
+            # collapses distinct rows that happen to share identical text (CPM
+            # boilerplate, repeated CCSS blurbs). See the 2026-09-29 changelog.
+            w.writerow({"para_id": r["para_id"], "paragraph": r["paragraph"], "tier": tier,
                         f"stage1_{args.arm}_label": r[lab],
                         f"stage1_{args.arm}_confidence": r[conf]})
 

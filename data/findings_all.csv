@@ -80,24 +80,796 @@ If the result of one event has no bearing on the probability of the second event
 Because one flip of the coin has no effect on the outcome of any other flips, each flip of the coin counts as an independent event.
 To find the probability of multiple independent events happening together, we multiply the individual probabilities:
 For independent events : P(A and B) = P(A)·P(B)"
-cpm_course2_ms,52,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"1-83. DaMarr also kept track of the number of heads he flipped. He wrote his experimental probability of flipping heads as the fraction 7 __ . He wants to rewrite 7 __ as a percent. To do so, he knows that he needs to rewrite it as a portion of 100. He started by drawing the picture shown to represent 7 __ . a. As he looked at his picture, DaMarr realized that he could adjust his drawing to show 100 parts instead of 20. DaMarr then drew a new diagram. How many of the 100 parts are shaded? Explain your reasoning. b. Explain how DaMarr can use his new picture to write 7 __ as a percent. c. Use a similar strategy to rewrite 3 __ as a percent. Show your steps. 1-84. Randy was playing “Double Heads,” a game in which he would flip two coins at a time. He recorded the number of times he flipped two heads at the same time. He flipped the coins 50 times, and there were 20 times when both coins landed heads-up, which he recorded as 20 __ . a. How does 20 __ compare to 50%? b. Randy claims, “ 20 __ is equivalent to 70 ___ because if I add 50 to the denominator to get 100 and add 50 to the numerator to get 70, the fraction becomes 70 ___ .” Explain to Randy why 20 __ and 70 ___ are not equivalent fractions. 1-85. Three students invented a game in which they flip coins for one minute and then determine who flipped the highest percentage of heads. After their first round, each of them thinks that they were the winner of the game. Here is what they reported: • “I think I won,” said Maria, “Of my flips, 12 __ were heads.” • Autymn said, “I flipped my coin 40 times and had a total of 18 heads. Since both of my numbers are larger than yours, I must have won.” • Kumar reported, “I recorded 44% of my flips as heads.” Help the students determine their percentages of heads. Explain your reasoning. NOTE: This stoplight icon will appear periodically throughout the text. Problems with this icon may be used to highlight common errors. Discover and correct the error."
-cpm_course2_ms,61,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"1-105. Justin is working on a new problem: 1 _ + 1 _ . He drew the picture shown to represent the problem. a. Could you name Justin’s sum as a single fraction? Would he be correct to name it 2 _ ? b. Kermit sees Justin’s work and says, “You need to make all of the pieces the same size before you try to write the sum. You can use a Giant One to rewrite 1 _ and 1 _ each as sixths.” He writes: Finish Kermit’s work to rewrite each fraction so that its denominator is 6. c. What is the sum of the new fractions? Fix Justin’s picture or draw a new diagram to explain why your answer makes sense. d. Discuss with your team why Kermit might have chosen to rewrite each fraction as sixths. Could he have used a different number? Be ready to share your thoughts. 1-106. Before you can write the sum of two fractions, they must be rewritten so that both wholes have an equal number of parts. In other words, they must be rewritten to have a common denominator. Three students were adding the fractions 1 _ + 5 __ . They each used a different common denominator: a. Who is correct? Can any number be a common denominator? Explain your reasoning. b. Which of their common denominators is easiest to work with? Why? c. Record at least three different common denominators you could use to add 3 __ + 1 _ . + = 1_ 3 · _ = _ 1_ 2 · _ = _ LILY ARMANDO JOSUE 1_ 4 + 5_ = 12_ 48 + 20_ = 32_ 1_ 4 + 5_ = 3_ 12 + 5_ = 8_ 1_ 4 + 5_ = 6_ 24 + 10_ = 16_"
-cpm_course2_ms,70,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"1.2.8 What part is missing? SUBTRACTING PROBABILITIES Launch Mathematicians construct viable arguments and critique the reasoning of others. Your teacher will display an image for a Which One Is Unique? activity. Be prepared to construct an argument for which one you believe is unique. Explore In Lesson 1.2.7, you calculated probabilities for single events and combinations of events when either one outcome or another is desirable. You have also compared those probabilities to decide which outcomes are most likely. In this lesson, you will work with your team to apply your knowledge of fractions to represent and calculate the probabilities of a variety of events. As you work, ask each other these questions to focus your discussion: • How can probabilities be combined? • How can the answer be rewritten in a different form? 1-129. Eustice is adding fractions. Here is his work: a. How do you think Eustice got his answer? Does his answer make sense? Discuss Eustice’s work with your team. Then explain your reasoning with diagrams and words. b. Help Eustice by showing your work to correctly add the fractions. Lesson Focus LANGUAGE OBJECTIVE Speak or Diagram: I can explain how to calculate the probability of compound events to teammates. STANDARDS FOR MATHEMATICAL PRACTICE 1: Make sense of problems and persevere in solving them. 3: Construct viable arguments and critique the reasoning of others. 6: Attend to precision. 7: Look for and make use of structure. MAJOR CONCEPTUAL IDEAS • Knowns and Unknowns • Probability and Data • Proportional Relationships 1_ 2 + 2_ 4 = 3_"
-cpm_course2_ms,71,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"1-130. Lindsay has a paper bag full of Fruiti Tutti Chews in different fruit flavors. She says, “If you reach into the bag, you have a 1 _ chance of pulling out a Killer Kiwi. There is a 3 _ chance that you will get Cool Coconut.” a. If you reach into the bag, what is P(coconut or kiwi)? b. Is there another flavor in the bag? How can you tell? If so, assuming that there is only one other flavor, what is the probability of getting that flavor? c. How many candies might Lindsay have in the bag? Is there more than one possibility? Assume that all candies in the bag are whole candies. 1-131. Lyle asked for a challenge problem, and his teacher gave him this one: There is a 2 _ chance of drawing a red marble out of a bag of marbles. If the probability of drawing a red or a blue marble is 2 _ , what is the probability of drawing a blue marble? When Lyle’s teammates saw the challenge he was working on, they each had a different idea for how he should start. • Mayra suggested that he start by rewriting 2 _ and 2 _ so that they have a common denominator. • Kenessa disagreed. “You want to set up a subtraction problem,” she said. She wrote the expression 2 _ − 2 _ to show Lyle her idea. • Darren had a different idea. “The probability that you would draw either red or blue is the same as the probability of drawing red added to the probability of drawing blue,” he said. He wrote the equation 2 _ = 2 _ + ? to show his idea. a. Which way would you suggest to Lyle as he starts working to determine P(blue)? • Discuss your ideas with your team. • Write a clear explanation of which method you recommend and why. • Include your ideas about whether the other strategies will solve the problem and why you did not choose them. b. What is the probability of drawing a blue marble? Explain your reasoning. 1-132. Louise is playing a game, but the spinner is incomplete. Each section of the spinner is labeled with the probability of spinning it. What fraction is missing? ? 1_ 1_ 2_"
-cpm_course2_ms,141,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"Review & Preview 2-119. Troy is a fan of baseball, and their favorite player is Moe Jauer of the Minnesota Triplets. Troy made a table displaying how many home runs Jauer hit during his first five seasons. Graph Troy’s data. 2-120. Sara turned in the two graphs shown for homework, but her teacher marked them as being incorrect. Explain to Sara what mistakes she made. Then choose one of her graphs, copy it, and correct it. a. b. 2-121. If a set of xy-axes has 20 grid units in each direction and the greatest value of the data to be placed on the horizontal axis is 132, what would be an appropriate and convenient scale to use for this axis? Explain. Season Number of Home Runs x y y x"
-cpm_course2_ms,153,INCORRECT_TO_CORRECT,UNCERTAIN,dual_arm,A_positive,paragraphs_stitched.csv,"3-1. Katrina wrote the following set of instructions for Cecil: 4 · 2.5 + 1. a. If Cecil the acrobat follows Katrina’s instructions, how far will he go? Draw a diagram of Cecil’s movements and show how far he will move. b. Katrina drew the diagram shown. How was she thinking about Cecil’s moves? Write an expression to represent Katrina’s diagram. c. Explain why Katrina’s diagram in part (b) will not give her the correct length for 4 ⋅ 2.5 + 1. d. Cecil changed Katrina’s set of instructions so that the length of 1 foot came first, as shown in the diagram. Write an expression to represent this new diagram. How far does Cecil move here? Does this give the same length as 4 · 2.5 + 1? 3-2. Cecil’s trainers proposed each of the following movements. Which one requires the longest rope? Draw diagrams to justify your answer. MOVEMENT 1 MOVEMENT 2 MOVEMENT 3 8 + 2(6.48) feet 2 + 8(6.48) feet (8 + 2)6.48 feet 3-3. The expression 5 + 3 · 4 + 2 can be used to represent the group of “+” tiles shown. a. How does each part of the expression connect with the groups of “+” tiles? How many tiles are there? b. Each group of “+” tiles is represented by a different part of the expression, also called a numerical term. Numerical terms are single numbers or products of numbers. It is often useful to circle terms in an expression to keep track of separate calculations. For example, each term circled in the expression shown represents a separate part of the collection of “+” tiles. Circle the terms in the following expression. What does each term describe about collections of “+” or “−” tiles? 4 · 5 + 1 + 3(−2) + 6 2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5 + + + + + + + + + + + + + + + + + + + 5 + 3 · 4 + 2"
-cpm_course2_ms,183,COMPARE_AND_CONTRAST,UNCERTAIN,dual_arm,A_positive,paragraphs_stitched.csv,"3-74. When multiplying decimals, how do you know where to place the decimal point? Think about this as you do parts (a) through (d). a. Write two equations for multiplying 0.3 by 0.16. One equation should express the factors and product using decimals, and one using fractions. b. In part (a), you multiplied tenths by hundredths to get thousandths. Do you always get thousandths if you multiply tenths by hundredths? Why or why not? What do you get if you multiply tenths by tenths? Hundredths by hundredths? Use several examples to justify your answers. c. When a multiplication problem is written using decimals, there is a relationship between the number of decimal places in the parts (or factors) of the problem and the number of decimal places in the answer (or product). Describe this relationship. d. Describe a shortcut for locating the decimal point in the answer to a problem involving decimal multiplication. 3-75. For each of the following problems, use a hundredths grid if needed. Write both a fraction and a decimal equation with your answer. a. (0.3)(0.6) b. (0.5)(−0.4) c. (−0.2) · (−0.7) 3-76. Jerry’s teacher gave him the problem (−2.4)(5.3). He decided to use an area model to determine the answer. He used the area model shown and determined that (−2.4)(5.3) = −8.48. Jerry’s teammate Ron knows that (2.4)(5.3) = 12.72, so he thinks that the answer to (−2.4)(5.3) is −12.72. Who is correct, and what mistake did the other student make? –10 2.0 –0.6 0.12 0.3 0.4 –2 + + = –10 + 2.0 – 0.6 + 0.12 = –8.48"
-cpm_course2_ms,185,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"3-79. Mentally calculate the following products. a. (−0.04)(−0.1) b. (0.03)(−0.02) c. (0.7)(0.4) d. Stacey said, “Stephanie, look at my answer to the last problem, 0.7 · 0.4 = 0.28. Usually when I multiply, I get a bigger answer than the numbers I start with, but twenty-eight hundredths, 0.28, is less than either 0.4 or 0.7. I must have made a mistake.” Stephanie responded, “Well, one-half times one-half is one-fourth, and one-fourth is less than one-half. I think when you multiply by a fraction or decimal less than one, you get less than you started with.” Write a sentence or two about who you think is correct and why. 3-80. The highest point in the United States is Mount McKinley, also called Denali, in Alaska. Its summit is 20,335 feet above sea level. Badwater, a basin located in Death Valley, is the lowest point in the United States, at 282 feet below sea level. How high is the summit of Denali above the Death Valley location? Show your calculation using absolute value symbols. 3-81. Calculate the mean, range, and median of these values: 12, 4, −2, 0, 9, −2, 1, 7, 8, 2. Recall that the range is calculated by determining the difference between the largest and smallest data values. 3-82. Calculate the product for each multiplication problem. a. 5 _ · 2 _ b. 3 _ · 2 _"
-cpm_course2_ms,200,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"3-115. Each problem has an error in the answer. Identify the error, explain how to correct the mistake, and correct it. a. b. c. d. e. f. 3-116. This problem is a checkpoint for multiplication of fractions and decimals. It will be referred to as Checkpoint 3. Multiply each pair of fractions or each pair of decimals. a. 3 _ · 3 _ b. 9 ___ · 4 _ c. 3 1 _ · 1 1 _ d. 2 1 _ · 3 1 _ e. 3.62 · 3.4 f. 0.26 · 0.0008 Check your answers. Do you feel confident working with multiplication of fractions and decimals? For extra support, refer to the review materials and practice problems that are available in the Checkpoint Materials. 3-117. Complete the following division problems using any method. a. 6 _ ÷ (− 3 _ ) b. 7 _ ÷ 3 _ c. − 4 _ ÷ 5 11 __ d. − 2 _ ÷ (−1 1 _ ) × 0.5 467.92 + 1.293 479.85 – 62.837 38.837 1.234 × 0.003 0.3702 4,006.3 – 34.98 3,971.48 45.6 32.87 + 0.003 374.6"
-cpm_course2_ms,203,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"3-122. Maria and Jorge were trying to evaluate the expression (− 4 _ ) · 1 2 _ · (− 3 _ ). Her work is shown. Jorge had a different idea. He multiplied (− 4 _ ) · (− 3 _ ) first. a. Evaluate the expression 1 2 _ · (− 4 _ ) · (− 3 _ ) using Jorge’s method. Is your answer equal to Maria’s? b. Jorge used the Commutative Property of Multiplication. Why might Jorge have decided to multiply (− 4 _ ) · (− 3 _ ) first? c. In a multiplication problem, the factors can be grouped together in different ways. This is called the Associative Property of Multiplication. Use this property and show that ( 3 _ · 2 _ ) · (−2) and 3 _ · ( 2 _ · (−2)) are equivalent. d. Evaluate each expression. First decide if you want to group some factors together. i. (−9) · 1 _ · 3 _ ii. − 5 __ · 3 _ · 4 _ iii. −8.1 · 5 · 2 3-123. Use the integers −6, 2, −3, and 1 once each with any of the four operations or parentheses to make: a. The largest possible answer. b. Zero or the closest number to zero. c. The smallest possible answer. = 84_ = 1 24_ = 1 2_ – 4_ 3 · 1 2_ 5 · – 3_ = – 4_ 3 · 7_ 5 · – 3_ = – 4_ 3 · – 21_"
-cpm_course2_ms,219,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"4-4. Two figures are scaled copies if the ratio of their side lengths stays the same. That means that the ratio of copy ______ original for each pair of corresponding sides is equal. a. These two figures are scaled copies. Can you determine the missing side lengths? What is the scale factor? b. Kai and Eli are having a disagreement about the scale factor for the following figures. Kai thinks the scale factor is 2:1, but Eli does not agree. Who is correct? Explain your reasoning. Closure Your teacher will give you instructions for a Closure activity. COPY ORIGINAL 2.8 COPY ORIGINAL"
-cpm_course2_ms,257,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"4-76. The perimeter of each algebra tile can be also written as an expression using variables and numbers. a. Write at least two different expressions for the perimeter of each tile shown. b. Which way of writing the perimeter seems clearest to you? What information can you get from each expression? c. Lianna wrote the perimeter of the collection of tiles shown as 2x + 1 + 1 + 1 + 2x + 1 units, but Jonah wrote it as 4x + 4. How are their expressions different? d. Which expression represents the perimeter? Can they both represent the perimeter? Neither? 4-77. The expressions that you have written to represent area and perimeter are made up of terms that are separated by addition and subtraction. a. Write an expression for the perimeter of the figure. b. How many x lengths are represented in the expression in part (a)? How many unit lengths? c. Combining like terms (like terms contain the same variable raised to the same power) is a way to rewrite an expression. Rewriting the perimeter of the shape as P = 4x + 6 combines the separate x-terms as 4x and combines the unit terms in the term 6. If you have not already done so, combine like terms for the perimeter expressions that you wrote in problem 4-76. Closure Your teacher will give you instructions for a Closure activity. x2 x x x"
-cpm_course2_ms,269,COMMON_ERROR_ALERT,UNCERTAIN,dual_arm,A_positive,paragraphs_stitched.csv,"4-99. Division by zero is an interesting concept. Some students believe that when you divide by zero, the result is zero. Consider how the numerical equation 30 ÷ 6 = 5 can be reversed to make the multiplication equation 5 · 6 = 30. a. Reverse the division equation 24 ÷ 4 = 6 into a multiplication equation. b. Now take the equation 24 ÷ 0 = x and reverse it into a multiplication equation. Is there a value of x that can make this equation true? Explain. c. Why do you think the solution to a number divided by zero is called “undefined”? d. Is 0 ÷ 24 also “undefined”? Why or why not? Closure 4-100. GOAL JOURNAL For this journal entry, write the title, read the prompt, and write your response. Copy the questions or incorporate them into your response. GOAL JOURNAL 4 Taking ownership and responsibility for your own learning may help you achieve at higher levels. This includes thoughtful reflection as you write in your journal, seeking out help if you are struggling, or making an honest assessment of your study habits. • To this point, what have you learned about yourself as a learner? • What are the ways that you learn best? • What is one study habit that, if you made a change, would help you be even more successful? • Write a goal including one small step you will take to improve as a learner."
-cpm_course2_ms,387,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"6-59. Chen’s sister made this riddle for him to solve: “I am thinking of a number. If you add two to the number then triple it, you get nine.” a. Build the equation on an Equation Mat. What are two ways that Chen could write this equation? b. Solve the equation and show your work by recording your steps after each valid move. c. When Chen told his sister the mystery number in the riddle, she said he was wrong. Chen was sure that he had figured out the correct number. Choose a way to justify that you have the correct solution in part (b). 6-60. Solve the equation 4(x + 3) = 8. Remember to: • Build the equation on your Equation Mat with algebra tiles. • Rewrite the equation using valid moves. • Record the original equation and all of your steps using symbols. • Solve for x. What is the value of x that makes the equation true? 6-61. CHECKING YOUR SOLUTION When you solve an equation that has one solution, you get a value for the variable. But how do you know that you have done the steps correctly and that your answer “works”? a. Look at your answer for problem 6-60. How could you verify that your solution is correct and convince someone else? Discuss your ideas with your team. b. When Kelly and Madison compared their solutions for the equation −7 = −2(x + 1) + 3x, Kelly got a solution of x = −5 and Madison got a solution of x = −8. To decide whether the solutions were correct, they decided to check their answers to see if they made the expressions equal. Finish their work to determine whether either person has the correct solution. c. When checking, Kelly ended up with −7 = −7. Does this mean that her answer is correct or incorrect? If it is correct, does this mean the solution is x = −7 or x = −5? Explain. d. Go back to problem 6-60 and show how to check your solution for that equation. KELLY MADISON x = –5 –7 = –2(x + 1) + 3x –7 = –2(–5 + 1) + 3(–5) x = –8 –7 = –2(x + 1) + 3x –7 = –2(–8 + 1) + 3(–8)"
-cpm_course2_ms,399,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"Review & Preview 6-87. For the end-of-year party, Mt. Rose Middle School ordered 112 pizzas. There were eight fewer veggie pizzas than there were pepperoni pizzas. There were three times as many combo pizzas as pepperoni pizzas. Use the 5-D Process to define a variable and write an equation for this situation. Then determine how many of each kind of pizza were ordered. 6-88. Consider the equation 7 = 3x − 5. a. Stanley wants to start solving the equation by adding 5 to both sides, while Terrence first wants to subtract 7 from both sides. Will both strategies work? Is one strategy more efficient than the other? b. Solve 7 = 3x − 5. Show your steps. Methods & Meanings DEFINING A VARIABLE When you write an equation, it is important to define the variable precisely. You need to be clear about what you are talking about so that someone else looking at your work would understand what the variable represents. This is an important habit to develop because it is an important step in solving many different math problems. For example, suppose you have the following problem: At the neighborhood grocery store, grapes cost $3 a pound. If Belinda spent $5.40 on grapes, how many pounds of grapes did she buy? One equation you could write is 3x = 5.4 if you know what x stands for. The variable x should be clearly defined, such as x = pounds of grapes, rather than just x = grapes. You could also write g = pounds of grapes, since any letter may be used as a variable."
-cpm_course2_ms,406,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"6.2.6 Which method should I use? CHOOSING A STRATEGY FOR SOLVING PROBLEMS Launch Mathematicians construct viable arguments and critique the reasoning of others. Your teacher will display an image for a Which One Is Unique? activity. Be prepared to construct an argument for which one you believe is unique. Explore In this lesson, you will practice writing equations from word problems and solving them using tools such as the 5-D Process, algebra tiles, and symbols. Having a variety of methods will help you choose the one that makes sense to you and makes you a stronger mathematician. 6-101. Nick tried to use symbols to solve 3x − 6 = 27, but he may have made a mistake. If he did make a mistake, on which step did he first make a mistake, and what was his mistake? If he did not make a mistake, check his solution and write “all correct.” x Lesson Focus LANGUAGE OBJECTIVE Speak: I can summarize the pros and cons of methods for solving equations with classmates. STANDARDS FOR MATHEMATICAL PRACTICE 1: Make sense of problems and persevere in solving them. 2: Reason abstractly and quantitatively. 3: Construct viable arguments and critique the reasoning of others. 5: Use appropriate tools strategically. 6: Attend to precision. MAJOR CONCEPTUAL IDEAS • Connections Across Representations • Geometric Relationships • Knowns and Unknowns • Math in the World 3x – 6 = 27 + 6 + 6 = 33 3x x = 11"
-cpm_course2_ms,419,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"REFLECTION AND SYNTHESIS Launch Mathematicians look for and make use of structure. Your teacher will display a dot arrangement for a Dot Talk. Think about how you might use the structure of the dot arrangement in your counting strategy. Silently determine the number of dots without counting each dot. Hold a hand close to your chest and extend one finger when you have an answer and a counting strategy. Explore These activities offer you a chance to reflect about what you have learned during this chapter. As you work, look for concepts that you feel very comfortable with, ideas that you would like to learn more about, and topics with which you need more help. Activity 1: Summarizing My Understanding In this chapter, you have used algebra tiles and an Equation Mat as tools for solving equations. You have also represented your solution steps on an Equation Mat and with algebraic symbols. Today, you will use what you have learned about equations in this chapter to show connections between all of these methods. To start, consider the following problem. Jamee is working to solve an equation. They did the work shown. With your team, answer the questions that follow. a. Explain what Jamee did at each step. b. What is their solution? c. Is their solution correct? Explain your reasoning. If it is not, determine their error and the correct answer. –3 – 9 = 2(2x + 2) –12 = 4x + 2 –14 = 4x ORIGINAL PROBLEM STEP 1 STEP 2 Core Connections Course 2 Follow the directions to demonstrate your understanding of solving Jamee’s equation with an Equation Mat, algebraically (with numbers and symbols), and in words. 1. Sketch tiles to represent the equation on an Equation Mat. 2. Complete each step to solve the equation. Represent each step on the mat with symbols, and in words. As you work, ask questions to clarify your thinking and understanding. Make sure you can give reasons for each step. 3. Color-code the matching steps in each representation. For example, if one step is to combine like terms, label this step with green in the symbols, on the mat, and in words. Use a new color to code each step. Activity 2: What Have I Learned? Working the problems in this section will help you to evaluate which types of problems you feel comfortable with and which ones you need more help with. Solve each problem as completely as you can. The table at the end of this Closure section provides answers to these problems. It also tells you where you can find additional help and where to find similar practice problems. CL 6-133. Consider the Equation Mat shown. a. Write the equation as represented. b. What value of x will make the two sides equal? Rewrite in the fewest terms needed. Record all steps of your work. c. Check your solution. x x −1 −1"
-cpm_course2_ms,442,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"7-30. Miranna teaches gymnastics lessons at summer camp. She is paid $12.50 per hour. a. If Miranna were offered a raise of 100% per hour, what would her new hourly rate be? What percent of her original pay would she be paid? b. Miranna is offered a raise of 75% of her hourly rate to teach a private lesson. How much per hour would she be paid for the private lesson? What percent of her original pay would she get? c. What is the relationship between the percent raise that Miranna gets and her new pay as a percent of her original pay? How is this related to the scale factor (multiplier) between her original pay and her new pay? 7-31. Liam was working on a problem and drew a diagram like the one shown. He then wrote the equation ($72)(0.14) = x. However, his equation does not agree with his diagram. Explain why the equation does not work with the diagram, and then write and solve the correct equation that matches the diagram. 7-32. Ramon went to the corner store and bought more notebook paper to do his homework. The cost for the paper was $7.50, but he also had to pay the 8.1% sales tax. How much will the notebook paper cost Ramon? If Ramon gives the clerk $10, how much change should he receive? 14% x 0% 100% $0 $72"
-cpm_course2_ms,476,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"7-100. Graeme knows that he earns $7.52 every half hour. He wanted to know how much money he would earn after one full week of work (40 hours). He wrote the equivalent ratios shown and quickly saw a way to determine his answer. a. What do you think Graeme is thinking of doing? b. Solve Graeme’s equation. c. Graeme wants to know how long it will take him to earn $1,000. Write and solve an equation to help him figure it out. 7-101. Shiloh knows 5 cups of flour makes 2 batches of cookies. He has 13 cups of flour left. He wants to know how many batches he can make. He wrote the equivalent ratios. He asked his friend Carolyn for help solving this equation. Carolyn said, “If it takes 5 cups of flour to make 2 recipes, then it takes 2 1 _ cups of flour for each recipe. You can just use this multiplier to write an equation.” She then wrote the equation F = 2 1 _ B, where F is cups of flour and B is the number of batches. She replaced F with 13 to determine the number of batches Shiloh can make with 13 cups of flour, as shown. a. Compare Shiloh and Carolyn’s equations. Are they correct? Why or why not? b. Which equation is easier to solve? Solve it. c. Does your solution work in both Shiloh and Carolyn’s equations? 7-102. Determine the missing information in each set of equivalent ratios, using any method. Be sure that you record your process so that others can see what you did. a. 2 __ = x _ b. x ___ = 7 _ c. 0.2 ___ 2 = 1 _ x d. y ___ 11.2 = 4 _ Closure Your teacher will give you instructions for a Closure activity. $7.52 1_ 2 hour = x 40 hours 5 cups 2 batches = 13 cups x batches 13 = 2 1_ 2B"
-cpm_course2_ms,521,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"8-62. The diagrams show some students’ use of protractors. Explain what each student needs to do to measure each angle correctly. a. b. c. d. m∠ = 60° 8-63. Complementary angles are two angles with a sum of 90°. Supplementary angles are two angles with a sum of 180°. a. Use your protractor to measure each of the angles and determine which pairs of angles are complementary and which pairs of angles are supplementary. b. With your team, come up with a strategy for remembering the definitions of “complementary” and “supplementary.” 140° 40° 20° 160° 0° 180° 180° 0° 140° 40° 160° 20° 60° 120° 80° 100° 100° 80° 60° 120° 140° 40° 20° 160° 0° 180° 180° 0° 140° 40° 160° 20° 60° 120° 80° 100° 100° 80° 60° 120° 140° 40° 20° 160° 0° 180° 180° 0° 140° 40° 160° 20° 60° 120° 80° 100° 100° 80° 60° 120° 140° 40° 20° 160° 0° 180° 180° 0° 140° 40° 160° 20° 60° 120° 80° 100° 100° 80° 60° 120° a b c"
-cpm_course2_ms,582,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs_stitched.csv,"9-63. When calculating the volume of the shape shown, Audrey determined the volume of the shaded layer first. Then she said, “The shape is 22 feet high, so there are 22 one-foot-high layers.” She then multiplied and got this answer: 22 ⋅ 200 = 4,400 ft3. a. What is Audrey’s mistake? b. What is the actual volume of the shape? Write an equation to represent the volume and explain how you determined it. c. Think of another method to determine the volume of the shape using a strategy that is different than the one Audrey used. Explain your method in words and write an equation to represent this strategy. Closure 9-64. REFLECTION JOURNAL For this journal entry, write the title, read the prompt, and write your response. Copy the questions or incorporate them into your response. The method for determining the volume of a prism is commonly described like this: “Calculate the area of the base, then multiply by the height.” It is commonly written as the equation V = B · h. Discuss with your team why this strategy works. • How does knowing the area of the base help you determine the volume? • Why do you multiply by the height? 5 ft 6 ft 8 ft 22 ft 20 ft 16 ft 1 ft 8 ft 5 + 20 = 25, so 25 · 8 · 1 = 200 ft3"
+ck12_algebra2_hs,47,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Guided Practice
+Simplify the expressions below.
+1. 6s − 7t + 12t − 10s
+2. 7y^2 − 9x^2 + y^2 − 14x + 3x^2 − 4
+Answers
+1. Combine the s’s and the t’s.
+6s − 7t + 12t − 10s
+(6s − 10s) + (−7t + 12t)
+−4s + 5t
+2. Group together the like terms.
+7y^2 − 9x^2 + y^2 − 14x + 3x^2 − 4
+(−9x^2 + 3x^2) + (7y^2 + y^2) − 14x − 4
+−6x^2 + 8y^2 − 14x − 4
+Notice in #1, we did not write (6s − 10s) − (7t + 12t) in the second step. This would lead us to an incorrect answer. Whenever grouping together like terms and one is negative (or being subtracted), always change the operator to addition and make the number negative.
+In #2, we can also take out the Greatest Common Factor of -2 from each term using the Distributive Property. This would reduce to −2(3x^2 − 4y^2 + 7x + 2). In this case, we take out a -2 so that the first term is positive."
+ck12_algebra2_hs,445,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Guided Practice 3: Solve the following system using substitution. If there is no unique solution, state whether there is no solution or infinitely many solutions: 3x - 5y = 0, -2x + 6y = 0. Answer: Solving the second equation for x we get: x = 3y. Now, we can substitute this into the first equation to solve for y: 3(3y) - 5y = 0; 9y - 5y = 0; 4y = 0; y = 0. Now we can use this value of y to find x: x = 3y; x = 3(0); x = 0. Therefore, this system has a solution at (0, 0). After solving systems that result in 0 = 0, it is easy to get confused by a result with zeros for the variables. It is perfectly okay for the intersection of two lines to occur at (0, 0)."
+ck12_algebra2_hs,760,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,Problem Set: 15. Error Analysis Spencer is given the following problem: Multiply (2x−5)^2. Here is his work: (2x−5)^2 = (2x)^2 − 5^2 = 4x^2 − 25. His teacher tells him the answer is 4x^2 − 20x + 25. What did Spencer do wrong? Describe his error and correct the problem.
+ck12_algebra2_hs,858,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example A
+Solve 3x² - 9x + 11 = 0
+
+Solution:
+1. Write the polynomial so that x² and x are on the left side of the equation and the constants on the right.
+3x² - 9x = -11
+
+2. Pull out a from everything on the left side. Even if b is not divisible by a, the coefficient of x² needs to be 1 in order to complete the square.
+3(x² - 3x + ___) = -11
+
+3. Now, complete the square. Determine what number would make a perfect square trinomial. To do this, divide the x-term by 2 and square that number, or (b/2)².
+(b/2)² = (3/2)² = 9/4
+
+4. Add this number to the interior of the parenthesis on the left side. On the right side, you will need to add a · (b/2)² to keep the equation balanced.
+3(x² - 3x + 9/4) = -11 + 27/4
+
+5. Factor the left side and simplify the right.
+3(x - 3/2)² = -17/4
+
+6. Solve by using square roots.
+(x - 3/2)² = -17/12
+x - 3/2 = ± (i√17)/(2√3) · √3/√3
+x = 3/2 ± √51/6 i
+
+Be careful with the addition of step 2 and the changes made to step 4. A very common mistake is to add (b/2)² to both sides, without multiplying by a for the right side."
+ck12_algebra2_hs,863,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"16. Error Analysis Examine the worked out problem below.
+4x² - 48x + 11 = 0
+4(x² - 12x + ___) = -11
+4(x² - 12x + 36) = -11 + 36
+4(x - 6)² = 25
+(x - 6)² = 25/4
+x - 6 = ±5/2
+x = 6 ± 5/2 → 17/2, 7/2
+Plug the answers into the original equation to see if they work. If not, find the error and correct it."
+ck12_algebra2_hs,912,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example A
+Graph y = −3x^2 + 14x − 8 using a graphing calculator.
+Solution: Using a TI-83/84, press the Y = button. Enter in the equation. Be careful not to confuse the negative sign and the subtraction sign. The equation should look like y = −3x^2 + 14x − 8 or y = −3x^2 + 14x − 8. Press GRAPH.
+If your graph does not look like this one, there may be an issue with your window. Press ZOOM and then 6:ZStandard, ENTER. This should give you the standard window."
+ck12_algebra2_hs,1183,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example A
+Solve \sqrt{4x+1}-x = -1
+
+Solution: Now we have an x that is not under the radical. We will still isolate the radical.
+\sqrt{4x+1}-x = -1
+\sqrt{4x+1} = x-1
+Now, we can square both sides. Be careful when squaring x-1, the answer is not x^2-1.
+(\sqrt{4x+1})^2 = (x-1)^2
+4x+1 = x^2-2x+1
+This problem is now a quadratic. To solve quadratic equations, we must either factor, when possible or use the Quadratic Formula. Combine like terms and set one side equal to zero.
+4x+1 = x^2-2x+1
+0 = x^2-6x
+0 = x(x-6)
+x = 0 or 6
+Check both solutions: \sqrt{4(0)+1}-1 = \sqrt{0+1}-1 = 1-1 = 0 \neq -1. 0 is an extraneous solution. \sqrt{4(6)+1}-6 = \sqrt{24+1}-6 = 5-6 = -1. Therefore, 6 is the only solution."
+ck12_algebra2_hs,1195,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Function Operations
+
+Objective
+To add, subtract, multiply, divide and compose two or more functions.
+
+Guidance
+As you saw in the Review Queue, we have already dealt with adding, subtracting, and multiplying functions. To add and subtract, you combine like terms (see the Adding and Subtracting Polynomials concept). When multiplying, you either FOIL or use the “box” method (see the Multiplying Polynomials concept). When you add, subtract, or multiply functions, it is exactly the same as what you would do with polynomials, except for the notation. Notice, in the Review Queue, we didn’t write out the entire function, just f(x) - g(x), for example. Let’s continue:
+f(x) - g(x) = (x+5) - (x^2-4x+8)
+= x+5-x^2+4x-8
+= -x^2+5x-3
+Distribute the negative sign to the second function and combine like terms. Be careful! f(x) - g(x) \neq g(x) - f(x). Also, this new function, f(x) - g(x) has a different domain and range that either f(x) or g(x)."
+ck12_algebra2_hs,1376,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Guidance
+
+Recall that a rational function is a function, f(x), such that f(x) = p(x)/q(x), where p(x) and q(x) are both polynomials. A rational expression, is just p(x)/q(x). Like any fraction, a rational expression can be simplified. To simplify a rational expression, you will need to factor the polynomials, determine if any factors are the same, and then cancel out any like factors.
+
+Fraction: 9/15 = (3 · 3)/(3 · 5) = 3/5
+Rational Expression: (x^2 + 6x + 9)/(x^2 + 8x + 15) = ((x + 3)(x + 3))/((x + 3)(x + 5)) = (x + 3)/(x + 5)
+
+With both fractions, we broke apart the numerator and denominator into the prime factorization. Then, we canceled the common factors.
+
+Important Note: (x + 3)/(x + 5) is completely factored. Do not cancel out the x’s! 3x/(5x) reduces to 3/5, but (x + 3)/(x + 5) does not because of the addition sign. To prove this, we will plug in a number for x to and show that the fraction does not reduce to 3/5. If x = 2, then (2 + 3)/(2 + 5) = 5/7 ≠ 3/5."
+ck12_algebra2_hs,1771,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Guidance Combinations of a subset of a larger set of objects refer to the number of ways we can choose items in any order. For comparison, look at the table below to see when order matters and when order doesn’t matter. TABLE 12.1: Combinations vs Permutations: • Ways to select the members of a committee from a larger population / Ways to select specific officers in a club—president, vice president, treasurer, etc. • Ways to select a set number of pizza toppings from a larger list of choices / Ways to select and arrange scoops of ice cream on a cone • Ways to select books from a reading list / Ways to select and order in which to read books selected from a reading list. The simplest way to describe the difference between a combination and a permutation is to say that in a combination the order doesn’t matter. The members of a committee could be selected in any order but the officers in a club are assigned a specific position and therefore the order does matter. Be careful of the use of these words in the real world as they are sometimes misused. For example, a locker combination. The ways to select and order the three numbers for a locker combination is not actually a combination, but a permutation since the order does matter."
+ck12_algebra2_hs,1940,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"More Guidance
+A reference angle is the acute angle between the terminal side of an angle and the x –axis. The diagram below shows the reference angles for terminal sides of angles in each of the four quadrants.
+Note: A reference angle is never determined by the angle between the terminal side and the y –axis. This is a common error for students, especially when the terminal side appears to be closer to the y –axis than the x –axis."
+ck12_geometry_hs,44,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example 1: Determine how long the line segment is, in inches. Round to the nearest quarter-inch. Solution: To measure this line segment with a ruler, it is very important to line up the “0” with the one of the endpoints. DO NOT USE THE EDGE OF THE RULER. This segment is about 3.5 inches (in) long."
+ck12_geometry_hs,114,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Midpoints
+
+Midpoint: A point on a line segment that divides it into two congruent segments.
+
+Because AB = BC, B is the midpoint of AC.
+
+Midpoint Postulate: Any line segment will have exactly one midpoint.
+
+This might seem self-explanatory. However, be careful, this postulate is referring to the midpoint, not the lines that pass through the midpoint, which is infinitely many."
+ck12_geometry_hs,399,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"35. Error Analysis Nadia is working on Problem 31. Here is her proof: TABLE 3.4: Statement 1. l || m, s || t Reason Given; Statement 2. ∠4 ≅ ∠15 Reason Alternate Exterior Angles Theorem; Statement 3. ∠15 ≅ ∠14 Reason Same Side Interior Angles Theorem; Statement 4. ∠14 ≅ ∠9 Reason Vertical Angles Theorem; Statement 5. ∠4 ≅ ∠9 Reason Transitive PoC. What happened? Explain what is needed to be done to make the proof correct."
+ck12_geometry_hs,435,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"30. What is wrong in the following diagram, given that j || k?"
+ck12_geometry_hs,1104,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"27. Error Analysis
+Casey attempts to solve for a in the diagram using the proportion
+5/a = 6/5
+What did Casey do wrong? Write the correct proportion and solve for a."
+ck12_geometry_hs,1339,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"23. Tommy was solving the triangle below and made a mistake. What did he do wrong?
+tan⁻¹(21/28) ≈ 36.9°"
+ck12_geometry_hs,1341,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,25. How could Tommy have found the hypotenuse in the triangle another way and avoided making his mistake?
+ck12_geometry_hs,1555,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Area of a Parallelogram
+Recall that a parallelogram is a quadrilateral whose opposite sides are parallel.
+To find the area of a parallelogram, make it into a rectangle.
+From this, we see that the area of a parallelogram is the same as the area of a rectangle.
+Area of a Parallelogram: The area of a parallelogram is A = bh.
+Be careful! The height of a parallelogram is always perpendicular to the base. This means that the sides are not the height."
+ck12_geometry_hs,1922,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example 3: Find the surface area of the figure below.
+Solution: This is a hemisphere. Be careful when finding the surface area of a hemisphere because you need to include the area of the base. If the question asked for the lateral surface area, then your answer would not include the bottom.
+SA = πr^2 + 1/2 4πr^2
+= π(6^2) + 2π(6^2)
+= 36π + 72π = 108π cm^2"
+cpm_algebra1_hs,166,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-26. Three students were determining the slope of the line shown. Each student drew a different slope triangle, as shown on the graph. a. Which slope triangle is correct? How do you know? b. On the Lesson 2.1.3A Resource Page, draw another slope triangle for this line so that Δx = 1. What is the height (Δy) of this new slope triangle?"
+cpm_algebra1_hs,179,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-36. DETERMINE THE SLOPE OF A LINE WITHOUT GRAPHING. While calculating the slope of a line that goes through the points (6, 5) and (3, 7), Gloria figured that Δy = −2 and Δx = 3 without needing to graph the line. a. Explain how Gloria could determine the horizontal and vertical distance of the slope triangle without graphing. Do you agree with her method? Explain your reasoning. b. What is the slope of the line? c. Use Gloria’s method (without graphing) to calculate the slope of the line that goes through the points (4, 15) and (2, 11). d. Use Gloria’s method to calculate the slope of the line that goes through the points (28, 86) and (34, 83). e. Another student calculated the slope from part (d) to be 2. What error or errors did that student make?"
+cpm_algebra1_hs,229,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-68. What is the slope of the line passing through each pair of points?
+a. (1, 2) and (4, –1)
+b. (7, 3) and (5, 4)
+c. (−6, 8) and (−8, 5)
+d. (55, 67) and (50, 68)
+e. A student got 1 for the slope of the line through points (1, 2) and (4, −1). Explain to them the mistake they made and how to calculate the slope correctly."
+cpm_algebra1_hs,263,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-92. A student says that if x = −5, the equation shown is true. Her friend says the answer is x = 3. Who is correct, the student or her friend? Justify your conclusion.
+9(x + 4) = 1 + 2x"
+cpm_algebra1_hs,267,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Launch
+Look at the following student work and think silently. What does this student know? What mistake is this student making?
+Write the equation for a linear function that goes through the points (–1, –8) and (3, 4)."
+cpm_algebra1_hs,298,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-7. A pair of students works to rewrite expressions. Some of their predictions about how to rewrite expressions are shown. Are the predictions correct? Justify your claim.
+a. x^150 / x^50 prediction: x^3
+b. y^20 · y^41 prediction: x^61
+c. (2m^2 n^15)^3 prediction: 2m^6 n^45"
+cpm_algebra1_hs,322,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-26. Consider the pile of tiles shown.
+a. Using the fewest terms possible, what expression represents the collective area of the tiles?
+b. The expression 7x^2 + xy + 2y + 2 does not represent the area of the tiles. What mistake might have been made by a person who claims that this expression does represent the area of the tiles?"
+cpm_algebra1_hs,352,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-50. None of the following equations is correct. What would you change to make each equation true? Be specific.
+a. (5x^(3/4))^4 = 5x^3
+b. 5x + 3x^2 = 8x^2
+c. 6x^3(x^2) = 216x^6"
+cpm_algebra1_hs,421,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,3-103. Yousef and Sithara are working on solving the equation 1/2(5x − 4) = 3x − 8. Explain how Yousef and Sithara started to solve the problem. Which approach makes more sense to you? Explain your response.
+cpm_algebra1_hs,479,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-8. A team of students is trying to rewrite the product 2 × 10^3 · 4 × 10^7 in scientific notation.
+• Jorge thinks they should use a generic rectangle because there are two terms multiplied by two terms.
+• Esperanza thinks the answer is 8 × 10^10, but she did not explain why.
+• Lauren thinks they should multiply the like parts. Her answer is 8 × 100^21.
+Who is correct? Explain why each student is correct or incorrect."
+cpm_algebra1_hs,490,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-17. When Ms. Shreve solved an equation in class, she checked her solution and it did not make the equation true! Examine her work and identify her mistake. Then calculate the correct solution.
+5(2x – 1) – 3x = 5x + 9
+10x – 5 – 3x = 5x + 9
+7x – 5 = 5x + 9
+12x = 4
+x = 1/3"
+cpm_algebra1_hs,523,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-40. Marcus and his twin, Tyrese, are trying to solve the following system of equations.
+Marcus thinks that using the Substitution Method should give a new equation of 3(6x − 1) + 2y = 43, while Tyrese thinks it should be 3x + 2(6x − 1) = 43. Who is correct and why?
+y = 6x − 1
+3x + 2y = 43"
+cpm_algebra1_hs,580,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-79. Aimee thinks the solution to the system is (−4, −6). Eric thinks the solution is (8, 2). Who is correct? Explain your reasoning. 2x − 3y = 10; 6y = 4x − 20."
+cpm_algebra1_hs,610,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-102. Mr. Greer solved the equation shown: 4x = 8(2x – 3) -> 4x = 16x – 3 -> –12x = –3 -> x = –3 / –12 -> x = 1/4. However, when he checked his solution, it did not make the original equation true. What did Mr. Greer do well as he solved the equation? What might have been his error(s) or mistake(s)? What value of x makes the equation true?"
+cpm_algebra1_hs,653,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-14. Jackie and Alexa were working on homework together when Jackie said, “I got x = 5 as the solution, but it looks like you got something different. Which solution is right?”
+“I think you made a mistake,” said Alexa. Did Jackie make a mistake? Help Jackie figure out whether she made a mistake and, if she did, explain her mistake and show her how to solve the equation correctly. Jackie’s work is shown.
+
+(x + 4)^2 – 2x – 5 = (x – 1)^2
+x^2 + 16 – 2x – 5 = x^2 + 1
+16 – 2x – 5 = 1
+11 – 2x = 1
+–2x = –10
+x = 5"
+cpm_algebra1_hs,730,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-72. Alejandro used his recursive equation, f(n + 1) = f(n) + 6, from part (c) of problem 5-71 to write the following sequence: 0, 6, 12, 18, 24. a. Does Alejandro's sequence match the sequence from problem 5-71? b. If Alejandro did not make a mistake when writing his recursive equation, why did he get a different sequence than the one from problem 5-71? How can you mathematically write down the information he needs so that he can write the correct sequence?"
+cpm_algebra1_hs,781,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Portfolio
+This section gives you an opportunity to show growth in your understanding of key mathematical ideas over time as you complete this course.
+Four members of a study team were analyzing the sequence 3, 7, 11, … They wrote the equation for the sequence as f(n) = 4n − 1, and they were trying to figure out if 200 could be a term in their sequence.
+They made the following statements. Which students justified their statements? Are the justifications convincing? Explain why or why not.
+“I think it’s not, because all the terms in the sequence are odd and 200 is an even number,” Shinna said.
+“I think it is, because the equation 200 = 4n − 1 has a solution,” Aldo said.
+“It can’t be, because the solution to 200 = 4n − 1 is n = 50.25, which is not a whole number. There can’t be a 50.25th term!” James argued.
+“I think 199 and 203 are terms of the sequence, but not 200,” Leslie added.
+Now create your own sequence. Then figure out what the 110th term of your sequence would be and whether the number 419 is a term in your sequence. Use multiple representations to justify your answers thoroughly."
+cpm_algebra1_hs,857,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-49. Sophie and Lindsey were discussing what it meant for a residual plot to have random scatter. ""The points need to be evenly scattered across the whole plot,"" Sophie suggested. Lindsey disagreed, ""Stars are random, even though they cluster, and sometimes there are large gaps of nothing in the sky.""
+
+Your teacher will guide you as you explore scatter plots with random points. Write a note to Sophie and Lindsey explaining what you discovered about random scatter plots."
+cpm_algebra1_hs,1092,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-101. Wade and Dwayne were working together writing an equation for the sequence 12, 36, 108, 324, … Wade wrote f(n) = 4 · 3^n and Dwayne wrote f(n) = 12 · 3^(n − 1).
+a. Make a table for the first four terms of each of their sequences. What do you notice?
+b. How do you think Dwayne explained his method of writing the equation to Wade?
+c. For the sequence 10.3, 11.5, 12.7, …, Wade wrote f(n) = 9.1 + 1.2n while Dwayne wrote f(n) = 10.3 + 1.2(n − 1). Make a table for the first four terms of each of their sequences. Are both forms of the equation correct?
+d. Dwayne calls his equations the “first term” form. Why do you think he calls them “first term” form? Why does Dwayne subtract one in both situations?"
+cpm_algebra1_hs,1096,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Launch
+Look at the following student’s work and think silently. What does this student know? What mistake is this student making?
+Create a function that is equivalent to f(x) = 24 · 9^x.
+f(x) = 3(2)^3(3)^(x/2)"
+cpm_algebra1_hs,1404,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Closure: Imagine if the United Nations wanted to gather information from each nation to determine world regions and subregions. Every nation was tasked to write constraints that best approximate its country’s shape, which will help the U.N. determine each country’s area. Honduras submitted the following system of inequalities, along with the graph shown, where x and y represent hundreds of kilometers: y ≤ x + 3, y ≤ 1/2 x − 1, y ≤ 2, y ≤ −2/3 x + 4, y ≤ −2/3 x − 1. A member of the United Nations suspects that some of the information was corrupted during transmission. How did they know? Use the graph and system of inequalities to justify your answer. Be ready to share your thinking with the class."
+cpm_algebra1_hs,1430,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"9-103. While setting up a mathematical sentence to solve a problem, Paulina and Aliya came up with the following equations. Since the equations did not look alike, they turned to you for help. PAULINA: 4x + 2y = 6; ALIYA: 12x + 6y = 18. a. Are these equations equivalent? Will the graph of each line be the same? Explain how you know. b. Write another equation that is equivalent to both of these. How did you determine your equation?"
+cpm_algebra1_hs,1486,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"10-25. Derek and Donovan were trying to solve the equation 4^4 = 16^x. Derek had an idea.
+“I know,” he said. “Isn’t 16 equal to 4^2?”
+“Yeah, so what?” said Donovan.
+“That means that we can rewrite the equation to look like 4^4 = (4^2)^x. This is much easier to solve!” replied Derek.
+“Yes,” said Donovan. “That makes sense. Isn’t there another way, too? Since 4 is the same as 2^2 and 16 is the same as 2^4, can’t we rewrite it as (2^2)^4 = (2^4)^x?”
+a. What were Derek and Donovan thinking? Will both methods work?
+b. Use both methods to solve 4^4 = 16^x.
+c. Solve 3^5 = 9^(2x)."
+cpm_algebra1_hs,1509,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"10.2.3 How can I solve it?
+MULTIPLE METHODS FOR SOLVING EQUATIONS
+
+Launch
+Three friends are trying to work out how many people were in the designated prize-winning seats at a concert. The venue says there were 15 sections with (x + 20) people in each, totaling 525 people. (Let x be the number of prize-winning seats in a section.) They record 15(x + 20) = 525. Then the friends each take a slightly different approach:
+FRIEND A: 15(x + 20) = 525; 15x + 300 = 525
+FRIEND B: 15(x + 20) = 525; 15(x + 20)/15 = 525/15
+FRIEND C: Each section had 35 people, so x + 20 = 35.
+Discuss each approach with your team.
+
+Explore
+You have solved linear, quadratic, and exponential equations in this course. Sometimes, when an equation looks very complicated, you can rewrite it to make the solving process easier. What are some other ways to solve complicated equations, like (sqrt(x + 5) - 6)^2 + 4 = 20? In this lesson, you will work with your team as you explore additional methods of solving complicated equations."
+cpm_algebra1_hs,1535,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"10-64. Omar and Vivi were solving the equation 1/2 x^2 − x = 7 1/2. Their work is shown.
+OMAR: 1/2 x^2 - x = 7 1/2; x^2 - 2x = 15
+VIVI: 1/2 x^2 - x = 7 1/2; 1/2 x^2 - x - 7 1/2 = 0
+a. Describe their first moves. What approaches are each taking?
+b. When might you use each of these starting moves?
+c. What might Vivi's first step be to solve 5x^2 − 20x = 55?"
+cpm_algebra2_hs,38,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"1-25. Note: The stoplight icon to the right of a problem indicates that there is an error in the problem.
+Find the error in the solution at right. Explain what the error is and solve the equation correctly. Show how to check your solution to be sure that it is correct.
+3(x − 2) − 2(x + 7) = 2x + 17
+3x − 6 − 2x + 14 = 2x + 17
+x + 8 = 2x + 17
+−9 = x"
+cpm_algebra2_hs,51,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"1-36. Nissos and Chelita were arguing over a math problem. Nissos was trying to explain to Chelita that she had made a mistake in finding the x-intercepts of the function y = x² − 10x + 21. “No way!” Chelita exclaimed. “I know how to find x-intercepts! You make the y equal to zero and solve for x. I know I did this right!” Here is Chelita’s work:
+Step 1: x² − 10x + 21 = 0, so (x + 7)(x + 3) = 0.
+Step 2: Therefore, x + 7 = 0 or x + 3 = 0.
+Step 3: So x = −7 or x = −3.
+Nissos tried to explain to Chelita that she had done something wrong. What is Chelita’s error? Justify and explain your answer completely."
+cpm_algebra2_hs,68,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"1-51. Find the error in the solution at right. Identify the error and solve the equation correctly.
+4.1x = 9.5x + 23.7
+−4.1x = −4.1x
+5.4x = 23.7
+5.4x / 5.4 = 23.7 / 5.4
+x = 4.39"
+cpm_algebra2_hs,83,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"1-63. Find the error in the solution at right. Explain what the error is and solve the equation correctly. Be sure to check your answer.
+5/x = x − 4
+x · 5/x = x − 4
+5 = x − 4
+x = 9"
+cpm_algebra2_hs,97,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"1-77. Find the error in the solution at right. Describe the error and solve the equation correctly.
+3x + 2 = 10 − 4(x − 1)
+3x + 2 = 6(x − 1)
+3x + 2 = 6x − 6
+8 = 3x  so x = 8/3"
+cpm_algebra2_hs,265,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-96. By mistake, Jim graphed y = x^3 - 4x instead of y = x^3 - 4x + 6. What should he do to his graph to get the correct one?"
+cpm_algebra2_hs,374,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-2. Jill and Terrell were looking back at their work on problem 1-53 in Lesson 1.2.1. They had come up with two different expressions for the volume of a paper box made from cutting out squares of dimensions x centimeters by x centimeters. Jill’s expression was (15 − 2x)(20 − 2x)x, and Terrell’s expression was 4x^3 − 70x^2 + 300x.
+a. Are Jill’s and Terrell’s expressions equivalent? Justify your answer.
+b. If you have not done so already, find an algebraic method to determine whether their expressions are equivalent. Be ready to share your strategy.
+c. Gary joined in on their conversation. He had another expression: (15 − 2x)(10 − x)2x. Use a strategy from part (b) to decide whether his expression for the volume is equivalent to Jill’s or Terrell’s. Be prepared to share your ideas with the class."
+cpm_algebra2_hs,379,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-7. Bonnie and Dylan were both working on simplifying the expression at right: ((2x^5y^4)/(8xy^3))^3. Each of their first steps is shown below.
+Bonnie: (8x^15y^12)/(512x^3y^9)
+Dylan: ((x^4y)/4)^3
+Each of them is convinced that they have started the problem correctly. Has either of them made an error? If so, explain the error completely. If not, explain how they can both be correct and verify that they will get the same, correct solution. Which student’s method do you prefer? Why?"
+cpm_algebra2_hs,418,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-44. Angelica and D’Lee were working on finding roots of two quadratic equations: y = (x − 3)(x − 5) and y = 2(x − 3)(x − 5). Angelica made an interesting claim: “Look,” she said, “When I solve each of them for y = 0, I get the same solutions. So these equations must be equivalent!”
+D’Lee is not so sure. “How can they be equivalent if one of the equations has a factor of 2 that the other equation doesn’t?” she asked.
+a. Who is correct? Is y = (x − 3)(x − 5) equivalent to y = 2(x − 3)(x − 5)? How can you justify your ideas using tables and graphs?
+b. Are the solutions of 0 = (x − 3)(x − 5) equivalent to the solutions of 0 = 2(x − 3)(x − 5)? Again, how can you justify your ideas?"
+cpm_algebra2_hs,562,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-33. Paul states that (a + b)^2 is equivalent to a^2 + b^2. Joyce thinks that something is missing. Help Joyce show Paul that the two expressions are not equivalent. Explain using at least two different approaches: diagrams, algebra, numbers, or words."
+cpm_algebra2_hs,592,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-60. Burt and Ernie were solving the inequality 2x^2 + 5x − 3 < x^2 + 4x + 3. They were looking at the graph in problem 4-58 when Burt had an idea. “Can’t we change this into one parabola and solve our inequality that way?” he said.
+Ernie asked, “What do you mean?”
+“Can’t we find the solutions by looking at the graph of f(x) = x^2 + x − 6?” Burt replied.
+
+a. Where did Burt get the equation y = x^2 + x − 6?
+b. Try Burt’s idea. Graph the parabola and show how it can be used to solve the original inequality.
+c. “Just a minute!” mumbled Ernie, “I think I have a short cut. Instead of graphing the parabola, can’t we just rewrite the original inequality as x^2 + x – 6 < 0 and then solve the equation x^2 + x – 6 = 0? This would give us the boundary points and then we could test numbers to find the regions that contain the solutions.” Check Ernie’s short cut. Does it give the same solution?
+d. Use any method to solve the inequality x^2 – 3x – 10 ≥ 0."
+cpm_algebra2_hs,710,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-44. Trejo says that if you know the x-intercepts, y-intercepts, domain, and range of a function then you automatically know the x-intercepts, y-intercepts, domain, and range for the inverse. Hilary disagrees. She says you know the intercepts but that is all you know for sure. Who is correct? Justify your answer."
+cpm_algebra2_hs,711,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-45. Adriena was finding inverses of some functions. Use Statler’s strategy from problem 5-43 to check Adriena’s work below and test if each pair of equations are inverses of each other. If they are not, explain what went wrong and show how to get the inverse correctly.
+a. f(x) = 3/5 x − 15, g(x) = 5/3 x + 25
+b. f(x) = (2(x+6))/3 + 10, g(x) = 3/2 x − 21
+c. e(x) = (x−10)^2 / 4, d(x) = 4√x + 10"
+cpm_algebra2_hs,828,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-15. The cost of food has been increasing by 4% per year for many years. To find the cost of an item 15 years ago, Heather said, “Take the current price and divide it by (1.04)^15 .”
+Her friend Elissa said, “No, you should take the current price and multiply it by (0.96)^15 !”
+Explain who is correct and why."
+cpm_algebra2_hs,903,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-84. On their Team Assessment, Raymond, Sarah, Hannah, and Aidan were given y = 4x^2 – 24x + 7 to change into graphing form. Raymond noticed that the leading coefficient was a 4 and not a 1. His team agreed on a way to start rewriting, but then they worked in pairs and got two different solutions, shown below.
+Raymond and Hannah
+(1) y = 4x^2 − 24x + 7
+(2) y = 4(x^2 − 6x) + 7
+(3) y = 4(x^2 − 6x + 3^2) + 7 − 36
+(4) y = 4(x − 3)^2 − 29
+Aidan and Sarah
+(1) y = 4x^2 − 24x + 7
+(2) y = 4(x^2 − 6x + 9) + 7 − 9
+(3) y = 4(x − 3)^2 + 7 − 3^2
+(4) y = 4(x − 3)^2 − 2
+Hannah says, “Aidan and Sarah made a mistake in Step 3. Because of the factored 4 they really added 4(9) to complete the square, so they should subtract 36, not just 9.” Is Hannah correct? Justify your answer by showing whether the results are equivalent to the original equation."
+cpm_algebra2_hs,909,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-89. Marta was convinced that there had to be some way to graph y = log2 x on her graphing calculator. She typed in y = log(2^x) and pressed [graph].
+“It WORKED!” Marta yelled in triumph.
+“Whaaaat?” said Celeste. “I think y = log2 x and y = log(2^x) are totally different, and I bet we can show it by converting both of them to exponential form.”
+“Yeah, I think you’re wrong, Marta,” said Sophia. “I think we can show that y = log2 x and y = log(2^x) are totally different by looking at the graphs.”
+a. Show that the two equations are different by sketching the graph of y = log2 x. Then sketch what your graphing calculator shows to be the graph of y = log(2^x).
+b. Now show that y = log2 x and y = log(2^x) are different by converting both of them to exponential form."
+cpm_algebra2_hs,916,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-96. Margee thinks she can use logs to solve 56 = x^8, since logs seem to make exponents disappear. Unfortunately, Margee is wrong. Explain the difference between equations like 2 = 1.04^x, in which you can use logs, and 56 = x^8, in which it does not make sense to use logs."
+cpm_algebra2_hs,1030,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-26. Hilda was working on her homework. She completed the square to change y = 3x² - 24x + 55 to graphing form in order to identify the vertex of the parabola. She did the work at right:
+y = 3x² - 24x + 55
+y = 3(x² - 8x) + 55
+y = 3(x² - 8x + 16) + 55 - 16
+y = 3(x - 4)² + 39
+and identified the vertex to be (4, 39). When she got back to class and checked her answers, she discovered that the vertex she found is incorrect, but she cannot find her mistake. Examine Hilda’s work and explain to her what she did wrong. Then show her how to complete the square correctly and identify the vertex."
+cpm_algebra2_hs,1076,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-70. While working on their homework on sequences, Davis was suddenly stumped!
+“This problem doesn’t make sense!” he exclaimed. Tess was working on her homework as well.
+“What’s the problem?” she asked.
+“This problem is about a SEQUENCE, t(n) = 9n - 2, but it is asking whether or not it is a function. How can a sequence be a function?”
+“Well of course a sequence is a function!” said Tess.
+Who is right? Should Davis be confused, or is Tess correct? What is the difference between a sequence and a function? Explain completely."
+cpm_algebra2_hs,1089,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-81. Greg was working on his homework. He completed the square to change y = 2x² - 6x + 2 to graphing form and identify the vertex of the parabola. He did the work at right:
+y = 2x² - 6x + 2
+y = 2(x² - 3x) + 2
+y = 2(x² - 3x + 9/4) + 2 - 9/4
+y = 2(x - 3/2)² - 1/4
+and identified the vertex to be (3/2, -1/4). When he got back to class and checked his answers, he discovered that his vertex was wrong, but he cannot find his mistake. Examine Greg’s work and explain to him where the mistake occurred. Then show him how to correct the mistake and state the vertex."
+cpm_algebra2_hs,1157,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-142. Farah and Thu were working on writing the equation of a sine function for the graph at right. They figured out that the amplitude is 3, the horizontal shift is π/4 and the midline is y = −2. They can see that the period is π, but they disagree on the equation. Farah has written f(x) = 3 sin 2(x − π/4) − 2 and Thu has written f(x) = 3 sin(2x − π/4) − 2.
+a. Whose equation is correct? How can you be sure?
+b. Graph the incorrect equation and explain how it is different from the original graph."
+cpm_algebra2_hs,1161,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-146. Colleen and Jolleen both used their calculators to find sin 30°. Colleen got sin 30º = −0.9880316241, but Jolleen got sin 30º = 0.5. Is one of their calculators broken, or is something else going on? Why did they get different answers?"
+cpm_algebra2_hs,1162,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-147. Ceirin’s teacher promised a quiz for the next day, so Ceirin called Adel to review what they had done in class. “Suppose I have y = sin 2x,” said Ceirin, “what will its graph look like?”
+“It will be horizontally compressed by a factor of 2,” replied Adel, “so the period must be π.”
+“Okay, now let’s say I want to shift it one unit to the right. Do I just subtract 1 from x, like always?”
+“I think so,” said Adel, “but let’s check on the graphing calculator.” They proceeded to check on their calculators. After a few moments they both spoke at the same time.
+“Rats,” said Ceirin, “it isn’t right.”
+“Cool,” said Adel, “it works.”
+When they arrived at school the next morning, they compared the equations they had put in their graphing calculators while they talked on the phone. One had y = sin 2x − 1, while the other had y = sin 2(x − 1).
+Which equation was correct? Did they both subtract 1 from x? Explain. Describe the rule for shifting a graph one unit to the right in a way that avoids this confusion."
+cpm_algebra2_hs,1163,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-148. George was solving the equation (2x – 1)(x + 3) = 4 and he got the solutions x = 1/2 and x = –3. Jeffrey came along and said, “You made a big mistake! You set each factor equal to zero, but it’s not equal to zero, it’s equal to 4. So you have to set each factor equal to 4 and then solve.” Who is correct? Show George and Jeffrey how to solve this equation. To be sure that you are correct, check your solutions."
+cpm_algebra2_hs,1220,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"8-18. Samantha thinks that the equation (x - 4)^2 + (y - 3)^2 = 25 is equivalent to the equation (x - 4) + (y - 3) = 5. Is she correct? Are the two equations equivalent? Explain how you know. If they are not equivalent, explain Samantha's mistake."
+cpm_algebra2_hs,1356,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"8-139. Spud has a problem. He knows that the solutions for a quadratic equation are x = 3 + 4i and x = 3 - 4i, but in order to get credit for the problem he was supposed to have written down the original equation. Unfortunately, he lost the paper with the original equation on it. Luckily, his friends are full of advice.
+a. Alexia says, ""Just remember when we made polynomials. If you wanted 7 and 4 to be the answers, you used (x - 7)(x - 4). So you just do x minus the first one times x minus the other."" Use (x - (3 + 4i))(x - (3 - 4i)) to find the quadratic equation.
+b. Hugo says, ""No, no, no. You can do it that way, but that's too complicated. I think you just start with x = 3 + 4i and work backward. So x - 3 = 4i, then, hmmm... Yeah, that'll work."" Try Hugo's method.
+c. Whose method do you think Spud should use? Explain your choice."
+cpm_algebra2_hs,1380,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"8-163. For homework, Londa was asked to simplify the expression √(-7) · √(-7). She got the answer 7, but when she checked, she learned that the correct answer was -7.
+a. Show Londa the steps she could take to get -7.
+b. What steps do you think Londa took to get 7 as a result?
+c. What does she need to consider to avoid making this mistake in the future?
+d. Londa's example means that it is not always true that √a · √b = √(ab) for real numbers a and b. What restriction needs to be placed on the numbers a and b?"
+cpm_algebra2_hs,1561,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"10-2. Angela continued to think about Uncle Zachary’s savings. a. Angela wrote the equation for the sequence as t(n) = 47 + 3n. But Uncle Zachary wrote t(n) = 50 + 3(n − 1). Which equation gives the correct sequence? What is the advantage of writing the equation like Angela did? What is the advantage of writing it like Uncle Zachary did? b. Determine the amount of money in Angela’s college fund at the time of her first birthday, after her Uncle had made exactly 12 deposits. c. How much was saved by Angela’s 5th birthday? Can you think of ways you might be able to figure this out without having to add the money for every month? Be ready to share your ideas with the class."
+cpm_algebra2_hs,1638,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"10-71. Katelyn was helping her younger sister Janelle with her Algebra 1 homework. a. Janelle was given the sequence 10, 50, 250, 1250, 6250, … . She wrote the equation t(n) = 2 * 5^n and made the graph at right. Katelyn cried out, “No. No. You’ve written the wrong equation! The correct equation for the sequence is t(n) = 10 * 5^(n–1).” Is Katelyn correct? Is Janelle wrong? b. What are the advantages of writing the equation like Katelyn did? What are the advantages of writing the equation like Janelle did? c. Rewrite the equation t(n) = 18 * 3^n using Katelyn’s method."
+cpm_algebra2_hs,1781,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"11-6. In problem 9-8 Katelyn recorded the number of cups of coffee sold at her coffee shop each hour during a 48-hour time period. Katelyn then sorted the data and made the following histogram: a. Katelyn decides to model her sales with a normal distribution, but Duncan thinks that this is not a good idea. What advice would you give Katelyn about using a normal model? b. Katelyn needs to sell more than 15 cups per hour to make a profit. What percentile is 15 cups per hour? Explain the percentile to Katelyn in terms of profits. c. Duncan thinks Katelyn should expand her business. He estimates that if they hire another server and add more tables and equipment, they will need to sell 48 cups per hour to make a profit. What percentile does 48 cups sold represent? Use the percentile to explain to Duncan whether or not expansion is a good idea."
+cpm_algebra2_hs,1800,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"11-24. Eddie told Allison, “I’ll bet if I flip three coins, I can get exactly two heads.” Allison replied, “I’ll bet I can get exactly two heads if I flip four coins!” Eddie scoffed, “Well, so what? That’s easier.” Allison argued, “No, it’s not. It’s harder.” Who is correct? Show all of your work and be prepared to defend your conclusion."
+cpm_algebra2_hs,1932,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"12-30. Salina, Tamara, and Uma are working on their homework together. Salina tells her friends that she got theta = 52º for the inverse cosine problem she is working on and asks if they got the same answer. Tamara says she got theta = 128º, and Uma volunteers her answer of theta = 308º. Is it possible that these are all solutions to the same problem? Justify your answer."
+cpm_algebra2_hs,2079,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"A-14. Jackie and Alexa were working on homework together when Jackie said, “I got x = 5 as the solution, but it looks like you got something different. Which solution is right?”
+“I think you made a mistake,” said Alexa.
+Did Jackie make a mistake? Help Jackie figure out whether she made a mistake and, if she did, explain her mistake and show her how to solve the equation correctly. Jackie’s work is shown above right:
+(x + 4)^2 − 2x − 5 = (x − 1)^2
+x^2 + 16 − 2x − 5 = x^2 + 1
+16 − 2x − 5 = 1
+11 − 2x = 1
+−2x = −10
+x = 5"
+cpm_algebra2_hs,2144,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"A-73. Alejandro used the recursive equation from part (c) of problem A-72 to write a sequence and came up with the following:
+0, 6, 12, 18, 24
+a. Does Alejandro’s sequence match the recursive equation from problem A-72?
+b. Why did Alejandro get a different sequence than the one from problem A-72? How can you mathematically write down the information he needs so that he can write the correct sequence?"
+cpm_algebra2_hs,2197,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3 PORTFOLIO: EVIDENCE OF MATHEMATICAL PROFICIENCY. Four members of a study team were analyzing the sequence 3, 7, 11, … They found the equation for the sequence to be t(n) = 4n – 1, and they were trying to figure out if 200 could be a term of their sequence. They made the following statements. Which students justified their statements? Are the justifications convincing? Explain why or why not. Shinna: ""I think it's not, because all the terms in the sequence are odd and 200 is an even number."" Aldo: ""I think it is, because the equation 200 = 4n – 1 has a solution."" James: ""It can't be, because the solution to 200 = 4n – 1 is n = 50.25, which is not a whole number. There can't be a 50.25th term!"" Leslie: ""I think 199 and 203 are terms of the sequence, but not 200."" Now create your own sequence. Then figure out what the 110th term of your sequence would be and whether the number 419 is a term in your sequence. Use multiple representations to justify your answers thoroughly. Alternatively your portfolio entry could showcase your early understanding of an exponential function by explaining everything you know about the function f(x) = 2^x − 3. Provide one or two representative example problems. Obtain the Appendix A Closure Resource Page: Sequence vs. Function Graphic Organizer from your teacher. Use this page to compare and contrast sequences and functions in their multiple representations. How are they similar? How are they different?"
+cpm_algebra2_hs,2329,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"B-106. Wade and Dwayne were working together writing an equation for the sequence 12, 36, 108, 324, … Wade wrote t(n) = 4 · 3^n, and Dwayne wrote t(n) = 12 · 3^(n–1).
+a. Make a table for the first four terms of each of their sequences. What do you notice?
+b. How do you think Dwayne explained his method of writing the equation to Wade?
+c. For the sequence 10.3, 11.5, 12.7, …, Wade wrote t(n) = 9.1 + 1.2n while Dwayne wrote t(n) = 10.3 + 1.2(n – 1). Make a table for the first four terms of each of their sequences. Are both forms of the equation correct?
+d. Dwayne calls his equations the “first term” form. Why do you think he calls them “first term” form? Why does Dwayne subtract one in both situations?"
+cpm_algebra2_hs,2368,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"C-17. Frank says that a/(x + b) = a/x + a/b, while Fred does not think that the two expressions are equivalent. Who is correct? Justify your answer."
+cpm_course1_ms,56,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"1-38. Two students are working together to divide a circle into three equal parts. They came up with two diagrams. Their other teammate is unsure. “I disagree with both pictures.”
+
+What do you think? Is one picture incorrect? If so, which one? Why?"
+cpm_course1_ms,103,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"CL 1-73. Amanda’s little brother, Timmy, is learning about even and odd numbers in math. He says, “6 is both even and odd because 2 is even and goes into 6 and 3 is odd and goes into 6.” Explain to Timmy why he is mistaken and clarify for him which numbers are even, which are odd, and how he can tell."
+cpm_course1_ms,202,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-63. Martin thinks he has discovered a shortcut for multiplying two-digit numbers. When he multiplied 22 · 35, he thought of 22 as 20 + 2 and 35 as 30 + 5. Then he multiplied the tens together (20 · 30 = 600), multiplied the ones together (2 · 5 = 10), and added the results (600 + 10 = 610).
+Then Martin checked his work by multiplying 22 · 35 on his calculator. To his surprise, his calculator showed 770!
+Work with your team to use an area model to calculate the product of 22 · 35. Then explain to Martin why his method will not give the correct product. What should Martin have done to arrive at the correct product?"
+cpm_course1_ms,276,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-17. Erik and Tate cannot agree on the amount shaded on the 100% block shown. Erik says, “It shows 2 tenths of the 100% block… and 3 hundredths of the block,” while Tate says, “It shows 23 hundredths of the whole block.” a. What would you tell Tate and Erik? Justify your response with words and pictures. b. Another representation of the number shown on the 100% block is a decimal, which would be written as 0.23. Compare this number to how Erik and Tate described the value. What similarities do you notice?"
+cpm_course1_ms,313,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-49. LOCATION, LOCATION, LOCATION Bella was helping her younger sister Lea, who had been absent from school, understand decimals. When Lea came to the problem 0.37 + 0.7, she got very excited. “I know, I know!” Lea shouted, “37 and 7 make 44, so the answer is 0.44!” “Well,” Bella said, “You’re right that 37 and 7 make 44, but 0.37 is not 37 and 0.7 is not 7. The value of numbers depends on where they are located.” Bella explained, “That is why you have to line up the place values, by lining up the decimal point, when you add or subtract.” What does Bella mean? What explanation can you give for lining up decimals when adding or subtracting? Write a note to Lea explaining why 0.37 + 0.7 is not 0.44. Include the correct answer and an explanation of what each number in the problem represents. (Hint: It might help to rewrite each number as a sum of fractions or draw them with hundred blocks.)"
+cpm_course1_ms,455,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-18. Luis and Fernando installed solar panels in their house last year. The following table shows how much electricity the panels produced each month in kilowatt-hours (kWh).
+Monthly Electricity Production (kWh):
+1,591
+1,131
+772
+403
+113
+1,174
+1,497
+1,862
+2,730
+2,050
+608
+1,116
+a. Display the data in a histogram.
+b. Luis thinks 2,730 kilowatt-hours is an outlier, but Fernando thinks the data has no outliers. Who do you agree with? Explain.
+c. According to the United States Energy Information Administration, in 2022, an average American home used 10,791 kilowatt-hours of electricity. Considering this, how are the solar panels helping Luis and Fernando reduce their impact on the environment?"
+cpm_course1_ms,474,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-32. Isabella is the owner of the “I’ve Been Framed!” picture-framing shop. She is excited about the work you have done describing square frames in the previous lesson and now wants your help. Use your algebraic expressions from problems 4-23 and 4-24 to help Isabella with each of the following orders. Be prepared to explain how you found each answer.
+a. A customer wants a frame that has 8 tiles along each side. How many tiles will Isabella need for the whole frame?
+b. Isabella’s neighbor wants a frame that has 16 tiles along each side. How many tiles will she need?
+c. A new customer comes into Isabella’s shop and says he wants a frame that has 25 tiles on each side. He used the expression 4(x − 1) to calculate that he needed 99 tiles. Isabella explains that he actually needs only 96 total tiles. What mistake did the customer make?
+d. Isabella’s father has 32 tiles that he wants to use to frame an old photograph. He needs to know the dimensions of the frame so that he can have the photo printed at the correct size. What should Isabella tell him?
+e. Isabella has a set of 40 tiles that she bought while traveling in South Africa. What is the largest frame size (on each side) that she can make with these tiles? Will she use all of her tiles?"
+cpm_course1_ms,478,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-36. Isabella’s frame shop employees, Parker and Barrow, were trying to determine the total number of tiles needed for a picture frame that had 24 tiles along one side. Parker evaluated the expression 4x − 4 by substituting x = 24 into the expression, and he came up with 420 tiles. Barrow reasoned that Parker’s answer was wrong. What mistake do you think Parker might have made?"
+cpm_course1_ms,568,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-22. Jess was still searching for an easier way to multiply 3 1/3 · 2 3/4 (from Anita’s recipe in problem 5-21) when they thought of a shortcut. “I know!” they said, “Can’t we just multiply 3 · 2 and then multiply 1/3 · 3/4 and then add the results?” Consider Jess’s idea with your team as you answer the following questions.
+a. What result would you get using Jess’s method? Is this result correct?
+b. Work with your team to explain to Jess what they are missing. You may want to use diagrams or write expressions to explain your thinking."
+cpm_course1_ms,574,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-27. Richard’s strategy for changing a percent to a decimal is to put the decimal point in front of the percent number. An example of his work is shown. Do you agree with Richard’s method? Explain your reasoning.
+8% = 0.8
+80% = 0.80
+800% = 0.800"
+cpm_course1_ms,612,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-61. As you answer the questions, think about multiple representations of portions to help you make sense of multiplying percents and decimals. a. To determine 40% of 20%, Chika used decimal multiplication. She thinks that 0.4(0.2) = 0.8. Is she correct? Work with your team to show whether Chika's answer makes sense. If it is not correct, determine the correct answer. b. What happens when you multiply one-tenth by one-tenth? Use fraction multiplication to determine the answer, then represent the problem and answer using decimals. c. Multiply 1/10 · 4/100. Then represent this problem and answer using decimals. d. Consider the products you calculated in parts (a) through (c). Why are the products less than the factors you multiplied?"
+cpm_course1_ms,617,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-66. Brian thinks that 3% · 4% = 12%, but Caitlyn is not so sure. What do you think? Explain your answer."
+cpm_course1_ms,628,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-73. HOW MANY TIMES? Shane is the treasurer of the performing arts club at Jefferson High. The club wrote a budget for a trip to New York City. The principal returned their budget with this note: ""Good job, Shane. Your budget is approved with only one change: Please multiply all amounts by 5/6."" When Shane heard this news, he was overjoyed. ""That's fantastic!"" he said, ""I thought our budget would be cut, not multiplied. Now, maybe we can visit Rockefeller Center, too."" Sari, the club president, replied, ""Actually, I'm afraid we are going to have to skip a few activities."" Is the news that the club received good or bad? With your team, decide whether the principal's memo means the club can spend more or less money than Shane had planned. Be ready to explain your ideas to the class."
+cpm_course1_ms,632,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-77. The publishing deadline for the winter edition of the newspaper was approaching, and Sam and Tammy were arguing about multipliers. Sam thought that to enlarge the 3-by-5 photo to a 6-by-10, they should multiply by 6/3. Tammy was sure that they should multiply by 10/5. Justin said it would be much simpler just to multiply each side by 2. Which student's method will work? Explain how you know."
+cpm_course1_ms,756,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-28. Death Valley is a desert in eastern California. In one area, the ground in Death Valley is 282 feet below sea level. Nearby, a mountain called Mount Whitney is 14,505 feet above sea level.
+a. Andreas lives close to both Death Valley and Mount Whitney, and he wants to compare the two elevations. He creates the vertical number line shown. Copy and complete the vertical number line by filling in the blanks.
+b. Use absolute value to describe the elevations of Death Valley and Mount Whitney.
+c. Andreas finds out that there is an area of New Orleans (in Louisiana) that is 8 feet below sea level. He writes |−282| > |−8| and places New Orleans below Death Valley on his number line. What feedback can you give Andreas to help him revise his work? Include inequalities in your explanation."
+cpm_course1_ms,783,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-51. Jeremy and Josue each sketched three x-tiles on their papers.
+Jeremy labeled each tile with an x. “There are three x-tiles, each with dimensions 1 by x, so the total area is 3x square units,” he said.
+Josue labeled the dimensions (length and width) of each tile. His sketch shows six x-lengths.
+a. Why do the two sketches each show a different number of x labels on the shapes?
+b. When tiles are named by their areas, they are named in square units. For example, the x-by-x tile (large square) is a shape that measures x^2 square units of area, so it is called an x^2-tile.
+What do the six x’s on Josue’s sketch measure? Are they measures of square units?"
+cpm_course1_ms,794,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-61. The perimeter of each algebra tile can be written as an expression using variables and numbers.
+a. Write at least two different expressions for the perimeter of each tile shown.
+b. Which way of writing the perimeter seems clearest to you? What information can you get from each expression?
+c. Lisa wrote the perimeter of the collection of tiles shown as 2x + 1 + 2x + 1 units, but her teammate Jody wrote it as 4x + 2. Are these two expressions equivalent? Explain your thinking.
+d. Do either of the expressions represent the perimeter of the tiles?"
+cpm_course1_ms,801,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-67. Julian and Naomi disagree about the value of the expression 2 + 3 · 4. Julian thinks it is 20, and Naomi thinks it is 14. How could each student have calculated their answer? Who is correct?"
+cpm_course1_ms,1075,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"8-26. Inspect each data set and the statement made about it. Each statement is false. Without making any calculations, determine how you can explain or justify that the statement is false. a. “The set of 24, 25, 26, and 28 has a mean of 30.” b. “15 is the median of this data set: 12, 14, 15, 13, and 16.”"
+cpm_course1_ms,1117,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"8-59. Maciel and Alejandro were trying to figure out the answer to 8.42 + 0.3. Maciel thinks the answer is 8.72, but Alejandro got 8.45. Who is correct? Why? What mistake did the other person make?"
+cpm_course1_ms,1175,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"8-105. Rob and Marla are going for a run. They typically run an average of 5 miles in 1 hour, as represented in the following diagram. Today, they plan to run for 40 minutes.
+a. Estimate how far Rob and Marla run in 40 minutes. Remember that an estimate can be done with only simple mental calculations, and it does not need to be an exact answer. Be ready to share your reasoning.
+b. Marla said, ""I know that to determine distance, I need to multiply rate and time. Multiplying 5 by 40 gives me the answer 200 miles."" Do you agree with how Marla organized the problem? If not, explain their mistake and what you think the actual distance should be."
+cpm_course1_ms,1213,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"9-4. Molly and Hallie disagree about the value of the expression 3 + 2² − (2 + 3). Molly thinks it is 2, and Hallie thinks it is 8. Do you agree with Molly or Hallie? How might each person have calculated their answer?"
+cpm_course1_ms,1234,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"9-22. Luca and Kevin calculated the volume of this rectangular box. Their work is shown.
+
+LUCA
+Volume equals length times width times height.
+V = l × w × h
+V = 3.38 inches × 2.5 inches × 11.5 inches
+V = 97.175 inches^3
+
+KEVIN
+Volume equals the area of the base times the height.
+V = B × h
+V = (3.38 inches × 2.5 inches) × 11.5 inches
+V = 8.45 inches^2 × 11.5 inches
+V = 97.175 inches^3
+
+a. Study the two methods. How are the two methods the same? How are they different?
+b. Why are some units inches, some inches^2, and some inches^3? How did Luca and Kevin know which units to write? For additional support, refer to the Methods & Meanings box following this lesson, “Measurement in Different Dimensions.”
+c. Choose one method (Luca’s or Kevin’s) to calculate the volume of the rectangular prism shown. Check your answer using the other method."
+cpm_course1_ms,1241,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"9-28. Lucy and Marissa each designed a box plot to represent this data set:
+16 18 19 19 25 26 27 32 35
+Their plots are shown in part (a).
+a. Which plot is scaled correctly and why? Explain the mistakes in the incorrect plot.
+b. Determine this data set’s first and third quartiles, median, and interquartile range (IQR)."
+cpm_course1_ms,1266,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"9-48. Clara has been filling rectangular prisms with cubes. She has a 1-foot cube and several 1-inch cubes. She wonders how many 1-inch cubes she will need to fill the 1-foot cube.
+Her work is shown:
+1/12 × 1/12 × 6 = 6/144 or 1/24 or 0.042 square feet
+a. What did Clara calculate?
+b. Does her calculation help her know how many 1-inch cubes will fit in the 1-foot cube?
+c. How many 1-inch cubes will fit in the 1-foot cube?"
+cpm_course1_ms,1273,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"9-53. WHICH IS SWEETER?
+Kay and Bill love hummingbirds. Every spring, they hang feeders around their gardens with a mixture of water and sugar that mimics the flower nectar the birds enjoy drinking. Today, they are comparing the sweetness of their recipes.
+Bill thinks his recipe is sweeter. “Mine has 5 cups of sugar and yours only has 3!”
+Kay thinks hers is sweeter. “But mine has a higher percentage of sugar,” she argues.
+a. Help Kay and Bill calculate the percentage of sugar in each recipe.
+b. Which information is most important to decide which mixture is sweeter: the amount of sugar in each recipe, or the percentage of sugar? Which recipe makes a sweeter mixture? Discuss this with your team and be prepared to explain your ideas to the class."
+cpm_course2_ms,121,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"1-84. Randy was playing “Double Heads,” a game in which he would flip two coins at a time. He recorded the number of times he flipped two heads at the same time. He flipped the coins 50 times, and there were 20 times when both coins landed heads-up, which he recorded as 20/50. a. How does 20/50 compare to 50%? b. Randy claims, “20/50 is equivalent to 70/100 because if I add 50 to the denominator to get 100 and add 50 to the numerator to get 70, the fraction becomes 70/100.” Explain to Randy why 20/50 and 70/100 are not equivalent fractions."
+cpm_course2_ms,150,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"1-106. Before you can write the sum of two fractions, they must be rewritten so that both wholes have an equal number of parts. In other words, they must be rewritten to have a common denominator. Three students were adding the fractions 1/4 + 5/12. They each used a different common denominator: LILY: 1/4 + 5/12 = 12/48 + 20/48 = 32/48. ARMANDO: 1/4 + 5/12 = 3/12 + 5/12 = 8/12. JOSUE: 1/4 + 5/12 = 6/24 + 10/24 = 16/24. a. Who is correct? Can any number be a common denominator? Explain your reasoning. b. Which of their common denominators is easiest to work with? Why? c. Record at least three different common denominators you could use to add 3/10 + 1/5."
+cpm_course2_ms,177,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,1-129. Eustice is adding fractions. Here is his work: 1/2 + 2/4 = 3/6 a. How do you think Eustice got his answer? Does his answer make sense? Discuss Eustice’s work with your team. Then explain your reasoning with diagrams and words. b. Help Eustice by showing your work to correctly add the fractions.
+cpm_course2_ms,179,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"1-131. Lyle asked for a challenge problem, and his teacher gave him this one: There is a 2/7 chance of drawing a red marble out of a bag of marbles. If the probability of drawing a red or a blue marble is 2/3, what is the probability of drawing a blue marble? When Lyle’s teammates saw the challenge he was working on, they each had a different idea for how he should start. • Mayra suggested that he start by rewriting 2/3 and 2/7 so that they have a common denominator. • Kenessa disagreed. “You want to set up a subtraction problem,” she said. She wrote the expression 2/3 − 2/7 to show Lyle her idea. • Darren had a different idea. “The probability that you would draw either red or blue is the same as the probability of drawing red added to the probability of drawing blue,” he said. He wrote the equation 2/3 = 2/7 + ? to show his idea. a. Which way would you suggest to Lyle as he starts working to determine P(blue)? • Discuss your ideas with your team. • Write a clear explanation of which method you recommend and why. • Include your ideas about whether the other strategies will solve the problem and why you did not choose them. b. What is the probability of drawing a blue marble? Explain your reasoning."
+cpm_course2_ms,375,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-120. Sara turned in the two graphs shown for homework, but her teacher marked them as being incorrect. Explain to Sara what mistakes she made. Then choose one of her graphs, copy it, and correct it."
+cpm_course2_ms,442,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-37. The Deep Submergence Vehicle, Alvin, can dive into the ocean to a maximum depth of 14,764 ft. If sea level is 0 ft, then this depth can be written as −14,764 ft. The deepest point in the Pacific Ocean, and in fact in the whole world, is a location called Challenger Deep in the Mariana Trench. It has a depth of −35,840 ft. Tory and Nina wanted to know the distance from the bottom of the trench to Alvin when the submarine was at its maximum dive depth.
+a. Sketch a vertical number line and label the depths described to help you to visualize the problem.
+b. Tory knew that they needed to subtract to determine the difference between the two depths, so she calculated −35,840 − (−14,764). Nina, on the other hand, calculated −14,764 − (−35,840). Complete both calculations. Use your number line or visualize integer tiles to help you. What do you notice about the solutions?
+c. If you want to calculate the distance between the two depths, how could you use absolute value in Nina and Tory’s expressions to show that distance is always a positive value? Write both expressions to show this."
+cpm_course2_ms,493,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-79. Mentally calculate the following products.
+a. (−0.04)(−0.1)
+b. (0.03)(−0.02)
+c. (0.7)(0.4)
+d. Stacey said, “Stephanie, look at my answer to the last problem, 0.7 · 0.4 = 0.28. Usually when I multiply, I get a bigger answer than the numbers I start with, but twenty-eight hundredths, 0.28, is less than either 0.4 or 0.7. I must have made a mistake.”
+Stephanie responded, “Well, one-half times one-half is one-fourth, and one-fourth is less than one-half. I think when you multiply by a fraction or decimal less than one, you get less than you started with.”
+Write a sentence or two about who you think is correct and why."
+cpm_course2_ms,513,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-95. Huy, Madison, and Ramona are working on the following problem and each begins her work differently.
+1 3/8 ÷ 3/4
+
+RAMONA:
+There is one 3/4 in 1 3/8 and 5/8 left over. Then since 3/4 equals 6/8, those 5/8 are really 5/6 of one group. That means the answer is 1 5/6, that is, 3/4 divides 1 3/8 into 1 5/6 pieces of lengths 3/4.
+
+MADISON:
+Since 1 3/8 is the same as 11/8 and 3/4 is the same as 6/8, this problem is really the same as 11/8 ÷ 6/8. I can think of this as dividing 11 pieces into groups of 6 or 11 ÷ 6 = 11/6 = 1 5/6.
+
+HUY:
+Since a fraction is division, I can write a super fraction and use a Super Giant One to make an equivalent fraction with a denominator of one. Then I just simplify.
+1 3/8 ÷ 3/4 = (1 3/8)/(3/4) = (11/8)/(3/4) · (4/3)/(4/3) = (44/24)/1 = 44/24 = 1 20/24 = 1 5/6.
+
+Work with your team to make sense of each student’s approach to the problem. Then use each of the three approaches to do the following two problems.
+a. 4/5 ÷ 1/2
+b. 2 1/2 ÷ 3/4"
+cpm_course2_ms,536,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-115. Each problem has an error in the answer. Identify the error, explain how to correct the mistake, and correct it.
+a. 10 × 0.5 = 50
+b. 467.92 + 1.293 = 479.85
+c. 100 − 62.837 = 38.837
+d. 1.234 × 0.003 = 0.3702
+e. 4,006.3 − 34.98 = 3,971.48
+f. 45.6 + 32.87 + 0.003 = 374.6"
+cpm_course2_ms,544,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-122. Maria and Jorge were trying to evaluate the expression (−4/3) · 1 2/5 · (−3/4). Her work is shown:
+(−4/3) · 1 2/5 · (−3/4)
+= (−4/3) · 7/5 · (−3/4)
+= (−4/3) · (−21/20)
+= 84/60 = 1 24/60 = 1 2/5
+
+Jorge had a different idea. He multiplied (−4/3) · (−3/4) first.
+a. Evaluate the expression 1 2/5 · (−4/3) · (−3/4) using Jorge’s method. Is your answer equal to Maria’s?
+b. Jorge used the Commutative Property of Multiplication. Why might Jorge have decided to multiply (−4/3) · (−3/4) first?
+c. In a multiplication problem, the factors can be grouped together in different ways. This is called the Associative Property of Multiplication. Use this property and show that (3/4 · 2/5) · (−2) and 3/4 · (2/5 · (−2)) are equivalent.
+d. Evaluate each expression. First decide if you want to group some factors together.
+i. (−9) · 1/9 · 3/8
+ii. −5/12 · 3/7 · 4/9
+iii. −8.1 · 5 · 2"
+cpm_course2_ms,574,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-4. Two figures are scaled copies if the ratio of their side lengths stays the same. That means that the ratio of copy/original for each pair of corresponding sides is equal.
+a. These two figures are scaled copies. Can you determine the missing side lengths? What is the scale factor?
+b. Kai and Eli are having a disagreement about the scale factor for the following figures. Kai thinks the scale factor is 2:1, but Eli does not agree. Who is correct? Explain your reasoning."
+cpm_course2_ms,664,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-76. The perimeter of each algebra tile can be also written as an expression using variables and numbers.
+a. Write at least two different expressions for the perimeter of each tile shown.
+b. Which way of writing the perimeter seems clearest to you? What information can you get from each expression?
+c. Lianna wrote the perimeter of the collection of tiles shown as 2x + 1 + 1 + 1 + 2x + 1 units, but Jonah wrote it as 4x + 4. How are their expressions different?
+d. Which expression represents the perimeter? Can they both represent the perimeter? Neither?"
+cpm_course2_ms,987,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-61. CHECKING YOUR SOLUTION. When you solve an equation that has one solution, you get a value for the variable. But how do you know that you have done the steps correctly and that your answer “works”? a. Look at your answer for problem 6-60. How could you verify that your solution is correct and convince someone else? Discuss your ideas with your team. b. When Kelly and Madison compared their solutions for the equation −7 = −2(x + 1) + 3x, Kelly got a solution of x = −5 and Madison got a solution of x = −8. To decide whether the solutions were correct, they decided to check their answers to see if they made the expressions equal. Finish their work to determine whether either person has the correct solution. c. When checking, Kelly ended up with −7 = −7. Does this mean that her answer is correct or incorrect? If it is correct, does this mean the solution is x = −7 or x = −5? Explain. d. Go back to problem 6-60 and show how to check your solution for that equation."
+cpm_course2_ms,1021,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-88. Consider the equation 7 = 3x − 5.
+a. Stanley wants to start solving the equation by adding 5 to both sides, while Terrence first wants to subtract 7 from both sides. Will both strategies work? Is one strategy more efficient than the other?
+b. Solve 7 = 3x − 5. Show your steps."
+cpm_course2_ms,1038,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-101. Nick tried to use symbols to solve 3x − 6 = 27, but he may have made a mistake. If he did make a mistake, on which step did he first make a mistake, and what was his mistake? If he did not make a mistake, check his solution and write “all correct.”
+
+3x − 6 = 27
++ 6  + 6
+3x = 33
+/3   /3
+x = 11"
+cpm_course2_ms,1076,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Activity 1: Summarizing My Understanding
+In this chapter, you have used algebra tiles and an Equation Mat as tools for solving equations. You have also represented your solution steps on an Equation Mat and with algebraic symbols. Today, you will use what you have learned about equations in this chapter to show connections between all of these methods. To start, consider the following problem.
+Jamee is working to solve an equation. They did the work shown. With your team, answer the questions that follow.
+ORIGINAL PROBLEM: –3 – 9 = 2(2x + 2)
+STEP 1: –12 = 4x + 2
+STEP 2: –14 = 4x
+a. Explain what Jamee did at each step.
+b. What is their solution?
+c. Is their solution correct? Explain your reasoning. If it is not, determine their error and the correct answer."
+cpm_course2_ms,1132,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-31. Liam was working on a problem and drew a diagram like the one shown. He then wrote the equation ($72)(0.14) = x. However, his equation does not agree with his diagram. Explain why the equation does not work with the diagram, and then write and solve the correct equation that matches the diagram."
+cpm_course2_ms,1221,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-101. Shiloh knows 5 cups of flour makes 2 batches of cookies. He has 13 cups of flour left. He wants to know how many batches he can make. He wrote the equivalent ratios.
+5 cups / 2 batches = 13 cups / x batches
+He asked his friend Carolyn for help solving this equation. Carolyn said, “If it takes 5 cups of flour to make 2 recipes, then it takes 2 1/2 cups of flour for each recipe. You can just use this multiplier to write an equation.” She then wrote the equation F = 2 1/2 B, where F is cups of flour and B is the number of batches. She replaced F with 13 to determine the number of batches Shiloh can make with 13 cups of flour, as shown.
+13 = 2 1/2 B
+a. Compare Shiloh and Carolyn’s equations. Are they correct? Why or why not?
+b. Which equation is easier to solve? Solve it.
+c. Does your solution work in both Shiloh and Carolyn’s equations?"
+cpm_course2_ms,1486,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"9-63. When calculating the volume of the shape shown, Audrey determined the volume of the shaded layer first.
+5 + 20 = 25, so 25 · 8 · 1 = 200 ft³
+Then she said, “The shape is 22 feet high, so there are 22 one-foot-high layers.” She then multiplied and got this answer: 22 ⋅ 200 = 4,400 ft³.
+a. What is Audrey’s mistake?
+b. What is the actual volume of the shape? Write an equation to represent the volume and explain how you determined it.
+c. Think of another method to determine the volume of the shape using a strategy that is different than the one Audrey used. Explain your method in words and write an equation to represent this strategy."
+cpm_course3_ms,121,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-5. Josiah and Jon wrote expressions to represent the tile collection shown.
+JOSIAH: 2y + 4x + 6
+JON: 2(2x + y + 3)
+Which of the expressions is correct? Explain how you know."
+cpm_course3_ms,136,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-16. Patti, Emilie, and Carla are debating the answer to part (d) of problem 2-15. Patti wrote 2 − 1 + 2x − 3. Carla thinks that the answer is 2x − 2. Emilie is convinced that the answer is 2(x − 1). Discuss with your team how each of them might have arrived at their answer. Who do you agree with? When you decide, write an explanation and justify your answer."
+cpm_course3_ms,155,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-30. When writing an expression for the tiles shown, Ricardo wrote 2x − 3 − (x + 1), while Francine wrote −3 + 2x − x − 1.
+
+Francine states that their expressions are equivalent. Is Francine’s conclusion true or false? Use algebraic properties to justify your conclusion."
+cpm_course3_ms,299,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-58. GOOFY GRAPHING
+Now Ms. Cai’s class is studying a tile pattern. Her students decided to represent the pattern with the (x, y) table shown.
+a. Ms. Cai wants her class to graph the data in this table. Write (x, y) coordinates for each point that needs to be plotted.
+b. When Ms. Cai’s students started to graph this data, they made mistakes right from the beginning. The following diagrams show how some of Ms. Cai’s students set up their axes. Your teacher will assign your team one of these diagrams.
+Describe all of the mistakes the students made in setting up the graph your teacher assigns you. (There may be more than one mistake in each graph!) Explain why this is an incorrect way to set up a graph, or why this is not the best way to set up the graph for this problem. Be ready to present your team’s ideas to the class."
+cpm_course3_ms,467,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-60. Josie and Jules are building a model car. They know the actual car is 54 inches tall and 180 inches long. They agree to make their model 3 inches tall but disagree about how long the model should be. Josie says their model should be 10 inches long, and Jules says it should be 129 inches long. Help them calculate precisely how long the model should be. Justify your solution."
+cpm_course3_ms,469,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Chapter 4 Closure What have I learned?
+REFLECTION AND SYNTHESIS
+Launch
+Your teacher will show you an image of a student’s work for the following problem. Review their work and think silently. What does this student know? What error is this student making?
+Solve −x2 + x = −x2 − (1) + −1 for x using the algebra tiles shown. Show your work."
+cpm_course3_ms,570,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Chapter 5 Closure What have I learned?
+REFLECTION AND SYNTHESIS
+
+Launch
+Your teacher will show you an image that shows a student's work. What does this student know? What mistake is this student making? Think silently as you consider your response.
+
+Explore
+These activities offer you a chance to reflect on what you have learned during this chapter. As you work, look for concepts that you feel very comfortable with, ideas that you would like to learn more about, and topics you need more help with.
+
+Activity 1: What Have I Learned?
+Working the problems in this section will help you to evaluate which types of problems you feel comfortable with and which ones you need more help with.
+Solve each problem as completely as you can. The table at the end of this Closure section provides answers to these problems. It also tells you where you can find additional help and where to find similar practice problems."
+cpm_course3_ms,619,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-27. Erin started with one corner of a figure located at (−4, 5) and translated it to (6, 8). To figure out how far the shape moved horizontally, she decided to determine the difference between the two x-coordinates. She wrote: 6 − (−4).
+a. Erin got 2 when she evaluated the expression 6 − (−4). Is this correct? If not, what is the correct answer?
+b. Write another expression to determine how far the shape moved vertically (↕). Describe the translation in words.
+c. Describe each of the following translations.
+i. (3, −2) → (5, −9)
+ii. (−1, 4) → (6, −2)
+iii. (0, 0) → (−4, −7)
+iv. (−2, −9) → (2, 9)"
+cpm_course3_ms,643,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-49. When Ms. Shreve solved an equation in class, she checked her solution and found that it did not make the equation true. Examine her work, locate her mistake, and determine the correct solution.
+5(2x – 1) – 3x = 5x + 9
+10x – 5 – 3x = 5x + 9
+7x – 5 = 5x + 9
+12x = 4
+x = 1/3"
+cpm_course3_ms,657,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-62. Mr. Greer solved the equation as shown. However, when he checked his solution, it did not make the original equation true. What was his error? What is the correct solution?
+4x = 8(2x – 3)
+4x = 16x – 3
+–12x = –3
+x = –3 / –12
+x = 1/4"
+cpm_course3_ms,682,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-81. Hannah thinks a solution to the following system is (−4, −6). Wirt thinks a solution is (20, 10).
+2x − 3y = 10
+6y = 4x − 20
+a. Is Hannah correct?
+b. Is Wirt correct?
+c. What do the answers to (a) and (b) tell you about the lines in the problem?"
+cpm_course3_ms,697,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-93. Alex and Maria were trying to calculate the side labeled x in problem 6-92. Their work is shown.
+
+ALEX: I noticed that when I multiplied by 3, the sides of the triangle got longer. 8 × 3 = 24
+MARIA: I remember that when we were dilating shapes in Lesson 6.2.2, my shape got bigger when I divided by 1/3. 8 ÷ 1/3 = 24
+
+a. Look at each student’s work. Why do both multiplying by 3 and dividing by 1/3 make the triangles larger?
+b. Use Alex and Maria’s strategy to write two expressions to determine the value of y in problem 6-92."
+cpm_course3_ms,713,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-105. Lucy and Marissa each designed a box plot to represent this data set: 16, 18, 19, 19, 25, 26, 27, 32, 35. Their plots are shown. Which plot is scaled correctly and why? Explain the mistakes in the incorrect plot.
+a.
+b."
+cpm_course3_ms,763,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-22. THE LINE FACTORY
+
+Congratulations! You have recently been hired to work at the city’s premiere Line Factory. People from all over the country order lines from your factory because of their superior quality and excellent price.
+
+Lately, however, the Line Factory is having a serious problem: Too many customers have placed orders and then received different lines from the ones they wanted. The factory has hired your team to correct this problem.
+
+Review the recent orders given and decide if there is anything wrong with each customer’s order. If the order is correct, pass it on to your production department with a rule, a table, and a graph (on graph paper). If the order is incorrect, explain to the customer how you know the order is incorrect and suggest corrections.
+
+a. Customer A wants a line with a y-intercept of (0, −3) and that grows by 4. She ordered the line y = −3x + 4.
+
+b. Customer B wants the line shown on the graph. He ordered the line y = 3x + 2.
+
+c. Customer C wants a line that passes through the points (2, −4) and (5, 2). She ordered the line y = 2x − 8.
+
+d. Customer D wants the line that is represented by the following table.
+x: -3, -2, -1, 0, 1, 2, 3
+y: -4, -1, 2, 4, 7, 10, 13
+
+e. Customer E ordered the line 2x − y = 4 and wants the line to grow by 2 and pass through the point (5, 6).
+
+f. Customer F wants a line that starts at (0, 1), grows first by 3, and then grows by 5."
+cpm_course3_ms,777,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-32. While comparing the rates from problem 7-30, a team is struggling to decide how to tell which athlete is moving faster.
+
+Leo thinks that because athlete A’s line is highest on the graph, he is traveling faster.
+
+Kara disagrees. “He starts first, but racer B is moving faster.”
+
+Which person do you agree with? Look at the graph of bicyclists A and B as shown and discuss this with your team. Be prepared to explain your reasoning to the class."
+cpm_course3_ms,812,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"7-60. Ella and her team are arguing about the slope of the line in the graph shown. They have come up with four different answers: 3/4, −4/3, −3/4, and 4/3. Which slope is correct? Justify your answer."
+cpm_course3_ms,927,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"8-35. Scientific notation requires that one factor is a power of 10, and the other factor is a number greater than or equal to 1 but less than 10. For example, 2.56 × 10^5 is correctly written in scientific notation, but 25.6 × 10^4 is not because 25.6 is greater than 10. Scientific notation also uses the symbol “×” for multiplication instead of “·” or parentheses. In each part (a) through (c), the number shown is not correctly written in scientific notation. Explain why each one does not meet the criteria for scientific notation, and then write it using correct scientific notation. a. 25.6 × 10^4 b. 5.46 · 100 c. 0.93 × 10^8"
+cpm_course3_ms,935,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"8-43. Consider the equation 7 = 3x − 5. a. Stanley wants to start solving the equation by adding 5 to both sides, while Terrence first wants to subtract 7 from both sides. Will both strategies work? Is one strategy more efficient than the other? b. Solve 7 = 3x − 5. Show your steps."
+cpm_course3_ms,941,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"8-47. Aaron wants to rewrite the expression 5^2 x^2 · 5^4 x^3 in fewer terms in exponent form. He started by expanding the expression like this: 5^2 x^2 · 5^4 x^3 = 5 · 5 + x · x + 5 · 5 · 5 · 5 + x · x · x = 25 + x^2 + 625 + x^3. Do you agree with his work so far? Work with your team to complete the problem or, if you do not agree, write Aaron a note explaining how to correct his work and determine the correct way to rewrite the expression."
+cpm_course3_ms,955,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"8-59. Two of the equations listed are true, and four contain errors. For each equation, if it is not true, identify the mistake and rewrite to create a true equation. a. x^3 y^2 x^4 = x^7 y^2 b. 2^3 · 2^4 = 2^12 c. (7^2 · 8^3) / (7^3 · 8^2) = 8/7 d. 3^5 · 3^2 = 9^7 e. 6^2 / 6^5 = 6^3 f. z^3 / z^3 = 0"
+cpm_course3_ms,961,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"8-65. Both Ngoc and Salvador are looking for ways to calculate values with negative exponents without extending a pattern. Looking at the expression 5^−2, they each started to rewrite differently. Salvador thinks that 5^2 is 25, so 5^−2 must be 1/25. Ngoc thinks 5^−2 is 1/5^2. Which student is correct?"
+cpm_course3_ms,1009,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,8-105. Marlo rewrote the following expression incorrectly. His work is shown: m^6 / m^2 = m^(6 ÷ 2) = m^3. a. Marlo divided his exponents to get his answer. What operation should Marlo have used to get the correct answer? b. How should Marlo rewrite m^12 / m^3?
+cpm_course3_ms,1057,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,Chapter 8 Closure What have I learned? REFLECTION AND SYNTHESIS. Launch: Your teacher will show you an image of a student's work on the following problem. Review their work and think silently. What does this student know? What error is this student making? Rewrite the expression (−6q^−3)^2. Show your work.
+cpm_course3_ms,1297,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"10-24. Anisa and Dan were trying to determine the volume of the cone shown. Anisa thinks that the cone is 8 inches tall, and Dan thinks that the cone is 10 inches tall. Write them a note explaining who is correct."
+cpm_course3_ms,1298,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"10-25. Anisa, Dan, and Jess calculated the volumes of some shapes and got different answers. Look at their work shown and make a sketch of the shape that each set of calculations might represent. Why do Dan’s and Jess’s calculations have the same result even though they look different?
+DAN: V = (42π)(9)/3 = 150.8 cm3
+ANISA: V = (42π)(9) = 452.4 cm3
+JESS: V = 1/3 (42π)(9) = 150.8 cm3"
+cpm_geometry_hs,56,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"1-43. Rosalinda examined the angles at right and wrote the equation below.
+(2x + 1º) + (x – 10º) = 90º
+a. Does her equation make sense? If so, explain why her equation must be true. If it is not correct, determine what is incorrect and write the equation.
+b. If you have not already done so, solve her equation, clearly showing all your steps. What are the measures of the two angles?
+c. Verify that your answer is correct."
+cpm_geometry_hs,212,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-33. Looking at the diagram below, John says that m∠BCF = m∠EFH.
+a. Do you agree with John? Why or why not?
+b. Jim says, ""You can't be sure those angles are equal. An important piece of information is missing from the diagram!"" What is Jim talking about?"
+cpm_geometry_hs,223,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-42. Robert believes the lines graphed at right are perpendicular, but Mario is not convinced. Find the slope of each line, and explain how you know whether or not the lines are perpendicular."
+cpm_geometry_hs,225,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-44. Janine measured the sides of a rectangle and found that the sides were 12 inches and 24 inches. Howard measured the same rectangle and found that the sides were 1 foot and 2 feet. When their math teacher asked them for the area, Janine said 288, and Howard said 2. Why did they get two different numbers for the area of the same rectangle?"
+cpm_geometry_hs,228,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-46. Use your knowledge of angle relationships to answer the questions below.
+a. In the diagram at right, what is the sum of angles x and y? How do you know?
+b. While looking at the diagram at right, Rianna exclaimed, ""I think something is wrong with this diagram."" What do you think she is referring to? Be prepared to share your thinking with the class."
+cpm_geometry_hs,258,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-72. How do you know which dimensions to use when finding the area of a triangle?
+a. Copy each triangle below onto your paper. Then find the area of each triangle. Draw any lines on the diagram that will help. Turning the triangles may help you discover a way to find their areas.
+(1) (2) (3)
+b. Look back at your work from part (a). Which numbers from each triangle did you use to find the area? For instance, in the center triangle, you probably used only the 6.8"" and 5.9"". Write an explanation and/or draw a diagram that would help another student understand how to choose which lengths to use when calculating the area.
+c. Mario, Raquel, and Jocelyn are arguing about where the height is for the triangle at right. The three have written their names along the part they think should be the height. Determine which person is correct. Explain why the one you chose is correct and why the other two are incorrect."
+cpm_geometry_hs,264,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-77. Daniel and Mike were having an argument about where to place a square in the Venn diagram at right. Daniel wants to put the square in the intersection (the region where the two circles overlap). Mike doesn't think that's right. ""I think it should go in the right region because it is a square, not a rectangle."" ""But a square IS a rectangle!"" protests Daniel. Who is right? Explain your thinking."
+cpm_geometry_hs,268,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"2-80. FINDING THE AREA OF A PARALLELOGRAM One of the shapes in your Shape Bucket is shown at right. It is called a parallelogram: a four-sided shape with two pairs of parallel sides. How can you find the area of a parallelogram? Consider this question as you answer the questions below. a. Kenisha thinks that the rectangle and parallelogram below have the same area. Her teammate Shaundra disagrees. Who is correct? Justify your conclusion. b. In the parallelogram shown in part (a), the two lengths that you were given are often called the base and height. Several more parallelograms are shown below. In each case, find a related rectangle for which you know both the base and height. Rotating your book might help. Use what you know about rectangles to find the area of each parallelogram. (1) (2) (3) (4) c. Describe how to find the area of a parallelogram when given its base and height. d. Does the angle at which the parallelogram slants matter? Does every parallelogram have a related rectangle with equal area? Why or why not? Explain how you know."
+cpm_geometry_hs,338,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-9. Examine each diagram below. Identify the error in each diagram.
+a.
+b.
+c."
+cpm_geometry_hs,359,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-27. After enlarging his ""U"" in problem 3-26, Al has an idea. He drew a 60° angle, as shown in Diagram #1 at right. Then, he extended the sides of the angle so that they are twice as long, as shown in Diagram #2. ""Therefore, the new angle must have measure 120°,"" he explained. Do you agree? Discuss this with your team and write a response to Al."
+cpm_geometry_hs,400,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,3-62. Lindsay was solving a math problem and drew the flowchart below right: a. Draw and label two triangles that could represent Lindsay's problem. What question did the problem ask her? How can you tell? b. Lindsay's teammate was working on the same problem and made a mistake in his flowchart: How is this flowchart different from Lindsay's? Why is this the wrong way to explain the reasoning in Lindsay's problem?
+cpm_geometry_hs,415,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-75. Flowcharts can also be used to represent real-life situations. For example, yesterday Joe found out that three people in his family (including Joe) wanted to see a movie, so he went to the theater and bought three tickets. Unfortunately, while he was gone, three more family members decided to go. When everyone arrived at the theater, Joe did not have enough tickets. Joe sat down later that night and tried to create a flowchart to describe what had happened. Here are the three possibilities he came up with: a. Which of these flowcharts best captures the situation that happened on Saturday? Why? b. What is wrong with the other two flowcharts as descriptions of this situation?"
+cpm_geometry_hs,434,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-92. Determine whether or not the reasoning in the flowchart at right is correct. If it is wrong, redo the flowchart to make it correct."
+cpm_geometry_hs,440,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"3-97. Examine the triangles at right.
+a. Are these triangles similar? If so, make a flowchart justifying their similarity.
+b. Charles has ΔCAT ~ ΔRUN as the conclusion of his flowchart. Leesa has ΔNRU ~ ΔTCA as her conclusion. Who is correct? Why?
+c. Are ΔCAT and ΔRUN congruent? Explain how you know.
+d. Find all the missing side lengths and all the angle measures of ΔCAT and ΔRUN."
+cpm_geometry_hs,473,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"CL 3-115. Jermaine has a triangle with sides 8, 14, and 20. Sadie and Aisha both think that they have triangles that are similar to Jermaine’s triangle. The sides of Sadie’s triangle are 2, 3.5, and 5. The sides of Aisha’s triangle are 4, 10, and 16. Decide who, if anyone, has a triangle similar to Jermaine’s triangle. Be sure to explain how you know."
+cpm_geometry_hs,516,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,4-27. Ben thinks that the slope ratio for this triangle is 7/10. Carlissa thinks the ratio is 10/7. Who is correct? Explain your thinking fully.
+cpm_geometry_hs,517,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-28. Use your observations from problem 4-26 to answer the following questions: a. Thalia did not have a tool to help her find the slope angle in the triangle at right. However, she claims that the slope angle has to be more than 45°. Do you agree with Thalia? Why? b. Lyra was trying to find the slope ratio for the triangle at right, and she says the answer is Δy/Δx = 2.675. Isiah claims that cannot be correct. Who is right? How do you know? c. Without finding the actual value, what information do you know about x in the diagram at right?"
+cpm_geometry_hs,525,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-35. MULTIPLE METHODS Tiana, Mae Lin, Eddie, and Amy are looking at the triangle at right and trying to find the missing side length. a. Tiana declares, “Hey! We can rotate the triangle so that 18° looks like a slope angle, and then Δy = 4.” Will her method work? If so, use her method to solve for a. If not, explain why not. b. Mae Lin says, “I see it differently. I can tell Δy = 4 without turning the triangle.” How can she tell? Explain one way she could know. c. Eddie replies, “What if we use 72° as our slope angle? Then Δx = 4.” What is he talking about? Discuss with your team and explain using pictures and words. d. Use Eddie’s observation in part (c) to confirm your answer to part (a)."
+cpm_geometry_hs,561,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-65. Sinclair wonders how to model the spinner game in problem 4-64 using a tree diagram. He draws the tree diagram at right. a. Sabrina says, “That can't be right. This diagram makes it look like all the words are equally likely.” What is Sabrina talking about? Why is this tree diagram misleading? b. To make the tree diagram reflect the true probabilities in this game, Sabrina writes numbers on each branch showing the probability that the letter will occur. So she writes a “1/3” on the branch for “A,” a “1/4” on the branch for each “T,” etc. Following Sabrina's method, label the tree diagram with probabilities on each branch. c. According to the probability area model that you made in problem 4-64, what is the probability that you will spin the word “AT”? Now examine the bolded branch on the tree diagram shown above. How could the numbers you have written on the tree diagram be used to find the probability of spinning “AT”? d. Does this method work for the other combinations of letters? Similarly calculate the probabilities for each of the paths of the tree diagram. At the end of each branch, write its probability. (For example, write “1/12” at the end of the “AT” branch.) Do your answers match those from problem 4-64? e. Find all the branches with letter combinations that make words. Use the numbers written at the end of each branch to compute the total probability that you will spin a word. Does this probability match the probability you found with your area model?"
+cpm_geometry_hs,579,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"4-81. Eddie told Alfred, “I'll bet if I flip three coins I can get exactly two heads.” Alfred replied, “I'll bet I can get exactly two heads if I flip four coins!” Eddie scoffed, “Well, so what? That's easier.” Alfred argued, “No, it's not. It's harder.” Who is correct? Show all of your work and be prepared to defend your conclusion."
+cpm_geometry_hs,613,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,4-112. What is wrong with the argument shown in the flow chart at right? What assumption does the argument make?
+cpm_geometry_hs,685,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-34. Jerry was trying to use a flowchart to describe how his friend Marcy feels about Whizzbangs candy. Examine his flowchart below.
+a. How do you know Jerry’s flowchart is incorrect?
+b. Make a flowchart on your paper with the same three ovals, but with arrows drawn in so the flowchart makes sense. Explain why your flowchart makes more sense than the one at right."
+cpm_geometry_hs,722,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-65. Copy the diagram at right onto your paper.
+a. Find the measures of all the angles in the diagram.
+b. Make a flowchart showing that the triangles are similar.
+c. Cheri and Roberta noticed their similarity statements for part (b) were not the same. Cheri had stated ΔABC ~ ΔDEC, while Roberta maintained that ΔABC ~ ΔEDC. Who is correct? Or are they both correct? Explain your reasoning."
+cpm_geometry_hs,738,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-79. William thinks that the hypotenuse must be the longest side of a right triangle, but Chad does not agree. Who is correct? Support your answer with an explanation and a counterexample, if possible."
+cpm_geometry_hs,745,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"5-85. Thui and Ivan came up with two different ways to find the height of the triangle below.
+• Using the right triangle on the left, Thui wrote: sin 58º = h/12.
+• Ivan also used the sine function, but his equation looked like this: sin 24º = h/25.
+a. Which triangle did Ivan use?
+b. Calculate h using Thui’s equation and again using Ivan’s equation. How do their answers compare?"
+cpm_geometry_hs,813,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"CL 5-143. While working on homework, Zachary was finding the value of each variable in the diagrams below. His first step for each problem is shown under the diagram. If his first step is correct, continue solving the problem to find the solution. If his first step is incorrect, explain his mistake and solve the problem correctly. a. sin(16º) = x/10  b. x^2 = 10^2 + 70^2 – 2(10)(70) cos(50º)"
+cpm_geometry_hs,857,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"6-30. In Don’s congruence flowchart for problem 6-29, one of the ovals said “AB/FD = 1”. In Phil’s flowchart, one of the ovals said, “AB = FD”. Discuss with your team whether these ovals say the same thing. Can equality statements like Phil’s always be used in congruence flowcharts?"
+cpm_geometry_hs,1029,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"MATH NOTES: METHODS AND MEANINGS - Exponential Functions. An exponential function has the general form y = a · b^x, where a is the initial value (the y-intercept) and b is the multiplier (the growth). Be careful: The independent variable x has to be in the exponent. For example, y = x^2 is not an exponential equation, even though it has an exponent. For example, in the multiple representations below, the y-intercept is (0, 4) and the growth factor is 3 because the y-value is increasing by multiplying by 3. To increase or decrease a quantity by a percentage, use the multiplier for that percentage. For example, the multiplier for an increase of 7% is 100% + 7% = 1.07. The multiplier for a decrease of 7% is 100% – 7% = 0.93."
+cpm_geometry_hs,1562,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"10-90. Mrs. Cassidy solved the problem (w – 3)(w + 5) = 9 and got w = 3 and w = –5. Is she correct? If so, show how you know. If not, show how you know and find the correct solution."
+cpm_geometry_hs,1601,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"10-124. WHAT IS THE FORMULA? a. In part (a) of problem 10-122 you calculated how many ways judges could pick the logo contest winner and three runners up from 52 contestants. The answer can be written using factorials as 52! 48! . Explain where these numbers came from. b. The logo contest situation can be thought of as finding the number of possible arrangements of 52 elements arranged 4 at a time. Reexamine your answers to parts (b) and (c) of problem 10-122 and use your answers to write a general formula to calculate the number of possible arrangements of n objects arranged r at a time. Begin your formula with nPr =. c. Use your formula from part (b) above to calculate: i. 7P4 ii. 52P4 iii. 16P7 10-125. ANAGRAMS a. How many distinct ways can the letters in the word MASH be arranged? b. How many distinct ways can the letters in the word SASH be arranged? Use a tree diagram if it helps. c. How many distinct ways can the letters in the word SASS be arranged? d. Express your answers to parts (b) and (c) using fractions with factorials. The numerators should both be 4!. e. How can you use fractions with factorials to account for repeated letters when counting the number of arrangements? 10-126. Sasha wonders how many distinct ways she can arrange the letters in her name. She thinks the answer is 5! 4! = 5. What is her mistake? What is the correct answer, written using factorials? © CPM Educational Program 2026. All rights reserved. Used with permission for research. These materials may not be used for commercial purposes and may not be distributed on the internet. Prepared for Alisha Jain and Frances Harper | 2026 | Do not share."
+cpm_geometry_hs,1859,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"12-13. Katelyn is a student assistant in the Musketeers Math Lab. She helps fellow students with their math homework. Becky and Diego are working on their algebra homework. They have been asked to make a quick sketch of the equation y = (x – 2)2 – 25. a. Becky started by making an x → y table as shown below. Will her approach work? b. Diego started by rewriting the quadratic equation as y = x2 – 4x – 21, then factoring to find y = (x + 3)(x – 7), because he thought he could find the x-intercepts easier. Will his approach work mathematically? c. Katelyn complimented Becky and Diego on their mathematical thinking. Then she went on to say that they were both working too hard if their goal was just to make a quick sketch. What did she mean? Be prepared to share your team’s thinking with the rest of the class."
+cpm_geometry_hs,1941,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"12-88. Jamila solved the quadratic x^2 + 3x − 10 = 8 (see her work below). When she checked her solutions, they did not make the equation true. However, Jamila cannot find her mistake. Explain her error and then solve the quadratic correctly.
+x^2 + 3x − 10 = 8
+(x + 5)(x − 2) = 8
+x + 5 = 8 or x − 2 = 8
+x = 3 or x = 10"
+cpm_geometry_hs,1954,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"12-100. FAMILY DISCUSSION
+When Dimitri discussed his idea with his family, he received many suggestions. Analyze each of the ideas given below and then report back to Dimitri about which of them, if any, he should choose. Assume that Zoe needs at least 500 square feet of grazing area between now and the fair. Your analysis should include:
+• A diagram of each proposed region on the Lesson 12.2.4 Resource Page (or use the figure in problem 12-98).
+• All calculations that help you determine the probability that Zoe will eat the poisoned weed for each proposed region.
+a. Dimitri's Father: ""Dimitri! Why do you need to waste rope? All you need is to tether your sheep with a 10-foot rope attached at point A. Take it from me: Less area to roam means there is less chance that the sheep will eat the terrible locoweed!""
+b. Dimitri's Sister: ""I don't agree. I think you should consider using a 30-foot rope attached to point B. The longer rope will give Zoe more freedom.""
+c. Dimitri's Mother: ""Both of those regions really restrict Zoe to the north-eastern part of the field. That means she won't be able to take advantage of the grass grown in the southern section of the field that is rich in nutrients because of better sunlight. I recommend that you use a 30-foot rope attached to point C. You won't be disappointed!"""
+saxon_course1_ms,3860,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"problem solving Michelle's grandfather taught her this math method for converting kilometers to miles: ""Divide the kilometers by 8, and then multiply by 5."" Michelle's grandmother told her to, ""Just multiply the kilometers by 0.6."" Use both methods to convert 80 km to miles and compare the results. If one kilometer is closer to 0.62 miles, whose method produces the more accurate answer?"
+saxon_course2_ms,29,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"The four fundamental operations of arithmetic are addition, subtraction, multiplication, and division. In this lesson we will review the operations of arithmetic with whole numbers and with money. Amounts of money are sometimes indicated with a dollar sign ($) or with a cent sign (¢), but not both. We can show 50 cents either of these two ways:
+$0.50 or 50¢
+Occasionally we will see a dollar sign or cent sign used incorrectly.
+This sign [Soft Drinks 0.50¢ each] is incorrect because it uses a decimal point with a cent sign. This incorrect sign literally means that soft drinks cost not half a dollar but half a cent! Take care to express amounts of money in the proper form when performing arithmetic with money."
+saxon_course2_ms,40,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Practice Set
+a. This sign is incorrect. Show two ways to correct the sign. [Lemonade 0.45¢ per glass]
+b. Name a whole number that is not a counting number.
+c. Justify When the product of 4 and 4 is divided by the sum of 4 and 4, what is the quotient? Explain how you found the answer.
+Simplify by adding, subtracting, multiplying, or dividing as indicated:
+d. $1.75 + 60¢ + $3    e. $2 − 47¢
+f. 5(65¢)    g. 250 ⋅ 24
+h. $24.00 ÷ 5    i. 234 / 18
+Evaluate each expression for a = 20 and b = 4:
+j. a + b    k. a − b
+l. ab       m. a / b
+Connect Write equations using the number 15, where 15 is:
+n. an addend    o. the product
+p. the quotient  q. the subtrahend
+r. the dividend  s. the minuend"
+saxon_course2_ms,128,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example 4: Use words to write 3406521. Solution: We start on the right and insert a comma every third place as we move to the left: 3,406,521. Three million, four hundred six thousand, five hundred twenty-one. Note: We do not write "". . . five hundred and twenty-one."" We never include ""and"" when saying or writing whole numbers."
+saxon_course2_ms,657,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example 6
+Dickerson Ranch is a level plot of land 4 miles square. The area of Dickerson Ranch is how many square miles?
+Solution
+""Four miles square"" does not mean ""4 square miles."" A plot of land that is 4 miles square is square and has sides 4 miles long. So the area is
+4 mi × 4 mi = 16 mi^2"
+saxon_course2_ms,1828,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"* 28. (36) Discuss A spinner is spun once. Derrick says the sample space is {1, 2, 3}. Jorge says the sample space is {1, 1, 1, 2, 2, 3}. Whose sample space is better? Explain why?"
+saxon_course2_ms,2789,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"When dividing figures, we must avoid assumptions based on appearances. Although it may appear that the figure at right is divided into two triangles, the larger “triangle” is actually a quadrilateral. The slanted “segment” bends where the solid and dashed segments intersect. The assumption that the figure is divided into two triangles leads to an incorrect calculation for the area of the figure."
+saxon_course2_ms,4371,COMMON_ERROR_ALERT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"When performing algebraic operations, it is necessary to guard against dividing by zero. For example, the following expression reduces to 2 only if x is not zero: 2x/x = 2 if x ≠ 0. What is the value of this expression if x is zero? 2x/x (expression); 2 · 0 / 0 (substituted 0 for x); 0/0 (multiplied 2 · 0)."
+saxon_course3_ms,179,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,f. Measurement: Sam measured from the wrong end of the ruler. How long is his pencil?
+saxon_course3_ms,1128,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Example 2: Find 5/6 of $12.47.
+Solution: Before multiplying, we choose to convert 5/6 to the decimal 0.83̄, rounding to 0.83.
+0.83 × 12.47 = 10.3501
+We round to the nearest cent, $10.35.
+Explain: Marsha multiplied 5/6 and $12.47 and got $10.39. Which answer is more accurate? Why is there a difference in the two answers?"
+saxon_course3_ms,1471,EXPLICIT_ERROR_DETECTION,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"Practice Set
+a. The diameter of a circle on the playground is 12 ft. What is the radius of the circle?
+b. A spoke on the bike wheel is about 12 inches long. The diameter of the wheel is about how many inches?
+c. What is the name for the perimeter of a circle?
+d. How many diameters equal a circumference?
+e. Write two formulas for the circumference of a circle.
+f. Which of these terms does not apply to π?
+A rational number B irrational number C real number
+g. Justify Explain your choice for problem f.
+h. Write a decimal number and a fraction commonly used as approximations for π.
+i. What is incorrect about the following equation? π = 3.14
+j. To roughly estimate calculations involving π or to check if a calculation is reasonable, we can use what number for π?
+k. Estimate A bicycle tire with a diameter of 30 inches rolls about how many inches in one turn?"
+saxon_course3_ms,2111,COMPARE_AND_CONTRAST,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"12. (32) If the spinner is spun once, Roger says the sample space is {A, A, A, B, B, C}. Simon says the sample space is {A, B, C}. Who is correct? Explain your answer."
+saxon_course3_ms,3550,INCORRECT_TO_CORRECT,CONFIRMED,dual_arm,A_positive,paragraphs.csv,"8. Rita looks at the floor plan of a room that was drawn with scale factor 1 inch equals 4 feet. She multiplied the perimeter of the drawing by four and ordered that many feet of molding. She multiplied the area of the drawing by four and ordered that many square feet of carpeting. When the orders arrived, Rita had enough molding, but the carpet covered only 1/4 of the room. Explain the error."

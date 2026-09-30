@@ -19,8 +19,8 @@
     "B_boundary": 231,
     "A_positive": 13
   },
-  "positives": 13,
-  "positive_rate": 0.00612,
+  "positives": 9,
+  "positive_rate": 0.00424,
   "strata": {
     "book": "ck12_geometry_hs",
     "stage1_file": "gemini_results.csv",

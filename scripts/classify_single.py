@@ -206,14 +206,25 @@ borderline case reported as confident NA is lost.
 """
 
 
-def load_paragraphs(csv_path: Path) -> List[str]:
+def load_paragraphs(csv_path: Path) -> List[Tuple[int, str]]:
+    """Return (para_id, paragraph) pairs, in file order.
+
+    para_id is read from the file when present (every current paragraphs.csv /
+    stage2_worklist.csv has it). Falling back to row position keeps this
+    working on an older file without one, but that para_id would only be
+    correct if the row set is later treated as the whole book in original
+    order — never true for a stage-2 worklist, which is a reordered subset.
+    """
     paragraphs = []
     with csv_path.open(encoding="utf8") as f:
         reader = csv.DictReader(f)
-        for row in reader:
+        for i, row in enumerate(reader, start=1):
             text = (row.get("paragraph") or "").strip()
-            if text:
-                paragraphs.append(text)
+            if not text:
+                continue
+            pid_raw = (row.get("para_id") or "").strip()
+            pid = int(pid_raw) if pid_raw else i
+            paragraphs.append((pid, text))
     return paragraphs
 
 
@@ -666,17 +677,23 @@ def main():
     # A stage-2 worklist from route.py carries a `tier` column saying why each
     # paragraph was routed here. Carrying it through to the output is what lets
     # stage2_report.py compute per-stratum agreement and the recall bound.
+    # Keyed by para_id, not text: two distinct rows can share identical text
+    # (CPM boilerplate, repeated CCSS blurbs), and a text-keyed lookup would
+    # silently give every occurrence the same tier even when route.py sampled
+    # them differently (e.g. one instance in the control sample, a duplicate
+    # instance not). See the 2026-09-29 changelog entry.
     tier_of = {}
     with input_path.open(encoding="utf8") as f:
-        for r in csv.DictReader(f):
+        for i, r in enumerate(csv.DictReader(f), start=1):
             if r.get("tier") and (r.get("paragraph") or "").strip():
-                tier_of[r["paragraph"].strip()] = r["tier"]
+                pid_raw = (r.get("para_id") or "").strip()
+                tier_of[int(pid_raw) if pid_raw else i] = r["tier"]
     if tier_of:
         from collections import Counter
         print(f"Stage-2 worklist detected: {dict(Counter(tier_of.values()))}")
 
     cached = load_cache(cache_path, model_id)
-    to_call = sum(1 for p in all_paragraphs if cache_key(model_id, p) not in cached)
+    to_call = sum(1 for _, p in all_paragraphs if cache_key(model_id, p) not in cached)
 
     eta_mins = to_call * (args.sleep + 1.0) / 60
     print(f"Cached: {total - to_call} | Need API call: {to_call}")
@@ -686,8 +703,10 @@ def main():
 
     # The cache is the durable store; this CSV is a derived view rebuilt each
     # run, so every input row appears exactly once even when texts repeat.
-    fieldnames = ["paragraph", f"{args.model}_label", f"{args.model}_reasoning",
-                  f"{args.model}_confidence", f"{args.model}_considered"]
+    # para_id is the stable key downstream (route.py, merge.py) must join on.
+    fieldnames = ["para_id", "paragraph", f"{args.model}_label",
+                  f"{args.model}_reasoning", f"{args.model}_confidence",
+                  f"{args.model}_considered"]
     if tier_of:
         fieldnames.append("tier")
     with output_path.open("w", encoding="utf8", newline="") as f:
@@ -696,7 +715,7 @@ def main():
     processed = 0
     errors = 0
 
-    for idx, paragraph in enumerate(all_paragraphs, start=1):
+    for idx, (para_id, paragraph) in enumerate(all_paragraphs, start=1):
         key = cache_key(model_id, paragraph)
         hit = cached.get(key)
 
@@ -742,6 +761,7 @@ def main():
                 print(f"\n  ── {idx}/{total} ({pct:.1f}%) | new: {processed} | errors: {errors} ──")
 
         row = {
+            "para_id": para_id,
             "paragraph": paragraph,
             f"{args.model}_label": v.category,
             f"{args.model}_reasoning": v.reasoning,
@@ -749,7 +769,7 @@ def main():
             f"{args.model}_considered": v.considered,
         }
         if tier_of:
-            row["tier"] = tier_of.get(paragraph, "")
+            row["tier"] = tier_of.get(para_id, "")
         with output_path.open("a", encoding="utf8", newline="") as f:
             csv.DictWriter(f, fieldnames=fieldnames).writerow(row)
 

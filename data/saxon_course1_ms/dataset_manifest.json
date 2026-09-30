@@ -3,20 +3,20 @@
   "mode": "two-stage",
   "stage1_arm": "gemini",
   "stage2_arm": "gpt_oss_or",
-  "rows": 4164,
+  "rows": 4166,
   "by_status": {
-    "CONFIRMED": 780,
-    "UNVERIFIED": 3370,
+    "CONFIRMED": 781,
+    "UNVERIFIED": 3371,
     "UNCERTAIN": 14
   },
   "by_verification": {
-    "dual_arm": 794,
-    "single_arm": 3370
+    "dual_arm": 795,
+    "single_arm": 3371
   },
   "by_tier": {
     "C_control": 398,
-    "B_boundary": 395,
-    "C_unsampled": 3370,
+    "B_boundary": 396,
+    "C_unsampled": 3371,
     "A_positive": 1
   },
   "positives": 1,
